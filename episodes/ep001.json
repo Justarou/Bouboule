@@ -1,0 +1,26 @@
+{
+  "title": "Bouboule et l'étoile Pitou",
+  "voices": {
+    "N": {"id": "t4fHUMAMZxaaV2inHOnb", "name": "Narrateur (Voix grand père)"},
+    "B": {"id": "vqvgjNDXBhRGzlLsbOq5", "name": "Bouboule"},
+    "P": {"id": "ZYOBieLaunTiQrTrvNQq", "name": "Pitou (Morgane)"},
+    "G": {"id": "7OQ78nZ3nzjUjN8fGpn6", "name": "Grincheux"}
+  },
+  "lines": [
+    {"who": "N", "tags": "[warm, slow, gentle old man telling a bedtime story]", "text": "Il était une fois, sur la colline des Rigolos, une petite boule orange qui s'appelait Bouboule."},
+    {"who": "B", "tags": "[excited] [childlike voice]", "text": "Salut, tout le monde ! Aujourd'hui, c'est une super journée pour sauter partout !"},
+    {"who": "N", "tags": "[warm, slow, gentle old man telling a bedtime story, a touch of mystery]", "text": "Mais ce soir-là, quelque chose de brillant tomba du ciel."},
+    {"who": "P", "tags": "[tiny cute high-pitched child-like voice, crying a little]", "text": "Aïe, aïe, aïe ! Je suis tombée du ciel, et ma lumière s'est éteinte !"},
+    {"who": "B", "tags": "[surprised] [childlike voice]", "text": "Oh ! Une étoile ! Ne pleure pas, je vais t'aider à rentrer chez toi !"},
+    {"who": "P", "tags": "[tiny cute high-pitched child-like voice, hopeful and sad]", "text": "Merci ! Mais pour remonter, il me faut un arc-en-ciel. Et ici, il n'y a que des nuages."},
+    {"who": "G", "tags": "[grumpy, sulking, plaintive]", "text": "Pfff. Il pleut parce que je suis triste. Personne ne veut jamais jouer avec un nuage."},
+    {"who": "B", "tags": "[excited] [childlike voice]", "text": "Moi, je veux bien jouer avec toi ! J'adore la pluie ! Regarde !"},
+    {"who": "P", "tags": "[tiny cute high-pitched child-like voice, giggling happily]", "text": "Hihi ! Ça fait des flaques géantes !"},
+    {"who": "G", "tags": "[surprised, then softening with a small smile]", "text": "Ah ? Vous n'avez pas peur de moi ? Oh, ça me fait un petit sourire, tiens."},
+    {"who": "B", "tags": "[excited] [childlike voice]", "text": "Regarde, Pitou ! Le soleil et la pluie ont fabriqué un arc-en-ciel !"},
+    {"who": "P", "tags": "[tiny cute high-pitched child-like voice, overjoyed and touched]", "text": "Mon escalier vers le ciel ! Merci, mes amis. Je brillerai pour vous, chaque soir !"},
+    {"who": "G", "tags": "[gruff but warm, cheerful at the end]", "text": "Et moi, je reviendrai souvent. Mais juste pour jouer !"},
+    {"who": "N", "tags": "[warm, slow, tender old man ending a bedtime story]", "text": "Et depuis ce jour, quand tu vois une étoile qui clignote, c'est Pitou qui dit bonsoir à Bouboule."},
+    {"who": "B", "tags": "[excited] [childlike voice]", "text": "Bouboule, Bouboule, saute, saute, saute ! Avec des amis, la pluie devient une fête !"}
+  ]
+}
