@@ -26,9 +26,13 @@ for path in sorted(glob.glob("episodes/*.json")):
     os.makedirs(out, exist_ok=True)
     for i, line in enumerate(ep["lines"], 1):
         f = os.path.join(out, f"line{i:02d}.mp3")
+        if not line.get("text"):
+            continue          # temps mort sans voix
         if os.path.exists(f):
             print("deja la :", f); continue
         voice = ep["voices"][line["who"]]["id"]
+        if voice == "TODO":
+            print("voix pas encore choisie, ligne ignorée :", f); continue
         text = (line.get("tags", "") + " " + line["text"]).strip()
         for attempt in range(3):
             try:

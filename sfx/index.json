@@ -1,0 +1,1218 @@
+{
+ "boing": [
+  {
+   "f": "boing_1.mp3",
+   "d": 1.12,
+   "src": "Cartoon/Boing 01.MP3"
+  },
+  {
+   "f": "boing_2.mp3",
+   "d": 2.16,
+   "src": "Cartoon/Boing 02.mp3"
+  },
+  {
+   "f": "boing_3.mp3",
+   "d": 0.54,
+   "src": "Cartoon/Boing 03.mp3"
+  }
+ ],
+ "pop": [
+  {
+   "f": "pop_1.mp3",
+   "d": 1.12,
+   "src": "Cartoon/Pop 01.mp3"
+  },
+  {
+   "f": "pop_2.mp3",
+   "d": 1.01,
+   "src": "Cartoon/Pop 02.mp3"
+  },
+  {
+   "f": "pop_3.mp3",
+   "d": 0.72,
+   "src": "Cartoon/Pop 03.mp3"
+  }
+ ],
+ "blop": [
+  {
+   "f": "blop_1.mp3",
+   "d": 0.32,
+   "src": "Cartoon/Blop 01.MP3"
+  },
+  {
+   "f": "blop_2.mp3",
+   "d": 0.47,
+   "src": "Cartoon/Blop 02.mp3"
+  }
+ ],
+ "bulle": [
+  {
+   "f": "bulle_1.mp3",
+   "d": 2.05,
+   "src": "Cartoon/Bulle.mp3"
+  }
+ ],
+ "bonk": [
+  {
+   "f": "bonk_1.mp3",
+   "d": 1.94,
+   "src": "Cartoon/Bonk.mp3"
+  }
+ ],
+ "surprise": [
+  {
+   "f": "surprise_1.mp3",
+   "d": 1.22,
+   "src": "Cartoon/Surprise 01.mp3"
+  },
+  {
+   "f": "surprise_2.mp3",
+   "d": 1.3,
+   "src": "Cartoon/Surprise 02.mp3"
+  }
+ ],
+ "choc": [
+  {
+   "f": "choc_1.mp3",
+   "d": 3.06,
+   "src": "Cartoon/Shocked Sound Effect.mp3"
+  }
+ ],
+ "tombe": [
+  {
+   "f": "tombe_1.mp3",
+   "d": 0.61,
+   "src": "Cartoon/Tomber 01.mp3"
+  },
+  {
+   "f": "tombe_2.mp3",
+   "d": 2.99,
+   "src": "Cartoon/Tomber 02.mp3"
+  },
+  {
+   "f": "tombe_3.mp3",
+   "d": 3.06,
+   "src": "Cartoon/Tomber 03.mp3"
+  },
+  {
+   "f": "tombe_4.mp3",
+   "d": 3.06,
+   "src": "Cartoon/Tomber 04.mp3"
+  }
+ ],
+ "glisse_bas": [
+  {
+   "f": "glisse_bas_1.mp3",
+   "d": 0.72,
+   "src": "Cartoon/Glisse vers le Bas.mp3"
+  }
+ ],
+ "glisse": [
+  {
+   "f": "glisse_1.mp3",
+   "d": 0.76,
+   "src": "Cartoon/Glisser.mp3"
+  }
+ ],
+ "court": [
+  {
+   "f": "court_1.mp3",
+   "d": 4.0,
+   "src": "Cartoon/Courir 01.mp3"
+  },
+  {
+   "f": "court_2.mp3",
+   "d": 2.27,
+   "src": "Cartoon/Courir 02.MP3"
+  }
+ ],
+ "court_echec": [
+  {
+   "f": "court_echec_1.mp3",
+   "d": 3.2,
+   "src": "Cartoon/Courir, échouer, s'écraser.mp3"
+  }
+ ],
+ "pointes": [
+  {
+   "f": "pointes_1.mp3",
+   "d": 1.19,
+   "src": "Cartoon/Marche sur la Pointe des Pieds 01.mp3"
+  },
+  {
+   "f": "pointes_2.mp3",
+   "d": 1.3,
+   "src": "Cartoon/Marche sur la Pointe des Pieds 02.mp3"
+  }
+ ],
+ "meep": [
+  {
+   "f": "meep_1.mp3",
+   "d": 0.83,
+   "src": "Cartoon/Meep Meep.mp3"
+  }
+ ],
+ "tic": [
+  {
+   "f": "tic_1.mp3",
+   "d": 0.32,
+   "src": "Cartoon/Tic.mp3"
+  }
+ ],
+ "toc": [
+  {
+   "f": "toc_1.mp3",
+   "d": 0.32,
+   "src": "Cartoon/Toc.mp3"
+  }
+ ],
+ "xylo": [
+  {
+   "f": "xylo_1.mp3",
+   "d": 4.0,
+   "src": "Cartoon/Xylophone.mp3"
+  }
+ ],
+ "tambour": [
+  {
+   "f": "tambour_1.mp3",
+   "d": 5.04,
+   "src": "Cartoon/Roulement de Tambour/Roulement de Tambour 01.mp3"
+  },
+  {
+   "f": "tambour_2.mp3",
+   "d": 4.75,
+   "src": "Cartoon/Roulement de Tambour/Roulement de Tambour 02.mp3"
+  },
+  {
+   "f": "tambour_3.mp3",
+   "d": 2.34,
+   "src": "Cartoon/Roulement de Tambour/Roulement de Tambour 03.mp3"
+  }
+ ],
+ "coup_tambour": [
+  {
+   "f": "coup_tambour_1.mp3",
+   "d": 0.65,
+   "src": "Cartoon/Roulement de Tambour/Coup de Tambour.mp3"
+  }
+ ],
+ "dents": [
+  {
+   "f": "dents_1.mp3",
+   "d": 3.06,
+   "src": "Cartoon/Dents qui Claque.mp3"
+  }
+ ],
+ "croque": [
+  {
+   "f": "croque_1.mp3",
+   "d": 1.12,
+   "src": "Cartoon/Croquer.mp3"
+  }
+ ],
+ "mange": [
+  {
+   "f": "mange_1.mp3",
+   "d": 1.04,
+   "src": "Cartoon/Manger.mp3"
+  }
+ ],
+ "eclabousse": [
+  {
+   "f": "eclabousse_1.mp3",
+   "d": 1.04,
+   "src": "Cartoon/Éclaboussure.mp3"
+  }
+ ],
+ "goutte": [
+  {
+   "f": "goutte_1.mp3",
+   "d": 1.66,
+   "src": "Cartoon/Goutte d'Eau 01.mp3"
+  },
+  {
+   "f": "goutte_2.mp3",
+   "d": 2.05,
+   "src": "Cartoon/Goutte d'Eau 02.mp3"
+  }
+ ],
+ "couine": [
+  {
+   "f": "couine_1.mp3",
+   "d": 1.04,
+   "src": "Cartoon/Jouets qui Couinent 01.mp3"
+  },
+  {
+   "f": "couine_2.mp3",
+   "d": 1.12,
+   "src": "Cartoon/Jouets qui Couinent 02.mp3"
+  }
+ ],
+ "apparition": [
+  {
+   "f": "apparition_1.mp3",
+   "d": 1.19,
+   "src": "Cartoon/Apparition 01.mp3"
+  },
+  {
+   "f": "apparition_2.mp3",
+   "d": 0.79,
+   "src": "Cartoon/Apparition 02.mp3"
+  }
+ ],
+ "grandit": [
+  {
+   "f": "grandit_1.mp3",
+   "d": 1.73,
+   "src": "Cartoon/Agrandissement - Rétrécissement 01.mp3"
+  },
+  {
+   "f": "grandit_2.mp3",
+   "d": 3.06,
+   "src": "Cartoon/Agrandissement - Rétrécissement 02.mp3"
+  }
+ ],
+ "cree_objet": [
+  {
+   "f": "cree_objet_1.mp3",
+   "d": 1.76,
+   "src": "Cartoon/Création d'un objet.mp3"
+  }
+ ],
+ "echec": [
+  {
+   "f": "echec_1.mp3",
+   "d": 3.02,
+   "src": "Cartoon/Échec 01.mp3"
+  },
+  {
+   "f": "echec_2.mp3",
+   "d": 2.95,
+   "src": "Cartoon/Échec 02.mp3"
+  },
+  {
+   "f": "echec_3.mp3",
+   "d": 3.02,
+   "src": "Cartoon/Échec 03.mp3"
+  }
+ ],
+ "defaite": [
+  {
+   "f": "defaite_1.mp3",
+   "d": 4.03,
+   "src": "Cartoon/Défaite.mp3"
+  }
+ ],
+ "raille": [
+  {
+   "f": "raille_1.mp3",
+   "d": 1.19,
+   "src": "Cartoon/Raillerie.mp3"
+  }
+ ],
+ "fete": [
+  {
+   "f": "fete_1.mp3",
+   "d": 1.04,
+   "src": "Cartoon/Corne de Fête.mp3"
+  }
+ ],
+ "torsion": [
+  {
+   "f": "torsion_1.mp3",
+   "d": 0.36,
+   "src": "Cartoon/Torsion 01.mp3"
+  },
+  {
+   "f": "torsion_2.mp3",
+   "d": 0.4,
+   "src": "Cartoon/Torsion 02.mp3"
+  }
+ ],
+ "tourne": [
+  {
+   "f": "tourne_1.mp3",
+   "d": 3.06,
+   "src": "Cartoon/Tourner 01.mp3"
+  },
+  {
+   "f": "tourne_2.mp3",
+   "d": 1.91,
+   "src": "Cartoon/Tourner 02.MP3"
+  },
+  {
+   "f": "tourne_3.mp3",
+   "d": 1.3,
+   "src": "Cartoon/Tourner 03.mp3"
+  },
+  {
+   "f": "tourne_4.mp3",
+   "d": 1.12,
+   "src": "Cartoon/Tourner 04.mp3"
+  }
+ ],
+ "tremble": [
+  {
+   "f": "tremble_1.mp3",
+   "d": 1.33,
+   "src": "Cartoon/Tremblement 01.mp3"
+  },
+  {
+   "f": "tremble_2.mp3",
+   "d": 3.02,
+   "src": "Cartoon/Tremblement 02.mp3"
+  }
+ ],
+ "ricoche": [
+  {
+   "f": "ricoche_1.mp3",
+   "d": 0.97,
+   "src": "Cartoon/Ricochet 01.mp3"
+  },
+  {
+   "f": "ricoche_2.mp3",
+   "d": 0.83,
+   "src": "Cartoon/Ricochet 02.mp3"
+  }
+ ],
+ "suspense_c": [
+  {
+   "f": "suspense_c_1.mp3",
+   "d": 1.87,
+   "src": "Cartoon/Suspense 01.mp3"
+  },
+  {
+   "f": "suspense_c_2.mp3",
+   "d": 2.16,
+   "src": "Cartoon/Suspense 02.mp3"
+  },
+  {
+   "f": "suspense_c_3.mp3",
+   "d": 1.84,
+   "src": "Cartoon/Suspense 03.mp3"
+  },
+  {
+   "f": "suspense_c_4.mp3",
+   "d": 5.04,
+   "src": "Cartoon/Suspense 04.mp3"
+  }
+ ],
+ "fouet": [
+  {
+   "f": "fouet_1.mp3",
+   "d": 1.44,
+   "src": "Cartoon/Coup de Fouet.mp3"
+  }
+ ],
+ "horloge": [
+  {
+   "f": "horloge_1.mp3",
+   "d": 0.94,
+   "src": "Cartoon/L'horloge.mp3"
+  }
+ ],
+ "klaxon_c": [
+  {
+   "f": "klaxon_c_1.mp3",
+   "d": 2.48,
+   "src": "Cartoon/Klaxon Pneumatique.mp3"
+  }
+ ],
+ "dundun": [
+  {
+   "f": "dundun_1.mp3",
+   "d": 4.03,
+   "src": "Cartoon/DUN DUN DUNNN.mp3"
+  }
+ ],
+ "impact_c": [
+  {
+   "f": "impact_c_1.mp3",
+   "d": 3.1,
+   "src": "Cartoon/Musique d'impact.mp3"
+  }
+ ],
+ "agrandit_alerte": [
+  {
+   "f": "agrandit_alerte_1.mp3",
+   "d": 1.22,
+   "src": "Cartoon/Alerte.mp3"
+  }
+ ],
+ "baguette": [
+  {
+   "f": "baguette_1.mp3",
+   "d": 2.3,
+   "src": "Effets/Magique/Baguette Magique 01.mp3"
+  },
+  {
+   "f": "baguette_2.mp3",
+   "d": 3.56,
+   "src": "Effets/Magique/Baguette Magique 02.mp3"
+  }
+ ],
+ "disparait": [
+  {
+   "f": "disparait_1.mp3",
+   "d": 3.49,
+   "src": "Effets/Magique/Disparaitre par Magie.mp3"
+  }
+ ],
+ "scintille": [
+  {
+   "f": "scintille_1.mp3",
+   "d": 3.46,
+   "src": "Effets/Magique/Impact Scintillant.mp3"
+  }
+ ],
+ "victoire": [
+  {
+   "f": "victoire_1.mp3",
+   "d": 2.59,
+   "src": "Effets/Arcade/Victoire.mp3"
+  }
+ ],
+ "lvlup": [
+  {
+   "f": "lvlup_1.mp3",
+   "d": 1.58,
+   "src": "Effets/Arcade/Lvl Up.mp3"
+  }
+ ],
+ "valide": [
+  {
+   "f": "valide_1.mp3",
+   "d": 1.58,
+   "src": "Effets/Arcade/Validé.mp3"
+  }
+ ],
+ "upgrade": [
+  {
+   "f": "upgrade_1.mp3",
+   "d": 1.98,
+   "src": "Effets/Arcade/Upgrade.mp3"
+  }
+ ],
+ "perdu": [
+  {
+   "f": "perdu_1.mp3",
+   "d": 3.02,
+   "src": "Effets/Arcade/Perdu 01.mp3"
+  }
+ ],
+ "notif": [
+  {
+   "f": "notif_1.mp3",
+   "d": 2.05,
+   "src": "Effets/Arcade/Notification.mp3"
+  }
+ ],
+ "rire": [
+  {
+   "f": "rire_1.mp3",
+   "d": 4.07,
+   "src": "Personnes/Rire/Rire 01.mp3"
+  },
+  {
+   "f": "rire_2.mp3",
+   "d": 4.03,
+   "src": "Personnes/Rire/Rire 02.mp3"
+  },
+  {
+   "f": "rire_3.mp3",
+   "d": 1.12,
+   "src": "Personnes/Rire/Rire 03.mp3"
+  }
+ ],
+ "rire_malin": [
+  {
+   "f": "rire_malin_1.mp3",
+   "d": 1.69,
+   "src": "Personnes/Rire/Rire Malin 01.mp3"
+  },
+  {
+   "f": "rire_malin_2.mp3",
+   "d": 3.49,
+   "src": "Personnes/Rire/Rire Malin 02.mp3"
+  },
+  {
+   "f": "rire_malin_3.mp3",
+   "d": 1.19,
+   "src": "Personnes/Rire/Rire Malin 03.mp3"
+  },
+  {
+   "f": "rire_malin_4.mp3",
+   "d": 3.06,
+   "src": "Personnes/Rire/Rire Malin 04.mp3"
+  }
+ ],
+ "rire_public": [
+  {
+   "f": "rire_public_1.mp3",
+   "d": 3.02,
+   "src": "Personnes/Rire/Rire Public 01.mp3"
+  },
+  {
+   "f": "rire_public_2.mp3",
+   "d": 2.16,
+   "src": "Personnes/Rire/Rire Public 02.mp3"
+  }
+ ],
+ "applaudit": [
+  {
+   "f": "applaudit_1.mp3",
+   "d": 7.06,
+   "src": "Personnes/Applaudissement/Applaudissement 01.mp3"
+  },
+  {
+   "f": "applaudit_2.mp3",
+   "d": 7.06,
+   "src": "Personnes/Applaudissement/Applaudissement 02.MP3"
+  },
+  {
+   "f": "applaudit_3.mp3",
+   "d": 7.06,
+   "src": "Personnes/Applaudissement/Applaudissement 03.mp3"
+  },
+  {
+   "f": "applaudit_4.mp3",
+   "d": 6.98,
+   "src": "Personnes/Applaudissement/Applaudissement 04.mp3"
+  }
+ ],
+ "foule": [
+  {
+   "f": "foule_1.mp3",
+   "d": 6.05,
+   "src": "Personnes/Applaudissement/Acclamation de la Foule.mp3"
+  }
+ ],
+ "joie_enfant": [
+  {
+   "f": "joie_enfant_1.mp3",
+   "d": 2.99,
+   "src": "Personnes/Cri/Enfant qui Cri de joie 01.mp3"
+  },
+  {
+   "f": "joie_enfant_2.mp3",
+   "d": 3.02,
+   "src": "Personnes/Cri/Enfant qui Cri de joie 02.mp3"
+  }
+ ],
+ "chute_p": [
+  {
+   "f": "chute_p_1.mp3",
+   "d": 1.76,
+   "src": "Personnes/Chute/Chute de Personne 01.mp3"
+  },
+  {
+   "f": "chute_p_2.mp3",
+   "d": 2.56,
+   "src": "Personnes/Chute/Chute de Personne 02.mp3"
+  },
+  {
+   "f": "chute_p_3.mp3",
+   "d": 2.99,
+   "src": "Personnes/Chute/Chute de Personne 03.mp3"
+  },
+  {
+   "f": "chute_p_4.mp3",
+   "d": 1.91,
+   "src": "Personnes/Chute/Chute de Personne 04.mp3"
+  },
+  {
+   "f": "chute_p_5.mp3",
+   "d": 2.99,
+   "src": "Personnes/Chute/Chute de Personne 05.mp3"
+  },
+  {
+   "f": "chute_p_6.mp3",
+   "d": 3.06,
+   "src": "Personnes/Chute/Chute de Personne 06.mp3"
+  }
+ ],
+ "coeur": [
+  {
+   "f": "coeur_1.mp3",
+   "d": 5.04,
+   "src": "Personnes/Battement/Battement de Coeur 01.mp3"
+  },
+  {
+   "f": "coeur_2.mp3",
+   "d": 5.04,
+   "src": "Personnes/Battement/Battement de Coeur 02.mp3"
+  }
+ ],
+ "clin": [
+  {
+   "f": "clin_1.mp3",
+   "d": 2.05,
+   "src": "Personnes/Clin d'Oeil/Clin d'Oeil 01.mp3"
+  },
+  {
+   "f": "clin_2.mp3",
+   "d": 2.05,
+   "src": "Personnes/Clin d'Oeil/Clin d'Oeil 02.mp3"
+  }
+ ],
+ "pas_bois": [
+  {
+   "f": "pas_bois_1.mp3",
+   "d": 0.86,
+   "src": "Personnes/Pas/Bois & Parquet/Pas sur du Bois 01.mp3"
+  },
+  {
+   "f": "pas_bois_2.mp3",
+   "d": 0.86,
+   "src": "Personnes/Pas/Bois & Parquet/Pas sur du Bois 02.mp3"
+  },
+  {
+   "f": "pas_bois_3.mp3",
+   "d": 1.04,
+   "src": "Personnes/Pas/Bois & Parquet/Pas sur du Bois 03.mp3"
+  },
+  {
+   "f": "pas_bois_4.mp3",
+   "d": 0.9,
+   "src": "Personnes/Pas/Bois & Parquet/Pas sur du Bois 04.mp3"
+  }
+ ],
+ "pas_boue": [
+  {
+   "f": "pas_boue_1.mp3",
+   "d": 0.72,
+   "src": "Personnes/Pas/Boue/Pas dans la Boue 01.mp3"
+  },
+  {
+   "f": "pas_boue_2.mp3",
+   "d": 1.01,
+   "src": "Personnes/Pas/Boue/Pas dans la Boue 02.mp3"
+  },
+  {
+   "f": "pas_boue_3.mp3",
+   "d": 1.04,
+   "src": "Personnes/Pas/Boue/Pas dans la Boue 03.mp3"
+  }
+ ],
+ "pas_eau": [
+  {
+   "f": "pas_eau_1.mp3",
+   "d": 1.19,
+   "src": "Personnes/Pas/Eau/Pas dans l'Eau 01.mp3"
+  },
+  {
+   "f": "pas_eau_2.mp3",
+   "d": 1.19,
+   "src": "Personnes/Pas/Eau/Pas dans l'Eau 02.mp3"
+  },
+  {
+   "f": "pas_eau_3.mp3",
+   "d": 1.3,
+   "src": "Personnes/Pas/Eau/Pas dans l'Eau 03.mp3"
+  }
+ ],
+ "course": [
+  {
+   "f": "course_1.mp3",
+   "d": 4.97,
+   "src": "Personnes/Pas/Course à pied.mp3"
+  }
+ ],
+ "pet": [
+  {
+   "f": "pet_1.mp3",
+   "d": 3.06,
+   "src": "Personnes/Pet, Rot & Ronflement/Pet/Long Pet.mp3"
+  },
+  {
+   "f": "pet_2.mp3",
+   "d": 0.61,
+   "src": "Personnes/Pet, Rot & Ronflement/Pet/Pet 01.mp3"
+  },
+  {
+   "f": "pet_3.mp3",
+   "d": 0.72,
+   "src": "Personnes/Pet, Rot & Ronflement/Pet/Pet 02.mp3"
+  },
+  {
+   "f": "pet_4.mp3",
+   "d": 1.3,
+   "src": "Personnes/Pet, Rot & Ronflement/Pet/Pet 03.mp3"
+  },
+  {
+   "f": "pet_5.mp3",
+   "d": 1.37,
+   "src": "Personnes/Pet, Rot & Ronflement/Pet/Pet 04.mp3"
+  },
+  {
+   "f": "pet_6.mp3",
+   "d": 1.08,
+   "src": "Personnes/Pet, Rot & Ronflement/Pet/Pet 05.mp3"
+  }
+ ],
+ "canard": [
+  {
+   "f": "canard_1.mp3",
+   "d": 3.06,
+   "src": "Animaux/Canard/Canard.mp3"
+  }
+ ],
+ "cochon": [
+  {
+   "f": "cochon_1.mp3",
+   "d": 3.06,
+   "src": "Animaux/Cochon Dinde/Cri Cochon Dinde.mp3"
+  }
+ ],
+ "chevre": [
+  {
+   "f": "chevre_1.mp3",
+   "d": 1.62,
+   "src": "Animaux/Chêvre/Cri de Chêvre.mp3"
+  }
+ ],
+ "ane": [
+  {
+   "f": "ane_1.mp3",
+   "d": 4.07,
+   "src": "Animaux/Ane/âne.mp3"
+  }
+ ],
+ "coq": [
+  {
+   "f": "coq_1.mp3",
+   "d": 4.0,
+   "src": "Animaux/Coq/Chant du Coq 01.mp3"
+  },
+  {
+   "f": "coq_2.mp3",
+   "d": 4.0,
+   "src": "Animaux/Coq/Chant du Coq 02.mp3"
+  }
+ ],
+ "chien_petit": [
+  {
+   "f": "chien_petit_1.mp3",
+   "d": 1.37,
+   "src": "Animaux/Chien/Aboiement Petit Chien 01.mp3"
+  },
+  {
+   "f": "chien_petit_2.mp3",
+   "d": 1.66,
+   "src": "Animaux/Chien/Aboiement Petit Chien 02.mp3"
+  },
+  {
+   "f": "chien_petit_3.mp3",
+   "d": 1.58,
+   "src": "Animaux/Chien/Aboiement Petit Chien 03.mp3"
+  },
+  {
+   "f": "chien_petit_4.mp3",
+   "d": 1.48,
+   "src": "Animaux/Chien/Aboiement Petit Chien 04.mp3"
+  }
+ ],
+ "chien_gros": [
+  {
+   "f": "chien_gros_1.mp3",
+   "d": 2.59,
+   "src": "Animaux/Chien/Aboiement Gros Chien 01.mp3"
+  },
+  {
+   "f": "chien_gros_2.mp3",
+   "d": 1.04,
+   "src": "Animaux/Chien/Aboiement Gros Chien 02.mp3"
+  },
+  {
+   "f": "chien_gros_3.mp3",
+   "d": 1.04,
+   "src": "Animaux/Chien/Aboiement Gros Chien 03.mp3"
+  }
+ ],
+ "elephant": [
+  {
+   "f": "elephant_1.mp3",
+   "d": 3.53,
+   "src": "Animaux/Éléphant/Éléphant qui Barrit 01.mp3"
+  },
+  {
+   "f": "elephant_2.mp3",
+   "d": 2.52,
+   "src": "Animaux/Éléphant/Éléphant qui Barrit 02.mp3"
+  }
+ ],
+ "grenouille": [
+  {
+   "f": "grenouille_1.mp3",
+   "d": 3.06,
+   "src": "Animaux/Grenouille/Grenouille qui Croasse.mp3"
+  }
+ ],
+ "grillon": [
+  {
+   "f": "grillon_1.mp3",
+   "d": 6.05,
+   "src": "Animaux/Grillon/Grillon 01.mp3"
+  }
+ ],
+ "hibou": [
+  {
+   "f": "hibou_1.mp3",
+   "d": 4.07,
+   "src": "Animaux/Hibou/Hibou.mp3"
+  }
+ ],
+ "singe": [
+  {
+   "f": "singe_1.mp3",
+   "d": 4.07,
+   "src": "Animaux/Singe/Singe.mp3"
+  }
+ ],
+ "loup": [
+  {
+   "f": "loup_1.mp3",
+   "d": 6.05,
+   "src": "Animaux/Loup/Loups Hurlant.mp3"
+  }
+ ],
+ "merle": [
+  {
+   "f": "merle_1.mp3",
+   "d": 5.0,
+   "src": "Animaux/Merle Noir/Chant du Merle Noir 01.mp3"
+  },
+  {
+   "f": "merle_2.mp3",
+   "d": 4.97,
+   "src": "Animaux/Merle Noir/Chant du Merle Noir 02.mp3"
+  },
+  {
+   "f": "merle_3.mp3",
+   "d": 5.0,
+   "src": "Animaux/Merle Noir/Chant du Merle Noir 03.mp3"
+  }
+ ],
+ "pie": [
+  {
+   "f": "pie_1.mp3",
+   "d": 3.02,
+   "src": "Animaux/Pie/Pie qui Jacasse 01.mp3"
+  },
+  {
+   "f": "pie_2.mp3",
+   "d": 2.63,
+   "src": "Animaux/Pie/Pie qui Jacasse 02.mp3"
+  }
+ ],
+ "dindon": [
+  {
+   "f": "dindon_1.mp3",
+   "d": 2.99,
+   "src": "Animaux/Dindon/Dindon qui Glousse 01.mp3"
+  },
+  {
+   "f": "dindon_2.mp3",
+   "d": 2.99,
+   "src": "Animaux/Dindon/Dindon qui Glousse 02.mp3"
+  }
+ ],
+ "mouche": [
+  {
+   "f": "mouche_1.mp3",
+   "d": 3.96,
+   "src": "Animaux/Mouche/Mouche 01.mp3"
+  },
+  {
+   "f": "mouche_2.mp3",
+   "d": 4.0,
+   "src": "Animaux/Mouche/Mouche 02.mp3"
+  }
+ ],
+ "chat_ronron": [
+  {
+   "f": "chat_ronron_1.mp3",
+   "d": 5.04,
+   "src": "Animaux/Chat/Ronronnement de Chat 01.mp3"
+  }
+ ],
+ "whoosh": [
+  {
+   "f": "whoosh_1.mp3",
+   "d": 2.52,
+   "src": "Effets/Transitions/Whoosh/Lent/Whoosh Lent 01.mp3"
+  },
+  {
+   "f": "whoosh_2.mp3",
+   "d": 2.52,
+   "src": "Effets/Transitions/Whoosh/Lent/Whoosh Lent 02.mp3"
+  },
+  {
+   "f": "whoosh_3.mp3",
+   "d": 2.52,
+   "src": "Effets/Transitions/Whoosh/Lent/Whoosh Lent 03.mp3"
+  },
+  {
+   "f": "whoosh_4.mp3",
+   "d": 2.56,
+   "src": "Effets/Transitions/Whoosh/Lent/Whoosh Lent 04.mp3"
+  }
+ ],
+ "whoosh_etoile": [
+  {
+   "f": "whoosh_etoile_1.mp3",
+   "d": 3.06,
+   "src": "Effets/Transitions/Whoosh/Lent/Whoosh Étoile fillante.mp3"
+  }
+ ],
+ "whoosh_sort": [
+  {
+   "f": "whoosh_sort_1.mp3",
+   "d": 3.02,
+   "src": "Effets/Transitions/Whoosh/Lent/Whoosh Lancement de Sort.mp3"
+  }
+ ],
+ "whoosh_vol": [
+  {
+   "f": "whoosh_vol_1.mp3",
+   "d": 3.06,
+   "src": "Effets/Transitions/Whoosh/Futuriste/Whoosh Voler.mp3"
+  }
+ ],
+ "retro": [
+  {
+   "f": "retro_1.mp3",
+   "d": 1.01,
+   "src": "Effets/Transitions/Retro/Transition Retro 01.mp3"
+  },
+  {
+   "f": "retro_2.mp3",
+   "d": 1.15,
+   "src": "Effets/Transitions/Retro/Transition Retro 02.mp3"
+  }
+ ],
+ "portail": [
+  {
+   "f": "portail_1.mp3",
+   "d": 4.03,
+   "src": "Effets/Futuriste/Portail Futuriste.mp3"
+  }
+ ],
+ "clochette": [
+  {
+   "f": "clochette_1.mp3",
+   "d": 2.95,
+   "src": "Quotidiens/Extérieur/Cloche/Clochette 01.mp3"
+  },
+  {
+   "f": "clochette_2.mp3",
+   "d": 3.06,
+   "src": "Quotidiens/Extérieur/Cloche/Clochette 02.mp3"
+  },
+  {
+   "f": "clochette_3.mp3",
+   "d": 2.84,
+   "src": "Quotidiens/Extérieur/Cloche/Clochette 03.mp3"
+  }
+ ],
+ "cloche_vache": [
+  {
+   "f": "cloche_vache_1.mp3",
+   "d": 4.07,
+   "src": "Quotidiens/Extérieur/Cloche/Cloche a Vache.mp3"
+  }
+ ],
+ "feu_artifice": [
+  {
+   "f": "feu_artifice_1.mp3",
+   "d": 3.38,
+   "src": "Quotidiens/Extérieur/Feu d'Artifice/Feu d'Artifice 01.mp3"
+  },
+  {
+   "f": "feu_artifice_2.mp3",
+   "d": 6.01,
+   "src": "Quotidiens/Extérieur/Feu d'Artifice/Feu d'Artifice 02.mp3"
+  },
+  {
+   "f": "feu_artifice_3.mp3",
+   "d": 5.98,
+   "src": "Quotidiens/Extérieur/Feu d'Artifice/Feu d'Artifice 03.mp3"
+  },
+  {
+   "f": "feu_artifice_4.mp3",
+   "d": 6.05,
+   "src": "Quotidiens/Extérieur/Feu d'Artifice/Feu d'Artifice 04.mp3"
+  }
+ ],
+ "feu_camp": [
+  {
+   "f": "feu_camp_1.mp3",
+   "d": 4.79,
+   "src": "Quotidiens/Extérieur/Feu/Feu de Camp.mp3"
+  }
+ ],
+ "eclabousse_eau": [
+  {
+   "f": "eclabousse_eau_1.mp3",
+   "d": 2.84,
+   "src": "Quotidiens/Extérieur/Water/Éclaboussure d'Eau.mp3"
+  }
+ ],
+ "impact_eau": [
+  {
+   "f": "impact_eau_1.mp3",
+   "d": 1.66,
+   "src": "Quotidiens/Extérieur/Water/Impact d'Eau 01.mp3"
+  },
+  {
+   "f": "impact_eau_2.mp3",
+   "d": 1.66,
+   "src": "Quotidiens/Extérieur/Water/Impact d'Eau 02.mp3"
+  },
+  {
+   "f": "impact_eau_3.mp3",
+   "d": 1.48,
+   "src": "Quotidiens/Extérieur/Water/Impact d'Eau 03.mp3"
+  },
+  {
+   "f": "impact_eau_4.mp3",
+   "d": 1.08,
+   "src": "Quotidiens/Extérieur/Water/Impact d'Eau 04.mp3"
+  },
+  {
+   "f": "impact_eau_5.mp3",
+   "d": 0.9,
+   "src": "Quotidiens/Extérieur/Water/Impact d'Eau 05.mp3"
+  },
+  {
+   "f": "impact_eau_6.mp3",
+   "d": 1.19,
+   "src": "Quotidiens/Extérieur/Water/Impact d'Eau 06.mp3"
+  }
+ ],
+ "petite_explosion": [
+  {
+   "f": "petite_explosion_1.mp3",
+   "d": 3.06,
+   "src": "Quotidiens/Extérieur/Explosion/Petite Explosion.mp3"
+  }
+ ],
+ "bois_craque": [
+  {
+   "f": "bois_craque_1.mp3",
+   "d": 3.06,
+   "src": "Quotidiens/Extérieur/Avalanche, Craquelement, Coup, Déplacement & Chutte/Bois/Craquelement de Bois.mp3"
+  }
+ ],
+ "porte_creepy": [
+  {
+   "f": "porte_creepy_1.mp3",
+   "d": 2.99,
+   "src": "Quotidiens/Intérieur/Porte/Fermeture  de Porte Creepy 01.mp3"
+  },
+  {
+   "f": "porte_creepy_2.mp3",
+   "d": 3.02,
+   "src": "Quotidiens/Intérieur/Porte/Fermeture de Porte Creepy 02.mp3"
+  }
+ ],
+ "bouchon": [
+  {
+   "f": "bouchon_1.mp3",
+   "d": 1.98,
+   "src": "Quotidiens/Intérieur/Cuisine/Bouteille/Pop de Bouchon en Liège.mp3"
+  }
+ ],
+ "papier": [
+  {
+   "f": "papier_1.mp3",
+   "d": 3.06,
+   "src": "Quotidiens/Intérieur/Papier/Froissage d'une Feuille.mp3"
+  }
+ ],
+ "minuteur": [
+  {
+   "f": "minuteur_1.mp3",
+   "d": 4.07,
+   "src": "Quotidiens/Intérieur/Cuisine/Minuteur.mp3"
+  }
+ ],
+ "amb_oiseaux": [
+  {
+   "f": "amb_oiseaux_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Matinale - Chant d'oiseaux.mp3"
+  }
+ ],
+ "amb_ext": [
+  {
+   "f": "amb_ext_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Extérieur.mp3"
+  }
+ ],
+ "amb_ruisseau": [
+  {
+   "f": "amb_ruisseau_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance de Ruisseau.mp3"
+  }
+ ],
+ "amb_nuit": [
+  {
+   "f": "amb_nuit_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance de Nuit (forêt).mp3"
+  }
+ ],
+ "amb_pluie": [
+  {
+   "f": "amb_pluie_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Pluie.mp3"
+  }
+ ],
+ "amb_vague": [
+  {
+   "f": "amb_vague_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Vague.mp3"
+  }
+ ],
+ "amb_mer": [
+  {
+   "f": "amb_mer_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Sous-Marine.mp3"
+  }
+ ],
+ "amb_savane": [
+  {
+   "f": "amb_savane_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Savane.mp3"
+  }
+ ],
+ "amb_vent": [
+  {
+   "f": "amb_vent_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Vents Hurlants.mp3"
+  }
+ ],
+ "amb_classe": [
+  {
+   "f": "amb_classe_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Salle de Classe.mp3"
+  }
+ ],
+ "amb_grotte": [
+  {
+   "f": "amb_grotte_1.mp3",
+   "d": 22.07,
+   "src": "Ambiances/Ambiance Grotte.mp3"
+  }
+ ]
+}
