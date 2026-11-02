@@ -1,99 +1,832 @@
 {
-  "title": "Bouboule et l'étoile Pitou",
-  "voices": {
-    "N": {
-      "id": "t4fHUMAMZxaaV2inHOnb",
-      "name": "Narrateur (Voix grand père)"
-    },
-    "B": {
-      "id": "vqvgjNDXBhRGzlLsbOq5",
-      "name": "Bouboule"
-    },
-    "P": {
-      "id": "ZYOBieLaunTiQrTrvNQq",
-      "name": "Pitou (Morgane)"
-    },
-    "G": {
-      "id": "7OQ78nZ3nzjUjN8fGpn6",
-      "name": "Grincheux"
-    }
-  },
-  "lines": [
-    {
-      "who": "N",
-      "tags": "[warm, slow, gentle old man telling a bedtime story]",
-      "text": "Il était une fois, sur la colline des Rigolos, une petite boule orange qui s'appelait Bouboule."
-    },
-    {
-      "who": "B",
-      "tags": "[excited] [childlike voice]",
-      "text": "Salut, tout le monde ! Aujourd'hui, c'est une super journée pour sauter partout !"
-    },
-    {
-      "who": "N",
-      "tags": "[warm, slow, gentle old man telling a bedtime story, a touch of mystery]",
-      "text": "Mais ce soir-là, quelque chose de brillant tomba du ciel."
-    },
-    {
-      "who": "P",
-      "tags": "[tiny cute high-pitched child-like voice, crying a little]",
-      "text": "Aïe, aïe, aïe ! Je suis tombée du ciel, et ma lumière s'est éteinte !"
-    },
-    {
-      "who": "B",
-      "tags": "[surprised] [childlike voice]",
-      "text": "Oh ! Une étoile ! Ne pleure pas, je vais t'aider à rentrer chez toi !"
-    },
-    {
-      "who": "P",
-      "tags": "[tiny cute high-pitched child-like voice, hopeful and sad]",
-      "text": "Merci ! Mais pour remonter, il me faut un arc-en-ciel. Et ici, il n'y a que des nuages."
-    },
-    {
-      "who": "G",
-      "tags": "[grumpy, sulking, plaintive]",
-      "text": "Pfff. Il pleut parce que je suis triste. Personne ne veut jamais jouer avec un nuage."
-    },
-    {
-      "who": "B",
-      "tags": "[excited] [childlike voice]",
-      "text": "Moi, je veux bien jouer avec toi ! J'adore la pluie ! Regarde !"
-    },
-    {
-      "who": "P",
-      "tags": "[tiny cute high-pitched child-like voice, giggling happily]",
-      "text": "Hihi ! Ça fait des flaques géantes !"
-    },
-    {
-      "who": "G",
-      "tags": "[surprised, then softening with a small smile]",
-      "text": "Ah ? Vous n'avez pas peur de moi ? Oh, ça me fait un petit sourire, tiens."
-    },
-    {
-      "who": "B",
-      "tags": "[excited] [childlike voice]",
-      "text": "Regarde, Pitou ! Le soleil et la pluie ont fabriqué un arc-en-ciel !"
-    },
-    {
-      "who": "P",
-      "tags": "[tiny cute high-pitched child-like voice, overjoyed and touched]",
-      "text": "Mon escalier vers le ciel ! Merci, mes amis. Je brillerai pour vous, chaque soir !"
-    },
-    {
-      "who": "G",
-      "tags": "[gruff but warm, cheerful at the end]",
-      "text": "Et moi, je reviendrai souvent. Mais juste pour jouer !"
-    },
-    {
-      "who": "N",
-      "tags": "[warm, slow, tender old man ending a bedtime story]",
-      "text": "Et depuis ce jour, quand tu vois une étoile qui clignote, c'est Pitou qui dit bonsoir à Bouboule."
-    },
-    {
-      "who": "B",
-      "tags": "[excited] [childlike voice]",
-      "text": "Bouboule, Bouboule, saute, saute, saute ! Avec des amis, la pluie devient une fête !"
-    }
+ "title": "Bouboule et l'étoile Pitou",
+ "series": "BOUBOULE",
+ "episodeNo": 1,
+ "subtitle": "Bouboule et l'étoile Pitou",
+ "lead_text": "Une petite étoile tombe du ciel et perd sa lumière. Bouboule et un nuage grincheux l'aident à retrouver le chemin avec un arc-en-ciel.",
+ "alt": "Dessin animé : Bouboule, la petite étoile Pitou et le nuage Grincheux sur la colline des Rigolos.",
+ "set": "colline",
+ "tod": "day",
+ "music": "joyeux",
+ "endLine": "à demain, petits rigolos !",
+ "nextTeaser": "Abonne-toi pour la suite !",
+ "lead": 3.0,
+ "outro": 5.5,
+ "cast": {
+  "B": "bouboule",
+  "P": "pitou",
+  "G": "grincheux"
+ },
+ "at": [
+  [
+   0,
+   "place",
+   "B",
+   0.3
   ],
-  "version": 1
+  [
+   0,
+   "amb",
+   "amb_oiseaux",
+   0.28
+  ]
+ ],
+ "voices": {
+  "N": {
+   "id": "t4fHUMAMZxaaV2inHOnb",
+   "name": "Narrateur (Voix grand père)"
+  },
+  "B": {
+   "id": "vqvgjNDXBhRGzlLsbOq5",
+   "name": "Bouboule"
+  },
+  "P": {
+   "id": "ZYOBieLaunTiQrTrvNQq",
+   "name": "Pitou (Morgane)"
+  },
+  "G": {
+   "id": "7OQ78nZ3nzjUjN8fGpn6",
+   "name": "Grincheux"
+  }
+ },
+ "lines": [
+  {
+   "who": "N",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "text": "Il était une fois, sur la colline des Rigolos, une petite boule orange qui s'appelait Bouboule.",
+   "do": [
+    [
+     0.4,
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     0.6,
+     "mood",
+     "B",
+     "happy"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "tags": "[excited] [childlike voice]",
+   "text": "Salut, tout le monde ! Aujourd'hui, c'est une super journée pour sauter partout !",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0.2,
+     "look",
+     "B",
+     "cam"
+    ],
+    [
+     0.3,
+     "anim",
+     "B",
+     "hop",
+     3
+    ],
+    [
+     "e-.9",
+     "anim",
+     "B",
+     "cheer",
+     0.8
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "tags": "[warm, slow, gentle old man telling a bedtime story, a touch of mystery]",
+   "text": "Mais ce soir-là, quelque chose de brillant tomba du ciel.",
+   "do": [
+    [
+     0,
+     "tod",
+     "dusk",
+     4
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0.6,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     "e-2.2",
+     "sfx",
+     "suspense_c",
+     0.5
+    ],
+    [
+     "e-1.7",
+     "enter",
+     "P",
+     "drop",
+     0.55,
+     1.5
+    ],
+    [
+     "e-0.25",
+     "sfx",
+     "tombe",
+     0.8
+    ],
+    [
+     "e-0.1",
+     "anim",
+     "B",
+     "squish",
+     0.5
+    ],
+    [
+     "e-0.1",
+     "mood",
+     "B",
+     "surprised"
+    ],
+    [
+     "e-0.1",
+     "glow",
+     "P",
+     0,
+     0.2
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "tags": "[tiny cute high-pitched child-like voice, crying a little]",
+   "text": "Aïe, aïe, aïe ! Je suis tombée du ciel, et ma lumière s'est éteinte !",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0,
+     0.1
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0.1,
+     "move",
+     "B",
+     0.42,
+     1.4,
+     "hop"
+    ],
+    [
+     0.2,
+     "anim",
+     "P",
+     "tremble",
+     3
+    ],
+    [
+     "e-1.0",
+     "fx",
+     "P",
+     "sweat",
+     1.2
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "tags": "[surprised] [childlike voice]",
+   "text": "Oh ! Une étoile ! Ne pleure pas, je vais t'aider à rentrer chez toi !",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     0.5,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     "e-1.2",
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     "e-1.2",
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     "e-1.0",
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     "e-1.2",
+     "sfx",
+     "valide",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "tags": "[tiny cute high-pitched child-like voice, hopeful and sad]",
+   "text": "Merci ! Mais pour remonter, il me faut un arc-en-ciel. Et ici, il n'y a que des nuages.",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0.3,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0.3,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0.8,
+     "tod",
+     "gloom",
+     4
+    ],
+    [
+     "e-1.6",
+     "cam",
+     "P",
+     1.25,
+     2.2
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "tags": "[grumpy, sulking, plaintive]",
+   "text": "Pfff. Il pleut parce que je suis triste. Personne ne veut jamais jouer avec un nuage.",
+   "do": [
+    [
+     0,
+     "enter",
+     "G",
+     "L",
+     0.78,
+     2.6,
+     "float"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     0.2,
+     "fx",
+     "G",
+     "rain",
+     11
+    ],
+    [
+     0.3,
+     "sfx",
+     "amb_pluie",
+     0.3
+    ],
+    [
+     1.2,
+     "anim",
+     "G",
+     "tremble",
+     2
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "G"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "cam",
+     "wide",
+     1,
+     1.8
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "tags": "[excited] [childlike voice]",
+   "text": "Moi, je veux bien jouer avec toi ! J'adore la pluie ! Regarde !",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "G"
+    ],
+    [
+     0.2,
+     "move",
+     "B",
+     0.6,
+     1.2,
+     "hop"
+    ],
+    [
+     0.5,
+     "anim",
+     "B",
+     "spin",
+     1.1
+    ],
+    [
+     "e-1.6",
+     "sfx",
+     "eclabousse",
+     0.8
+    ],
+    [
+     "e-1.2",
+     "fx",
+     "B",
+     "foam",
+     1.6
+    ],
+    [
+     "e-0.9",
+     "anim",
+     "B",
+     "hop",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "tags": "[tiny cute high-pitched child-like voice, giggling happily]",
+   "text": "Hihi ! Ça fait des flaques géantes !",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "laugh"
+    ],
+    [
+     0.3,
+     "move",
+     "P",
+     0.42,
+     1,
+     "float"
+    ],
+    [
+     0.4,
+     "anim",
+     "P",
+     "hop",
+     3
+    ],
+    [
+     "e-1.7",
+     "sfx",
+     "eclabousse",
+     0.7
+    ],
+    [
+     "e-0.7",
+     "sfx",
+     "rire",
+     0.5
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.45,
+     1
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "tags": "[surprised, then softening with a small smile]",
+   "text": "Ah ? Vous n'avez pas peur de moi ? Oh, ça me fait un petit sourire, tiens.",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "surprised"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     1.4,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     1.5,
+     "fx",
+     "G",
+     "hearts",
+     2.2
+    ],
+    [
+     "e-2.2",
+     "tod",
+     "day",
+     3.5
+    ],
+    [
+     "e-2.0",
+     "beams",
+     1,
+     2
+    ],
+    [
+     "e-2.0",
+     "music",
+     "joyeux"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "tags": "[excited] [childlike voice]",
+   "text": "Regarde, Pitou ! Le soleil et la pluie ont fabriqué un arc-en-ciel !",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "surprised"
+    ],
+    [
+     0.5,
+     "anim",
+     "B",
+     "jump",
+     1.2
+    ],
+    [
+     0.7,
+     "rainbow",
+     "show",
+     3.2
+    ],
+    [
+     0.7,
+     "sfx",
+     "scintille",
+     0.6
+    ],
+    [
+     0.7,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0.7,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0.7,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     1.0,
+     "fx",
+     "P",
+     "sparkle",
+     3
+    ],
+    [
+     "e-1.2",
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     "e-2.2",
+     "cam",
+     "wide",
+     1,
+     2
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "tags": "[tiny cute high-pitched child-like voice, overjoyed and touched]",
+   "text": "Mon escalier vers le ciel ! Merci, mes amis. Je brillerai pour vous, chaque soir !",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     1,
+     1.4
+    ],
+    [
+     0.3,
+     "anim",
+     "P",
+     "cheer",
+     1.8
+    ],
+    [
+     0.4,
+     "fx",
+     "P",
+     "sparkle",
+     3
+    ],
+    [
+     "e-3.0",
+     "fx",
+     "P",
+     "hearts",
+     2
+    ],
+    [
+     "e-2.4",
+     "anim",
+     "P",
+     "ascend",
+     2.4
+    ],
+    [
+     "e-2.4",
+     "sfx",
+     "lvlup",
+     0.5
+    ],
+    [
+     "e-0.1",
+     "vanish",
+     "P"
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "tags": "[gruff but warm, cheerful at the end]",
+   "text": "Et moi, je reviendrai souvent. Mais juste pour jouer !",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     0.5,
+     "anim",
+     "G",
+     "nod",
+     2
+    ],
+    [
+     "e-1.4",
+     "fx",
+     "G",
+     "hearts",
+     1.5
+    ],
+    [
+     "e-1.0",
+     "rainbow",
+     "hide",
+     2
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "tags": "[warm, slow, tender old man ending a bedtime story]",
+   "text": "Et depuis ce jour, quand tu vois une étoile qui clignote, c'est Pitou qui dit bonsoir à Bouboule.",
+   "do": [
+    [
+     0,
+     "beams",
+     0,
+     1.5
+    ],
+    [
+     0,
+     "tod",
+     "night",
+     5
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0.5,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0.5,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     1.2,
+     "cam",
+     "B",
+     1.3,
+     3.5
+    ],
+    [
+     1.8,
+     "fx",
+     "B",
+     "sparkle",
+     4
+    ],
+    [
+     2.0,
+     "sfx",
+     "clin",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "tags": "[excited] [childlike voice]",
+   "text": "Bouboule, Bouboule, saute, saute, saute ! Avec des amis, la pluie devient une fête !",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "music",
+     "fete"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "cam"
+    ],
+    [
+     0.1,
+     "anim",
+     "B",
+     "dance",
+     5
+    ],
+    [
+     0.2,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0.3,
+     "anim",
+     "G",
+     "nod",
+     3
+    ],
+    [
+     "e-4.0",
+     "fx",
+     "B",
+     "confetti",
+     3.5
+    ],
+    [
+     "e-4.0",
+     "sfx",
+     "fete",
+     0.4
+    ]
+   ]
+  }
+ ],
+ "meta": {
+  "youtubeTitle": "Bouboule et l'étoile tombée du ciel | Dessin animé pour enfants en français | Bouboule et ses amis",
+  "youtubeDesc": "Une petite étoile, Pitou, tombe du ciel et perd sa lumière. Bouboule et le nuage Grincheux vont l'aider à retrouver son chemin.\n\nPersonnages : Bouboule, Pitou, Grincheux.\nMorale : l'amitié éclaire les jours de pluie.\n\nÉpisode 1 de la série Bouboule et ses amis, un dessin animé pour enfants de 3 à 9 ans.\nVoix générées par IA.\n\n#dessinanimé #enfants #bouboule",
+  "youtubeTags": [
+   "dessin animé",
+   "dessin animé pour enfants",
+   "histoire pour enfants",
+   "bouboule",
+   "étoile",
+   "arc-en-ciel",
+   "amitié"
+  ],
+  "shortsTitle": "Une étoile tombe du ciel ! ⭐",
+  "shortsDesc": "Bouboule aide Pitou l'étoile à rentrer chez elle. #shorts #dessinanimé #enfants",
+  "shortsTags": [
+   "shorts",
+   "dessin animé",
+   "enfants"
+  ],
+  "tiktokTitle": "Et si une étoile tombait sur ta colline ? ⭐",
+  "tiktokDesc": "Bouboule, Pitou et Grincheux : un arc-en-ciel pour rentrer chez soi. #dessinanimé #enfants #bouboule (voix IA)",
+  "tiktokTags": [
+   "dessinanimé",
+   "enfants",
+   "bouboule"
+  ]
+ }
 }

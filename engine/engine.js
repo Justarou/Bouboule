@@ -53,6 +53,7 @@
     AC[k] = { k: k, kind: kind, s: o.s || 1, row: o.row || 0, hover: o.hover || 0, style: STYLE[kind] || 'hop',
       segs: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
   });
+  var RBEV = [];
   var EVSFX = [], EVFX = [], EVCAM = [], SKYK = [], SHK = [], BEAMS = [], PROPS = { ball: [], machine: [] }, AMB = [], MUS = [], SETK = [[0, EP.set || 'colline']], RAIN = [];
   SKYK.push([0, EP.tod || 'day']);
 
@@ -111,6 +112,8 @@
     else if (v === 'amb') AMB.push({ t: t, key: a[0], vol: a[1] === undefined ? .35 : a[1], dur: a[2] });
     else if (v === 'ball') PROPS.ball.push({ t: t, a: a });
     else if (v === 'machine') PROPS.machine.push({ t: t, a: a });
+    else if (v === 'rainbow') RBEV.push({ t: t, a: a });
+    else if (v === 'vanish') A.vis.push([t, 0]);
     else if (v === 'music') MUS.push({ t: t, style: a[0], vol: a[1] });
   });
   LET.forEach(function (k) { var A = AC[k]; if (A.x0 === undefined) A.x0 = (A.segs[0] ? A.segs[0].x0 : .5); if (!A.vis.length) A.vis.push([0, 1]); A.vis.sort(function (x, y) { return x[0] - y[0]; }); });
@@ -323,6 +326,7 @@
       else if (nm === 'hic') { var hu = Math.sin(Math.PI * Math.min(1, u * 1.4)); o.sy *= 1 + .22 * hu * (u < .4 ? 1 : -.5); o.sx *= 1 - .12 * hu; o.y += 16 * hu; o.rot -= 6 * hu; }
       else if (nm === 'pop') { var pp = sm(u); o.sx *= pp * (1 + .25 * Math.sin(Math.PI * u)); o.sy *= pp * (1 + .25 * Math.sin(Math.PI * u)); }
       else if (nm === 'drop') { var dt = 1 - u; o.y += 360 * dt * dt; o.rot += 360 * dt; if (u > .9) { o.sy *= .7 + (1 - u) * 3; o.sx *= 1.2 - (1 - u); } }
+      else if (nm === 'ascend') { var ea = sm(u); o.y += 340 * ea; o.rot += 300 * ea; o.sx *= 1 - .5 * ea; o.sy *= 1 - .5 * ea; }
       else if (nm === 'bounce') { var hb = hopf(t, an.t0, .5, 30 * pn); o.y += hb.y; o.sx *= hb.sx; o.sy *= hb.sy; }
       else if (nm === 'tremble') { o.dx += 1.6 * Math.sin(t * 70); }
       else if (nm === 'lean') { o.rot += 14 * Math.sin(Math.PI * u); }
@@ -389,6 +393,7 @@
     [kz, kx, ky].forEach(function (a) { for (var j = 1; j < a.length; j++) if (a[j][0] <= a[j - 1][0]) a[j][0] = a[j - 1][0] + .02; });
     CAMS[mode] = { z: kz, x: kx, y: ky };
   }
+  var CAMFX = 400, CAMFY = 250;
   function camAt(t) {
     var c = CAMS[MODE], cfg = LAYOUT[MODE], z = 0, fx = 0, fy = 0, n = 0, d;
     for (d = -.35; d <= .36; d += .175) { var tt = Math.max(0, t + d); z += kf(c.z, tt); fx += kf(c.x, tt); fy += kf(c.y, tt); n++; }
@@ -396,6 +401,7 @@
     var sx = 0, sy = 0;
     SHK.forEach(function (s) { var a = t - s[0]; if (a > 0 && a < 1.2) { var e = s[1] * Math.exp(-a * 5.5); sx += e * Math.sin(a * 47); sy += e * .7 * Math.cos(a * 39); } });
     var halfW = cfg.VW / 2 / z; fx = cl(fx, -60 + halfW, 860 - halfW);
+    CAMFX = fx; CAMFY = fy;
     return 'translate(' + f1(cfg.VW / 2 + sx) + ' ' + f1(cfg.VH / 2 + sy) + ') scale(' + z.toFixed(4) + ') translate(' + f1(-fx) + ' ' + f1(-fy) + ')';
   }
 
@@ -411,6 +417,7 @@
   });
   var tintFront = mk('rect', { x: -500, y: -900, width: 1800, height: 2300, fill: '#fff', opacity: 0, 'pointer-events': 'none' }, fxF);
 
+
   /* personnages */
   var ACT_DOM = {}, shadows = {};
   LET.forEach(function (k) {
@@ -423,6 +430,10 @@
   var ballG = mk('g', {}, fxL), ballE = mk('circle', { r: 16, fill: '#ff5f7e', stroke: '#8a2a4a', 'stroke-width': 3 }, ballG);
   put(ballG, '<path d="M-14 -4 Q0 -10 14 -4 M-12 8 Q0 2 12 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/>');
   var ballBurn = mk('circle', { r: 14, fill: '#1c1614', opacity: 0 }, ballG);
+  var rbG = mk('g', {}, propL), rbP = [];
+  ['#ff5a5a', '#ff9a3c', '#ffd93a', '#5fd36b', '#4cb8ff', '#6a6cf0', '#b36be0'].forEach(function (col, i) { rbP.push(mk('path', { d: 'M' + (80 + i * 9) + ' 405 Q360 ' + (-150 + i * 20) + ' ' + (640 - i * 9) + ' 405', fill: 'none', stroke: col, 'stroke-width': 10, 'stroke-linecap': 'round', pathLength: 1, 'stroke-dasharray': '1 1', 'stroke-dashoffset': 1 }, rbG)); });
+  rbG.setAttribute('opacity', 0);
+  function rainbowState(t) { var p = 0, o = 0, i; for (i = 0; i < RBEV.length; i++) { var e = RBEV[i]; if (e.t > t) break; if (e.a[0] === 'show') { p = cl((t - e.t) / (e.a[1] || 3)); o = 1; } else if (e.a[0] === 'hide') { o = Math.max(0, 1 - (t - e.t) / (e.a[1] || 1.5)); } } return { p: sm(p), o: o }; }
   var machG = mk('g', {}, propL);
   put(machG, '<ellipse cy="2" rx="30" ry="6" fill="#14213d" opacity=".2"/><rect x="-26" y="-58" width="52" height="56" rx="9" fill="#b7c3d8" stroke="#3b4a66" stroke-width="3.4"/><rect x="-18" y="-50" width="36" height="22" rx="5" fill="#2a3a58"/>' +
     '<circle cx="-8" cy="-39" r="5" fill="#7aff9a"/><circle cx="6" cy="-39" r="5" fill="#ffd23f"/><circle class="mbtn" cx="0" cy="-16" r="8" fill="#ff5f5f" stroke="#7a1f1f" stroke-width="3"/><path d="M-14 -58 L-8 -78 H8 L14 -58Z" fill="#ffb347" stroke="#8a4a12" stroke-width="3" stroke-linejoin="round"/><path d="M-26 -30 q-14 0 -14 14" fill="none" stroke="#3b4a66" stroke-width="4" stroke-linecap="round"/>');
@@ -443,6 +454,8 @@
   var flashR = mk('rect', { x: 0, y: 0, width: 800, height: 450, fill: '#fff', opacity: 0, 'pointer-events': 'none' }, svg);
   var vig = mk('rect', { x: 0, y: 0, width: 800, height: 450, fill: 'url(#vigG)', 'pointer-events': 'none' }, svg);
   put(svg, '<defs><radialGradient id="vigG" cx=".5" cy=".5" r=".78"><stop offset=".6" stop-color="#0a0f28" stop-opacity="0"/><stop offset="1" stop-color="#0a0f28" stop-opacity=".45"/></radialGradient></defs>');
+  var vigG = mk('g', { 'pointer-events': 'none' }, svg); put(vigG, '<defs><radialGradient id="vigG" cx=".5" cy=".48" r=".78"><stop offset=".5" stop-color="#0b1030" stop-opacity="0"/><stop offset="1" stop-color="#0b1030" stop-opacity=".36"/></radialGradient></defs>');
+  var vigR = mk('rect', { x: 0, y: 0, width: 800, height: 450, fill: 'url(#vigG)' }, vigG);
   var ovL = mk('g', { id: 'ov' }, svg);
   PE.sort(function (a, b) { return a.t0 - b.t0; });
 
@@ -562,6 +575,7 @@
       if (on) { so.r.update(t, S, {}); }
     });
     var activeSet = SETOBJ[setNow].r;
+    (activeSet.par || []).forEach(function (q) { q[0].setAttribute('transform', 'translate(' + (Math.max(-40, Math.min(40, (1 - q[1]) * (CAMFX - 400)))).toFixed(1) + ' ' + ((1 - q[1]) * (CAMFY - 250) * .5).toFixed(1) + ')'); });
     skyR.update(t, S, { beams: beamsAt(t), birds: activeSet.birds, cloudsOn: activeSet.cloudsOn });
     var nightF = cl((S.night - .2) / .3);
     /* teinte globale */
@@ -612,6 +626,7 @@
         ch.wings[0].setAttribute('transform', 'translate(-30 -58) rotate(' + f1(-fl) + ')'); ch.wings[1].setAttribute('transform', 'translate(30 -58) rotate(' + f1(fl) + ')');
       }
     });
+    var rs = rainbowState(t); rbG.setAttribute('opacity', (rs.o * .95).toFixed(2)); rbP.forEach(function (p, i) { p.setAttribute('stroke-dashoffset', (1 - rs.p).toFixed(3)); });
     /* machine */
     var ms = machineState(t);
     if (ms.vis) {
@@ -662,6 +677,7 @@
     if (!CAMS[m]) buildCam(m);
     var cfg = LAYOUT[m];
     svg.setAttribute('viewBox', '0 0 ' + cfg.VW + ' ' + cfg.VH);
+    vigR.setAttribute('width', cfg.VW); vigR.setAttribute('height', cfg.VH);
     vig.setAttribute('width', cfg.VW); vig.setAttribute('height', cfg.VH);
     svg.parentNode.setAttribute('data-mode', m);
     capCache = {};
