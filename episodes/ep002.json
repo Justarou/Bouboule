@@ -1,0 +1,1218 @@
+{
+ "title": "Flamme et le hoquet de feu",
+ "series": "BOUBOULE",
+ "episodeNo": 2,
+ "subtitle": "Flamme et le hoquet de feu",
+ "lead_text": "Un petit dragon a un hoquet qui crache du feu. Ses amis l'aident à comprendre que sa différence peut devenir une force.",
+ "alt": "Dessin animé : le petit dragon Flamme et ses amis Bouboule, Pitou, Robi et Grincheux.",
+ "set": "colline",
+ "tod": "day",
+ "music": "joyeux",
+ "endLine": "à demain, petits rigolos !",
+ "nextTeaser": "Abonne-toi pour la suite !",
+ "lead": 3.0,
+ "outro": 5.5,
+ "cast": {
+  "B": "bouboule",
+  "P": "pitou",
+  "R": "robi",
+  "F": "flamme",
+  "G": "grincheux"
+ },
+ "voices": {
+  "N": {
+   "id": "t4fHUMAMZxaaV2inHOnb",
+   "name": "Narrateur"
+  },
+  "B": {
+   "id": "vqvgjNDXBhRGzlLsbOq5",
+   "name": "Bouboule"
+  },
+  "P": {
+   "id": "ZYOBieLaunTiQrTrvNQq",
+   "name": "Pitou"
+  },
+  "G": {
+   "id": "7OQ78nZ3nzjUjN8fGpn6",
+   "name": "Grincheux"
+  },
+  "R": {
+   "id": "TODO",
+   "name": "Robi"
+  },
+  "F": {
+   "id": "TODO",
+   "name": "Flamme"
+  }
+ },
+ "at": [
+  [
+   0,
+   "place",
+   "B",
+   0.16
+  ],
+  [
+   0,
+   "place",
+   "P",
+   0.34
+  ],
+  [
+   0,
+   "place",
+   "R",
+   0.52
+  ],
+  [
+   0,
+   "place",
+   "F",
+   0.9
+  ],
+  [
+   0,
+   "mood",
+   "F",
+   "sad"
+  ],
+  [
+   0,
+   "amb",
+   "amb_oiseaux",
+   0.28
+  ]
+ ],
+ "meta": {
+  "youtubeTitle": "Flamme et le hoquet de feu | Dessin animé pour enfants | Bouboule et ses amis",
+  "youtubeDesc": "Flamme, le petit dragon, a un hoquet qui crache du feu et il n'ose plus jouer avec ses amis. Bouboule, Pitou, Robi le robot et Grincheux le nuage vont l'aider... et découvrir que ce qui nous rend différents peut devenir une super force !\n\nUne histoire courte et rigolote pour les enfants de 3 à 9 ans, avec une petite leçon sur l'amitié et la confiance en soi.\n\nUn nouvel épisode de Bouboule et ses amis chaque jour. Abonne-toi pour ne rien manquer !\n\nPersonnages : Bouboule, Pitou, Robi, Flamme, Grincheux\nDurée : environ 1 minute 30",
+  "youtubeTags": "dessin animé enfant, dessin animé français, histoire pour enfants, conte pour enfants, petit dragon, hoquet, amitié, confiance en soi, Bouboule, histoire courte, dessin animé 3 ans, dessin animé 5 ans",
+  "shortsTitle": "Le petit dragon qui a le hoquet de feu 🔥 #shorts",
+  "shortsDesc": "Flamme a le hoquet... et ça crache du feu ! 🐲🔥 Ses amis vont l'aider. Un épisode de Bouboule et ses amis, chaque jour. #shorts #dessinanimé #enfants",
+  "shortsTags": "#shorts #dessinanimé #histoirepourenfants #bouboule #dragon",
+  "tiktokTitle": "Quand ton hoquet crache du feu 🔥🐲",
+  "tiktokDesc": "Flamme a le hoquet de feu et il a peur de brûler ses amis... jusqu'à ce que Grincheux ait froid 🥶➡️🔥 Un nouvel épisode chaque jour ! #dessinanimé #enfants #dragon #bouboule #histoire #pourtoi",
+  "tiktokTags": "#dessinanimé #enfants #dragon #bouboule #histoire #pourtoi #famille #amitié"
+ },
+ "lines": [
+  {
+   "who": "N",
+   "text": "Un matin, sur la colline des Rigolos, tout le monde jouait au ballon... sauf quelqu'un.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0.4,
+     "ball",
+     "show",
+     0.3
+    ],
+    [
+     0.5,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0.9,
+     "ball",
+     "toss",
+     "B",
+     "P",
+     0.8,
+     60
+    ],
+    [
+     1.2,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     2.0,
+     "ball",
+     "toss",
+     "P",
+     "R",
+     0.8,
+     60
+    ],
+    [
+     2.3,
+     "look",
+     "R",
+     "B"
+    ],
+    [
+     3.2,
+     "ball",
+     "toss",
+     "R",
+     "B",
+     0.9,
+     70
+    ],
+    [
+     3.3,
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     "e-1.5",
+     "cam",
+     "F",
+     1.35,
+     2.6
+    ],
+    [
+     "e-1.4",
+     "mood",
+     "F",
+     "sad"
+    ],
+    [
+     "e-1.4",
+     "look",
+     "F",
+     "down"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Hé, Flamme ! Viens jouer avec nous !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "F"
+    ],
+    [
+     0.1,
+     "move",
+     "B",
+     0.74,
+     1.8,
+     "hop"
+    ],
+    [
+     0.2,
+     "look",
+     "F",
+     "B"
+    ],
+    [
+     0.3,
+     "mood",
+     "F",
+     "shy"
+    ],
+    [
+     "e-.7",
+     "ball",
+     "toss",
+     "B",
+     "F",
+     0.6,
+     50
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Non merci. J'ai le hoquet de feu, et ça brûle tout. Hic !",
+   "tags": "[shy, soft, trembling little voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "B"
+    ],
+    [
+     "e-.9",
+     "mood",
+     "F",
+     "scared"
+    ],
+    [
+     "e-.7",
+     "hic",
+     "F",
+     0.55,
+     "L"
+    ],
+    [
+     "e-.6",
+     "ball",
+     "burn"
+    ],
+    [
+     "e-.5",
+     "soot",
+     "B",
+     1,
+     0.2
+    ],
+    [
+     "e-.5",
+     "mood",
+     "B",
+     "surprised"
+    ],
+    [
+     "e-.5",
+     "sfx",
+     "surprise",
+     0.8
+    ],
+    [
+     "e-.4",
+     "fx",
+     "F",
+     "smoke",
+     2.2,
+     "ball"
+    ],
+    [
+     "e-.3",
+     "anim",
+     "B",
+     "shake",
+     0.7
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Ce n'est pas grave ! Ça nous a fait un ballon grillé !",
+   "tags": "[laughing, excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0.4,
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     "e-1.0",
+     "sfx",
+     "rire_malin",
+     0.5
+    ],
+    [
+     "e-1.0",
+     "mood",
+     "F",
+     "shy"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Bip bip ! Pas de panique ! J'ai inventé la machine anti-hoquet !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "happy"
+    ],
+    [
+     0,
+     "sfx",
+     "valide",
+     0.5
+    ],
+    [
+     0.1,
+     "move",
+     "R",
+     0.6,
+     1.2,
+     "drive"
+    ],
+    [
+     0.3,
+     "machine",
+     "show",
+     0.44
+    ],
+    [
+     0.5,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     "e-1.2",
+     "anim",
+     "R",
+     "hop",
+     2
+    ]
+   ],
+   "gap": 0.5
+  },
+  {
+   "who": "N",
+   "text": "La machine fit : bzzzzt, boum, plouf !",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0.2,
+     "machine",
+     "shake",
+     1.7
+    ],
+    [
+     0.2,
+     "sfx",
+     "tourne",
+     0.5
+    ],
+    [
+     "e-1.1",
+     "machine",
+     "boom"
+    ],
+    [
+     "e-1.0",
+     "anim",
+     "R",
+     "flop",
+     0.6
+    ],
+    [
+     "e-1.0",
+     "mood",
+     "R",
+     "dizzy"
+    ],
+    [
+     "e-.9",
+     "sfx",
+     "eclabousse",
+     0.8
+    ],
+    [
+     "e-.8",
+     "sfx",
+     "blop",
+     0.7
+    ],
+    [
+     "e-.6",
+     "fx",
+     "R",
+     "stars",
+     2.2
+    ],
+    [
+     "e-.9",
+     "anim",
+     "B",
+     "shake",
+     0.5
+    ],
+    [
+     "e-.9",
+     "mood",
+     "B",
+     "surprised"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Bip... Elle marche... presque.",
+   "tags": "[dizzy, robotic, apologetic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "dizzy"
+    ],
+    [
+     0.2,
+     "sfx",
+     "echec",
+     0.55
+    ],
+    [
+     "e-.9",
+     "anim",
+     "R",
+     "shake",
+     0.7
+    ],
+    [
+     "e-.5",
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     "e-.5",
+     "sfx",
+     "rire",
+     0.35
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Moi, je sais ! Il faut boire de l'eau en se bouchant le nez, et compter jusqu'à dix !",
+   "tags": "[tiny cute high-pitched child-like voice, excited]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "anim",
+     "P",
+     "jump",
+     0.7,
+     60
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "F"
+    ],
+    [
+     3.6,
+     "anim",
+     "B",
+     "squish",
+     0.6
+    ],
+    [
+     3.9,
+     "anim",
+     "R",
+     "squish",
+     0.6
+    ],
+    [
+     "e-.6",
+     "look",
+     "F",
+     "P"
+    ],
+    [
+     "e-.6",
+     "mood",
+     "F",
+     "worried"
+    ]
+   ]
+  },
+  {
+   "who": null,
+   "text": "",
+   "do": [
+    [
+     0.2,
+     "anim",
+     "B",
+     "nod",
+     0.8,
+     2
+    ],
+    [
+     0.5,
+     "mood",
+     "F",
+     "scared"
+    ],
+    [
+     0.9,
+     "hic",
+     "F",
+     0.55,
+     "up"
+    ],
+    [
+     1.0,
+     "mood",
+     "P",
+     "surprised"
+    ],
+    [
+     1.0,
+     "anim",
+     "P",
+     "jump",
+     0.5,
+     40
+    ],
+    [
+     1.0,
+     "mood",
+     "R",
+     "scared"
+    ],
+    [
+     1.0,
+     "anim",
+     "B",
+     "jump",
+     0.5,
+     50
+    ],
+    [
+     1.1,
+     "fx",
+     "F",
+     "smoke",
+     1.6
+    ],
+    [
+     1.3,
+     "sfx",
+     "surprise",
+     0.7,
+     1
+    ]
+   ],
+   "silent": 2.0,
+   "gap": 0.2
+  },
+  {
+   "who": "F",
+   "text": "Hic ! Oh non... Ça ne marche pas. Je ne suis bon à rien.",
+   "tags": "[sad, shy, soft, trembling little voice]",
+   "do": [
+    [
+     0.1,
+     "mood",
+     "F",
+     "sad"
+    ],
+    [
+     0.1,
+     "look",
+     "F",
+     "down"
+    ],
+    [
+     0.2,
+     "hic",
+     "F",
+     0.4,
+     "up"
+    ],
+    [
+     "e-1.2",
+     "anim",
+     "F",
+     "nod",
+     1.0,
+     1
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "worried"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "worried"
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Alors le soir tomba, et le ciel devint tout gris. Un petit nuage approchait en tremblant de froid.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "tod",
+     "dusk",
+     4
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     1.8,
+     "enter",
+     "G",
+     "L",
+     0.3,
+     3.4,
+     "float"
+    ],
+    [
+     1.8,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     1.8,
+     "anim",
+     "G",
+     "tremble",
+     4
+    ],
+    [
+     3.0,
+     "tod",
+     "night",
+     5
+    ],
+    [
+     3.2,
+     "fx",
+     "G",
+     "rain",
+     9
+    ],
+    [
+     3.8,
+     "soot",
+     "B",
+     0,
+     0.8
+    ],
+    [
+     3.8,
+     "anim",
+     "B",
+     "squish",
+     0.5
+    ],
+    [
+     3.9,
+     "sfx",
+     "glisse",
+     0.5
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "look",
+     "R",
+     "up"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "neutral"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "neutral"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "neutral"
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Brrr... Il fait froid, et tout noir. Personne ne veut jouer avec un nuage grincheux.",
+   "tags": "[grumpy, sad, grumbling, slightly nasal]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "down"
+    ],
+    [
+     "e-1.6",
+     "look",
+     "B",
+     "G"
+    ],
+    [
+     "e-1.6",
+     "look",
+     "F",
+     "G"
+    ],
+    [
+     "e-1.6",
+     "mood",
+     "F",
+     "worried"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Flamme ! Ton hoquet de feu... Ça peut réchauffer Grincheux !",
+   "tags": "[excited, idea, childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "surprised"
+    ],
+    [
+     0.3,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "F"
+    ],
+    [
+     0.4,
+     "anim",
+     "B",
+     "jump",
+     0.6,
+     50
+    ],
+    [
+     "e-.8",
+     "look",
+     "F",
+     "B"
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Moi ? Mais... j'ai peur de le brûler.",
+   "tags": "[shy, worried, soft, trembling little voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "worried"
+    ],
+    [
+     "e-1.7",
+     "move",
+     "F",
+     0.44,
+     3.2,
+     "waddle"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Bip ! Calcul terminé : un petit hoquet, pas trop près, ça devrait être parfait !",
+   "tags": "[cheerful, robotic, confident]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "happy"
+    ],
+    [
+     0,
+     "sfx",
+     "valide",
+     0.5
+    ],
+    [
+     0.3,
+     "anim",
+     "R",
+     "nod",
+     1.2,
+     2
+    ],
+    [
+     "e-.6",
+     "look",
+     "F",
+     "G"
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Alors... j'essaie. Hic !",
+   "tags": "[brave, hesitant, soft little voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "worried"
+    ],
+    [
+     0.2,
+     "look",
+     "F",
+     "G"
+    ],
+    [
+     "e-.7",
+     "hic",
+     "F",
+     1.3,
+     "L"
+    ],
+    [
+     "e-.6",
+     "glow",
+     "G",
+     1,
+     1.4
+    ],
+    [
+     "e-.5",
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     "e-.4",
+     "fx",
+     "G",
+     "sparkle",
+     2.5
+    ],
+    [
+     "e-.4",
+     "sfx",
+     "scintille",
+     0.6
+    ],
+    [
+     "e-.3",
+     "fx",
+     "G",
+     "steam",
+     1.4
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Oooh... C'est chaud, c'est doux... Merci, petit dragon. Tu es le meilleur !",
+   "tags": "[surprised then warm, softly happy, grumpy voice melting]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0.2,
+     "fx",
+     "G",
+     "hearts",
+     3
+    ],
+    [
+     2.6,
+     "anim",
+     "G",
+     "bounce",
+     2,
+     1
+    ],
+    [
+     3.5,
+     "mood",
+     "F",
+     "proud"
+    ],
+    [
+     "e-1.2",
+     "mood",
+     "G",
+     "laugh"
+    ],
+    [
+     "e-1.0",
+     "anim",
+     "F",
+     "jump",
+     0.6,
+     40
+    ],
+    [
+     "e-1.0",
+     "mood",
+     "F",
+     "happy"
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Et en plus, ça éclaire toute la colline !",
+   "tags": "[tiny cute high-pitched child-like voice, delighted]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     1,
+     0.6
+    ],
+    [
+     0,
+     "anim",
+     "P",
+     "jump",
+     0.7,
+     60
+    ],
+    [
+     0.2,
+     "fx",
+     "P",
+     "sparkle",
+     2
+    ],
+    [
+     0.3,
+     "sfx",
+     "baguette",
+     0.6
+    ],
+    [
+     0.2,
+     "beams",
+     0.0
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Et c'est ainsi que Flamme comprit que ce qui nous rend différents peut devenir notre plus grande force.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "music",
+     "fete"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "happy"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "happy"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.3,
+     "fx",
+     "B",
+     "confetti",
+     4
+    ],
+    [
+     0.5,
+     "sfx",
+     "fete",
+     0.7
+    ],
+    [
+     0.8,
+     "fx",
+     null,
+     "fireworks",
+     3
+    ],
+    [
+     1.0,
+     "anim",
+     "B",
+     "cheer",
+     3
+    ],
+    [
+     1.0,
+     "anim",
+     "R",
+     "dance",
+     3
+    ],
+    [
+     1.2,
+     "anim",
+     "P",
+     "dance",
+     3
+    ],
+    [
+     1.2,
+     "anim",
+     "G",
+     "bounce",
+     3,
+     1
+    ],
+    [
+     3.5,
+     "sfx",
+     "applaudit",
+     0.6
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Hic ! Oups... pardon, Bouboule !",
+   "tags": "[cheerful, giggling, soft little voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "laugh"
+    ],
+    [
+     0.1,
+     "hic",
+     "F",
+     0.45,
+     "L"
+    ],
+    [
+     0.25,
+     "soot",
+     "B",
+     1,
+     0.2
+    ],
+    [
+     0.25,
+     "mood",
+     "B",
+     "surprised"
+    ],
+    [
+     0.3,
+     "anim",
+     "B",
+     "shake",
+     0.6
+    ],
+    [
+     0.4,
+     "sfx",
+     "boing",
+     0.6
+    ],
+    [
+     "e-.6",
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     "e-.5",
+     "sfx",
+     "rire_public",
+     0.5
+    ]
+   ],
+   "gap": 0.6
+  }
+ ]
+}
