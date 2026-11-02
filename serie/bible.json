@@ -1,0 +1,149 @@
+{
+ "serie": "Bouboule et ses amis",
+ "public": "3 à 9 ans : histoires simples, humour, petite morale, un peu d'aventure",
+ "langue": "français",
+ "monde": {
+  "lieu": "La colline des Rigolos : une colline ronde avec, autour, une rivière, une forêt, un coin de nuit étoilée.",
+  "regles": [
+   "Le monde est doux : personne n'est méchant, les problèmes viennent d'un défaut, d'une peur ou d'un accident.",
+   "Chaque personnage a un pouvoir lié à sa nature (Pitou brille, Grincheux fait pleuvoir, Flamme crache du feu, Robi invente, Bouboule rebondit) et ce pouvoir est aussi sa difficulté.",
+   "Les tristesses se règlent par l'amitié, jamais par la magie seule.",
+   "Pas de nouvelle voix en saison 1 : les invités éventuels sont des animaux muets (hibou, grenouille, luciole, poisson) avec bruitages.",
+   "Pitou vit sur la colline le jour. Chaque soir elle monte l'escalier arc-en-ciel pour briller dans le ciel, et redescend à l'aube. Elle vient d'une constellation lointaine que l'arc-en-ciel n'atteint pas."
+  ]
+ },
+ "structure_episode": [
+  "1. Rappel d'une phrase par le narrateur, sauf épisode 1 (« Dans l'épisode d'avant... »)",
+  "2. Accroche dans les 10 premières secondes (un problème, une question, un bruit)",
+  "3. Le problème s'installe",
+  "4. Deux ou trois tentatives, dont une qui rate et fait rire",
+  "5. Le moment le plus émouvant ou le plus fort",
+  "6. Résolution par l'entraide + morale dite par le narrateur en une phrase",
+  "7. Teaser d'une phrase pour le prochain épisode",
+  "8. Chanson-refrain : « Bouboule, Bouboule, saute, saute, saute ! » adaptée à la morale"
+ ],
+ "durees": {
+  "nouveaux_episodes": "4 à 6 minutes, environ 55 à 75 répliques",
+  "episodes_pilotes": "ep001 et ep002 durent 1 min 50 et sont de format court"
+ },
+ "gags_recurrents": {
+  "Bouboule": "rebondit de joie ; « saute, saute, saute ! »",
+  "Pitou": "compte jusqu'à dix pour calmer les autres (depuis l'épisode 2)",
+  "Grincheux": "dit « Pfff » ; un petit nuage de pluie lui suit la tête quand il boude",
+  "Robi": "« Bip bip ! » ; chaque invention fait « bzzzzt, boum, plouf » avant de marcher à moitié",
+  "Flamme": "« Hic ! » ; chaque hoquet grille quelque chose de petit"
+ },
+ "personnages": {
+  "B": {
+   "nom": "Bouboule",
+   "voix": "vqvgjNDXBhRGzlLsbOq5",
+   "nature": "petite boule orange",
+   "veut": "que tous jouent ensemble",
+   "faille": "fonce sans écouter",
+   "chemin": "apprendre à écouter avant d'agir, puis à faire confiance à ses amis",
+   "etat": {
+    "humeur": "joyeux",
+    "relations": {
+     "P": "meilleure amie",
+     "G": "ami protecteur",
+     "R": "complice de jeux",
+     "F": "grand frère protecteur"
+    },
+    "souvenirs": [
+     "a trouvé Pitou tombée du ciel et l'a aidée (ep1)",
+     "a transformé le hoquet de Flamme en jeu (ep2)"
+    ],
+    "progression": 0
+   }
+  },
+  "P": {
+   "nom": "Pitou",
+   "voix": "ZYOBieLaunTiQrTrvNQq",
+   "nature": "petite étoile tombée du ciel, féminin",
+   "veut": "comprendre comment les choses marchent et retrouver sa famille d'étoiles",
+   "faille": "veut toujours avoir raison ; garde ses chagrins pour elle",
+   "chemin": "accepter de ne pas savoir, et dire quand elle est triste",
+   "etat": {
+    "humeur": "contente",
+    "relations": {
+     "B": "meilleur ami",
+     "G": "protège le nuage de sa solitude",
+     "R": "taquine ses inventions",
+     "F": "encourage"
+    },
+    "souvenirs": [
+     "est tombée du ciel et a retrouvé sa lumière grâce à l'arc-en-ciel (ep1)",
+     "a donné l'astuce de compter jusqu'à dix (ep2)"
+    ],
+    "progression": 0
+   }
+  },
+  "G": {
+   "nom": "Grincheux",
+   "voix": "7OQ78nZ3nzjUjN8fGpn6",
+   "nature": "petit nuage gris",
+   "veut": "qu'on le laisse tranquille",
+   "faille": "se sent seul derrière sa mauvaise humeur ; croit que sa pluie dérange",
+   "chemin": "oser demander de l'aide et accepter qu'il est utile",
+   "etat": {
+    "humeur": "adouci mais méfiant",
+    "relations": {
+     "B": "premier ami",
+     "P": "l'écoute",
+     "R": "se moque de ses machines",
+     "F": "lui doit d'avoir eu chaud (ep2)"
+    },
+    "souvenirs": [
+     "a joué sous la pluie avec Bouboule et Pitou (ep1)",
+     "a été réchauffé par le feu de Flamme (ep2)"
+    ],
+    "sans_abri": true,
+    "progression": 0
+   }
+  },
+  "R": {
+   "nom": "Robi",
+   "voix": "UOvFSB5TNiugzjq7qJQ3",
+   "nature": "petit robot inventeur, un peu maladroit",
+   "veut": "inventer la machine parfaite",
+   "faille": "ses inventions tournent mal ; il se juge à ses échecs",
+   "chemin": "comprendre qu'une erreur fait avancer et que le travail à plusieurs vaut mieux que la machine",
+   "etat": {
+    "humeur": "enthousiaste",
+    "relations": {
+     "B": "meilleur public",
+     "P": "calcule avec elle",
+     "G": "chamailleries",
+     "F": "a essayé de le soigner"
+    },
+    "souvenirs": [
+     "sa machine anti-hoquet a raté (ep2)",
+     "son calcul a aidé Flamme à réchauffer Grincheux (ep2)"
+    ],
+    "progression": 0
+   }
+  },
+  "F": {
+   "nom": "Flamme",
+   "voix": "3paYfmyc7ZI6WVqsBsrE",
+   "nature": "petit dragon timide",
+   "veut": "être accepté",
+   "faille": "a peur de brûler ses amis, se croit nul",
+   "chemin": "faire de son feu une force après s'être pardonné",
+   "etat": {
+    "humeur": "heureux mais fragile",
+    "relations": {
+     "B": "ami qui l'a invité",
+     "G": "lui a rendu confiance",
+     "R": "ami d'atelier",
+     "P": "grande sœur"
+    },
+    "souvenirs": [
+     "a réchauffé Grincheux (ep2)",
+     "a grillé deux fois Bouboule par accident (ep2)"
+    ],
+    "progression": 0
+   }
+  }
+ }
+}
