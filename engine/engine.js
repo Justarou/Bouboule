@@ -382,6 +382,11 @@
       }
     });
     add(ENDT - OUTRO + .6, wideZ, 400); add(ENDT, wideZ, 400);
+    EVCAM.sort(function (a, b) { return a.t - b.t; });
+    EVCAM.forEach(function (c, j) { var nx = EVCAM[j + 1]; if (nx && c.t + c.dur > nx.t - .3) c.dur = Math.max(.3, nx.t - .3 - c.t); });
+    /* les clés auto situées dans une fenêtre de cam explicite sont retirées (sinon la caméra zigzague) */
+    var keep = kz.map(function (k) { var ok = true; EVCAM.forEach(function (c) { if (k[0] > c.t - .15 && k[0] < c.t + c.dur + .15) ok = false; }); return ok; });
+    kz = kz.filter(function (_, j) { return keep[j]; }); kx = kx.filter(function (_, j) { return keep[j]; }); ky = ky.filter(function (_, j) { return keep[j]; });
     EVCAM.forEach(function (c) {
       var tgtx = AC[c.tgt] ? wx(xOf(c.tgt, c.t + c.dur / 2)) : (typeof c.tgt === 'number' ? wx(c.tgt) : 400);
       /* on insère puis on re-trie */
