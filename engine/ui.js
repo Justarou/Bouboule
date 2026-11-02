@@ -108,13 +108,14 @@
         var t = f / fps; E.render(t); E.ovL.setAttribute('display', 'none');
         var xml = new XMLSerializer().serializeToString(svg).replace('<svg ', '<svg width="' + W + '" height="' + H + '" ');
         var url = URL.createObjectURL(new Blob([xml], { type: 'image/svg+xml;charset=utf-8' }));
-        var img = new Image(); img.src = url; await img.decode(); c2.drawImage(img, 0, 0, W, H); URL.revokeObjectURL(url);
+        var img = new Image(); img.src = url; await img.decode(); c2.drawImage(img, 0, 0, W, H); URL.revokeObjectURL(url); img.removeAttribute('src'); img = null; xml = null;
         E.drawOverlayCanvas(c2, E.overlayModel(t, mode), k);
         var vf = new VideoFrame(cv, { timestamp: Math.round(f * 1e6 / fps), duration: Math.round(1e6 / fps) });
         venc.encode(vf, { keyFrame: f % (fps * 2) === 0 }); vf.close();
         if (err) throw err;
         while (venc.encodeQueueSize > 8) await sleep(4);
         if (f % 8 === 0) { prog(f / nF, 'Création de la vidéo'); await sleep(0); }
+        if (f % 24 === 23) { await venc.flush(); await sleep(30); if (window.gc) window.gc(); }
       }
       await venc.flush(); muxer.finalize();
       E.ovL.removeAttribute('display');
