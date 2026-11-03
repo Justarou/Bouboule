@@ -5,6 +5,10 @@
 - Sauts de teinte dus à des `tod` qui se chevauchent dans les épisodes `engine: 2` (ép. 2 à 52,7 s, ép. 3 à 6,0 s) : corrigés seulement si l'épisode passe en `engine: 3` ; évolution EV-004 possible.
 - Carte « FIN » : en paysage elle recouvre en partie le personnage du dernier plan ; comportement conservé (décision d'Aaron, 3 nov. 2026), amélioration à étudier dans une évolution séparée.
 
+## 1.2.1 — 3 novembre 2026
+- **Règle de publication (Aaron) : pas de YouTube Shorts au-delà de 3 minutes.** Export (étape N) : pas de titre ni de description Shorts pour un épisode de plus de 3 min ; TikTok et YouTube paysage inchangés. Fichiers : `chaine_production.md`, `01_univers.md`. Épisodes 1 à 4 non modifiés.
+- À traiter : descriptions YouTube des ép. 3 et 4 (« 3 à 9 ans » au lieu de 6–9 ans) ; ép. 4 programmé vendredi, correction à décider.
+
 ## 1.2.0 — 3 novembre 2026
 - **Démo 2 (Pitou + Grincheux) VALIDÉE par Aaron** (rapport `demo/RAPPORT_demo02.md`) : condition de la validation définitive du studio remplie.
 - **Fusions autorisées par Aaron, sans force push, non-régression après chacune** :
