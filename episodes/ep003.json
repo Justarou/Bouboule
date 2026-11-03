@@ -107,20 +107,6 @@
      "worried"
     ],
     [
-     0.3,
-     "anim",
-     "B",
-     "tremble",
-     4
-    ],
-    [
-     0.4,
-     "fx",
-     "B",
-     "sweat",
-     2
-    ],
-    [
      0,
      "shot",
      "medium",
@@ -203,6 +189,13 @@
      "mood",
      "P",
      "worried"
+    ],
+    [
+     0.2,
+     "anim",
+     "B",
+     "tremble",
+     1.6
     ]
    ]
   },
