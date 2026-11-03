@@ -1,6 +1,6 @@
 # Chaîne de production d'un épisode (obligatoire, dans l'ordre)
 
-Chaque étape produit un **livrable vérifiable**. On ne passe à la suivante que lorsque la **porte** est franchie. Le chef d'orchestre est la compétence `realisation-animation`. Chaque livrable porte la mention « bible 1.0.0 » (version lue).
+Chaque étape produit un **livrable vérifiable**. On ne passe à la suivante que lorsque la **porte** est franchie. Le chef d'orchestre est la compétence `realisation-animation`. Chaque livrable porte la mention « bible 1.1.0 » (version lue).
 
 | Étape | Intitulé | Compétence principale | Livrable | Porte de validation |
 |---|---|---|---|---|
