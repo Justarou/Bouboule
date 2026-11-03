@@ -147,7 +147,7 @@
     return v;
   }
   function scaleOf(k, t) { return AC[k].depths.length ? AC[k].s * (1 - DEPTH_SC * depthOf(k, t)) : AC[k].s; }
-  function actorY(k, t) { return GY + AC[k].row - (AC[k].lifts.length ? liftOf(k, t) : 0) - (AC[k].depths.length ? DEPTH_DY * depthOf(k, t) : 0); }
+  function actorY(k, t) { var dd = AC[k].depths.length ? depthOf(k, t) : 0; return GY + AC[k].row - (AC[k].lifts.length ? liftOf(k, t) * (1 - DEPTH_SC * dd) : 0) - DEPTH_DY * dd; }
   function bodyTop(k) { return CHARS.LIB[AC[k].kind]; }
   function mouthPos(k, t, dirX) {
     var A = AC[k], c = CHAR_INFO[A.kind], x = wx(xOf(k, t));
@@ -555,7 +555,7 @@
   }
   /* cailloux (EV-001) : gués dans l'eau (show/hide) et tas de pierres plates sur la berge (pile/unpile) */
   var STN = [], stnMax = 0, stnPile = null;
-  PROPS.stones.forEach(function (c) { if (c.a[0] === 'show') stnMax = Math.max(stnMax, (c.a[1] || []).length); });
+  var stnLen = 0; PROPS.stones.forEach(function (c) { if (c.a[0] === 'show') stnLen = (c.a[1] || []).length; else if (c.a[0] === 'add') stnLen += (c.a[1] || []).length; else if (c.a[0] === 'hide') stnLen = 0; stnMax = Math.max(stnMax, stnLen); });
   var stonesG = mk('g', {}, propL), stnEl = [];
   for (i = 0; i < stnMax; i++) {
     var sg = mk('g', {}, stonesG);
