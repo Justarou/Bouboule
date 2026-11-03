@@ -17,9 +17,10 @@ Chaque étape produit un **livrable vérifiable**. On ne passe à la suivante qu
 | K | Sound design et musique | sound-design | plan sonore : musique par scène, ambiances, signatures, silences, bruitages | niveaux conformes à 06 |
 | L | Montage | montage-animation | épisode assemblé (`out/epNNN.html`) + rendus paysage et vertical + **rapport de fluidité `qc_fluidite.py` (un niveau par format)** | rythme, durée, formats ; **fluidité CONFORME dans les deux formats** (À CORRIGER → nouveau rendu du format ; BLOQUANT → arrêt) |
 | M | Contrôle qualité | supervision-qualite | rapport de contrôle sur le rendu réel (10) avec **checklist de livraison et passages suspects de caméra visionnés** + mise à jour de la continuité (09) | verdict **VALIDÉ** et **fluidité caméra CONFORME** |
-| N | Export final | montage-animation | MP4 paysage et vertical + titres/descriptions (YouTube, Shorts, TikTok) | rapport validé **avec fluidité CONFORME** ; export **interdit** sinon ; Aaron informé |
+| N | Export final | montage-animation | MP4 paysage et vertical + titres/descriptions (YouTube, TikTok ; **Shorts uniquement si l'épisode dure 3 min ou moins**, voir règles) | rapport validé **avec fluidité CONFORME** ; export **interdit** sinon ; Aaron informé |
 
 ## Règles de la chaîne
+- **Shorts (décision d'Aaron, 3 nov. 2026)** : une vidéo de plus de 3 minutes ne peut pas être publiée en YouTube Shorts. Pour tout épisode de plus de 3 min (c'est le cas de la durée cible 3 min 30–6 min), l'export prépare titres et descriptions YouTube et TikTok, **sans titre ni description Shorts**. Un extrait de 3 min ou moins pour Shorts n'est produit que si Aaron le demande. Les épisodes 3 et 4 (plus de 3 min) ont des champs `shorts*` sans objet : non modifiés.
 - 🔒 **Contrôle de fluidité caméra obligatoire** (`10_qualite.md`) : à chaque épisode et chaque démo, deux formats, avant livraison. Pas de livraison tant que le niveau n'est pas CONFORME ; un BLOQUANT arrête la chaîne et est remonté à Aaron.
 - Un livrable refusé revient à l'étape qui l'a produit, avec la liste numérée des corrections.
 - Une idée qui dépasse le moteur déclenche la procédure de `11_moteur.md` (pas de bricolage).

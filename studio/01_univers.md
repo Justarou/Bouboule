@@ -26,4 +26,4 @@ Moquerie qui blesse sans réparation dans l'épisode ; exclusion d'un personnage
 La maison commune en construction ; le moulin de la colline ; le panneau « Colline des Rigolos » ; la rivière aux pierres plates ; la forêt aux champignons lumineux ; l'atelier de Robi ; l'escalier arc-en-ciel de Pitou.
 
 ## Série et diffusion
-Nom : « Bouboule et ses amis ». Épisode quotidien (YouTube paysage + Shorts/TikTok vertical). Durée cible des nouveaux épisodes : 3 min 30 à 6 min. Voix générées par IA (le déclarer dans les descriptions de chaîne).
+Nom : « Bouboule et ses amis ». Épisode quotidien (YouTube paysage + TikTok vertical ; YouTube Shorts seulement pour une vidéo de 3 min ou moins). Durée cible des nouveaux épisodes : 3 min 30 à 6 min. Voix générées par IA (le déclarer dans les descriptions de chaîne).
