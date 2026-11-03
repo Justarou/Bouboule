@@ -13,4 +13,4 @@ Activé **uniquement si l'épisode déclare `"engine": 3`** → les épisodes à
 Non traité (à examiner si besoin) : `ball`, `machine` (même principe possible).
 
 ## Tests (3 nov. 2026)
-Voir `studio/tests/` et le rapport de tests joint à la présentation. Résumé : non-régression ép. 1–4 moteur de la branche vs moteur main = 24/24 images identiques par épisode ; ép. 3 et 4 en `engine: 3` : seules les fenêtres de transition (et le piquet en forêt) diffèrent ; fluidité des rendus corrigés : voir rapport.
+Voir `studio/tests/RAPPORT_EV-002_tests.md`. Résumé : non-régression ép. 1–4 moteur de la branche vs moteur main = 24/24 images identiques par épisode ; ép. 3 et 4 en `engine: 3` : seules les fenêtres de transition (et le piquet en forêt) diffèrent ; fluidité des rendus corrigés : voir rapport.

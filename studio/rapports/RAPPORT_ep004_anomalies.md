@@ -9,3 +9,5 @@ Décision d'Aaron (3 nov. 2026) : **publication maintenue vendredi 6 nov. avec l
 | Les deux | dès 45 s, jusqu'à la fin | contenu (continuité) | Le piquet-drapeau de la colline reste visible dans la forêt | Accessoire `house stake` non lié à son décor (corrigé par EV-002 sous `engine: 3`) |
 
 Suites : correctif EV-002 sur la branche `ev-002-transition-decors` ; épisode 4 inchangé.
+
+Complément (3 nov. 2026) : à 45,1 s, saut de teinte du ciel (dusk → night) dans les deux formats, déjà présent dans le rendu publié ; cause `tod dusk 0` lu comme 3 s et chevauchant `tod night` (EV-003 proposée). Fenêtres verticales 7,1 s et 11,7–13,2 s : mouvements rapides de saut, à qualifier.
