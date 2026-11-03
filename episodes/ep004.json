@@ -1,0 +1,1386 @@
+{
+ "title": "Grincheux et la nuit sans étoiles",
+ "series": "BOUBOULE",
+ "episodeNo": 4,
+ "subtitle": "Grincheux et la nuit sans étoiles",
+ "lead_text": "Vexé par une plaisanterie, Grincheux part dans la forêt noire. Ses amis le retrouvent et lui montrent qu'on a toujours besoin de lui.",
+ "alt": "Dessin animé : le petit nuage Grincheux se perd la nuit dans la forêt, Pitou et Bouboule le retrouvent.",
+ "set": "colline",
+ "tod": "dusk",
+ "music": "doux",
+ "endLine": "à demain, petits rigolos !",
+ "nextTeaser": "Abonne-toi pour la suite !",
+ "lead": 3.0,
+ "outro": 5.5,
+ "cast": {
+  "B": "bouboule",
+  "P": "pitou",
+  "G": "grincheux"
+ },
+ "at": [
+  [
+   0,
+   "place",
+   "B",
+   0.3
+  ],
+  [
+   0,
+   "place",
+   "P",
+   0.48
+  ],
+  [
+   0,
+   "place",
+   "G",
+   0.9
+  ],
+  [
+   0,
+   "amb",
+   "amb_oiseaux",
+   0.2
+  ]
+ ],
+ "lines": [
+  {
+   "who": "N",
+   "text": "Le soir tombait sur la colline. Les amis admiraient le premier piquet de leur maison et, tout au bord, Grincheux, le petit nuage, les regardait de loin.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "tod",
+     "dusk",
+     2
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0,
+     "fx",
+     "G",
+     "rain",
+     9
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     "group",
+     3.5
+    ],
+    [
+     3.5,
+     "shot",
+     "close",
+     "G",
+     4
+    ],
+    [
+     "e-0.1",
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "house",
+     "stake",
+     0.62,
+     1.6
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Elle sera si belle, notre maison ! Mais attention : s'il pleut, on aura les pieds mouillés !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0.3,
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.4,
+      0.4
+     ],
+     3.2
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Ha ha ! Surtout si Grincheux vient dormir dedans : il pleuvra aussi à l'intérieur !",
+   "tags": "[tiny cute high-pitched child-like voice, giggling happily]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "laugh"
+    ],
+    [
+     0,
+     "sfx",
+     "xylo",
+     0.22
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0.2,
+     "anim",
+     "P",
+     "nod",
+     2
+    ],
+    [
+     "e-2.6",
+     "shot",
+     "reaction",
+     "G",
+     2.6
+    ],
+    [
+     "e-2.6",
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     "e-2.4",
+     "anim",
+     "G",
+     "tremble",
+     2
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Alors je mouille tout... Je ne sers qu'à faire des flaques.",
+   "tags": "[grumpy, sulking, plaintive]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "cam"
+    ],
+    [
+     0,
+     "sfx",
+     "goutte",
+     0.5
+    ],
+    [
+     0.2,
+     "fx",
+     "G",
+     "rain",
+     6
+    ],
+    [
+     0,
+     "shot",
+     "extreme",
+     "G",
+     4.2
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Grincheux, attends ! C'était juste pour rire !",
+   "tags": "[worried, childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "embarrassed"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "G"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0.3,
+     "anim",
+     "B",
+     "hop",
+     1
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     "group",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Je vais voir ailleurs.",
+   "tags": "[grumpy, sulking, plaintive]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "R"
+    ],
+    [
+     "e-1.8",
+     "exit",
+     "G",
+     "R",
+     2.0,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     "group",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Oh non... Il part dans la forêt, et il va faire nuit noire !",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0,
+     "sfx",
+     "xylo",
+     0.22
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "P",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Vite, suivons-le !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     "e-1.8",
+     "exit",
+     "B",
+     "R",
+     1.9,
+     "hop"
+    ],
+    [
+     "e-1.6",
+     "exit",
+     "P",
+     "R",
+     1.9,
+     "float"
+    ],
+    [
+     "e-2.2",
+     "shot",
+     "wide",
+     "group",
+     2.4
+    ],
+    [
+     0,
+     "tod",
+     "dusk",
+     0
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Dans la forêt, il faisait noir comme dans un tunnel. Le vent soufflait, et un hibou fit : Hou, hou !",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "set",
+     "foret",
+     1.4
+    ],
+    [
+     0,
+     "tod",
+     "night",
+     2.5
+    ],
+    [
+     0,
+     "music",
+     "mystere"
+    ],
+    [
+     0,
+     "amb",
+     "amb_nuit",
+     0.3
+    ],
+    [
+     0,
+     "amb",
+     "amb_vent",
+     0.15
+    ],
+    [
+     0.3,
+     "enter",
+     "G",
+     "L",
+     0.55,
+     2.4,
+     "float"
+    ],
+    [
+     0.5,
+     "mood",
+     "G",
+     "scared"
+    ],
+    [
+     1.4,
+     "sfx",
+     "hibou",
+     0.7
+    ],
+    [
+     0,
+     "cam",
+     "wide",
+     1,
+     2
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Il fait tout noir ici... Je n'aperçois aucune étoile !",
+   "tags": "[grumpy, sulking, plaintive]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "scared"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     0.3,
+     "sfx",
+     "tic",
+     0.2
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "G",
+     4
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Hou ? Qui est là ? ...Aïe ! Ce n'était qu'un arbre.",
+   "tags": "[grumpy, sulking, plaintive]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "scared"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "L"
+    ],
+    [
+     0.8,
+     "sfx",
+     "bonk",
+     0.8
+    ],
+    [
+     0.8,
+     "anim",
+     "G",
+     "squish",
+     0.6
+    ],
+    [
+     1.1,
+     "mood",
+     "G",
+     "embarrassed"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "G",
+     4.2
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Même les étoiles m'ont oublié.",
+   "tags": "[grumpy, sulking, plaintive]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     0,
+     "fx",
+     "G",
+     "rain",
+     3
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "G",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Pendant ce temps, Pitou et Bouboule le cherchaient dans l'obscurité.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "enter",
+     "B",
+     "L",
+     0.18,
+     2.2,
+     "hop"
+    ],
+    [
+     0.3,
+     "enter",
+     "P",
+     "L",
+     0.3,
+     2.2,
+     "float"
+    ],
+    [
+     0.3,
+     "glow",
+     "P",
+     0.3,
+     0.8
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     0,
+     "cam",
+     "wide",
+     1,
+     3
+    ],
+    [
+     0,
+     "sfx",
+     "pas_bois",
+     0.35
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Grincheux, c'est nous ! Mais ta pluie éteint ma lumière, je brille à peine !",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.25,
+     0.4
+    ],
+    [
+     0.2,
+     "fx",
+     "G",
+     "rain",
+     6
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     4.6
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "J'ai un peu peur du noir. Mais avec mes amis, ça va mieux !",
+   "tags": "[worried, childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "G"
+    ],
+    [
+     1.5,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     "group",
+     3.4
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Vous m'avez suivi ? Même après ce que vous avez dit ?",
+   "tags": "[surprised, then softening with a small smile]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "surprised"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     1.2,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "G",
+     3.4
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Ton gros nuage cache les étoiles du ciel, et ma lumière aussi. Si tu t'écartes un peu, je pourrai éclairer toute la forêt !",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "curious"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "cam",
+     "x400",
+     1.35,
+     3.2,
+     120
+    ],
+    [
+     3.4,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     "e-2.4",
+     "shot",
+     "medium",
+     "P",
+     2.4
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Comme ça ?",
+   "tags": "[surprised, then softening with a small smile]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "curious"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "P"
+    ],
+    [
+     0.2,
+     "move",
+     "G",
+     0.78,
+     1.4,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "group",
+     2.2
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Alors Pitou se mit à briller de toutes ses pointes, et la forêt s'illumina !",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "glow",
+     "P",
+     1,
+     1.2
+    ],
+    [
+     0,
+     "beams",
+     "on",
+     1
+    ],
+    [
+     0,
+     "sfx",
+     "scintille",
+     0.7
+    ],
+    [
+     0,
+     "fx",
+     "P",
+     "sparkle",
+     3
+    ],
+    [
+     0.3,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.3,
+     "mood",
+     "B",
+     "amazed"
+    ],
+    [
+     0.4,
+     "mood",
+     "G",
+     "amazed"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "P"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     "group",
+     5.2
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Waouh ! Regardez comme c'est beau !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "amazed"
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "jump",
+     1.2
+    ],
+    [
+     0,
+     "sfx",
+     "boing",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     "group",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Je cachais votre lumière, et je croyais que je ne servais à rien...",
+   "tags": "[surprised, then softening with a small smile]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "P"
+    ],
+    [
+     2.2,
+     "mood",
+     "G",
+     "shy"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "G",
+     4.4
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Mais si ! Ta pluie, avec ma lumière, fait un arc-en-ciel de nuit !",
+   "tags": "[tiny cute high-pitched child-like voice, giggling happily]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.3,
+     "fx",
+     "G",
+     "rain",
+     5
+    ],
+    [
+     0.8,
+     "rainbow",
+     "show",
+     3
+    ],
+    [
+     1.2,
+     "sfx",
+     "clochette",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.5,
+      0.55
+     ],
+     5
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Moi, j'ai servi à quelque chose ! À la maison, il manque un toit contre la pluie. Je le ferai, si vous m'aidez.",
+   "tags": "[gruff but warm, cheerful at the end]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "proud"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     2.0,
+     "anim",
+     "G",
+     "nod",
+     2
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "G",
+     4.4
+    ],
+    [
+     "e-2.4",
+     "shot",
+     "reaction",
+     "B",
+     2.4
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Bien sûr qu'on t'aidera !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "B",
+     2.4
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Demander de l'aide, ce n'est pas être faible. C'est être courageux. Allez, on rentre ensemble !",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "proud"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "sfx",
+     "xylo",
+     0.22
+    ],
+    [
+     "e-2.6",
+     "exit",
+     "P",
+     "L",
+     2.2,
+     "float"
+    ],
+    [
+     "e-2.4",
+     "exit",
+     "B",
+     "L",
+     2.2,
+     "hop"
+    ],
+    [
+     "e-2.2",
+     "exit",
+     "G",
+     "L",
+     2.2,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     3
+    ],
+    [
+     "e-2.8",
+     "shot",
+     "wide",
+     "group",
+     2.8
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Et tous les trois rentrèrent à la colline, juste au moment où le jour se levait.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "set",
+     "colline",
+     1.4
+    ],
+    [
+     0,
+     "tod",
+     "dawn",
+     3
+    ],
+    [
+     0,
+     "music",
+     "joyeux"
+    ],
+    [
+     0,
+     "amb",
+     "amb_oiseaux",
+     0.25
+    ],
+    [
+     0.2,
+     "rainbow",
+     "hide",
+     1
+    ],
+    [
+     0.5,
+     "enter",
+     "G",
+     "R",
+     0.6,
+     2.2,
+     "float"
+    ],
+    [
+     0.8,
+     "enter",
+     "B",
+     "R",
+     0.32,
+     2.2,
+     "hop"
+    ],
+    [
+     1.1,
+     "enter",
+     "P",
+     "R",
+     0.46,
+     2.2,
+     "float"
+    ],
+    [
+     0,
+     "cam",
+     "wide",
+     1,
+     3
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Pfff... Merci. Je ferai le plus beau des toits.",
+   "tags": "[gruff but warm, cheerful at the end]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     1.2,
+     "fx",
+     "G",
+     "hearts",
+     1.5
+    ],
+    [
+     0.5,
+     "anim",
+     "G",
+     "nod",
+     2
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "G",
+     3.4
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Mais au petit matin, Bouboule entendit un doux bruit d'eau au loin... et il partit tout seul voir la rivière. À demain, pour la suite !",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "curious"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0.5,
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "B",
+     5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Bouboule, Bouboule, saute, saute, saute ! Quand on demande de l'aide, on va plus haut !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "music",
+     "fete"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "cam"
+    ],
+    [
+     0.1,
+     "anim",
+     "B",
+     "dance",
+     5
+    ],
+    [
+     0.2,
+     "anim",
+     "P",
+     "dance",
+     5
+    ],
+    [
+     0.2,
+     "anim",
+     "G",
+     "dance",
+     5
+    ],
+    [
+     "e-4",
+     "fx",
+     "B",
+     "confetti",
+     3.5
+    ],
+    [
+     "e-4",
+     "sfx",
+     "fete",
+     0.4
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     "group",
+     7
+    ]
+   ]
+  }
+ ],
+ "meta": {
+  "youtubeTitle": "Grincheux se perd dans la forêt la nuit... | Dessin animé pour enfants | Bouboule et ses amis",
+  "youtubeDesc": "Un soir, Bouboule et Pitou plaisantent sur la pluie de Grincheux... mais le petit nuage les entend et part, vexé, dans la forêt noire. Seul dans la nuit, il a peur. Ses amis le retrouvent, et Pitou lui montre un secret : on a toujours besoin de lui !\n\nUne histoire courte et douce pour les enfants de 3 à 9 ans, avec une petite leçon : demander de l'aide, ce n'est pas être faible.\n\nPersonnages : Bouboule, Pitou, Grincheux\nDurée : environ 3 minutes 30\n\n🎬 Épisode 4 de la série Bouboule et ses amis. Abonne-toi pour ne rien manquer !\n\nLes voix des personnages sont générées par IA.\n\n#dessinanimé #enfants #bouboule #histoirepourenfants",
+  "youtubeTags": [
+   "dessin animé enfant",
+   "dessin animé français",
+   "histoire pour enfants",
+   "nuage",
+   "forêt",
+   "nuit",
+   "amitié",
+   "Bouboule",
+   "histoire courte"
+  ],
+  "shortsTitle": "Grincheux a peur dans la forêt noire 🌧️ #shorts",
+  "shortsDesc": "Grincheux se perd la nuit dans la forêt... mais ses amis le retrouvent ! 🌌 Épisode 4 de Bouboule et ses amis. Voix générées par IA. #shorts #dessinanimé #enfants #bouboule",
+  "tiktokTitle": "Grincheux a peur du noir 🌧️🌌",
+  "tiktokDesc": "Grincheux part seul dans la forêt noire... Ses amis le retrouvent et lui montrent qu'on a besoin de lui ! #dessinanimé #enfants #bouboule #pourtoi (voix IA)",
+  "tiktokTags": [
+   "dessinanimé",
+   "enfants",
+   "nuage",
+   "bouboule",
+   "pourtoi"
+  ]
+ },
+ "engine": 2
+}
