@@ -1,6 +1,7 @@
 # Journal des modifications de la bible du studio
 
 ## À traiter
+- EV-001 — rivière (option B) : développée sur `ev-001-riviere`, tests dans `tests/RAPPORT_EV-001_tests.md`, **en attente de validation d'Aaron avant fusion** (prévue : studio 1.2.0).
 - EV-003 — **`tod X 0`** : une durée de 0 est lue comme 3 s (`a[1] || 3`) et chevauche le `tod` suivant → saut de teinte du ciel (ép. 4, 45,1 s). Branche `ev-003-tod-duree-zero` en développement (autorisée le 3 nov. 2026).
 - Qualification des fenêtres verticales 7–13 s des ép. 3 et 4 (mouvements rapides de saut ?).
 
