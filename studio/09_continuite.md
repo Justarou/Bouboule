@@ -1,0 +1,48 @@
+# 09 — Règles de continuité et mémoire de la série
+
+## Principe
+Chaque épisode peut être regardé seul, mais ce qui s'est passé compte : les souvenirs, les promesses, les objets, l'état de la maison et les relations évoluent. Un événement passé peut **influencer** un épisode suivant (un rappel, une rancune, une aide rendue, un objet réutilisé).
+🔒 FONDAMENTAL — Aucun épisode ne contredit un fait établi (voir « Faits établis »). Un fait ne se corrige que par la procédure de mise à jour.
+
+## Où vit la mémoire
+- **Fichier d'état** : `../serie/bible.json` → pour chaque personnage : humeur, relations, souvenirs, progression. Mis à jour après chaque épisode.
+- **Plan de saison** : `../serie/saison1.json` → liens entre épisodes, pièce de la maison, teasers, rappels.
+- **Ce document** : règles + faits établis + registre des promesses et objets.
+
+## Faits établis (état après l'épisode 4, version de la bible 1.0.0)
+| Épisode | Faits retenus |
+|---|---|
+| 1 | Bouboule trouve Pitou, tombée du ciel, et l'aide ; Pitou retrouve sa lumière grâce à l'arc-en-ciel ; Grincheux joue sous la pluie avec eux : **premier ami de Bouboule** ; Pitou monte le soir par l'escalier arc-en-ciel. |
+| 2 | Flamme a le hoquet de feu ; la machine anti-hoquet de Robi rate ; Flamme réchauffe Grincheux (qui n'avait pas d'abri) ; Pitou donne l'astuce de compter jusqu'à dix. |
+| 3 | Les amis lancent la **maison de la colline** ; la machine de Robi (Bâtimatic) s'écroule ; Robi se croit nul ; ses amis le rassurent ; on décide de **construire à la main** ; premier piquet planté ; teaser : il faudra des pierres plates à la rivière. |
+| 4 | Bouboule et Pitou plaisantent sur la pluie de Grincheux, qui se vexe et part dans la forêt ; il a peur du noir ; Pitou lui apprend à s'écarter pour qu'elle éclaire la forêt ; pluie + lumière = **arc-en-ciel de nuit** ; Grincheux **promet de faire le toit** de la maison ; il comprend qu'il peut demander de l'aide ; teaser : Bouboule est parti seul vers la rivière. |
+
+## Registre des promesses (à tenir dans la saison)
+- Grincheux fera le **toit** (ép. 8).
+- Pitou a une **famille d'étoiles** à retrouver (ép. 7, 10, 11, 12).
+- Bouboule va à la **rivière** seul (ép. 5), sans écouter : il en apprendra l'écoute.
+- La **bouteille à la mer** (fin de saison) ouvre la saison 2.
+
+## État de la maison commune (objet récurrent)
+Piquet planté (ép. 3). Prévu : fondations (ép. 5), cheminée (ép. 6), fenêtre ronde (ép. 7), toit (ép. 8), porte (ép. 10), fête d'inauguration (ép. 12). Position : à droite de la colline (milieu-droit du décor), grande, plus haute que les personnages.
+
+## Protocole de continuité
+**Avant d'écrire** : lire les faits établis, le registre des promesses, l'état des personnages. Choisir *au moins un* rappel naturel d'un épisode passé (une phrase, un objet, un geste) ; vérifier qu'il ne contredit rien.
+**Après chaque épisode** (étape M) :
+1. Mettre à jour `../serie/bible.json` : humeur, souvenirs, relations, progression.
+2. Ajouter une ligne aux faits établis (ce qui est définitivement vrai).
+3. Mettre à jour le registre des promesses (une promesse tenue disparaît ; une nouvelle s'ajoute).
+4. Mettre à jour l'état de la maison et des objets.
+5. Noter les « graines » plantées (un détail qui servira plus tard).
+6. Statut de l'épisode dans `saison1.json`.
+
+## Types d'influence entre épisodes
+- **Rappel** : un personnage cite un événement (« comme avec le hoquet… »).
+- **Conséquence** : l'état d'un personnage découle d'avant (Robi plus prudent après son échec).
+- **Objet** : le Bâtimatic, la maison, le piquet, l'arc-en-ciel de nuit.
+- **Relation** : Grincheux fait confiance à Pitou après la forêt.
+- **Promesse** : tenue ou mise à l'épreuve plus tard.
+- **Retournement** : un fait ancien reprend un sens nouveau.
+
+## Contrôle de cohérence
+Pour chaque épisode : positions et état des objets, savoirs (qui sait quoi), météo et heure, nombre de personnages présents, vocabulaire et tics, lieu de départ = lieu d'arrivée de l'épisode précédent (ou le narrateur explique le saut).
