@@ -440,7 +440,7 @@
     var keep = kz.map(function (k) { var ok = true; EVCAM.forEach(function (c) { if (k[0] > c.t - .15 && k[0] < c.t + c.dur + .15) ok = false; }); return ok; });
     kz = kz.filter(function (_, j) { return keep[j]; }); kx = kx.filter(function (_, j) { return keep[j]; }); ky = ky.filter(function (_, j) { return keep[j]; });
     EVCAM.forEach(function (c) {
-      var tgtx = AC[c.tgt] ? wx(xOf(c.tgt, c.t + c.dur / 2)) : (typeof c.tgt === 'number' ? wx(c.tgt) : (c.tgt === 'group' ? visMean(c.t + c.dur / 2) : 400));
+      var tgtx = AC[c.tgt] ? wx(xOf(c.tgt, c.t + c.dur / 2)) : (typeof c.tgt === 'number' ? wx(c.tgt) : (typeof c.tgt === 'string' && c.tgt.charAt(0) === 'x' ? +c.tgt.slice(1) : (c.tgt === 'group' ? visMean(c.t + c.dur / 2) : 400)));
       if (c.rel) { var zz = cfg.zoomWide * c.zoom; kz.push([c.t, zz]); kx.push([c.t, tgtx]); ky.push([c.t, fyFor(zz)]); kz.push([c.t + c.dur, zz]); kx.push([c.t + c.dur, tgtx]); ky.push([c.t + c.dur, fyFor(zz)]); return; }
       /* on insère puis on re-trie */
       kz.push([c.t, c.zoom * (mode === 'port' ? .9 : 1)]); kx.push([c.t, tgtx]); ky.push([c.t, c.fy !== undefined ? c.fy : fyFor(c.zoom)]);
@@ -647,10 +647,11 @@
     cam.setAttribute('transform', camAt(t));
     /* décor actif */
     var setNow = SETK[0][1], fade = 1, prev = null;
-    for (i = 0; i < SETK.length; i++) if (SETK[i][0] <= t) { prev = setNow; setNow = SETK[i][1]; if (i > 0) fade = cl((t - SETK[i][0]) / .5); }
+    for (i = 0; i < SETK.length; i++) if (SETK[i][0] <= t) { prev = setNow; setNow = SETK[i][1]; if (i > 0) fade = cl((t - SETK[i][0]) / (V2 ? Math.max(.3, SETK[i][2]) : .5)); }
     Object.keys(SETOBJ).forEach(function (n) {
       var so = SETOBJ[n], on = n === setNow;
       so.b.setAttribute('display', on || (prev === n && fade < 1) ? '' : 'none'); so.f.setAttribute('display', on || (prev === n && fade < 1) ? '' : 'none');
+      if (V2) { var op = on ? 1 : (1 - fade * fade * (3 - 2 * fade)).toFixed(3); so.b.setAttribute('opacity', op); so.f.setAttribute('opacity', op); }
       if (on) { so.r.update(t, S, {}); }
     });
     var activeSet = SETOBJ[setNow].r;

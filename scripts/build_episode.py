@@ -28,6 +28,17 @@ def visemes(path):
         vis += str(v); amp += str(min(9, int(round(float(r) * 7))))
     return vis, amp
 
+def voice_gain(path, target=0.115):
+    """Gain de normalisation d'une voix (niveau RMS sur les parties parlées -> cible), borné."""
+    import numpy as np
+    raw = subprocess.check_output(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", "16000", "-f", "s16le", "-"])
+    x = np.abs(np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768)
+    act = x[x > 0.02]
+    if len(act) < 200: return 1.0
+    rms = float(np.sqrt((act ** 2).mean())); pk = float(x.max())
+    g = target / max(rms, 1e-4)
+    return round(max(0.55, min(g, 4.0, 0.98 / max(pk, 1e-4))), 3)
+
 name = sys.argv[1]  # ep002
 FAKE = "--fake" in sys.argv
 ep = json.load(open(os.path.join(ROOT, "episodes", name + ".json"), encoding="utf8"))
@@ -38,7 +49,7 @@ for i, ln in enumerate(ep["lines"], 1):
         ln["dur"] = round(max(1.0, len(ln.get("text", "")) * .062 + .4), 2) if ln.get("text") else ln.get("silent", 1.0); voices.append(None); ln.pop("tags", None); continue
     if ln.get("text") and os.path.exists(f):
         ln["dur"] = dur(f); voices.append(b64(f))
-        if ep.get("engine", 1) >= 2: ln["vis"], ln["amp"] = visemes(f)
+        if ep.get("engine", 1) >= 2: ln["vis"], ln["amp"] = visemes(f); ln["vg"] = voice_gain(f)
     else:
         ln.setdefault("dur", ln.get("silent", 1.0)); voices.append(None)
         if ln.get("text"): sys.exit(f"audio manquant : {f}")

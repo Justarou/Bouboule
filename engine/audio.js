@@ -66,28 +66,41 @@ var AUDIO = (function () {
     opt = opt || {};
     var comp = ctx.createDynamicsCompressor(); comp.threshold.value = -14; comp.knee.value = 12; comp.ratio.value = 4; comp.attack.value = .004; comp.release.value = .2;
     var master = ctx.createGain(); master.gain.value = .95; comp.connect(master); master.connect(dest);
-    var G = {}, names = { voice: 1.0, sfx: .62, music: .26, amb: .3 };
+    var V2 = (window.EP && window.EP.engine >= 2), G = {}, names = { voice: 1.0, sfx: (V2 ? .36 : .62), music: .26, amb: (V2 ? .24 : .3) };
     Object.keys(names).forEach(function (k) { var g = ctx.createGain(); g.gain.value = (opt[k] === 0 ? 0 : names[k]); g.connect(comp); G[k] = g; });
     var mDuck = ctx.createGain(); mDuck.connect(G.music); mDuck.gain.value = 1;
+    var sDuck = ctx.createGain(); sDuck.connect(G.sfx); sDuck.gain.value = 1;
     /* voix */
     E.LINES.forEach(function (ln, i) {
       var b = BUF.voice[i]; if (!b) return;
-      var s = ctx.createBufferSource(); s.buffer = b; s.connect(G.voice); s.start(t0 + ln.t);
+      var s = ctx.createBufferSource(), vg = ctx.createGain(); s.buffer = b; vg.gain.value = (ln.vg || 1); s.connect(vg); vg.connect(G.voice); s.start(t0 + ln.t);
       mDuck.gain.setTargetAtTime(.34, t0 + ln.t - .12, .07); mDuck.gain.setTargetAtTime(1, t0 + ln.e + .1, .35);
+      if (V2) { sDuck.gain.setTargetAtTime(.55, t0 + ln.t - .05, .06); sDuck.gain.setTargetAtTime(1, t0 + ln.e + .05, .25); }
     });
     /* bruitages */
     var cnt = {};
     E.SFX.forEach(function (ev) {
       var arr = BUF.sfx[ev.key]; if (!arr || !arr.length) return;
       var v = ev.variant !== undefined ? ev.variant % arr.length : ((cnt[ev.key] = (cnt[ev.key] === undefined ? -1 : cnt[ev.key]) + 1) % arr.length);
-      var s = ctx.createBufferSource(), g = ctx.createGain(); s.buffer = arr[v]; g.gain.value = ev.vol; s.connect(g); g.connect(G.sfx); s.start(t0 + Math.max(0, ev.t));
+      var s = ctx.createBufferSource(), g = ctx.createGain(); s.buffer = arr[v]; g.gain.value = ev.vol; s.connect(g); g.connect(sDuck); s.start(t0 + Math.max(0, ev.t));
     });
     /* ambiances */
     E.AMB.forEach(function (a, i) {
       var arr = BUF.sfx[a.key]; if (!arr || !arr.length) return;
       var next = E.AMB[i + 1], end = a.dur ? a.t + a.dur : (next ? next.t + 1 : E.ENDT - 1);
-      var s = ctx.createBufferSource(), g = ctx.createGain(); s.buffer = arr[0]; s.loop = true; g.gain.setValueAtTime(0, t0 + a.t); g.gain.linearRampToValueAtTime(a.vol, t0 + a.t + 1.2); g.gain.setValueAtTime(a.vol, t0 + end - 1.2); g.gain.linearRampToValueAtTime(0, t0 + end);
-      s.connect(g); g.connect(G.amb); s.start(t0 + a.t); s.stop(t0 + end + .1);
+      var buf = arr[0], g = ctx.createGain();
+      g.gain.setValueAtTime(0, t0 + a.t); g.gain.linearRampToValueAtTime(a.vol, t0 + a.t + 1.2); g.gain.setValueAtTime(a.vol, t0 + end - 1.2); g.gain.linearRampToValueAtTime(0, t0 + end);
+      g.connect(G.amb);
+      if (!V2) { var s = ctx.createBufferSource(); s.buffer = buf; s.loop = true; s.connect(g); s.start(t0 + a.t); s.stop(t0 + end + .1); return; }
+      /* v2 : on coupe le début/la fin (fondus, silences) et on enchaîne les passages en fondu croisé -> boucle sans trou */
+      var cut = Math.min(1.8, buf.duration * .12), xf = Math.min(2.2, buf.duration * .12), L = buf.duration - 2 * cut, t = t0 + a.t, k = 0;
+      while (t < t0 + end + .1) {
+        var s2 = ctx.createBufferSource(), sg = ctx.createGain(); s2.buffer = buf;
+        var off = cut + (k === 0 ? Math.min(L * .35, 4) : 0), len = L - (k === 0 ? Math.min(L * .35, 4) : 0);
+        sg.gain.setValueAtTime(k === 0 ? 1 : 0, t); if (k) sg.gain.linearRampToValueAtTime(1, t + xf);
+        sg.gain.setValueAtTime(1, t + len - xf); sg.gain.linearRampToValueAtTime(0, t + len);
+        s2.connect(sg); sg.connect(g); s2.start(t, off, len); k++; t += len - xf;
+      }
     });
     /* musique */
     var secs = [{ t: E.LEAD, style: (window.EP.music || 'joyeux'), vol: 1 }];

@@ -233,61 +233,71 @@ var SETS = (function () {
     return '<g class="' + id + '" transform="translate(' + x + ' ' + y + ')"><path d="' + d + 'Z" fill="' + col + '" stroke="#3b4a66" stroke-width="2.4" stroke-linejoin="round"/><circle r="' + (r * .32) + '" fill="#e6edf8" stroke="#3b4a66" stroke-width="2.2"/></g>';
   }
   function atelier(back, front) {
-    var gw = mk('g', {}, back), gs = mk('g', {}, back), gn = mk('g', {}, back), i;
+    var gf = mk('g', {}, back), gw = mk('g', {}, back), gs = mk('g', {}, back), gn = mk('g', {}, back), i;
     var P = [[gw, .3], [gs, .6], [gn, .88]];
-    put(gw,
-      '<defs><linearGradient id="awl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8aa7d9"/><stop offset="1" stop-color="#bcd0ee"/></linearGradient>' +
-      '<linearGradient id="afl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9ae78"/><stop offset=".5" stop-color="#c4915a"/><stop offset="1" stop-color="#a87444"/></linearGradient>' +
+    /* sol (sans parallaxe) : planches + tapis, derrière le mur */
+    put(gf,
+      '<defs><linearGradient id="awl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9db9e4"/><stop offset="1" stop-color="#c8daf2"/></linearGradient>' +
+      '<linearGradient id="afl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0b57f"/><stop offset=".5" stop-color="#c8955d"/><stop offset="1" stop-color="#a87444"/></linearGradient>' +
       '<linearGradient id="aws" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fc4ff"/><stop offset="1" stop-color="#d6efff"/></linearGradient>' +
-      '<radialGradient id="alamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2b0" stop-opacity=".9"/><stop offset="1" stop-color="#ffd870" stop-opacity="0"/></radialGradient></defs>' +
-      '<rect x="-500" y="-300" width="1800" height="900" fill="url(#awl)"/>' +
-      '<g opacity=".16" stroke="#fff" stroke-width="3">' + (function () { var s = ''; for (var k = -10; k < 28; k++) s += '<line x1="' + (k * 50) + '" y1="-300" x2="' + (k * 50) + '" y2="360"/>'; return s; })() + '</g>' +
-      '<rect x="-500" y="330" width="1800" height="22" fill="#8a6d4d"/><rect x="-500" y="330" width="1800" height="5" fill="#b69067"/>');
+      '<radialGradient id="alamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2b0" stop-opacity=".9"/><stop offset="1" stop-color="#ffd870" stop-opacity="0"/></radialGradient>' +
+      '<linearGradient id="ashaft" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6c8" stop-opacity=".5"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></linearGradient></defs>' +
+      '<rect x="-500" y="300" width="1800" height="400" fill="url(#afl)"/>' +
+      '<g stroke="#8a5a30" stroke-width="2.4" opacity=".45">' + (function () { var s = ''; for (var k = 0; k < 8; k++) s += '<line x1="-500" y1="' + (350 + k * 16) + '" x2="1300" y2="' + (350 + k * 16) + '"/>'; for (k = -8; k < 24; k++) s += '<line x1="' + (k * 90 + (k % 2) * 40) + '" y1="' + (350 + (k % 3) * 16) + '" x2="' + (k * 90 + (k % 2) * 40) + '" y2="' + (366 + (k % 3) * 16) + '"/>'; return s; })() + '</g>' +
+      '<ellipse cx="400" cy="398" rx="270" ry="30" fill="#3f6fb5" opacity=".35"/><ellipse cx="400" cy="396" rx="258" ry="26" fill="#e86a5e" stroke="#9a3a34" stroke-width="3"/><ellipse cx="400" cy="396" rx="212" ry="20" fill="#ffd36a"/><ellipse cx="400" cy="396" rx="160" ry="14" fill="#5bc2a0"/><ellipse cx="400" cy="396" rx="108" ry="9" fill="#fff4d6"/>');
+    put(gw,
+      '<rect x="-500" y="-300" width="1800" height="640" fill="url(#awl)"/>' +
+      '<g opacity=".14" stroke="#fff" stroke-width="3">' + (function () { var s = ''; for (var k = -10; k < 28; k++) s += '<line x1="' + (k * 50) + '" y1="-300" x2="' + (k * 50) + '" y2="340"/>'; return s; })() + '</g>' +
+      '<rect x="-500" y="255" width="1800" height="85" fill="#7fa0d4"/><rect x="-500" y="251" width="1800" height="7" fill="#f3ead8" stroke="#a8946f" stroke-width="1.5"/>' +
+      '<g stroke="#5f82b8" stroke-width="2.6" opacity=".8">' + (function () { var s = ''; for (var k = -10; k < 28; k++) s += '<rect x="' + (k * 100 + 12) + '" y="268" width="76" height="52" rx="5" fill="none"/>'; return s; })() + '</g>' +
+      '<rect x="-500" y="332" width="1800" height="14" fill="#f3ead8" stroke="#a8946f" stroke-width="1.5"/>');
     put(gs,
-      /* grande fenêtre */
-      '<g transform="translate(560 70)"><rect x="-10" y="-10" width="240" height="190" rx="12" fill="#6d4a31"/><rect class="awin" x="0" y="0" width="220" height="170" rx="6" fill="url(#aws)"/>' +
-      '<g class="awc"></g><path d="M0 120 Q60 98 120 116 T220 104 V170 H0Z" fill="#6fcf94" opacity=".9"/><path d="M0 142 Q70 124 130 140 T220 130 V170 H0Z" fill="#4fb67f"/>' +
-      '<rect x="107" y="0" width="6" height="170" fill="#6d4a31"/><rect x="0" y="82" width="220" height="6" fill="#6d4a31"/><rect x="-16" y="178" width="252" height="12" rx="5" fill="#8a6040"/><rect class="awsh" x="0" y="0" width="220" height="170" rx="6" fill="#0a1236" opacity="0"/></g>' +
-      /* tableau des plans */
-      '<g transform="translate(110 56)"><rect x="-6" y="-6" width="176" height="124" rx="7" fill="#7d5a3c"/><rect width="164" height="112" rx="4" fill="#2f4a6e"/>' +
-      '<g stroke="#9ed0ff" stroke-width="2" fill="none" opacity=".85"><rect x="22" y="50" width="62" height="42"/><path d="M16 50 L53 20 L90 50"/><rect x="48" y="68" width="14" height="24"/><rect x="30" y="60" width="12" height="12"/><path d="M110 24 H148 M110 40 H148 M110 56 H134" /><circle cx="130" cy="86" r="12"/></g>' +
-      '<text x="82" y="14" font-size="10" font-weight="800" text-anchor="middle" fill="#cfe8ff" font-family="Baloo 2, Arial Rounded MT Bold, Arial, sans-serif">PLANS</text></g>' +
-      /* engrenages muraux */
-      gear(40, 120, 26, 10, '#ffcf6a', 'ag1') + gear(88, 150, 17, 8, '#ff9a6a', 'ag2') + gear(430, 60, 22, 9, '#8fd1ff', 'ag3'));
+      '<path d="M30 12 Q170 52 320 16 T610 22 T800 12" fill="none" stroke="#5a4a3a" stroke-width="2.4"/>' +
+      (function () { var s = '', cols = ['#ff7b6b', '#ffd23f', '#7ad39a', '#7fc4ff', '#c79bff']; for (var k = 0; k < 15; k++) { var x = 40 + k * 52, y = 12 + 24 * Math.sin((x - 30) / 120) * (x < 330 ? 1 : .2) + (x < 330 ? 18 : 6); s += '<circle class="abulb" cx="' + x + '" cy="' + (y + 6).toFixed(0) + '" r="7" fill="' + cols[k % 5] + '" stroke="#3b4a66" stroke-width="1.6"/>'; } return s; })() +
+      '<g transform="translate(565 70)"><rect x="-10" y="-10" width="240" height="190" rx="12" fill="#6d4a31" stroke="#4a3220" stroke-width="3"/><rect class="awin" x="0" y="0" width="220" height="170" rx="6" fill="url(#aws)"/>' +
+      '<g class="awc"></g><path d="M0 120 Q60 98 120 116 T220 104 V170 H0Z" fill="#6fcf94" opacity=".9"/><path d="M0 142 Q70 124 130 140 T220 130 V170 H0Z" fill="#4fb67f"/><circle cx="170" cy="30" r="15" fill="#fff0a0" opacity=".9"/>' +
+      '<rect x="107" y="0" width="6" height="170" fill="#6d4a31"/><rect x="0" y="82" width="220" height="6" fill="#6d4a31"/><rect x="-16" y="178" width="252" height="12" rx="5" fill="#8a6040"/><rect class="awsh" x="0" y="0" width="220" height="170" rx="6" fill="#0a1236" opacity="0"/>' +
+      '<path d="M-10 -6 Q40 60 -14 186 L30 186 Q70 70 20 -6Z" fill="#ff9a8a" opacity=".85"/><path d="M230 -6 Q180 60 234 186 L190 186 Q150 70 200 -6Z" fill="#ff9a8a" opacity=".85"/></g>' +
+      '<g transform="translate(78 62)"><rect x="-9" y="-9" width="288" height="192" rx="10" fill="#8a6040" stroke="#5a3d26" stroke-width="3"/><rect width="270" height="174" rx="5" fill="#2a58a0"/>' +
+      '<g stroke="#9ed0ff" stroke-width="1" opacity=".22">' + (function () { var s = ''; for (var k = 1; k < 15; k++) s += '<line x1="' + (k * 18) + '" y1="0" x2="' + (k * 18) + '" y2="174"/>'; for (k = 1; k < 10; k++) s += '<line x1="0" y1="' + (k * 18) + '" x2="270" y2="' + (k * 18) + '"/>'; return s; })() + '</g>' +
+      '<g stroke="#e8f6ff" stroke-width="3.4" fill="none" stroke-linejoin="round" stroke-linecap="round"><rect x="66" y="84" width="112" height="66"/><path d="M54 88 L122 36 L190 88Z"/><rect x="104" y="112" width="26" height="38"/><rect x="78" y="98" width="18" height="18"/><path d="M87 98 V116 M78 107 H96"/><rect x="152" y="46" width="13" height="26"/>' +
+      '<path d="M66 160 H178 M66 154 V166 M178 154 V166" stroke-width="2.2" stroke="#ffe08a"/><path d="M202 84 V150 M196 84 H208 M196 150 H208" stroke-width="2.2" stroke="#ffe08a"/></g>' +
+      '<g font-family="Baloo 2, Arial Rounded MT Bold, Arial, sans-serif" font-weight="800" fill="#ffe08a"><text x="122" y="172" font-size="12" text-anchor="middle">4 m</text><text x="226" y="122" font-size="12" text-anchor="middle">3 m</text></g>' +
+      '<text x="14" y="26" font-size="17" font-weight="800" fill="#ffffff" font-family="Baloo 2, Arial Rounded MT Bold, Arial, sans-serif">PLAN : LA MAISON</text>' +
+      '<g font-family="Baloo 2, Arial Rounded MT Bold, Arial, sans-serif" font-weight="800" font-size="11" fill="#cfe8ff"><text x="212" y="46">4 murs</text><text x="212" y="62">1 toit</text><text x="212" y="78">1 porte</text></g>' +
+      '<circle cx="14" cy="-2" r="6" fill="#ff5f6d" stroke="#8a1f2a" stroke-width="2"/><circle cx="256" cy="-2" r="6" fill="#ff5f6d" stroke="#8a1f2a" stroke-width="2"/></g>' +
+      gear(34, 190, 22, 10, '#ffcf6a', 'ag1') + gear(76, 216, 14, 8, '#ff9a6a', 'ag2') + gear(388, 78, 20, 9, '#8fd1ff', 'ag3'));
     put(gn,
-      /* étagère + objets */
-      '<g transform="translate(330 150)"><rect x="-6" y="0" width="150" height="10" rx="3" fill="#8a6040"/><rect x="-6" y="10" width="150" height="4" fill="#6d4a31"/>' +
+      '<g transform="translate(398 168)"><rect x="-6" y="0" width="150" height="10" rx="3" fill="#8a6040"/><rect x="-6" y="10" width="150" height="4" fill="#6d4a31"/>' +
       '<rect x="6" y="-30" width="22" height="30" rx="4" fill="#ff7b6b" stroke="#8a2a2a" stroke-width="2.4"/><rect x="32" y="-22" width="18" height="22" rx="4" fill="#7ad39a" stroke="#2a6a45" stroke-width="2.4"/>' +
       '<rect x="56" y="-36" width="26" height="36" rx="4" fill="#ffd23f" stroke="#8a6a12" stroke-width="2.4"/><circle cx="108" cy="-14" r="14" fill="#b7c3d8" stroke="#3b4a66" stroke-width="2.4"/><circle cx="108" cy="-14" r="5" fill="#2a3a58"/></g>' +
-      '<g transform="translate(330 240)"><rect x="-6" y="0" width="150" height="10" rx="3" fill="#8a6040"/><rect x="-6" y="10" width="150" height="4" fill="#6d4a31"/>' +
+      '<g transform="translate(398 250)"><rect x="-6" y="0" width="150" height="10" rx="3" fill="#8a6040"/><rect x="-6" y="10" width="150" height="4" fill="#6d4a31"/>' +
       '<path d="M10 0 V-28 H34 V0Z" fill="#b7c3d8" stroke="#3b4a66" stroke-width="2.4"/><path d="M50 0 L62 -34 L74 0Z" fill="#ffb347" stroke="#8a4a12" stroke-width="2.4"/><rect x="88" y="-20" width="38" height="20" rx="4" fill="#a98cd8" stroke="#4f3a8a" stroke-width="2.4"/></g>' +
-      /* lampe suspendue */
-      '<g transform="translate(300 -20)"><line x1="0" y1="0" x2="0" y2="70" stroke="#3b4a66" stroke-width="3"/><path d="M-24 100 Q0 62 24 100Z" fill="#ffb347" stroke="#8a4a12" stroke-width="3" stroke-linejoin="round"/><circle class="alp" cx="0" cy="104" r="54" fill="url(#alamp)" opacity=".8"/></g>' +
-      /* établi */
+      '<path class="ashaft" d="M575 150 L775 150 L700 395 L430 395Z" fill="url(#ashaft)" opacity=".5"/>' +
+      '<g transform="translate(470 -20)"><line x1="0" y1="0" x2="0" y2="70" stroke="#3b4a66" stroke-width="3"/><path d="M-24 100 Q0 62 24 100Z" fill="#ffb347" stroke="#8a4a12" stroke-width="3" stroke-linejoin="round"/><circle class="alp" cx="0" cy="104" r="54" fill="url(#alamp)" opacity=".8"/></g>' +
+      '<g transform="translate(18 330)"><path d="M-18 56 L-14 8 H14 L18 56Z" fill="#d9825b" stroke="#8a4a2a" stroke-width="3"/><rect x="-18" y="2" width="36" height="10" rx="4" fill="#e89a72" stroke="#8a4a2a" stroke-width="3"/><path d="M0 4 Q-30 -30 -20 -56 Q0 -36 0 4Z" fill="#4fb67f" stroke="#2a6a45" stroke-width="3"/><path d="M0 4 Q30 -34 22 -62 Q-2 -40 0 4Z" fill="#6fcf94" stroke="#2a6a45" stroke-width="3"/><path d="M0 4 Q-4 -50 8 -78 Q16 -40 0 4Z" fill="#7ad39a" stroke="#2a6a45" stroke-width="3"/></g>' +
       '<g transform="translate(0 0)"><rect x="620" y="300" width="230" height="16" rx="5" fill="#9a6e45"/><rect x="620" y="316" width="230" height="5" fill="#6d4a31"/><rect x="628" y="321" width="12" height="66" fill="#7d5a3c"/><rect x="830" y="321" width="12" height="66" fill="#7d5a3c"/>' +
       '<rect x="650" y="276" width="60" height="24" rx="5" fill="#b7c3d8" stroke="#3b4a66" stroke-width="2.6"/><circle cx="664" cy="288" r="4" fill="#7aff9a"/><circle cx="678" cy="288" r="4" fill="#ffd23f"/><rect x="730" y="288" width="44" height="12" rx="3" fill="#ff7b6b" stroke="#8a2a2a" stroke-width="2.4"/><path d="M790 300 l12 -26 l12 26Z" fill="#7ad39a" stroke="#2a6a45" stroke-width="2.4"/></g>' +
       '<rect class="atint" x="-500" y="-900" width="1800" height="2300" fill="#fff" opacity="0"/>');
     put(front,
-      '<rect class="gstrip" x="-300" y="408" width="1600" height="900" fill="url(#afl)"/>' +
-      '<g stroke="#8a5a30" stroke-width="2.4" opacity=".55">' + (function () { var s = ''; for (var k = 0; k < 9; k++) s += '<line x1="-300" y1="' + (420 + k * 18) + '" x2="1100" y2="' + (420 + k * 18) + '"/>'; for (k = -6; k < 20; k++) s += '<line x1="' + (k * 90) + '" y1="' + (420 + (k % 3) * 18) + '" x2="' + (k * 90) + '" y2="' + (438 + (k % 3) * 18) + '"/>'; return s; })() + '</g>' +
-      '<path d="M-300 408 H1100" stroke="#f0cf9c" stroke-width="4" opacity=".7"/>' +
       '<g transform="translate(90 436)"><ellipse cy="14" rx="30" ry="6" fill="#14213d" opacity=".18"/><path d="M-26 12 V-8 Q-26 -14 -20 -14 H20 Q26 -14 26 -8 V12Z" fill="#b7c3d8" stroke="#3b4a66" stroke-width="3"/><rect x="-26" y="-24" width="52" height="10" rx="3" fill="#8a6040"/><path d="M-18 -24 L-12 -40 L-6 -24M2 -24 L8 -44 L14 -24" fill="none" stroke="#3b4a66" stroke-width="3"/></g>' +
       '<g transform="translate(720 446)"><ellipse cy="12" rx="40" ry="6" fill="#14213d" opacity=".16"/><path d="M-34 10 C-34 -10 -24 -22 -4 -22 C16 -22 34 -12 34 10Z" fill="#c9d4e6" stroke="#3b4a66" stroke-width="3"/><circle cx="-10" cy="-4" r="5" fill="#ff7b6b"/><circle cx="10" cy="-4" r="5" fill="#7ad39a"/></g>' +
       '<g class="asp" fill="#ffe9a0"></g>');
     var qb = function (c) { return back.querySelector('.' + c); }, qf = function (c) { return front.querySelector('.' + c); };
-    var R = { gstrip: qf('gstrip'), groundCol: [196, 145, 90], birds: 0, cloudsOn: 0, par: P, awin: qb('awin'), awsh: qb('awsh'), alp: qb('alp'), atint: qb('atint') };
+    var R = { groundCol: [196, 145, 90], birds: 0, cloudsOn: 0, par: P, awin: qb('awin'), awsh: qb('awsh'), alp: qb('alp'), atint: qb('atint'), shaft: qb('ashaft'), bulbs: back.querySelectorAll('.abulb') };
     R.g1 = qb('ag1'); R.g2 = qb('ag2'); R.g3 = qb('ag3');
     R.clouds = []; for (i = 0; i < 3; i++) R.clouds.push(mk('ellipse', { cy: 30 + i * 20, rx: 26 + i * 6, ry: 9, fill: '#fff', opacity: .85 }, qb('awc')));
     R.sp = []; for (i = 0; i < 16; i++) R.sp.push(mk('circle', { r: 1 + rnd(i + 5) * 1.6 }, qf('asp')));
     R.update = function (t, S, o) {
       var night = Math.max(0, Math.min(1, S.night * 1.8)), gl = Math.max(0, Math.min(1, S.gloom));
-      R.g1.setAttribute('transform', 'translate(40 120) rotate(' + (t * 22).toFixed(1) + ')'); R.g2.setAttribute('transform', 'translate(88 150) rotate(' + (-t * 33).toFixed(1) + ')'); R.g3.setAttribute('transform', 'translate(430 60) rotate(' + (t * 18).toFixed(1) + ')');
+      R.g1.setAttribute('transform', 'translate(34 190) rotate(' + (t * 22).toFixed(1) + ')'); R.g2.setAttribute('transform', 'translate(76 216) rotate(' + (-t * 33).toFixed(1) + ')'); R.g3.setAttribute('transform', 'translate(388 78) rotate(' + (t * 18).toFixed(1) + ')');
       R.awin.setAttribute('fill', night > .3 ? 'url(#aws)' : 'url(#aws)'); R.awsh.setAttribute('opacity', (night * .72 + gl * .25).toFixed(2));
       R.clouds.forEach(function (c, i) { c.setAttribute('cx', (((t * (6 + i * 3) + i * 90) % 280) - 30).toFixed(1)); });
       R.alp.setAttribute('opacity', (.55 + .25 * night + .05 * Math.sin(t * 5)).toFixed(2));
       R.sp.forEach(function (c, i) { var x = ((rnd(i + 11) * 900 + t * (4 + 4 * rnd(i + 30))) % 900), y = 440 - ((rnd(i + 51) * 260 + t * (8 + 6 * rnd(i + 70))) % 260); c.setAttribute('cx', x.toFixed(1)); c.setAttribute('cy', y.toFixed(1)); c.setAttribute('opacity', (.2 + .25 * Math.sin(t * 1.7 + i) * Math.sin(t * 1.7 + i)).toFixed(2)); });
       R.atint.setAttribute('fill', rgb(S.tint)); R.atint.setAttribute('opacity', (S.tint[3] * .6).toFixed(3));
-      R.gstrip.setAttribute('opacity', 1);
+      R.shaft.setAttribute('opacity', (.55 * (1 - night) * (1 - gl * .5) * (.85 + .15 * Math.sin(t * .8))).toFixed(2));
+      for (var bi = 0; bi < R.bulbs.length; bi++) R.bulbs[bi].setAttribute('opacity', (.55 + .45 * Math.max(0, Math.sin(t * 2.2 + bi * 1.7))).toFixed(2));
     };
     return R;
   }

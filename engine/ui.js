@@ -172,7 +172,7 @@
   E.__still = E.LEAD + .6;
   E.setMode('land'); E.render(E.__still);
   setPlayUI(false);
-  window.__ep = { render: E.render, setMode: E.setMode, ENDT: E.ENDT, exportMP4: exportMP4, audioWav: async function () {
+  window.__ep = { lines: function () { return E.LINES; }, render: E.render, setMode: E.setMode, ENDT: E.ENDT, exportMP4: exportMP4, audioWav: async function () {
     await AUDIO.decodeAll(); var off = new OfflineAudioContext(2, Math.ceil(48000 * (E.ENDT + .2)), 48000); AUDIO.schedule(off, off.destination, 0, {}); var b = await off.startRendering();
     var n = b.length, ch0 = b.getChannelData(0), ch1 = b.getChannelData(1), buf = new ArrayBuffer(44 + n * 4), v = new DataView(buf);
     function ws(o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); }
