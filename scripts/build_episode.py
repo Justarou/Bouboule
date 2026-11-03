@@ -61,6 +61,8 @@ ep["fileBase"] = name
 idx = json.load(open(os.path.join(ROOT, "sfx", "index.json"), encoding="utf8"))
 blob = json.dumps(ep, ensure_ascii=False)
 used = set(re.findall(r'"sfx",\s*"([a-z_0-9]+)"', blob)) | set(re.findall(r'"amb",\s*"([a-z_0-9]+)"', blob))
+if '"splashbig"' in blob: used |= {"eclabousse_eau"}
+if '"ripple"' in blob: used |= {"blop"}
 used |= {"pop", "boing", "tombe", "tourne", "tremble", "couine", "feu_artifice", "impact_c", "petite_explosion"}
 sfx = {}
 for k in sorted(used):

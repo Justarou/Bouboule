@@ -10,9 +10,10 @@ Chaque lieu a une identité (forme, couleurs, ambiance sonore), des variantes (m
 | Colline des Rigolos | `colline` | collines rondes, moulin qui tourne, panneau, petite maison au loin, arbres ronds, fleurs, herbe | `amb_oiseaux` (jour), `amb_nuit` (nuit) |
 | Forêt | `foret` | sapins en trois plans, champignons lumineux, lucioles, rayons de lumière | `amb_nuit`, `amb_vent`, hibou |
 | Atelier de Robi | `atelier` | mur bleu clair avec lambris, sol en planches avec tapis rond, grande fenêtre avec rideaux, guirlande lumineuse, plan de la maison sur grand panneau, étagères, établi, plante, engrenages tournants, rayon de soleil | `amb_classe` bas |
+| Rivière aux cailloux | `riviere` | (EV-001, option B) montagnes lointaines comme la colline, autre berge avec arbres et rochers, pont de planches cassé au fond, rivière bleu-vert large (y 328–394) avec reflets qui glissent, écume, nénuphars, libellules (jour), roseaux de chaque côté, berge herbeuse où marchent les personnages (sol GY=395) ; cailloux du gué et tas de pierres plates posés par les accessoires `stones` | `amb_ruisseau` (+ `amb_oiseaux` le jour) ; bruitages `pas_eau`, `eclabousse_eau`, `impact_eau`, `blop` |
 
 ## Lieux à créer (planifiés)
-- **Rivière aux cailloux** (ép. 5) : berge, cailloux plats, eau qui coule, cascade au loin. Variante jour d'abord.
+- ~~Rivière aux cailloux (ép. 5)~~ : créée (voir tableau ci-dessus), en test sur la branche `ev-001-riviere`.
 - **Ciel étoilé / escalier arc-en-ciel** (fil de Pitou, ép. 7, 10–12).
 - Intérieur de la maison commune au fil de la construction (ép. 8–12).
 Toute création de lieu : fiche dans ce document (forme, couleurs, accessoires, ambiance sonore, variantes) avant le code, puis demande d'évolution du moteur (voir `11_moteur.md`).
@@ -26,6 +27,7 @@ Toute création de lieu : fiche dans ce document (forme, couleurs, accessoires, 
 - **Maison** (`house`) : `build` (monte), `collapse` (s'écroule), `clear` (disparaît), `stake` (piquet). Échelle réglable ; elle doit être **plus grande que les personnages** et visible en entier pendant l'action.
 - **Machine de Robi** (`machine`) : `show`, `hide`, `shake`, `boom`.
 - **Balle** (`ball`) : lancer, brûler.
+- **Cailloux** (`stones`) : gué de pierres plates dans l'eau (on y monte avec `lift`, 22 px ; la pierre s'enfonce de 3 px sous le poids) et tas de pierres plates sur la berge (`pile`).
 Un accessoire important a toujours son plan d'insert (voir `07_realisation.md`).
 
 ## Règles de composition

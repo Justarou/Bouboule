@@ -186,6 +186,90 @@ var SETS = (function () {
     return R;
   }
 
+
+  /* ---------- SET : la rivière aux cailloux (EV-001, option B) ---------- */
+  function riviere(back, front) {
+    var i, gm = mk('g', {}, back), gfar = mk('g', {}, back), gw = mk('g', {}, back), gnear = mk('g', {}, back);
+    put(gm,
+      '<defs><linearGradient id="rvm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fa6e0"/><stop offset="1" stop-color="#d3e3fa"/></linearGradient>' +
+      '<linearGradient id="rvm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c98d6"/><stop offset="1" stop-color="#bcd2f1"/></linearGradient>' +
+      '<linearGradient id="rvh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9eefd" stop-opacity="0"/><stop offset="1" stop-color="#e8f6ff" stop-opacity=".9"/></linearGradient>' +
+      '<linearGradient id="rvA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a5e9b4"/><stop offset=".6" stop-color="#6fcf94"/><stop offset="1" stop-color="#4fb67f"/></linearGradient>' +
+      '<linearGradient id="rvW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f86ad"/><stop offset=".45" stop-color="#4cb4cf"/><stop offset="1" stop-color="#7fd3de"/></linearGradient>' +
+      '<linearGradient id="rvB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ce39c"/><stop offset=".5" stop-color="#4fc283"/><stop offset="1" stop-color="#2f9f6c"/></linearGradient>' +
+      '<linearGradient id="rvF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#58c58b"/><stop offset=".5" stop-color="#46b681"/><stop offset="1" stop-color="#37a06f"/></linearGradient></defs>' +
+      '<path d="M-300 292 L-210 226 L-130 270 L-60 292 L40 214 L100 262 L180 180 L262 266 L340 208 L420 272 L508 190 L600 268 L682 200 L772 262 L866 212 L950 262 L1100 226 V1200 H-300Z" fill="url(#rvm1)"/>' +
+      '<path d="M180 180 L158 208 L172 202 L182 214 L193 202 L205 209Z M508 190 L486 220 L499 213 L509 225 L520 213 L532 221Z M682 200 L664 224 L675 218 L683 229 L692 218 L702 224Z" fill="#fff" opacity=".85"/>' +
+      '<path d="M-300 318 L-190 262 L-90 300 L10 252 L120 306 L240 258 L350 308 L470 246 L580 304 L700 256 L830 306 L960 262 L1100 300 V1200 H-300Z" fill="url(#rvm2)" opacity=".95"/>' +
+      '<rect x="-300" y="240" width="1400" height="120" fill="url(#rvh)"/>');
+    var far = ''; for (i = 0; i < 12; i++) far += tree3(-240 + i * 125 + rnd(i + 60) * 40, 322 + rnd(i + 64) * 5, .38 + rnd(i + 62) * .12, TREEP[0]);
+    put(gfar,
+      '<path d="M-300 340 Q110 300 250 326 T520 316 T1100 308 V420 H-300Z" fill="url(#rvA)"/>' +
+      '<path d="M-300 340 Q110 300 250 326 T520 316 T1100 308" fill="none" stroke="#e8ffd9" stroke-width="3" opacity=".7"/>' + far +
+      tree3(90, 336, .75, TREEP[1]) + tree3(235, 334, .62, TREEP[2]) + tree3(710, 322, .8, TREEP[1]) +
+      /* rochers de l'autre berge */
+      '<g fill="#b9b2a6" stroke="#7d756a" stroke-width="2"><path d="M395 338 q8 -16 24 -14 q12 2 14 14Z"/><path d="M425 340 q6 -10 16 -9 q8 1 9 9Z" fill="#cbc4b8"/></g>' +
+      /* pont de planches cassé, au fond */
+      '<g transform="translate(560 346)"><rect x="-70" y="-6" width="52" height="7" rx="2" fill="#a9794a" stroke="#6b4426" stroke-width="2"/><rect x="-62" y="1" width="6" height="22" fill="#7b4f33"/><rect x="-30" y="1" width="6" height="22" fill="#7b4f33"/>' +
+      '<g class="rvplank" transform="translate(-18 -6)"><rect x="0" y="0" width="30" height="7" rx="2" fill="#a9794a" stroke="#6b4426" stroke-width="2" transform="rotate(24)"/></g>' +
+      '<rect x="58" y="-6" width="34" height="7" rx="2" fill="#a9794a" stroke="#6b4426" stroke-width="2"/><rect x="82" y="1" width="6" height="22" fill="#7b4f33"/></g>');
+    put(gw,
+      '<path d="M-300 332 Q60 322 260 334 T620 327 T1100 333 V420 H-300Z" fill="url(#rvW)"/>' +
+      '<path d="M-300 332 Q60 322 260 334 T620 327 T1100 333 V344 Q620 338 260 346 T-300 344Z" fill="#1f6f92" opacity=".35"/>' +
+      '<path d="M-300 360 Q200 352 420 360 T1100 356 V368 Q700 366 420 372 T-300 368Z" fill="#cfeff6" opacity=".22"/>' +
+      '<g class="rvcur"></g><g class="rvfoam"></g><g class="rvlily"></g><g class="rvfly"></g>');
+    put(gnear,
+      '<path d="M-300 394 Q100 386 300 394 T700 390 T1100 394 V1200 H-300Z" fill="url(#rvB)"/>' +
+      '<path d="M-300 394 Q100 386 300 394 T700 390 T1100 394" fill="none" stroke="#d6ffd0" stroke-width="4" opacity=".7"/>' +
+      '<path d="M-300 396 Q100 389 300 397 T700 393 T1100 397 V402 Q700 399 300 402 T-300 402Z" fill="#8a6a42" opacity=".45"/>' +
+      '<ellipse cx="140" cy="400" rx="80" ry="6" fill="#1f7a52" opacity=".16"/><ellipse cx="600" cy="398" rx="90" ry="6" fill="#1f7a52" opacity=".16"/>' +
+      '<g class="rvreedsB"></g>');
+    put(front,
+      '<rect class="gstrip" x="-300" y="412" width="1600" height="900" fill="url(#rvF)"/><path d="M-300 412 Q200 404 420 412 T1100 410" fill="none" stroke="#8fe5ad" stroke-width="3.5" opacity=".75"/><g class="tufts"></g>' +
+      '<g class="rvreedsF"></g><g class="ffs"></g>');
+    var qb = function (c) { return back.querySelector('.' + c); }, qf = function (c) { return front.querySelector('.' + c); };
+    var R = { gstrip: qf('gstrip'), groundCol: [55, 166, 116], birds: 1, cloudsOn: 1, waterY: 394 };
+    /* reflets du courant : lentilles claires qui glissent */
+    R.cur = []; for (i = 0; i < 9; i++) R.cur.push(mk('path', { d: 'M0 0 q20 -4 40 0 q-20 3 -40 0Z', fill: '#e9fbff', opacity: .0 }, qb('rvcur')));
+    /* écume : fines lignes qui scintillent */
+    R.foam = []; for (i = 0; i < 7; i++) R.foam.push(mk('path', { d: 'M0 0 q12 -3 24 0 M6 4 q10 -2 20 0', fill: 'none', stroke: '#ffffff', 'stroke-width': 2, 'stroke-linecap': 'round', opacity: 0 }, qb('rvfoam')));
+    /* nénuphars */
+    R.lily = [];
+    [[120, 372, 1], [300, 384, .8], [470, 364, .9], [690, 380, 1.1], [30, 362, .8]].forEach(function (L, k) {
+      var g = mk('g', {}, qb('rvlily'));
+      put(g, '<ellipse rx="15" ry="4.6" fill="#3f9a6a"/><path d="M0 0 L15 0" stroke="#2e7d52" stroke-width="1.6" opacity=".6"/><ellipse cx="-2" cy="-1" rx="11" ry="3" fill="#5fc08a" opacity=".7"/>' + (k % 2 ? '<circle cx="3" cy="-3" r="3.2" fill="#ff8fb0"/><circle cx="3" cy="-3.6" r="1.3" fill="#ffe08a"/>' : ''));
+      R.lily.push({ g: g, x: L[0], y: L[1], s: L[2], i: k });
+    });
+    /* roseaux (arrière + avant) */
+    function reeds(layer, xs, sc, y) { var out = []; xs.forEach(function (x, k) { var g = mk('g', {}, layer); put(g, '<path d="M0 0 Q-2 -34 -4 -62" stroke="#5aa86a" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M5 0 Q7 -28 11 -52" stroke="#4a9a5e" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M-6 0 Q-12 -22 -16 -40" stroke="#6fbd7c" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse cx="-4" cy="-66" rx="3.4" ry="9" fill="#8a5a38"/><ellipse cx="11" cy="-56" rx="3" ry="8" fill="#8a5a38"/>'); out.push({ g: g, x: x, y: y + (k % 2) * 4, s: sc * (.85 + rnd(k + 5) * .4), i: k }); }); return out; }
+    R.reedsB = reeds(qb('rvreedsB'), [-10, 38, 760, 800], .9, 396);
+    R.reedsF = reeds(qf('rvreedsF'), [-30, 8, 790, 830], 1.15, 428);
+    R.tufts = grassTufts(qf('tufts'), 60, 418, 34, ['#3fae7c', '#4fc08a', '#6fd6a0', '#45b583']);
+    R.ffs = []; for (i = 0; i < 14; i++) { var fg = mk('g', {}, qf('ffs')); mk('circle', { r: 9, fill: '#fff3a0', opacity: .25 }, fg); mk('circle', { r: 2.4, fill: '#fff8c0' }, fg); R.ffs.push(fg); }
+    /* libellules */
+    R.fly = []; for (i = 0; i < 2; i++) { var fy = mk('g', {}, qb('rvfly')); put(fy, '<path d="M-7 0 H8" stroke="#2a9d8f" stroke-width="2.2" stroke-linecap="round"/><ellipse cx="-2" cy="-3" rx="5" ry="1.8" fill="#dff7ff" opacity=".8"/><ellipse cx="-2" cy="3" rx="5" ry="1.8" fill="#dff7ff" opacity=".8"/>'); R.fly.push(fy); }
+    R.plank = qb('rvplank');
+    R.update = function (t, S, o) {
+      var dayF = Math.max(0, 1 - S.night * 1.8 - S.gloom * .7);
+      R.cur.forEach(function (c, i) {
+        var sp = 22 + (i % 3) * 9, x = ((i * 137 + t * sp) % 1100) - 150, y = 340 + (i * 29 % 46) + 2 * Math.sin(t * 1.2 + i);
+        c.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') scale(' + (1 + (i % 3) * .5) + ' 1)'); c.setAttribute('opacity', (.55 * (.5 + .5 * dayF) * (.5 + .5 * Math.sin(t * .8 + i * 1.9))).toFixed(2));
+      });
+      R.foam.forEach(function (f, i) {
+        var x = ((i * 211 + t * 14) % 1000) - 100, y = 344 + (i * 37 % 44);
+        f.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')'); f.setAttribute('opacity', (.5 * Math.abs(Math.sin(t * 1.3 + i * 2.2))).toFixed(2));
+      });
+      R.lily.forEach(function (l) { l.g.setAttribute('transform', 'translate(' + l.x + ' ' + (l.y + 1.6 * Math.sin(t * 1.5 + l.i)).toFixed(1) + ') rotate(' + (3 * Math.sin(t * 1.1 + l.i * 2)).toFixed(1) + ') scale(' + l.s + ')'); });
+      [R.reedsB, R.reedsF].forEach(function (arr) { arr.forEach(function (r) { r.g.setAttribute('transform', 'translate(' + r.x + ' ' + r.y + ') rotate(' + (4 * Math.sin(t * 1.6 + r.i * 1.3)).toFixed(1) + ') scale(' + r.s.toFixed(2) + ')'); }); });
+      R.tufts.forEach(function (f) { f.g.setAttribute('transform', 'translate(' + f.x.toFixed(1) + ' ' + f.y.toFixed(1) + ') rotate(' + (5 * Math.sin(t * 1.8 + f.i)).toFixed(1) + ') scale(' + f.s.toFixed(2) + ')'); });
+      R.plank.setAttribute('transform', 'translate(-18 -6) rotate(' + (3 * Math.sin(t * 1.4)).toFixed(1) + ')');
+      R.fly.forEach(function (g, i) { var x = 150 + i * 380 + 90 * Math.sin(t * .6 + i * 2.2), y = 322 + 24 * Math.sin(t * 1.1 + i) + 10 * Math.sin(t * 5 + i); g.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + (10 * Math.cos(t * .6 + i * 2.2)).toFixed(1) + ')'); g.setAttribute('opacity', (dayF * .9).toFixed(2)); });
+      var ffo = Math.max(0, Math.min(1, S.night * 2.2));
+      R.ffs.forEach(function (g, i) { var x = rnd(i + 40) * 800 + 30 * Math.sin(t * .5 + i), y = 300 + rnd(i + 70) * 120 + 14 * Math.sin(t * .8 + i * 1.7), s = Math.sin(t * 3 + i * 2.1); g.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')'); g.setAttribute('opacity', (ffo * (.45 + .55 * s * s)).toFixed(2)); });
+    };
+    return R;
+  }
+
   /* ---------- SET : forêt enchantée ---------- */
   function pine(x, y, s, c1, c2) {
     return '<g transform="translate(' + x + ' ' + y + ') scale(' + s + ')"><rect x="-6" y="-30" width="12" height="40" fill="#7a4e2e"/><path d="M0 -150 L-34 -78 H-16 L-46 -30 H-22 L-56 12 H56 L22 -30 H46 L16 -78 H34Z" fill="' + c1 + '"/><path d="M0 -150 L-18 -100 L0 -108 L16 -98Z" fill="' + c2 + '" opacity=".6"/></g>';
@@ -302,5 +386,5 @@ var SETS = (function () {
     return R;
   }
 
-  return { skyAt: skyAt, PAL: PAL, buildSky: buildSky, build: { colline: colline, foret: foret, atelier: atelier }, sparkD: sparkD, rnd: rnd, rgb: rgb, mixc: mixc };
+  return { skyAt: skyAt, PAL: PAL, buildSky: buildSky, build: { colline: colline, foret: foret, atelier: atelier, riviere: riviere }, sparkD: sparkD, rnd: rnd, rgb: rgb, mixc: mixc };
 })();
