@@ -22,6 +22,7 @@
   var CAST_OPT = { bouboule: { s: 1, row: 0 }, pitou: { s: .95, row: 4, hover: 10 }, grincheux: { s: .95, row: -6, hover: 55 }, robi: { s: 1, row: 8 }, flamme: { s: .92, row: -4 } };
 
   var V2 = (EP.engine || 1) >= 2; CHARS.V2 = V2;
+  var V4 = (EP.engine || 1) >= 4; /* EV-004 : profondeur (depth), cailloux en profondeur, locuteur au premier plan */
   var V3 = (EP.engine || 1) >= 3; /* EV-002 : transitions de décor symétriques + accessoires liés à leur décor */
   var RND = SETS.rnd, SM = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
   /* ---------- 1. Chronologie des répliques ---------- */
@@ -54,7 +55,7 @@
   LET.forEach(function (k, n) {
     var kind = CASTK[k], o = CAST_OPT[kind] || {};
     AC[k] = { k: k, kind: kind, s: o.s || 1, row: o.row || 0, hover: o.hover || 0, style: STYLE[kind] || 'hop',
-      segs: [], lifts: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
+      segs: [], lifts: [], depths: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
   });
   var RBEV = [];
   var EVSFX = [], EVFX = [], EVCAM = [], SKYK = [], SHK = [], BEAMS = [], PROPS = { ball: [], machine: [], house: [], stones: [] }, AMB = [], MUS = [], SETK = [[0, EP.set || 'colline']], RAIN = [];
@@ -118,6 +119,7 @@
     else if (v === 'machine') PROPS.machine.push({ t: t, a: a });
     else if (v === 'house') PROPS.house.push({ t: t, a: a });
     else if (v === 'stones') PROPS.stones.push({ t: t, a: a });   /* EV-001 : cailloux de la rivière */
+    else if (v === 'depth') A.depths.push({ t0: t, t1: t + (a[2] === undefined ? .6 : a[2]), v: a[1] });   /* EV-004 : éloigne l'acteur (0 = rive, 1 = loin) : monte et rapetisse */
     else if (v === 'lift') A.lifts.push({ t0: t, t1: t + (a[2] === undefined ? .3 : a[2]), v: a[1] });   /* EV-001 : monte l'acteur de a[1] px (ex. sur un caillou) */
     else if (v === 'rainbow') RBEV.push({ t: t, a: a });
     else if (v === 'vanish') A.vis.push([t, 0]);
@@ -138,11 +140,18 @@
     for (i = 0; i < L.length; i++) { var l = L[i]; if (t < l.t0) break; if (t >= l.t1) { v = l.v; continue; } return v + (l.v - v) * SM((t - l.t0) / Math.max(.001, l.t1 - l.t0)); }
     return v;
   }
-  function actorY(k, t) { return GY + AC[k].row - (AC[k].lifts.length ? liftOf(k, t) : 0); }
+  var DEPTH_DY = 70, DEPTH_SC = .46;
+  function depthOf(k, t) {
+    var L = AC[k].depths, v = 0, i;
+    for (i = 0; i < L.length; i++) { var l = L[i]; if (t < l.t0) break; if (t >= l.t1) { v = l.v; continue; } return v + (l.v - v) * SM((t - l.t0) / Math.max(.001, l.t1 - l.t0)); }
+    return v;
+  }
+  function scaleOf(k, t) { return AC[k].depths.length ? AC[k].s * (1 - DEPTH_SC * depthOf(k, t)) : AC[k].s; }
+  function actorY(k, t) { return GY + AC[k].row - (AC[k].lifts.length ? liftOf(k, t) : 0) - (AC[k].depths.length ? DEPTH_DY * depthOf(k, t) : 0); }
   function bodyTop(k) { return CHARS.LIB[AC[k].kind]; }
   function mouthPos(k, t, dirX) {
     var A = AC[k], c = CHAR_INFO[A.kind], x = wx(xOf(k, t));
-    return { x: x + c.mouth.x * A.s, y: actorY(k, t) - A.hover - 0 + c.mouth.y * A.s };
+    return { x: x + c.mouth.x * scaleOf(k, t), y: actorY(k, t) - A.hover * (scaleOf(k, t) / A.s) - 0 + c.mouth.y * scaleOf(k, t) };
   }
   var CHAR_INFO = {};
   Object.keys(CHARS.LIB).forEach(function (kn) { var tmp = CHARS.LIB[kn].make(); CHAR_INFO[kn] = { mouth: tmp.mouth, cy: tmp.cy, h: tmp.h, w: tmp.w }; });
@@ -561,14 +570,16 @@
     '<path d="M-30 -10 Q-30 -19 -16 -20 L20 -20 Q31 -19 31 -10Z" fill="#b8b1a5" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-18" rx="20" ry="2.8" fill="#d8d2c7"/>' +
     '<path d="M-22 -20 Q-22 -28 -10 -29 L12 -29 Q23 -28 23 -20Z" fill="#a39c90" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-27" rx="14" ry="2.4" fill="#c9c3b8"/>');
   pileG.setAttribute('display', 'none');
+  function addDelay(ss, n) { var a = ss.add || [], j, d = 0; for (j = 0; j < a.length; j++) if (n >= a[j][0]) d = a[j][1] - ss.t0 - a[j][0] * .12; return d; }
   function stonesState(t) {
-    var st = { list: [], t0: 0, pile: null, pt0: 0 }, i, e;
+    var st = { list: [], t0: 0, pile: null, pt0: 0, add: [] }, i, e;
     for (i = 0; i < PROPS.stones.length; i++) {
       e = PROPS.stones[i]; if (e.t > t) break; var v = e.a[0];
-      if (v === 'show') st = { list: e.a[1] || [], t0: e.t, pile: st.pile, pt0: st.pt0 };
-      else if (v === 'hide') st = { list: [], t0: e.t, pile: st.pile, pt0: st.pt0 };
-      else if (v === 'pile') st = { list: st.list, t0: st.t0, pile: e.a[1] === undefined ? .8 : e.a[1], pt0: e.t };
-      else if (v === 'unpile') st = { list: st.list, t0: st.t0, pile: null, pt0: e.t };
+      if (v === 'show') st = { list: e.a[1] || [], t0: e.t, pile: st.pile, pt0: st.pt0, add: [] };
+      else if (v === 'add') { var n0 = st.list.length; st = { list: st.list.concat(e.a[1] || []), t0: st.t0, pile: st.pile, pt0: st.pt0, add: (st.add || []).concat([[n0, e.t]]) }; }   /* EV-004 : ajoute des cailloux sans refaire apparaître les anciens */
+      else if (v === 'hide') st = { list: [], t0: e.t, pile: st.pile, pt0: st.pt0, add: [] };
+      else if (v === 'pile') st = { list: st.list, t0: st.t0, pile: e.a[1] === undefined ? .8 : e.a[1], pt0: e.t, add: st.add };
+      else if (v === 'unpile') st = { list: st.list, t0: st.t0, pile: null, pt0: e.t, add: st.add };
     }
     return st;
   }
@@ -699,7 +710,7 @@
   }
 
   /* ---------- 12. Rendu d'une image ---------- */
-  var lastUsed = {};
+  var lastUsed = {}, z4Key = '';
   var curSetOpacity = {};
   function render(t) {
     var cfg = LAYOUT[MODE], i, S = SETS.skyAt(SKYKEYS, t);
@@ -726,16 +737,23 @@
     var nightF = cl((S.night - .2) / .3);
     /* teinte globale */
     tintFront.setAttribute('fill', SETS.rgb(S.tint)); tintFront.setAttribute('opacity', (S.tint[3] * .9).toFixed(3));
+    /* EV-004 : ordre d'affichage = les plus loin derrière, le locuteur toujours devant */
+    if (V4) {
+      var spk = null; for (i = 0; i < L.length; i++) if (t >= L[i].t && t <= L[i].e + .15) { spk = L[i].who; break; }
+      var ord = LET.slice().sort(function (a, b) { return (b === spk ? -1 : 0) - (a === spk ? -1 : 0) || depthOf(b, t) - depthOf(a, t) || LET.indexOf(a) - LET.indexOf(b); });
+      var ok = ord.join();
+      if (ok !== z4Key) { z4Key = ok; ord.forEach(function (k) { actL.appendChild(ACT_DOM[k].ax); }); }
+    }
     /* personnages */
     LET.forEach(function (k) {
-      var A = AC[k], D = ACT_DOM[k], st = astate(k, t), ch = D.ch, gy = actorY(k, t);
+      var A = AC[k], D = ACT_DOM[k], st = astate(k, t), ch = D.ch, gy = actorY(k, t), asc = scaleOf(k, t);
       if (!st.vis) { D.ax.setAttribute('display', 'none'); D.sh.setAttribute('opacity', 0); return; }
       D.ax.setAttribute('display', '');
-      D.ax.setAttribute('transform', 'translate(' + f1(st.x + st.dx) + ' ' + f1(gy - st.y) + ') scale(' + A.s + ')');
+      D.ax.setAttribute('transform', 'translate(' + f1(st.x + st.dx) + ' ' + f1(gy - st.y) + ') scale(' + asc + ')');
       var cy = ch.cy;
       D.sq.setAttribute('transform', 'translate(0 ' + cy + ') rotate(' + st.rot.toFixed(1) + ') translate(0 ' + (-cy) + ') scale(' + st.sx.toFixed(3) + ' ' + st.sy.toFixed(3) + ')');
       var hh = Math.max(0, st.y - A.hover);
-      D.sh.setAttribute('cx', f1(st.x)); D.sh.setAttribute('cy', f1(gy + 2)); D.sh.setAttribute('rx', ((A.kind === 'grincheux' ? 52 : 32) * A.s * (1 - cl(st.y / 300) * .5)).toFixed(1)); D.sh.setAttribute('ry', 7 * A.s); D.sh.setAttribute('opacity', (.22 * (1 - cl(st.y / 320))).toFixed(2));
+      D.sh.setAttribute('cx', f1(st.x)); D.sh.setAttribute('cy', f1(gy + 2)); D.sh.setAttribute('rx', ((A.kind === 'grincheux' ? 52 : 32) * asc * (1 - cl(st.y / 300) * .5)).toFixed(1)); D.sh.setAttribute('ry', 7 * asc); D.sh.setAttribute('opacity', (.22 * (1 - cl(st.y / 320))).toFixed(2));
       CHARS.poseFace(ch.face, { emo: st.emo, emoPrev: st.emoPrev, emoK: st.emoK, open: st.open, mw: st.mw, lx: st.lx, ly: st.ly, blink: st.blink, blinkAmt: st.blinkAmt });
       /* bras */
       if (ch.arms && ch.arms.length) {
@@ -789,11 +807,11 @@
       var ss = stonesState(t);
       stnEl.forEach(function (o, n) {
         if (n >= ss.list.length) { o.g.setAttribute('display', 'none'); return; }
-        var sx = wx(ss.list[n]), pu = cl((t - ss.t0 - n * .12) / .35), dep = 0;
+        var si = ss.list[n], sd = (si instanceof Array) ? (si[1] || 0) : 0, sx = wx(si instanceof Array ? si[0] : si), pu = cl((t - ss.t0 - n * .12 - addDelay(ss, n)) / .35), dep = 0;
         if (pu <= 0) { o.g.setAttribute('display', 'none'); return; }
         LET.forEach(function (k2) { var ll = liftOf(k2, t); if (ll > 8 && visOf(k2, t) && Math.abs(wx(xOf(k2, t)) - sx) < 26) dep = Math.max(dep, 3 * cl(ll / 22)); });
-        var sc = sm(pu) * (1 + .12 * Math.sin(pu * Math.PI));
-        o.g.setAttribute('display', ''); o.g.setAttribute('transform', 'translate(' + f1(sx) + ' ' + f1(GY - 14 + dep + 1.2 * Math.sin(t * 1.4 + n * 2)) + ') scale(' + sc.toFixed(3) + ')');
+        var sc = sm(pu) * (1 + .12 * Math.sin(pu * Math.PI)) * (1 - DEPTH_SC * sd);
+        o.g.setAttribute('display', ''); o.g.setAttribute('transform', 'translate(' + f1(sx) + ' ' + f1(GY - 14 - DEPTH_DY * sd + dep + 1.2 * Math.sin(t * 1.4 + n * 2)) + ') scale(' + sc.toFixed(3) + ')');
         o.sf.setAttribute('opacity', (.35 + .3 * Math.sin(t * 2.2 + n)).toFixed(2)); o.sf.setAttribute('rx', (36 + 2 * Math.sin(t * 2 + n)).toFixed(1));
       });
       if (ss.pile === null) pileG.setAttribute('display', 'none');
