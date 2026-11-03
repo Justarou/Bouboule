@@ -369,7 +369,7 @@
   function buildCam(mode) {
     var cfg = LAYOUT[mode], K = [], kz = [], kx = [], ky = [], i;
     MODE = mode;
-    function fyFor(z) { return mode === 'land' ? lerp(262, 340, cl((z - 1) / .38)) : (GY - .36 * cfg.VH / z); }
+    function fyFor(z) { return mode === 'land' ? lerp(290, 366, cl((z - 1) / .38)) : (GY - .36 * cfg.VH / z); }
     function add(t, z, fx, fy) { if (kz.length && t <= kz[kz.length - 1][0]) t = kz[kz.length - 1][0] + .05; kz.push([t, z]); kx.push([t, fx]); ky.push([t, fy === undefined ? fyFor(z) : fy]); }
     function visMean(t, excl) { var s = 0, n = 0; LET.forEach(function (k) { if (visOf(k, t) && k !== excl) { s += wx(xOf(k, t)); n++; } }); return n ? s / n : 400; }
     var closeZ = cfg.zoomClose, wideZ = cfg.zoomWide;
