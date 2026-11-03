@@ -1,0 +1,505 @@
+{
+ "title": "Démo studio 2 : La pluie et la lumière",
+ "series": "BOUBOULE",
+ "episodeNo": 98,
+ "subtitle": "Deuxième démonstration du studio",
+ "lead_text": "Scène test du studio : Pitou et Grincheux.",
+ "alt": "Démo 2",
+ "set": "colline",
+ "tod": "dusk",
+ "music": "doux",
+ "endLine": "à demain, petits rigolos !",
+ "nextTeaser": "",
+ "lead": 1.5,
+ "outro": 4,
+ "cast": {
+  "P": "pitou",
+  "G": "grincheux"
+ },
+ "at": [
+  [
+   0,
+   "place",
+   "P",
+   0.38
+  ],
+  [
+   0,
+   "amb",
+   "amb_oiseaux",
+   0.4
+  ]
+ ],
+ "engine": 3,
+ "voices": {
+  "N": {
+   "id": "t4fHUMAMZxaaV2inHOnb",
+   "name": "Narrateur"
+  },
+  "P": {
+   "id": "ZYOBieLaunTiQrTrvNQq",
+   "name": "Pitou"
+  },
+  "G": {
+   "id": "7OQ78nZ3nzjUjN8fGpn6",
+   "name": "Grincheux"
+  }
+ },
+ "lines": [
+  {
+   "who": "N",
+   "text": "Le soir tombait sur la colline. Pitou voulait compter les premières étoiles, mais une petite pluie tombait juste au-dessus d'elle.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "tod",
+     "dusk",
+     1
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.45,
+     1
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     "group",
+     3
+    ],
+    [
+     "e-3.5",
+     "enter",
+     "G",
+     "R",
+     0.6,
+     2.2,
+     "float"
+    ],
+    [
+     "e-3.5",
+     "fx",
+     "G",
+     "rain",
+     30
+    ],
+    [
+     "e-3.5",
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     3.5,
+     "shot",
+     "medium",
+     "P",
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Un... deux... trois... Oh non ! Ma lumière s'éteint encore !",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [sad]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.2,
+     1.2
+    ],
+    [
+     0.2,
+     "anim",
+     "P",
+     "shake",
+     1.2
+    ],
+    [
+     "e-1.5",
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Encore ma pluie qui gâche tout. Je m'en vais. Comme ça, plus personne ne sera mouillé.",
+   "tags": "[grumpy, sulking, plaintive]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "P"
+    ],
+    [
+     0.4,
+     "anim",
+     "G",
+     "tremble",
+     1.5
+    ],
+    [
+     "e-1.8",
+     "look",
+     "G",
+     "L"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "group",
+     3
+    ],
+    [
+     "e-1.4",
+     "move",
+     "G",
+     0.78,
+     1.3,
+     "float"
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Non, reste ! Ce n'est pas toi. C'est que... je suis un peu triste, ce soir.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [soft, hesitant]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "move",
+     "P",
+     0.52,
+     1,
+     "float"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "embarrassed"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     3.5
+    ],
+    [
+     "e-2.2",
+     "mood",
+     "P",
+     "sad"
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Triste ? Toi ? Mais tu comptes toujours jusqu'à dix pour les autres !",
+   "tags": "[grumpy, sulking, plaintive] [surprised]",
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "P"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "surprised"
+    ],
+    [
+     0,
+     "move",
+     "G",
+     0.66,
+     1.2,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "group",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Justement. Ce soir, personne ne compte pour moi. Tu veux bien compter avec moi ?",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [timid, hopeful]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "curious"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0.3,
+     "anim",
+     "P",
+     "nod",
+     1.5
+    ],
+    [
+     "e-1.2",
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Pfff... Un... deux... trois...",
+   "tags": "[gruff but warm] [slowly counting]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "embarrassed"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     0.6,
+     "glow",
+     "P",
+     0.7,
+     1.2
+    ],
+    [
+     1.6,
+     "glow",
+     "P",
+     1,
+     1.2
+    ],
+    [
+     "e-1",
+     "mood",
+     "G",
+     "curious"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "group",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Plus Grincheux comptait, plus la lumière de Pitou brillait. Et dans la pluie douce, la lumière dessina un grand arc de couleurs.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     1,
+     1
+    ],
+    [
+     1.2,
+     "rainbow",
+     "show",
+     3
+    ],
+    [
+     "e-2.5",
+     "sfx",
+     "xylo",
+     0.3
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     "group",
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Un arc-en-ciel ! Ta pluie et ma lumière, ensemble !",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [joyful]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "laugh"
+    ],
+    [
+     0.2,
+     "anim",
+     "P",
+     "hop",
+     1.2
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "group",
+     2.5
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Ma pluie sert à quelque chose ? Pfff... c'est joli.",
+   "tags": "[gruff but warm, cheerful at the end]",
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "P"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "G",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Ce soir-là, Pitou et Grincheux ont compris qu'ensemble, ils faisaient de la couleur.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "P"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     "group",
+     4
+    ]
+   ]
+  }
+ ]
+}
