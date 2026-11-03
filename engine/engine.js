@@ -140,7 +140,7 @@
     for (i = 0; i < L.length; i++) { var l = L[i]; if (t < l.t0) break; if (t >= l.t1) { v = l.v; continue; } return v + (l.v - v) * SM((t - l.t0) / Math.max(.001, l.t1 - l.t0)); }
     return v;
   }
-  var DEPTH_DY = 70, DEPTH_SC = .46;
+  var DEPTH_DY = 70, DEPTH_SC = .55;
   function depthOf(k, t) {
     var L = AC[k].depths, v = 0, i;
     for (i = 0; i < L.length; i++) { var l = L[i]; if (t < l.t0) break; if (t >= l.t1) { v = l.v; continue; } return v + (l.v - v) * SM((t - l.t0) / Math.max(.001, l.t1 - l.t0)); }
