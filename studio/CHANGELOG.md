@@ -8,3 +8,6 @@ _(rien pour l'instant)_
 - Public cible fixé à 6–9 ans (validé par Aaron le 3 nov. 2026).
 - Reprise sans doublon de `serie/guide_mise_en_scene.md` (intégré dans `07_realisation.md` et `06_sonore.md`) et de `serie/bible.json` (devenu le fichier d'état, voir `09_continuite.md`).
 - Validé par : Aaron (architecture et décisions du 3 nov. 2026).
+
+## À traiter
+- EV-001 — décor « rivière » pour l'épisode 5 : fiche `evolutions/EV-001_decor_riviere.md`, en attente de décision d'Aaron (aucune modification du moteur).
