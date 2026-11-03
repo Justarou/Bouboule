@@ -570,14 +570,16 @@
     '<path d="M-30 -10 Q-30 -19 -16 -20 L20 -20 Q31 -19 31 -10Z" fill="#b8b1a5" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-18" rx="20" ry="2.8" fill="#d8d2c7"/>' +
     '<path d="M-22 -20 Q-22 -28 -10 -29 L12 -29 Q23 -28 23 -20Z" fill="#a39c90" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-27" rx="14" ry="2.4" fill="#c9c3b8"/>');
   pileG.setAttribute('display', 'none');
+  function addDelay(ss, n) { var a = ss.add || [], j, d = 0; for (j = 0; j < a.length; j++) if (n >= a[j][0]) d = a[j][1] - ss.t0 - a[j][0] * .12; return d; }
   function stonesState(t) {
-    var st = { list: [], t0: 0, pile: null, pt0: 0 }, i, e;
+    var st = { list: [], t0: 0, pile: null, pt0: 0, add: [] }, i, e;
     for (i = 0; i < PROPS.stones.length; i++) {
       e = PROPS.stones[i]; if (e.t > t) break; var v = e.a[0];
-      if (v === 'show') st = { list: e.a[1] || [], t0: e.t, pile: st.pile, pt0: st.pt0 };
-      else if (v === 'hide') st = { list: [], t0: e.t, pile: st.pile, pt0: st.pt0 };
-      else if (v === 'pile') st = { list: st.list, t0: st.t0, pile: e.a[1] === undefined ? .8 : e.a[1], pt0: e.t };
-      else if (v === 'unpile') st = { list: st.list, t0: st.t0, pile: null, pt0: e.t };
+      if (v === 'show') st = { list: e.a[1] || [], t0: e.t, pile: st.pile, pt0: st.pt0, add: [] };
+      else if (v === 'add') { var n0 = st.list.length; st = { list: st.list.concat(e.a[1] || []), t0: st.t0, pile: st.pile, pt0: st.pt0, add: (st.add || []).concat([[n0, e.t]]) }; }   /* EV-004 : ajoute des cailloux sans refaire apparaître les anciens */
+      else if (v === 'hide') st = { list: [], t0: e.t, pile: st.pile, pt0: st.pt0, add: [] };
+      else if (v === 'pile') st = { list: st.list, t0: st.t0, pile: e.a[1] === undefined ? .8 : e.a[1], pt0: e.t, add: st.add };
+      else if (v === 'unpile') st = { list: st.list, t0: st.t0, pile: null, pt0: e.t, add: st.add };
     }
     return st;
   }
@@ -805,7 +807,7 @@
       var ss = stonesState(t);
       stnEl.forEach(function (o, n) {
         if (n >= ss.list.length) { o.g.setAttribute('display', 'none'); return; }
-        var si = ss.list[n], sd = (si instanceof Array) ? (si[1] || 0) : 0, sx = wx(si instanceof Array ? si[0] : si), pu = cl((t - ss.t0 - n * .12) / .35), dep = 0;
+        var si = ss.list[n], sd = (si instanceof Array) ? (si[1] || 0) : 0, sx = wx(si instanceof Array ? si[0] : si), pu = cl((t - ss.t0 - n * .12 - addDelay(ss, n)) / .35), dep = 0;
         if (pu <= 0) { o.g.setAttribute('display', 'none'); return; }
         LET.forEach(function (k2) { var ll = liftOf(k2, t); if (ll > 8 && visOf(k2, t) && Math.abs(wx(xOf(k2, t)) - sx) < 26) dep = Math.max(dep, 3 * cl(ll / 22)); });
         var sc = sm(pu) * (1 + .12 * Math.sin(pu * Math.PI)) * (1 - DEPTH_SC * sd);
