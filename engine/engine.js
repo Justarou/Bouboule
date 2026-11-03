@@ -22,6 +22,7 @@
   var CAST_OPT = { bouboule: { s: 1, row: 0 }, pitou: { s: .95, row: 4, hover: 10 }, grincheux: { s: .95, row: -6, hover: 55 }, robi: { s: 1, row: 8 }, flamme: { s: .92, row: -4 } };
 
   var V2 = (EP.engine || 1) >= 2; CHARS.V2 = V2;
+  var V3 = (EP.engine || 1) >= 3; /* EV-002 : transitions de décor symétriques + accessoires liés à leur décor */
   var RND = SETS.rnd, SM = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
   /* ---------- 1. Chronologie des répliques ---------- */
   var LEAD = EP.lead !== undefined ? EP.lead : 3.0, OUTRO = EP.outro !== undefined ? EP.outro : 5.0;
@@ -507,10 +508,11 @@
     var st = { mode: 'none', t0: 0, x: 400 }, i, e;
     for (i = 0; i < PROPS.house.length; i++) {
       e = PROPS.house[i]; if (e.t > t) break; var v = e.a[0];
-      if (v === 'build') st = { mode: 'build', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: e.a[2] || 3, s: e.a[3] || 1 };
-      else if (v === 'collapse' && st.mode !== 'none') st = { mode: 'collapse', t0: e.t, x: st.x, dur: .9, s: st.s };
+      if (V3) { var hset = SETK[0][1], k3; for (k3 = 0; k3 < SETK.length; k3++) if (SETK[k3][0] <= e.t) hset = SETK[k3][1]; }
+      if (v === 'build') st = { set: hset, mode: 'build', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: e.a[2] || 3, s: e.a[3] || 1 };
+      else if (v === 'collapse' && st.mode !== 'none') st = { set: hset, mode: 'collapse', t0: e.t, x: st.x, dur: .9, s: st.s };
       else if (v === 'clear') st = { mode: 'none', t0: e.t, x: st.x };
-      else if (v === 'stake') st = { mode: 'stake', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: .5, s: e.a[2] || 1 };
+      else if (v === 'stake') st = { set: hset, mode: 'stake', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: .5, s: e.a[2] || 1 };
     }
     return st;
   }
@@ -649,10 +651,17 @@
     /* décor actif */
     var setNow = SETK[0][1], fade = 1, prev = null;
     for (i = 0; i < SETK.length; i++) if (SETK[i][0] <= t) { prev = setNow; setNow = SETK[i][1]; if (i > 0) fade = cl((t - SETK[i][0]) / (V2 ? Math.max(.3, SETK[i][2]) : .5)); }
+    var setNames3 = V3 ? Object.keys(SETOBJ) : null, ramp3 = fade * fade * (3 - 2 * fade);
     Object.keys(SETOBJ).forEach(function (n) {
       var so = SETOBJ[n], on = n === setNow;
       so.b.setAttribute('display', on || (prev === n && fade < 1) ? '' : 'none'); so.f.setAttribute('display', on || (prev === n && fade < 1) ? '' : 'none');
-      if (V2) { var op = on ? 1 : (1 - fade * fade * (3 - 2 * fade)).toFixed(3); so.b.setAttribute('opacity', op); so.f.setAttribute('opacity', op); }
+      if (V3 && prev !== null && prev !== setNow && fade < 1) {
+        /* EV-002 : fondu enchaîné correct quel que soit l'ordre des calques (celui du dessus fond, celui du dessous s'efface plus tard / apparaît plus tôt) */
+        var upIn = setNames3.indexOf(setNow) > setNames3.indexOf(prev), op3;
+        if (on) op3 = upIn ? ramp3 : cl(ramp3 * 2);
+        else op3 = upIn ? 1 - cl((ramp3 - .5) / .5) : 1 - ramp3;
+        so.b.setAttribute('opacity', op3.toFixed(3)); so.f.setAttribute('opacity', op3.toFixed(3));
+      } else if (V2) { var op = on ? 1 : (1 - fade * fade * (3 - 2 * fade)).toFixed(3); so.b.setAttribute('opacity', op); so.f.setAttribute('opacity', op); }
       if (on) { so.r.update(t, S, {}); }
     });
     var activeSet = SETOBJ[setNow].r;
@@ -724,6 +733,14 @@
     if (hs.mode === 'none') houseG.setAttribute('display', 'none');
     else {
       houseG.setAttribute('display', '');
+      if (V3) {
+        /* EV-002 : la maison / le piquet appartient au décor où il a été posé ; il disparaît (fondu) quand le décor change */
+        var hop = 0;
+        if (hs.set === setNow) hop = (prev !== null && prev !== setNow && fade < 1) ? ramp3 : 1;
+        else if (hs.set === prev && fade < 1) hop = 1 - ramp3;
+        houseG.setAttribute('opacity', hop.toFixed(3));
+        if (hop <= 0) houseG.setAttribute('display', 'none');
+      }
       var hb = houseG.querySelector('.hbd'), hw = houseG.querySelector('.hwl'), hr = houseG.querySelector('.hrf'), hrub = houseG.querySelector('.hrub'), hst = houseG.querySelector('.hst');
       var hu = cl((t - hs.t0) / (hs.dur || 1)), wy = 1, ry = 0, rr = 0, rot = 0, rub = 0, bo = 1, so = 0, sy0 = 0;
       if (hs.mode === 'build') { wy = Math.max(.001, sm(cl(hu / .7))); var ru = sm(cl((hu - .6) / .4)); ry = -(1 - ru) * 90; rr = (1 - ru) * -25 - 7 * ru; rot = 5 * sm(hu) + 1.4 * Math.sin(t * 9) * (1 - hu) * (hu > 0 ? 1 : 0); bo = 1; }
