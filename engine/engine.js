@@ -54,7 +54,7 @@
       segs: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
   });
   var RBEV = [];
-  var EVSFX = [], EVFX = [], EVCAM = [], SKYK = [], SHK = [], BEAMS = [], PROPS = { ball: [], machine: [] }, AMB = [], MUS = [], SETK = [[0, EP.set || 'colline']], RAIN = [];
+  var EVSFX = [], EVFX = [], EVCAM = [], SKYK = [], SHK = [], BEAMS = [], PROPS = { ball: [], machine: [], house: [] }, AMB = [], MUS = [], SETK = [[0, EP.set || 'colline']], RAIN = [];
   SKYK.push([0, EP.tod || 'day']);
 
   function sideX(sd) { return sd === 'L' ? -.2 : (sd === 'R' ? 1.2 : .5); }
@@ -112,6 +112,7 @@
     else if (v === 'amb') AMB.push({ t: t, key: a[0], vol: a[1] === undefined ? .35 : a[1], dur: a[2] });
     else if (v === 'ball') PROPS.ball.push({ t: t, a: a });
     else if (v === 'machine') PROPS.machine.push({ t: t, a: a });
+    else if (v === 'house') PROPS.house.push({ t: t, a: a });
     else if (v === 'rainbow') RBEV.push({ t: t, a: a });
     else if (v === 'vanish') A.vis.push([t, 0]);
     else if (v === 'music') MUS.push({ t: t, style: a[0], vol: a[1] });
@@ -439,6 +440,27 @@
   ['#ff5a5a', '#ff9a3c', '#ffd93a', '#5fd36b', '#4cb8ff', '#6a6cf0', '#b36be0'].forEach(function (col, i) { rbP.push(mk('path', { d: 'M' + (80 + i * 9) + ' 405 Q360 ' + (-150 + i * 20) + ' ' + (640 - i * 9) + ' 405', fill: 'none', stroke: col, 'stroke-width': 10, 'stroke-linecap': 'round', pathLength: 1, 'stroke-dasharray': '1 1', 'stroke-dashoffset': 1 }, rbG)); });
   rbG.setAttribute('opacity', 0);
   function rainbowState(t) { var p = 0, o = 0, i; for (i = 0; i < RBEV.length; i++) { var e = RBEV[i]; if (e.t > t) break; if (e.a[0] === 'show') { p = cl((t - e.t) / (e.a[1] || 3)); o = 1; } else if (e.a[0] === 'hide') { o = Math.max(0, 1 - (t - e.t) / (e.a[1] || 1.5)); } } return { p: sm(p), o: o }; }
+
+  /* maison (ép. 3) : build -> tordue, collapse -> décombres, stake -> piquet */
+  var houseG = mk('g', {}, propL);
+  put(houseG,
+    '<ellipse cy="3" rx="64" ry="8" fill="#14213d" opacity=".18"/>' +
+    '<g class="hrub"><rect x="-52" y="-12" width="44" height="12" rx="3" fill="#e6c08a" stroke="#7b4f33" stroke-width="2.6" transform="rotate(-9 -30 -6)"/><rect x="-6" y="-9" width="50" height="10" rx="3" fill="#f2d2a0" stroke="#7b4f33" stroke-width="2.6" transform="rotate(7 18 -4)"/><path d="M-20 -18 L8 -40 L36 -16Z" fill="#d8654f" stroke="#7b3a2a" stroke-width="2.6" stroke-linejoin="round" transform="rotate(-18 8 -26)"/><rect x="26" y="-8" width="30" height="8" rx="3" fill="#c4915a" stroke="#7b4f33" stroke-width="2.4" transform="rotate(14 40 -4)"/></g>' +
+    '<g class="hbd"><g class="hwl"><rect x="-46" y="-62" width="92" height="62" rx="3" fill="#f2d2a0" stroke="#7b4f33" stroke-width="3.2"/><rect x="-46" y="-62" width="30" height="62" fill="#e6bf86" opacity=".6"/><rect x="-36" y="-48" width="22" height="22" rx="2" fill="#a9d0ee" stroke="#7b4f33" stroke-width="3" transform="rotate(8 -25 -37)"/><rect x="8" y="-40" width="20" height="40" rx="9" fill="#7b4f33" transform="rotate(-4 18 -20)"/><circle cx="23" cy="-18" r="2" fill="#ffd23f"/></g>' +
+    '<g class="hrf"><path d="M-58 -62 L0 -108 L58 -62Z" fill="#e0614e" stroke="#7b3a2a" stroke-width="3.4" stroke-linejoin="round"/><path d="M0 -108 L58 -62 L10 -62Z" fill="#bb4638"/></g></g>' +
+    '<g class="hst"><rect x="-4" y="-48" width="8" height="46" rx="2" fill="#c4915a" stroke="#7b4f33" stroke-width="2.6"/><path d="M-4 -2 L0 8 L4 -2Z" fill="#7b4f33"/><path d="M4 -46 L26 -40 L4 -32Z" fill="#ff5f7e" stroke="#8a2a4a" stroke-width="2"/></g>');
+  houseG.setAttribute('display', 'none');
+  function houseState(t) {
+    var st = { mode: 'none', t0: 0, x: 400 }, i, e;
+    for (i = 0; i < PROPS.house.length; i++) {
+      e = PROPS.house[i]; if (e.t > t) break; var v = e.a[0];
+      if (v === 'build') st = { mode: 'build', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: e.a[2] || 3 };
+      else if (v === 'collapse' && st.mode !== 'none') st = { mode: 'collapse', t0: e.t, x: st.x, dur: .9 };
+      else if (v === 'clear') st = { mode: 'none', t0: e.t, x: st.x };
+      else if (v === 'stake') st = { mode: 'stake', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: .5 };
+    }
+    return st;
+  }
   var machG = mk('g', {}, propL);
   put(machG, '<ellipse cy="2" rx="30" ry="6" fill="#14213d" opacity=".2"/><rect x="-26" y="-58" width="52" height="56" rx="9" fill="#b7c3d8" stroke="#3b4a66" stroke-width="3.4"/><rect x="-18" y="-50" width="36" height="22" rx="5" fill="#2a3a58"/>' +
     '<circle cx="-8" cy="-39" r="5" fill="#7aff9a"/><circle cx="6" cy="-39" r="5" fill="#ffd23f"/><circle class="mbtn" cx="0" cy="-16" r="8" fill="#ff5f5f" stroke="#7a1f1f" stroke-width="3"/><path d="M-14 -58 L-8 -78 H8 L14 -58Z" fill="#ffb347" stroke="#8a4a12" stroke-width="3" stroke-linejoin="round"/><path d="M-26 -30 q-14 0 -14 14" fill="none" stroke="#3b4a66" stroke-width="4" stroke-linecap="round"/>');
@@ -642,6 +664,24 @@
       machG.setAttribute('display', ''); machG.setAttribute('transform', 'translate(' + f1(mx + (shk ? 2.5 * Math.sin(t * 60) : 0)) + ' ' + GY + ') scale(' + scl.toFixed(3) + ')');
       machG.querySelector('.mbtn').setAttribute('fill', shk && Math.sin(t * 14) > 0 ? '#ffb0b0' : '#ff5f5f');
     } else machG.setAttribute('display', 'none');
+
+    /* maison */
+    var hs = houseState(t);
+    if (hs.mode === 'none') houseG.setAttribute('display', 'none');
+    else {
+      houseG.setAttribute('display', '');
+      var hb = houseG.querySelector('.hbd'), hw = houseG.querySelector('.hwl'), hr = houseG.querySelector('.hrf'), hrub = houseG.querySelector('.hrub'), hst = houseG.querySelector('.hst');
+      var hu = cl((t - hs.t0) / (hs.dur || 1)), wy = 1, ry = 0, rr = 0, rot = 0, rub = 0, bo = 1, so = 0, sy0 = 0;
+      if (hs.mode === 'build') { wy = Math.max(.001, sm(cl(hu / .7))); var ru = sm(cl((hu - .6) / .4)); ry = -(1 - ru) * 90; rr = (1 - ru) * -25 - 7 * ru; rot = 5 * sm(hu) + 1.4 * Math.sin(t * 9) * (1 - hu) * (hu > 0 ? 1 : 0); bo = 1; }
+      else if (hs.mode === 'collapse') { wy = 1 - .84 * sm(hu); ry = 0 + 110 * hu * hu; rr = -7 - 40 * hu; rot = 5 + 22 * hu * hu; rub = sm(cl((hu - .5) / .5)); bo = hu < .95 ? 1 : 0; wy = Math.max(.001, wy); }
+      else if (hs.mode === 'stake') { bo = 0; so = 1; sy0 = -140 * Math.pow(1 - sm(cl(hu)), 2); }
+      hb.setAttribute('display', bo ? '' : 'none'); hrub.setAttribute('display', rub > 0 ? '' : 'none'); hrub.setAttribute('opacity', rub.toFixed(2)); hst.setAttribute('display', so ? '' : 'none');
+      hst.setAttribute('transform', 'translate(0 ' + f1(sy0) + ')');
+      hb.setAttribute('transform', 'rotate(' + rot.toFixed(2) + ' 0 0)');
+      hw.setAttribute('transform', 'scale(1 ' + wy.toFixed(3) + ')');
+      hr.setAttribute('transform', 'translate(0 ' + f1(ry - (1 - wy) * 62) + ') rotate(' + rr.toFixed(2) + ' 0 -62)');
+      houseG.setAttribute('transform', 'translate(' + f1(hs.x) + ' ' + GY + ')');
+    }
     /* balle */
     var bp = ballPos(t);
     if (bp.vis) {

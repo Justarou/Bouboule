@@ -1,0 +1,1586 @@
+{
+ "title": "Robi et le plan de la maison",
+ "series": "BOUBOULE",
+ "episodeNo": 3,
+ "subtitle": "Robi et le plan de la maison",
+ "lead_text": "Robi construit une maison en dix secondes avec sa machine... et tout s'écroule ! Ses amis lui montrent qu'on construit mieux ensemble.",
+ "alt": "Dessin animé : le robot Robi, Bouboule, Pitou et Flamme construisent une maison pour Grincheux.",
+ "set": "colline",
+ "tod": "dawn",
+ "music": "doux",
+ "endLine": "à demain, petits rigolos !",
+ "nextTeaser": "Abonne-toi pour la suite !",
+ "lead": 3.0,
+ "outro": 5.5,
+ "cast": {
+  "B": "bouboule",
+  "P": "pitou",
+  "R": "robi",
+  "F": "flamme"
+ },
+ "at": [
+  [
+   0,
+   "place",
+   "B",
+   0.2
+  ],
+  [
+   0,
+   "place",
+   "P",
+   0.36
+  ],
+  [
+   0,
+   "place",
+   "F",
+   0.62
+  ],
+  [
+   0,
+   "place",
+   "R",
+   0.82
+  ],
+  [
+   0,
+   "amb",
+   "amb_oiseaux",
+   0.25
+  ]
+ ],
+ "voices": {
+  "N": {
+   "id": "t4fHUMAMZxaaV2inHOnb",
+   "name": "Narrateur"
+  },
+  "B": {
+   "id": "vqvgjNDXBhRGzlLsbOq5",
+   "name": "Bouboule"
+  },
+  "P": {
+   "id": "ZYOBieLaunTiQrTrvNQq",
+   "name": "Pitou"
+  },
+  "R": {
+   "id": "UOvFSB5TNiugzjq7qJQ3",
+   "name": "Robi"
+  },
+  "F": {
+   "id": "3paYfmyc7ZI6WVqsBsrE",
+   "name": "Flamme"
+  }
+ },
+ "lines": [
+  {
+   "who": "N",
+   "text": "Dans l'épisode d'avant, le petit dragon Flamme avait réchauffé Grincheux, le nuage grelottant, qui n'avait nulle part où dormir.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "tod",
+     "dawn"
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0.5,
+     "tod",
+     "day",
+     5
+    ],
+    [
+     1,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     "e-2.2",
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     "e-2.2",
+     "look",
+     "B",
+     "up"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Brrr ! Cette nuit, Grincheux a dormi sous un buisson. Il tremblait tellement que son nuage s'est mis à pleuvoir !",
+   "tags": "[worried, childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "cam"
+    ],
+    [
+     0.2,
+     "cam",
+     "B",
+     1.25,
+     3
+    ],
+    [
+     "e-1.8",
+     "fx",
+     "B",
+     "sweat",
+     1.4
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Pauvre Grincheux. Il lui faut un toit, et vite !",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0.4,
+     "anim",
+     "P",
+     "nod",
+     1
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "J'ai une idée ! Il nous faut une maison pour tout le monde !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "music",
+     "joyeux"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "cam"
+    ],
+    [
+     0.2,
+     "anim",
+     "B",
+     "jump",
+     1.2
+    ],
+    [
+     0.2,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     "e-1.5",
+     "anim",
+     "B",
+     "hop",
+     3
+    ],
+    [
+     "e-1.5",
+     "sfx",
+     "boing",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Une maison ? Oh oui ! Hic ! Oups... j'ai grillé une petite fleur. Pardon !",
+   "tags": "[shy, soft, trembling little voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "B"
+    ],
+    [
+     "e-1.9",
+     "hic",
+     "F",
+     0.5,
+     "R"
+    ],
+    [
+     "e-1.8",
+     "fx",
+     "F",
+     "smoke",
+     1.6
+    ],
+    [
+     "e-1.7",
+     "mood",
+     "F",
+     "shy"
+    ],
+    [
+     "e-1.2",
+     "anim",
+     "F",
+     "squish",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Bip bip ! Une maison ? J'ai le plan, et j'ai la machine ! Suivez-moi à l'atelier !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "R",
+     "cam"
+    ],
+    [
+     0.2,
+     "anim",
+     "R",
+     "hop",
+     2
+    ],
+    [
+     0.4,
+     "fx",
+     "R",
+     "stars",
+     1.8
+    ],
+    [
+     "e-1.2",
+     "sfx",
+     "valide",
+     0.5
+    ],
+    [
+     "e-0.6",
+     "cam",
+     "wide",
+     1,
+     2
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Dans l'atelier de Robi, il y avait des engrenages, des boulons, et un grand plan accroché au mur.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "set",
+     "atelier",
+     0.5
+    ],
+    [
+     0,
+     "amb",
+     "amb_classe",
+     0.15
+    ],
+    [
+     0,
+     "cam",
+     "wide",
+     1,
+     2
+    ],
+    [
+     0.2,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0.2,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0.2,
+     "look",
+     "F",
+     "up"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Voici le plan de la maison parfaite : quatre murs, un toit et une porte. Facile !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "look",
+     "R",
+     "cam"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "proud"
+    ],
+    [
+     0.3,
+     "anim",
+     "R",
+     "puff",
+     1.5
+    ],
+    [
+     "e-1",
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     "e-1",
+     "look",
+     "P",
+     "R"
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Vérifions. Quatre murs, un toit, une porte... Le calcul est bon. Mais cela va demander beaucoup de travail.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0.5,
+     "anim",
+     "P",
+     "nod",
+     2
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Pas avec ma nouvelle invention : le Bâtimatic ! Elle construit une maison en dix secondes !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "proud"
+    ],
+    [
+     0.3,
+     "machine",
+     "show",
+     0.62
+    ],
+    [
+     0.3,
+     "sfx",
+     "apparition",
+     0.5
+    ],
+    [
+     0.4,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     "e-1.5",
+     "anim",
+     "R",
+     "hop",
+     2
+    ],
+    [
+     "e-1.5",
+     "sfx",
+     "tourne",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Dix secondes ? Waouh ! Trop fort, Robi !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0.1,
+     "anim",
+     "B",
+     "jump",
+     1
+    ],
+    [
+     0.2,
+     "mood",
+     "P",
+     "surprised"
+    ],
+    [
+     "e-1",
+     "sfx",
+     "applaudit",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Elle est belle... mais un peu bruyante. Hic !",
+   "tags": "[shy, soft, trembling little voice]",
+   "do": [
+    [
+     0,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "shy"
+    ],
+    [
+     "e-.8",
+     "hic",
+     "F",
+     0.5,
+     "L"
+    ],
+    [
+     "e-.7",
+     "fx",
+     "F",
+     "smoke",
+     1.6
+    ],
+    [
+     "e-.6",
+     "anim",
+     "F",
+     "squish",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Bip bip ! Pas grave, il reste assez de plan ! En route pour la colline !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "happy"
+    ],
+    [
+     0,
+     "anim",
+     "R",
+     "hop",
+     2
+    ],
+    [
+     "e-1.2",
+     "sfx",
+     "valide",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Tous ensemble, ils poussèrent la machine jusqu'au sommet de la colline.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "set",
+     "colline",
+     0.5
+    ],
+    [
+     0,
+     "amb",
+     "amb_oiseaux",
+     0.25
+    ],
+    [
+     0,
+     "cam",
+     "wide",
+     1,
+     2
+    ],
+    [
+     0.3,
+     "move",
+     "R",
+     0.9,
+     2,
+     "drive"
+    ],
+    [
+     0.3,
+     "move",
+     "B",
+     0.1,
+     2,
+     "hop"
+    ],
+    [
+     0.3,
+     "move",
+     "P",
+     0.24,
+     2,
+     "float"
+    ],
+    [
+     0.3,
+     "move",
+     "F",
+     0.37,
+     2,
+     "waddle"
+    ],
+    [
+     1.0,
+     "machine",
+     "show",
+     0.78
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Attention, tout le monde ! Trois, deux, un... Bâtimatic, en avant !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "look",
+     "R",
+     "cam"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "proud"
+    ],
+    [
+     0.3,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0.3,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     "e-1.6",
+     "machine",
+     "shake",
+     1.8
+    ],
+    [
+     "e-1.6",
+     "sfx",
+     "tremble",
+     0.7
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Bzzzzt ! La machine se mit à trembler, et petit à petit, des murs apparurent.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0.2,
+     "house",
+     "build",
+     0.55,
+     3
+    ],
+    [
+     0.2,
+     "sfx",
+     "cree_objet",
+     0.6
+    ],
+    [
+     0.4,
+     "mood",
+     "B",
+     "surprised"
+    ],
+    [
+     0.4,
+     "mood",
+     "P",
+     "surprised"
+    ],
+    [
+     0.4,
+     "mood",
+     "F",
+     "surprised"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Ça marche ! Je vois des murs ! Euh... ils sont un peu penchés.",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "cam"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0.5,
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     "e-1.2",
+     "look",
+     "B",
+     "P"
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Et le toit est tout de travers. Robi, tu es sûr de ton calcul ?",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     "e-1",
+     "anim",
+     "P",
+     "lean",
+     1
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Pas de panique ! Je passe en mode turbo !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "scared"
+    ],
+    [
+     0,
+     "look",
+     "R",
+     "cam"
+    ],
+    [
+     0.2,
+     "machine",
+     "shake",
+     1.6
+    ],
+    [
+     "e-1",
+     "sfx",
+     "tremble",
+     0.8
+    ],
+    [
+     "e-.5",
+     "sfx",
+     "suspense_c",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Bzzzzt... boum ! Et plouf !",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "house",
+     "collapse"
+    ],
+    [
+     0,
+     "machine",
+     "boom"
+    ],
+    [
+     0,
+     "sfx",
+     "petite_explosion",
+     0.8
+    ],
+    [
+     0.2,
+     "shake",
+     0.5,
+     0.7
+    ],
+    [
+     0.7,
+     "sfx",
+     "eclabousse",
+     0.8
+    ],
+    [
+     0.8,
+     "fx",
+     "R",
+     "smoke",
+     2.4
+    ],
+    [
+     0.9,
+     "soot",
+     "R",
+     1,
+     0.2
+    ],
+    [
+     0.9,
+     "anim",
+     "B",
+     "squish",
+     0.6
+    ],
+    [
+     1.0,
+     "anim",
+     "P",
+     "shake",
+     1
+    ],
+    [
+     1.2,
+     "anim",
+     "F",
+     "fall",
+     1
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Oh là là... Hic !",
+   "tags": "[shy, soft, trembling little voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "scared"
+    ],
+    [
+     0.3,
+     "hic",
+     "F",
+     0.4,
+     "L"
+    ],
+    [
+     "e-.5",
+     "look",
+     "F",
+     "R"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Je suis nul... Ma machine casse tout. Je ne suis bon à rien. Bip...",
+   "tags": "[sad, robotic, small and discouraged]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "R",
+     "down"
+    ],
+    [
+     0,
+     "glow",
+     "R",
+     0,
+     0.1
+    ],
+    [
+     0.3,
+     "anim",
+     "R",
+     "tremble",
+     3
+    ],
+    [
+     0.2,
+     "tod",
+     "gloom",
+     4
+    ],
+    [
+     0.4,
+     "cam",
+     "R",
+     1.35,
+     3.2
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Mais non, Robi ! Tu n'es pas nul ! Tu es... euh... tu es...",
+   "tags": "[worried, childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0.3,
+     "move",
+     "B",
+     0.8,
+     1.2,
+     "hop"
+    ],
+    [
+     "e-.8",
+     "anim",
+     "B",
+     "tremble",
+     1
+    ],
+    [
+     "e-.8",
+     "mood",
+     "B",
+     "sad"
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Robi, respire. Comptons ensemble jusqu'à dix. Un, deux, trois, quatre, cinq...",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "move",
+     "P",
+     0.7,
+     1.4,
+     "float"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.3,
+     "glow",
+     "P",
+     0.8,
+     0.5
+    ],
+    [
+     0.6,
+     "fx",
+     "P",
+     "sparkle",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "...six, sept, huit, neuf, dix. Bip... Ça va un petit peu mieux.",
+   "tags": "[sad, robotic, small and discouraged]",
+   "do": [
+    [
+     0,
+     "look",
+     "R",
+     "P"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "neutral"
+    ],
+    [
+     "e-1.6",
+     "mood",
+     "R",
+     "shy"
+    ],
+    [
+     "e-1",
+     "tod",
+     "day",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Moi aussi, je grille tout, et vous êtes quand même mes amis. Tiens, j'ai séché ton plan mouillé.",
+   "tags": "[warm, soft, kind little voice]",
+   "do": [
+    [
+     0,
+     "move",
+     "F",
+     0.78,
+     1.6,
+     "waddle"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     0.3,
+     "look",
+     "R",
+     "F"
+    ],
+    [
+     "e-1.2",
+     "fx",
+     "F",
+     "steam",
+     1.6
+    ],
+    [
+     "e-1.0",
+     "hic",
+     "F",
+     0.3,
+     "L"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Mon plan est sauvé ! Merci, Flamme. Bip bip !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "R",
+     "F"
+    ],
+    [
+     0.3,
+     "anim",
+     "R",
+     "hop",
+     1.6
+    ],
+    [
+     "e-1",
+     "fx",
+     "R",
+     "stars",
+     1.4
+    ],
+    [
+     "e-1",
+     "sfx",
+     "scintille",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Robi, moi aussi je fonce sans écouter, et je fais des bêtises. Mais ensemble, on les répare ! Et si on construisait la maison à la main, pièce par pièce ?",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "house",
+     "clear"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0.2,
+     "cam",
+     "wide",
+     1,
+     2
+    ],
+    [
+     "e-2",
+     "anim",
+     "B",
+     "hop",
+     2
+    ],
+    [
+     "e-1",
+     "look",
+     "B",
+     "cam"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "À la main ? Sans machine ? Bip bip... avec vous, oui ! D'accord !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "surprised"
+    ],
+    [
+     0.6,
+     "mood",
+     "R",
+     "happy"
+    ],
+    [
+     0.8,
+     "anim",
+     "R",
+     "jump",
+     1.1
+    ],
+    [
+     "e-1.2",
+     "sfx",
+     "valide",
+     0.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Le plan dit que le premier piquet se plante ici. Tu veux le faire, Robi ?",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.5,
+     "anim",
+     "P",
+     "nod",
+     1.6
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Moi ? Oui ! Avec plaisir !",
+   "tags": "[cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "proud"
+    ],
+    [
+     0.3,
+     "move",
+     "R",
+     0.66,
+     1.2,
+     "drive"
+    ],
+    [
+     "e-.5",
+     "look",
+     "R",
+     "down"
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Et toc ! Robi planta le premier piquet de la maison. Tout restait à faire, mais cette fois, ils étaient tous ensemble.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0.4,
+     "house",
+     "stake",
+     0.55
+    ],
+    [
+     0.9,
+     "sfx",
+     "toc",
+     0.8
+    ],
+    [
+     0.9,
+     "fx",
+     "R",
+     "sparkle",
+     2.2
+    ],
+    [
+     1.0,
+     "anim",
+     "R",
+     "cheer",
+     1.4
+    ],
+    [
+     0.3,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0.3,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     0.3,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     2.0,
+     "fx",
+     "B",
+     "hearts",
+     2
+    ],
+    [
+     2.5,
+     "mood",
+     "B",
+     "happy"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Hourra ! La maison de Grincheux est commencée !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "jump",
+     1.2
+    ],
+    [
+     0.2,
+     "sfx",
+     "joie_enfant",
+     0.5
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "happy"
+    ],
+    [
+     0.3,
+     "move",
+     "B",
+     0.3,
+     1.4,
+     "hop"
+    ],
+    [
+     0.3,
+     "move",
+     "P",
+     0.44,
+     1.4,
+     "float"
+    ],
+    [
+     0.3,
+     "move",
+     "R",
+     0.66,
+     1.2,
+     "drive"
+    ],
+    [
+     0.3,
+     "move",
+     "F",
+     0.8,
+     1.4,
+     "waddle"
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Car une machine, même très forte, ne remplace jamais des amis qui construisent ensemble.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0,
+     "cam",
+     "wide",
+     1.08,
+     3
+    ],
+    [
+     0.5,
+     "tod",
+     "dusk",
+     5
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Mais pour les fondations, il faudra de grosses pierres plates, et on n'en trouve qu'à la rivière. À demain, pour la suite !",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0.5,
+     "look",
+     "R",
+     "up"
+    ],
+    [
+     "e-2",
+     "music",
+     "joyeux"
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Bouboule, Bouboule, saute, saute, saute ! Avec des amis, on construit tout !",
+   "tags": "[excited] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "music",
+     "fete"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "cam"
+    ],
+    [
+     0.1,
+     "anim",
+     "B",
+     "dance",
+     5
+    ],
+    [
+     0.2,
+     "anim",
+     "P",
+     "dance",
+     5
+    ],
+    [
+     0.2,
+     "anim",
+     "R",
+     "dance",
+     5
+    ],
+    [
+     0.2,
+     "anim",
+     "F",
+     "dance",
+     5
+    ],
+    [
+     "e-4",
+     "fx",
+     "B",
+     "confetti",
+     3.5
+    ],
+    [
+     "e-4",
+     "sfx",
+     "fete",
+     0.4
+    ]
+   ]
+  }
+ ],
+ "meta": {
+  "youtubeTitle": "Robi construit une maison en 10 secondes... et tout s'écroule ! | Dessin animé pour enfants | Bouboule et ses amis",
+  "youtubeDesc": "Robi le petit robot a inventé une machine qui construit une maison en dix secondes. Mais bzzzzt, boum, plouf : tout s'écroule ! Ses amis Bouboule, Pitou et Flamme vont lui montrer qu'on construit mieux ensemble.\n\nUne histoire courte et drôle pour les enfants de 3 à 9 ans, avec une petite leçon sur l'amitié et le droit à l'erreur.\n\nPersonnages : Bouboule, Pitou, Robi, Flamme\nDurée : environ 3 minutes\n\n🎬 Épisode 3 de la série Bouboule et ses amis. Abonne-toi pour ne rien manquer !\n\nLes voix des personnages sont générées par IA.\n\n#dessinanimé #enfants #bouboule #histoirepourenfants",
+  "youtubeTags": [
+   "dessin animé enfant",
+   "dessin animé français",
+   "histoire pour enfants",
+   "robot",
+   "maison",
+   "amitié",
+   "droit à l'erreur",
+   "Bouboule",
+   "histoire courte"
+  ],
+  "shortsTitle": "Une maison construite en 10 secondes ?! 🤖 #shorts",
+  "shortsDesc": "Robi construit une maison en dix secondes... et tout s'écroule ! 🏠💥 Épisode 3 de Bouboule et ses amis. Voix générées par IA. #shorts #dessinanimé #enfants #bouboule",
+  "tiktokTitle": "Une maison en 10 secondes ?! 🤖🏠",
+  "tiktokDesc": "Robi construit une maison en dix secondes... bzzzzt, boum, plouf ! 💥 Ses amis lui montrent qu'on construit mieux ensemble. #dessinanimé #enfants #robot #bouboule #pourtoi (voix IA)",
+  "tiktokTags": [
+   "dessinanimé",
+   "enfants",
+   "robot",
+   "bouboule",
+   "pourtoi"
+  ]
+ }
+}
