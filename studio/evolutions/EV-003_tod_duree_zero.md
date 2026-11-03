@@ -1,5 +1,5 @@
 # EV-003 — Fiche d'évolution du moteur : `tod` avec durée 0
-Statut : **EN TEST sur la branche `ev-003-tod-duree-zero`** (autorisée par Aaron le 3 nov. 2026). **Pas de fusion sans présentation des résultats et validation d'Aaron.** Indépendante d'EV-001 (rivière). Bible 1.1.1.
+Statut : **FUSIONNÉE dans main le 3 nov. 2026 (studio 1.2.0), sur autorisation d'Aaron.** Active uniquement avec `"engine": 3` ; épisodes 1 à 4 inchangés (vérifié). Tests : `tests/RAPPORT_EV-003_tests.md`.
 
 ## Problème
 `[t, 'tod', 'dusk', 0]` : le moteur lit `a[1] || 3` → la durée 0 devient 3 s. Dans l'ép. 4 (ligne 7, `tod dusk 0`), cette rampe de 3 s chevauche le `tod night` de la ligne 8 → clés de ciel non monotones → saut de teinte à 45,1 s (dans le rendu publié aussi).

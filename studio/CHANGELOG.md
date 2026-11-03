@@ -1,9 +1,18 @@
 # Journal des modifications de la bible du studio
 
 ## À traiter
-- EV-001 — rivière (option B) : développée sur `ev-001-riviere`, tests dans `tests/RAPPORT_EV-001_tests.md`, **en attente de validation d'Aaron avant fusion** (prévue : studio 1.2.0).
-- EV-003 — **`tod X 0`** : une durée de 0 est lue comme 3 s (`a[1] || 3`) et chevauche le `tod` suivant → saut de teinte du ciel (ép. 4, 45,1 s). Branche `ev-003-tod-duree-zero` en développement (autorisée le 3 nov. 2026).
 - Qualification des fenêtres verticales 7–13 s des ép. 3 et 4 (mouvements rapides de saut ?).
+- Sauts de teinte dus à des `tod` qui se chevauchent dans les épisodes `engine: 2` (ép. 2 à 52,7 s, ép. 3 à 6,0 s) : corrigés seulement si l'épisode passe en `engine: 3` ; évolution EV-004 possible.
+- Carte « FIN » : en paysage elle recouvre en partie le personnage du dernier plan ; comportement conservé (décision d'Aaron, 3 nov. 2026), amélioration à étudier dans une évolution séparée.
+
+## 1.2.0 — 3 novembre 2026
+- **Démo 2 (Pitou + Grincheux) VALIDÉE par Aaron** (rapport `demo/RAPPORT_demo02.md`) : condition de la validation définitive du studio remplie.
+- **Fusions autorisées par Aaron, sans force push, non-régression après chacune** :
+  - `voice_gain3` (`scripts/build_episode.py`) : normalisation des voix fines (Pitou), **uniquement `engine >= 3`** ; ép. 1–4 reconstruits octet pour octet identiques (commit de fusion 97d4483).
+  - **EV-003** : `tod X 0` = changement instantané sous `engine: 3` (commit e70440d) ; ép. 1–4 : 24/24 images identiques par épisode.
+  - **EV-001** : décor `riviere` (option B), verbes `stones`/`lift`, effets `ripple`/`splashbig`/`vapeur` (commit 483355f) ; ép. 1–4 : 24/24 identiques par épisode ; démo 2 inchangée (24/24).
+- Tous les nouveaux comportements ne s'activent que pour `"engine": 3` ou par l'usage explicite des nouveaux verbes ; les épisodes 1 à 4 n'ont pas été modifiés.
+- Étape suivante : épisode 5 « Bouboule et la rivière aux cailloux ».
 
 ## 1.1.1 — 3 novembre 2026
 - **EV-002 fusionnée** (commit de fusion b3a9160, validée par Aaron) : fondu de décor symétrique (quel que soit l'ordre des calques) et maison/piquet liés à leur décor. **Actif uniquement pour les épisodes déclarant `"engine": 3`** ; épisodes 1 à 4 inchangés (vérifié image par image après fusion). Fiche `evolutions/EV-002_transition_decors.md`, rapport `tests/RAPPORT_EV-002_tests.md`, anomalies ép. 3/4 dans `rapports/`.

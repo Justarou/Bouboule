@@ -1,5 +1,5 @@
 # EV-002 — Fiche d'évolution du moteur : transitions de décor et accessoires liés au décor
-Statut : **EN TEST sur la branche `ev-002-transition-decors`** (autorisée par Aaron le 3 nov. 2026). **Aucune fusion dans main sans présentation des tests et validation d'Aaron.** Indépendante d'EV-001 (rivière, branche `ev-001-riviere`).
+Statut : **FUSIONNÉE dans main (studio 1.1.1), validée par Aaron le 3 nov. 2026.** Active uniquement avec `"engine": 3`.
 Bible : 1.1.0.
 
 ## Problème

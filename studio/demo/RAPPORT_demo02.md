@@ -32,6 +32,6 @@ Rendus réels : paysage 1920×1080 et vertical 1080×1920, 71,6 s, vraies voix E
 
 ## Limites et réserves
 - **Carte de fin** : en paysage, « FIN / à demain, petits rigolos ! » assombrit la scène et recouvre en partie le visage de Grincheux. C'est la carte standard du moteur (identique aux ép. 1–4) ; non modifiée par prudence (touche les épisodes de référence). Réserve mineure, non bloquante ; à traiter par une évolution dédiée si Aaron le souhaite.
-- `voice_gain3` (scripts/build_episode.py) n'agit que pour `engine >= 3` ; sur la branche `demo-02-scene`, à valider avant fusion.
+- `voice_gain3` (scripts/build_episode.py) n'agit que pour `engine >= 3` ; fusionné dans main le 3 nov. 2026 (studio 1.2.0) après validation d'Aaron ; épisodes 1 à 4 reconstruits octet pour octet identiques.
 - Les fichiers de la démo 2 ont été poussés sur main comme fixtures (comme demo99) pour permettre la génération des voix.
 - Reste à écouter à l'oreille : musique et mixage final (jugement humain).

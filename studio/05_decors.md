@@ -13,7 +13,7 @@ Chaque lieu a une identité (forme, couleurs, ambiance sonore), des variantes (m
 | Rivière aux cailloux | `riviere` | (EV-001, option B) montagnes lointaines comme la colline, autre berge avec arbres et rochers, pont de planches cassé au fond, rivière bleu-vert large (y 328–394) avec reflets qui glissent, écume, nénuphars, libellules (jour), roseaux de chaque côté, berge herbeuse où marchent les personnages (sol GY=395) ; cailloux du gué et tas de pierres plates posés par les accessoires `stones` | `amb_ruisseau` (+ `amb_oiseaux` le jour) ; bruitages `pas_eau`, `eclabousse_eau`, `impact_eau`, `blop` |
 
 ## Lieux à créer (planifiés)
-- ~~Rivière aux cailloux (ép. 5)~~ : créée (voir tableau ci-dessus), en test sur la branche `ev-001-riviere`.
+- ~~Rivière aux cailloux (ép. 5)~~ : créée (voir tableau ci-dessus), **fusionnée dans main (studio 1.2.0, EV-001)**.
 - **Ciel étoilé / escalier arc-en-ciel** (fil de Pitou, ép. 7, 10–12).
 - Intérieur de la maison commune au fil de la construction (ép. 8–12).
 Toute création de lieu : fiche dans ce document (forme, couleurs, accessoires, ambiance sonore, variantes) avant le code, puis demande d'évolution du moteur (voir `11_moteur.md`).
