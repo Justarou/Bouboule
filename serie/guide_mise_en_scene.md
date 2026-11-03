@@ -49,7 +49,8 @@ Retour ou lieu suivant : sens inverse. Le narrateur annonce le lieu pendant le f
 ## 5. Liste de contrôle avant rendu
 - [ ] Chaque objet cité à l'oral est montré en gros plan lisible (et fonctionne en vertical).
 - [ ] Chaque changement de lieu : sortie → fondu → entrée, même sens de marche.
-- [ ] Aucun plan changé sans raison ; pas de zigzag de caméra (script `camdump.js`).
+- [ ] Aucun plan changé sans raison ; pas de zigzag de caméra.
+- [ ] **Fluidité caméra CONFORME dans les deux formats** (`studio/outils/qc_camera.js` puis `qc_fluidite.py` sur chaque rendu ; passages suspects visionnés) — obligatoire, voir `studio/10_qualite.md`.
 - [ ] Niveaux des voix homogènes (`vg` entre 0,55 et 4) ; bruitages sous les voix ; ambiances en fondu croisé.
 - [ ] Gag visuel + émotion + morale présents ; accroche < 10 s.
 - [ ] Sous-titres : ne cachent ni personnages ni objet clé (vérifier paysage ET vertical).

@@ -1,5 +1,5 @@
 # EV-001 — Fiche d'évolution du moteur : décor « La rivière aux cailloux » (épisode 5)
-Statut : **PROPOSÉE — en attente de décision d'Aaron. Aucune modification du moteur n'a été faite.**
+Statut : **APPROUVÉE le 3 nov. 2026 — Option B retenue** (décor, cailloux sur lesquels sauter, effets d'eau) ; gag « Robi refuse l'eau, Flamme est éteinte » validé pour l'épisode 5. Développement sur la branche `ev-001-riviere` ; épisodes 1 à 4 intacts (références de non-régression) ; contrôle de fluidité caméra obligatoire sur les rendus de test.
 Bible : 1.0.0 · Demandeur : direction-artistique / storyboard (épisode 5, `serie/saison1.json`) · Rédigée le 3 nov. 2026.
 
 ## 1. Pourquoi

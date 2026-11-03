@@ -27,6 +27,10 @@ Enfants de **6 à 9 ans**, univers accessible aux familles. Histoires plus déve
 Données d'état lisibles par machine : `../serie/bible.json` (état des personnages après chaque épisode) et `../serie/saison1.json` (plan de la saison). Le texte fait foi pour les règles ; ces deux fichiers font foi pour l'état.
 `outils/` : scripts de contrôle qualité sur les rendus réels (voir `10_qualite.md`).
 
+## Règles imposées par Aaron (3 nov. 2026)
+- 🔒 Public 6–9 ans. 🔒 Aucun Skill ne change une règle fondamentale sans sa validation. 🔒 **Contrôle de fluidité caméra avant chaque livraison** (3 niveaux CONFORME / À CORRIGER / BLOQUANT — `10_qualite.md`, `chaine_production.md`).
+- Les épisodes 1 à 4 restent intacts : références des tests de non-régression.
+
 ## Qui lit quoi
 | Compétence | Lit obligatoirement | Lit au besoin |
 |---|---|---|

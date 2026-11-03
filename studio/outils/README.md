@@ -3,6 +3,7 @@
 - `qc_video.py video.mp4 [dossier]` : durée, résolution, noir, images figées, planche-contact + une image / 3 s.
 - `qc_cadrage.js out/epNNN.html` : zones de sécurité (personnages et maison non coupés, sous-titres dégagés, paysage et vertical).
 - `qc_lipsync.js out/epNNN.html` : synchro labiale mesurée sur le moteur (seule la bouche du parleur bouge ; narrateur = aucune bouche).
+- `qc_fluidite.py video.mp4` : **fluidité caméra sur le rendu** (images dupliquées, micro-coupures, à-coups) → niveau CONFORME / A CORRIGER / BLOQUANT, images des passages suspects ; à lancer sur CHAQUE format avant livraison.
 - `qc_camera.js out/epNNN.html` : sauts de caméra, plans trop courts.
 - `shot_images.js` / `lignes_temps.js` : images à des instants précis et temps des répliques (copies des outils de travail ; adapter le chemin `out/test_*.html`).
 Playwright et ffmpeg requis.

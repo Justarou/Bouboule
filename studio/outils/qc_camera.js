@@ -7,4 +7,8 @@ const r=await p.evaluate(()=>{const jumps=[],cuts=[];let prev=null,last=0;const 
 for(let t=0;t<end;t+=.1){window.__ep.render(t);const m=document.getElementById('cam').getAttribute('transform').match(/scale\(([\d.]+)\) translate\(([-\d.]+) ([-\d.]+)/);if(!m)continue;const v=[+m[1],+m[2],+m[3]];
 if(prev){const d=Math.abs(v[0]-prev[0])*300+Math.abs(v[1]-prev[1])+Math.abs(v[2]-prev[2]);if(d>60){jumps.push({t:+t.toFixed(1),d:Math.round(d)});if(last>0&&t-last<2.5)cuts.push({t:+t.toFixed(1),plan_s:+(t-last).toFixed(1)});last=t}}prev=v}
 return {end,jumps,short:cuts}});
-console.log(JSON.stringify(r,null,1));console.log(r.jumps.length?'A VERIFIER: coupures/sauts brusques (voir t) — acceptes seulement si voulus':'OK: caméra fluide');await b.close()})()
+console.log(JSON.stringify(r,null,1));
+// Niveau (pré-contrôle moteur) : sauts brusques = BLOQUANT tant qu'ils ne sont pas justifiés ; plans trop courts = A CORRIGER
+const niveau=r.jumps.length?'BLOQUANT':(r.short.length?'A CORRIGER':'CONFORME');
+console.log('NIVEAU CAMERA (moteur) :',niveau,niveau==='CONFORME'?'':'— passages à visionner ; un saut voulu doit être justifié par écrit dans la fiche d\'intention');
+await b.close()})()
