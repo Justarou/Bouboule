@@ -27,7 +27,7 @@ Chaque axe est noté : **A** (très bon), **B** (acceptable), **C** (à reprendr
 | Saut de caméra | aucun changement > 25 % de la largeur en moins de 0,2 s | `outils/qc_camera.js` |
 | Durée minimale d'un plan | ≥ 2,5 s en dialogue (sauf gag) | `outils/qc_camera.js` |
 | Image noire / figée | aucune image noire hors fondu ; aucune image figée > 4 s hors pause | `outils/qc_video.py` |
-| Synchro labiale | l'ouverture de bouche commence à ±80 ms de l'attaque de la voix ; fermée pendant les silences | `outils/qc_video.py` (échantillons) + regard humain |
+| Synchro labiale | seule la bouche du personnage qui parle bouge (amplitude ≥ 4, autres ≤ 60 % de la sienne) ; narrateur = aucune bouche ; contrôle visuel sur échantillons | `outils/qc_lipsync.js` + regard humain |
 | Durée | 3 min 30–6 min, jamais plus de 7 min | `outils/qc_video.py` |
 | Formats | paysage 1920×1080 et vertical 1080×1920, même durée à ±0,1 s | `outils/qc_video.py` |
 
