@@ -107,7 +107,7 @@
     else if (v === 'fx') EVFX.push({ t: t, fx: a[1], who: a[0], dur: a[2], extra: a[3], extra2: a[4] });
     else if (v === 'glow') A.glow.push([t, a[1], t + (a[2] || .6)]);
     else if (v === 'soot') A.soot.push([t, a[1], t + (a[2] || .4)]);
-    else if (v === 'tod') SKYK.push([t, a[0], t + (a[1] || 3)]);
+    else if (v === 'tod') SKYK.push([t, a[0], t + (V3 ? (a[1] === undefined ? 3 : a[1]) : (a[1] || 3))]); /* EV-003 : en engine 3, durée 0 = changement instantané (plus de remplacement par 3 s) */
     else if (v === 'set') SETK.push([t, a[0], a[1] || .6]);
     else if (v === 'beams') BEAMS.push([t, a[0], a[1] || 1]);
     else if (v === 'shake') SHK.push([t, a[0] || 5]);
