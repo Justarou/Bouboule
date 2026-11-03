@@ -1,3 +1,5 @@
+> Ce guide est complété par la bible du studio (`studio/`, v1.0.0). En cas de contradiction, la bible du studio prime.
+
 # Guide de mise en scène, de son et de scénario — « Bouboule et ses amis »
 
 À relire AVANT d'écrire ou de mettre en scène chaque épisode, et à cocher à la fin (liste de contrôle en bas).
@@ -34,13 +36,13 @@ Retour ou lieu suivant : sens inverse. Le narrateur annonce le lieu pendant le f
 - Silences voulus : après une chute ou une blague, laisser 0,5 s de silence avant la réplique suivante.
 - Contrôle avant publication : écouter les 20 premières secondes, une chute, un changement de lieu et la fin.
 
-## 4. Scénario (3–9 ans, épisodes de 3 à 4 minutes)
+## 4. Scénario (6–9 ans, épisodes de 3 min 30 à 6 min — règles complètes : `studio/08_narration.md`)
 - **Accroche en 10 secondes** : une question, un problème visible ou un gag.
 - **Une seule intrigue**, un problème clair énoncé tôt, 3 péripéties qui montent (essai → raté drôle → autre idée), résolution par la coopération ou une qualité du personnage.
 - **Au moins un gag visuel** (qu'on comprend sans les mots) et un moment d'émotion lisible (tristesse, fierté).
 - **2 à 3 personnages principaux** par épisode ; les autres réagissent en plan de réaction.
 - **Pas de personnages immobiles qui discutent** : chaque réplique s'accompagne d'une action, d'un déplacement ou d'une réaction visible. Répliques courtes (≤ 15 mots, ≤ 8 s).
-- Vocabulaire simple, répétitions rythmiques (comptines, refrain, compte à rebours) : les petits adorent anticiper.
+- Vocabulaire clair (un mot nouveau par épisode au plus) ; répétitions rythmiques avec variation (refrain, compte à rebours retourné) : à 6–9 ans on aime anticiper puis être surpris.
 - Petite morale naturelle dite par un personnage (pas par le narrateur seul), conclusion positive ou amusante, teaser de l'épisode suivant.
 - Cohérence de série : tenir `serie/bible.json` à jour (qui sait quoi, objets, lieux) et ne pas contredire un épisode précédent.
 

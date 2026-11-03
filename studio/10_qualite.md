@@ -23,6 +23,7 @@ Chaque axe est noté : **A** (très bon), **B** (acceptable), **C** (à reprendr
 | Écart de niveau entre personnages | ≤ 3 dB | `outils/qc_audio.py` |
 | Bruitages pendant une réplique | ≥ 6 dB sous la voix | `outils/qc_audio.py` |
 | Trou audio non voulu | aucun silence > 1,5 s hors pause notée ; aucun trou dans une ambiance | `outils/qc_audio.py` |
+| Cadrage (zones de sécurité) | aucun personnage/objet clé coupé ou sous le sous-titre, marges ≥ 5 % (voir 07) | `outils/qc_cadrage.js` |
 | Saut de caméra | aucun changement > 25 % de la largeur en moins de 0,2 s | `outils/qc_camera.js` |
 | Durée minimale d'un plan | ≥ 2,5 s en dialogue (sauf gag) | `outils/qc_camera.js` |
 | Image noire / figée | aucune image noire hors fondu ; aucune image figée > 4 s hors pause | `outils/qc_video.py` |

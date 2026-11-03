@@ -37,6 +37,16 @@ La cible peut être un personnage, `group`, une fraction de scène, une position
 3. **Arrivée** : ils *entrent* du côté opposé (`enter`) et marchent à leur place ; plan général de 1 à 2 s qui présente le décor.
 Aller = sortie à droite → arrivée par la gauche. Retour = l'inverse. Jamais de coupe sèche entre deux lieux sauf effet de surprise voulu et noté.
 
+## Zones de sécurité et proportions (valeurs mesurables)
+- **Image** : paysage 16:9 (800×450 de référence), vertical 9:16 (450×800). Le même moment doit raconter la même chose dans les deux formats (même point focal, mêmes objets visibles), même si le cadrage diffère.
+- **Marges de sécurité** : aucun personnage ni objet clé à moins de **5 %** d'un bord latéral ; rien d'important au contact du bord haut. Exceptions : entrée ou sortie de personnage en cours, animation de construction (la maison tombe du ciel), décor de fond.
+- **Bande de sous-titres** : paysage = bas 22 % de l'image ; vertical = haut 20 %. Aucun visage ni objet cité dans cette bande.
+- **Maison** : toit et murs entièrement visibles dès la fin de sa construction, dans les deux formats. Échelle de référence 2,2 (≈ 2 fois la hauteur d'un personnage) ; caméra `cam` zoom 1,0 avec cibles `["x450","x410"]` quand la maison est à 0,64 de la scène.
+- **Personnages parlants** : toujours entiers dans le cadre ; en vertical deux personnages tiennent ensemble si leur écart est inférieur à ≈ 150 px de monde (positions 0,40 et 0,53 de la scène) — sinon choisir un seul point focal ou cadrer `group` plus large.
+- **Personnage silencieux** : jamais coupé par le bord ; s'il ne tient pas dans le cadre vertical, rapprocher les positions plutôt que couper.
+- **Générique de fin** : la caméra reste sur le plan final (ne pas laisser le titre « FIN » recouvrir la maison ou un personnage).
+- Contrôle automatique : `node studio/outils/qc_cadrage.js out/epNNN.html` (3 échantillons par réplique, deux formats).
+
 ## Mise en scène des personnages
 - Pas de personnages immobiles qui parlent : chaque réplique s'accompagne d'une action, d'un déplacement ou d'une réaction visible.
 - Les personnages silencieux continuent à vivre (regard, souffle, micro-mouvements) et réagissent (voir `04_graphique.md` et la compétence character-acting).

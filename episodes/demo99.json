@@ -1,0 +1,273 @@
+{
+ "title": "Démo studio : Robi compte les pierres",
+ "series": "BOUBOULE",
+ "episodeNo": 99,
+ "subtitle": "Scène de démonstration du studio",
+ "lead_text": "Scène test du studio.",
+ "alt": "Démo",
+ "set": "colline",
+ "tod": "dawn",
+ "music": "doux",
+ "endLine": "à demain, petits rigolos !",
+ "nextTeaser": "",
+ "lead": 1.5,
+ "outro": 3,
+ "cast": {
+  "B": "bouboule",
+  "R": "robi"
+ },
+ "at": [
+  [
+   0,
+   "place",
+   "R",
+   0.53
+  ],
+  [
+   0,
+   "amb",
+   "amb_oiseaux",
+   0.2
+  ]
+ ],
+ "engine": 2,
+ "voices": {
+  "N": {
+   "id": "t4fHUMAMZxaaV2inHOnb",
+   "name": "Narrateur"
+  },
+  "B": {
+   "id": "vqvgjNDXBhRGzlLsbOq5",
+   "name": "Bouboule"
+  },
+  "R": {
+   "id": "UOvFSB5TNiugzjq7qJQ3",
+   "name": "Robi"
+  }
+ },
+ "lines": [
+  {
+   "who": "N",
+   "text": "Au petit matin, sur la colline, Robi regardait le piquet planté la veille. Il n'avait pas dormi.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "tod",
+     "dawn",
+     1
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "R",
+     "up"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     "group",
+     3
+    ],
+    [
+     3,
+     "shot",
+     "close",
+     "R",
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Robi ! Déjà debout ? Tu as l'air tout chiffonné !",
+   "tags": "[cheerful] [childlike voice]",
+   "do": [
+    [
+     0,
+     "enter",
+     "B",
+     "L",
+     0.4,
+     1.8,
+     "hop"
+    ],
+    [
+     0.2,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     "e-1.2",
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "group",
+     3
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Bip bip... J'ai calculé. Sans machine, la maison sera très, très lente.",
+   "tags": "[robotic, worried, soft]",
+   "do": [
+    [
+     0,
+     "look",
+     "R",
+     "B"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "sad"
+    ],
+    [
+     0.5,
+     "anim",
+     "R",
+     "lean",
+     1.5
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     [
+      "R",
+      "group"
+     ],
+     3
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Lente, oui. Mais regarde ce qu'on a déjà : un piquet, et toi pour compter les pierres !",
+   "tags": "[warm, encouraging] [childlike voice]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0.3,
+     "house",
+     "stake",
+     0.64,
+     1
+    ],
+    [
+     0.6,
+     "shot",
+     "wide",
+     "group",
+     3.5
+    ],
+    [
+     1.2,
+     "mood",
+     "R",
+     "happy"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Alors... je commence tout de suite. Une pierre. Deux pierres. Trois... bzzzt, hop !",
+   "tags": "[robotic, proud, a little shy]",
+   "do": [
+    [
+     0,
+     "anim",
+     "R",
+     "hop",
+     1.5
+    ],
+    [
+     0,
+     "fx",
+     "R",
+     "sparkle",
+     1.5
+    ],
+    [
+     0.5,
+     "sfx",
+     "xylo",
+     0.22
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      "R",
+      "group"
+     ],
+     3
+    ],
+    [
+     "e-0.6",
+     "anim",
+     "B",
+     "cheer",
+     1.2
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Et ce jour-là, la maison de la colline avança d'un tout petit pas, mais d'un vrai pas.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "house",
+     "build",
+     0.64,
+     3,
+     2.2
+    ],
+    [
+     0,
+     "cam",
+     [
+      "x450",
+      "x410"
+     ],
+     1.0,
+     9.5
+    ]
+   ]
+  }
+ ]
+}
