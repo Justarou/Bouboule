@@ -402,7 +402,7 @@
   var CAMFX = 400, CAMFY = 250;
   function camAt(t) {
     var c = CAMS[MODE], cfg = LAYOUT[MODE], z = 0, fx = 0, fy = 0, n = 0, d;
-    for (d = -.35; d <= .36; d += .175) { var tt = Math.max(0, t + d); z += kf(c.z, tt); fx += kf(c.x, tt); fy += kf(c.y, tt); n++; }
+    for (d = -.75; d <= .76; d += .25) { var tt = Math.max(0, t + d); z += kf(c.z, tt); fx += kf(c.x, tt); fy += kf(c.y, tt); n++; }
     z /= n; fx /= n; fy /= n;
     var sx = 0, sy = 0;
     SHK.forEach(function (s) { var a = t - s[0]; if (a > 0 && a < 1.2) { var e = s[1] * Math.exp(-a * 5.5); sx += e * Math.sin(a * 47); sy += e * .7 * Math.cos(a * 39); } });
