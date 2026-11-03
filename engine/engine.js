@@ -440,7 +440,8 @@
     var keep = kz.map(function (k) { var ok = true; EVCAM.forEach(function (c) { if (k[0] > c.t - .15 && k[0] < c.t + c.dur + .15) ok = false; }); return ok; });
     kz = kz.filter(function (_, j) { return keep[j]; }); kx = kx.filter(function (_, j) { return keep[j]; }); ky = ky.filter(function (_, j) { return keep[j]; });
     EVCAM.forEach(function (c) {
-      var tgtx = AC[c.tgt] ? wx(xOf(c.tgt, c.t + c.dur / 2)) : (typeof c.tgt === 'number' ? wx(c.tgt) : (typeof c.tgt === 'string' && c.tgt.charAt(0) === 'x' ? +c.tgt.slice(1) : (c.tgt === 'group' ? visMean(c.t + c.dur / 2) : 400)));
+      var tg = Array.isArray(c.tgt) ? c.tgt[mode === 'port' ? 1 : 0] : c.tgt;
+      var tgtx = AC[tg] ? wx(xOf(tg, c.t + c.dur / 2)) : (typeof tg === 'number' ? wx(tg) : (typeof tg === 'string' && tg.charAt(0) === 'x' ? +tg.slice(1) : (tg === 'group' ? visMean(c.t + c.dur / 2) : 400)));
       if (c.rel) { var zz = cfg.zoomWide * c.zoom; kz.push([c.t, zz]); kx.push([c.t, tgtx]); ky.push([c.t, fyFor(zz)]); kz.push([c.t + c.dur, zz]); kx.push([c.t + c.dur, tgtx]); ky.push([c.t + c.dur, fyFor(zz)]); return; }
       /* on insère puis on re-trie */
       kz.push([c.t, c.zoom * (mode === 'port' ? .9 : 1)]); kx.push([c.t, tgtx]); ky.push([c.t, c.fy !== undefined ? c.fy : fyFor(c.zoom)]);
@@ -506,10 +507,10 @@
     var st = { mode: 'none', t0: 0, x: 400 }, i, e;
     for (i = 0; i < PROPS.house.length; i++) {
       e = PROPS.house[i]; if (e.t > t) break; var v = e.a[0];
-      if (v === 'build') st = { mode: 'build', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: e.a[2] || 3 };
-      else if (v === 'collapse' && st.mode !== 'none') st = { mode: 'collapse', t0: e.t, x: st.x, dur: .9 };
+      if (v === 'build') st = { mode: 'build', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: e.a[2] || 3, s: e.a[3] || 1 };
+      else if (v === 'collapse' && st.mode !== 'none') st = { mode: 'collapse', t0: e.t, x: st.x, dur: .9, s: st.s };
       else if (v === 'clear') st = { mode: 'none', t0: e.t, x: st.x };
-      else if (v === 'stake') st = { mode: 'stake', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: .5 };
+      else if (v === 'stake') st = { mode: 'stake', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: .5, s: e.a[2] || 1 };
     }
     return st;
   }
@@ -655,7 +656,7 @@
       if (on) { so.r.update(t, S, {}); }
     });
     var activeSet = SETOBJ[setNow].r;
-    (activeSet.par || []).forEach(function (q) { q[0].setAttribute('transform', 'translate(' + (Math.max(-40, Math.min(40, (1 - q[1]) * (CAMFX - 400)))).toFixed(1) + ' ' + ((1 - q[1]) * (CAMFY - 250) * .5).toFixed(1) + ')'); });
+    if (!V2) (activeSet.par || []).forEach(function (q) { q[0].setAttribute('transform', 'translate(' + (Math.max(-40, Math.min(40, (1 - q[1]) * (CAMFX - 400)))).toFixed(1) + ' ' + ((1 - q[1]) * (CAMFY - 250) * .5).toFixed(1) + ')'); });
     skyR.update(t, S, { beams: beamsAt(t), birds: activeSet.birds, cloudsOn: activeSet.cloudsOn });
     var nightF = cl((S.night - .2) / .3);
     /* teinte globale */
@@ -733,7 +734,7 @@
       hb.setAttribute('transform', 'rotate(' + rot.toFixed(2) + ' 0 0)');
       hw.setAttribute('transform', 'scale(1 ' + wy.toFixed(3) + ')');
       hr.setAttribute('transform', 'translate(0 ' + f1(ry - (1 - wy) * 62) + ') rotate(' + rr.toFixed(2) + ' 0 -62)');
-      houseG.setAttribute('transform', 'translate(' + f1(hs.x) + ' ' + GY + ')');
+      houseG.setAttribute('transform', 'translate(' + f1(hs.x) + ' ' + GY + ') scale(' + (hs.s || 1) + ')');
     }
     /* balle */
     var bp = ballPos(t);
