@@ -21,6 +21,8 @@
   var STYLE = { bouboule: 'hop', pitou: 'float', grincheux: 'float', robi: 'drive', flamme: 'waddle' };
   var CAST_OPT = { bouboule: { s: 1, row: 0 }, pitou: { s: .95, row: 4, hover: 10 }, grincheux: { s: .95, row: -6, hover: 55 }, robi: { s: 1, row: 8 }, flamme: { s: .92, row: -4 } };
 
+  var V2 = (EP.engine || 1) >= 2; CHARS.V2 = V2;
+  var RND = SETS.rnd, SM = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
   /* ---------- 1. Chronologie des répliques ---------- */
   var LEAD = EP.lead !== undefined ? EP.lead : 3.0, OUTRO = EP.outro !== undefined ? EP.outro : 5.0;
   var L = EP.lines, cur = LEAD, i, w;
@@ -109,6 +111,7 @@
     else if (v === 'beams') BEAMS.push([t, a[0], a[1] || 1]);
     else if (v === 'shake') SHK.push([t, a[0] || 5]);
     else if (v === 'cam') EVCAM.push({ t: t, tgt: a[0], zoom: a[1], dur: a[2] || 2.5, fy: a[3] });
+    else if (v === 'shot') { var SHZ = { wide: 1, group: 1.05, medium: 1.18, close: 1.38, extreme: 1.75, reaction: 1.45 }; EVCAM.push({ t: t, tgt: a[1] || 'group', zoom: SHZ[a[0]] || 1.2, rel: true, dur: a[2] || 2.5 }); }
     else if (v === 'amb') AMB.push({ t: t, key: a[0], vol: a[1] === undefined ? .35 : a[1], dur: a[2] });
     else if (v === 'ball') PROPS.ball.push({ t: t, a: a });
     else if (v === 'machine') PROPS.machine.push({ t: t, a: a });
@@ -284,6 +287,34 @@
   function machinePos() { var s = machineState(1e9); /* dernière position connue */ var x = 400, i; for (i = 0; i < MACH.show.length; i++) if (MACH.show[i][2] !== undefined) x = wx(MACH.show[i][2]); return { x: x, y: GY }; }
 
   /* ---------- 7. État d'un personnage à l'instant t ---------- */
+  /* synchro labiale v2 : formes de bouche issues de l'enveloppe audio (vis/amp à 50 Hz) */
+  var VP = [{ o: 0, w: 1 }, { o: .14, w: .84 }, { o: .6, w: 1.08 }, { o: 1.2, w: 1 }, { o: .85, w: .64 }, { o: .42, w: 1.3 }];
+  function mouthAt(k, t) {
+    for (var i = 0; i < L.length; i++) {
+      var l = L[i]; if (l.who !== k || t < l.t - .05 || t > l.e + .05 || !l.vis) continue;
+      var f = (t - l.t) * 50, c = Math.round(f), o = 0, w = 0, ws = 0, am = 0, d;
+      for (d = -2; d <= 2; d++) { var j = c + d, wt = 3 - Math.abs(d), ch = j >= 0 && j < l.vis.length ? +l.vis[j] : 0, a = j >= 0 && j < l.amp.length ? +l.amp[j] : 0; var pr = VP[ch]; o += wt * pr.o * (ch >= 2 ? .5 + .5 * a / 9 : 1); w += wt * pr.w; ws += wt; am += wt * a / 9; }
+      return { open: o / ws, w: w / ws, act: am / ws };
+    }
+    return { open: 0, w: 1, act: 0 };
+  }
+  function anyoneSpeaking(t) { for (var i = 0; i < L.length; i++) if (t >= L[i].t && t < L[i].e) return L[i].who; return null; }
+  /* clignements irréguliers (déterministes) */
+  var BLINKS = {};
+  function blinkAmt(k, t) {
+    var A = AC[k]; if (!BLINKS[k]) { var arr = [], tt = .8 + RND(A.phase * 7) * 2, n = 0; while (tt < 400) { arr.push(tt); if (RND(n * 3.7 + A.phase) < .26) arr.push(tt + .3); tt += 2.2 + RND(n * 1.9 + A.phase * 5) * 3.6; n++; } BLINKS[k] = arr; }
+    var b = BLINKS[k], v = 0; for (var i = 0; i < b.length; i++) { var d = t - b[i]; if (d < 0) break; if (d < .17) v = Math.max(v, d < .06 ? d / .06 : (d < .09 ? 1 : 1 - (d - .09) / .08)); }
+    return v;
+  }
+  function gaze(k, t) {
+    var A = AC[k], u = t / 1.35 + A.phase, n = Math.floor(u), q = SM((u - n) / .22);
+    var ax = (RND(n * 5.3 + A.phase) - .5) * .5, ay = (RND(n * 2.9 + A.phase * 3) - .5) * .3, bx = (RND((n - 1) * 5.3 + A.phase) - .5) * .5, by = (RND((n - 1) * 2.9 + A.phase * 3) - .5) * .3;
+    return { x: bx + (ax - bx) * q, y: by + (ay - by) * q };
+  }
+  function moodBlend(A, t) {
+    var m = A.moods, ix = 0, i; for (i = 0; i < m.length; i++) { if (m[i][0] <= t) ix = i; else break; }
+    return { cur: m[ix][1], prev: ix > 0 ? m[ix - 1][1] : m[ix][1], k: SM((t - m[ix][0]) / .45) };
+  }
   function speaking(k, t) { for (var i = 0; i < L.length; i++) if (L[i].who === k && t >= L[i].t && t < L[i].e) return Math.abs(Math.sin(t * 13)) * (.55 + .45 * Math.abs(Math.sin(t * 3.7))); return 0; }
   function curLine(t) { var r = -1; for (var i = 0; i < L.length; i++) if (t >= L[i].t - .05) r = i; return r; }
   function hopf(t, s, per, h) { var p = (((t - s) / per) % 1 + 1) % 1, sn = Math.sin(Math.PI * p), sx = 1 - .06 * sn, sy = 1 + .1 * sn; if (p < .12) { var kk = 1 - p / .12; sy = 1 - .22 * kk; sx = 1 + .2 * kk; } return { y: h * sn, sx: sx, sy: sy, p: p }; }
@@ -295,6 +326,7 @@
     var phase = t * 2 + A.phase;
     /* idle */
     if (A.style === 'float') { o.y = A.hover + 4 * Math.sin(t * 2.2 + A.phase) + (A.kind === 'grincheux' ? 3 : 0); o.sy = 1 + .015 * Math.sin(t * 2.2); }
+    else if (V2) { var br = Math.sin(t * 1.9 + A.phase); o.sy = 1 + .024 * br; o.sx = 1 - .015 * br; }
     else { var br = Math.sin(t * 2.6 + A.phase); o.sy = 1 + .02 * br; o.sx = 1 - .012 * br; }
     /* marche */
     if (moving) {
@@ -313,6 +345,7 @@
       if (u < 0 || u > 1.0001) { if (an.name === 'faint' && u > 1) { o.rot += 88; o.y -= 0; } continue; }
       var nm = an.name, pn = an.p || 1;
       if (nm === 'hop') { var hh = hopf(t, an.t0, an.dur / pn, 34); o.y += hh.y; o.sx *= hh.sx; o.sy *= hh.sy; o.armL = 120; o.armR = 120; }
+      else if (nm === 'jump' && V2) { var uu = cl((u - .12) / .78), sj = Math.sin(Math.PI * uu); o.y += (pn > 1 ? pn : 90) * sj; if (u < .12) { var k1 = Math.sin(u / .12 * Math.PI / 2); o.sy *= 1 - .22 * k1; o.sx *= 1 + .15 * k1; } else if (u > .9) { var k2 = Math.sin((u - .9) / .1 * Math.PI); o.sy *= 1 - .2 * k2; o.sx *= 1 + .14 * k2; } else { o.sy *= 1 + .12 * sj; o.sx *= 1 - .07 * sj; } o.armL = 150; o.armR = 150; }
       else if (nm === 'jump') { var sn = Math.sin(Math.PI * u); o.y += (pn > 1 ? pn : 90) * sn; o.sy *= 1 + .14 * sn; o.sx *= 1 - .08 * sn; o.armL = 150; o.armR = 150; }
       else if (nm === 'spin') { o.rot += 360 * sm(u); o.y += 40 * Math.sin(Math.PI * u); }
       else if (nm === 'shake') { o.dx += 3.2 * Math.sin(t * 60) * (1 - u * .3); o.rot += 3 * Math.sin(t * 47); }
@@ -335,14 +368,32 @@
     }
     if (o.vis < 1) o.vis = o.vis;
     /* visage */
-    var talk = speaking(k, t);
+    var talk, mA = null;
+    if (V2) { mA = mouthAt(k, t); talk = Math.min(1, mA.act * 1.15); } else talk = speaking(k, t);
     o.emo = lastOf(A.moods, t);
+    if (V2) { var mb = moodBlend(A, t); o.emoPrev = mb.prev; o.emoK = mb.k; }
     var lk = lastOf(A.looks, t), lx = 0, ly = 0;
     if (typeof lk === 'string' && AC[lk]) { var dxl = wx(xOf(lk, t)) - o.x; lx = cl(dxl / 120, -1, 1); ly = -.1; }
     else if (lk === 'up') ly = -1; else if (lk === 'down') ly = 1; else if (lk === 'L') lx = -1; else if (lk === 'R') lx = 1;
     if (o.extra.moving) lx = cl(Math.sign(vel) * .7 + lx * .3, -1, 1);
     if (!lk || lk === 'cam') { lx = 0; ly = 0; }
-    o.lx = lx; o.ly = ly; o.open = talk; o.blink = ((t * 1 + A.phase * 3.3) % 3.4) < .12;
+    if (V2) { var gz = gaze(k, t); lx = cl(lx + gz.x * (lx || ly ? .35 : 1), -1, 1); ly = cl(ly + gz.y * (lx || ly ? .35 : 1), -1, 1); }
+    o.lx = lx; o.ly = ly; o.open = V2 ? mA.open : talk; o.blink = ((t * 1 + A.phase * 3.3) % 3.4) < .12;
+    if (V2) {
+      o.mw = mA.w; o.blinkAmt = blinkAmt(k, t);
+      var sp = anyoneSpeaking(t), idleNow = !o.extra.moving && !A.anims.some(function (an) { return t >= an.t0 && t <= an.t0 + an.dur; });
+      /* micro-mouvements pendant les dialogues */
+      if (talk > .02) { o.y += 2.4 * mA.open; o.rot += 1.8 * Math.sin(t * 2.3 + A.phase * 2) * talk + 1.2 * Math.sin(t * 5.1 + A.phase) * mA.open; o.sy *= 1 + .02 * mA.open; }
+      else if (sp && sp !== k && idleNow) { var nu = ((t * .34 + A.phase * .37) % 1); if (nu < .09) o.y -= 3.2 * Math.sin(Math.PI * nu / .09); o.rot += 1.1 * Math.sin(t * 1.3 + A.phase); }
+      /* signature gestuelle */
+      if (idleNow) {
+        if (A.kind === 'bouboule') { var bu = ((t * .38 + A.phase) % 1); if (bu < .16) { var bs = Math.sin(Math.PI * bu / .16); o.y += 5 * bs; o.sy *= 1 + .03 * bs; } }
+        else if (A.kind === 'pitou') { o.rot += 3.2 * Math.sin(t * 1.1 + A.phase); o.y += 2 * Math.sin(t * 1.7 + A.phase); }
+        else if (A.kind === 'robi') { o.rot += 2.2 * Math.round(Math.sin(t * .8 + A.phase) * 2) / 2; }
+        else if (A.kind === 'flamme') { o.rot += 1.6 * Math.sin(t * 2.2 + A.phase); o.sx *= 1 + .012 * Math.sin(t * 4.4); }
+        else if (A.kind === 'grincheux') { o.rot += 2 * Math.sin(t * .9 + A.phase); }
+      }
+    }
     if (o.emo === 'laugh') o.open = Math.max(o.open, .5 + .3 * Math.sin(t * 20));
     /* bras */
     var rest = CHAR_INFO[A.kind].armRest;
@@ -389,7 +440,8 @@
     var keep = kz.map(function (k) { var ok = true; EVCAM.forEach(function (c) { if (k[0] > c.t - .15 && k[0] < c.t + c.dur + .15) ok = false; }); return ok; });
     kz = kz.filter(function (_, j) { return keep[j]; }); kx = kx.filter(function (_, j) { return keep[j]; }); ky = ky.filter(function (_, j) { return keep[j]; });
     EVCAM.forEach(function (c) {
-      var tgtx = AC[c.tgt] ? wx(xOf(c.tgt, c.t + c.dur / 2)) : (typeof c.tgt === 'number' ? wx(c.tgt) : 400);
+      var tgtx = AC[c.tgt] ? wx(xOf(c.tgt, c.t + c.dur / 2)) : (typeof c.tgt === 'number' ? wx(c.tgt) : (c.tgt === 'group' ? visMean(c.t + c.dur / 2) : 400));
+      if (c.rel) { var zz = cfg.zoomWide * c.zoom; kz.push([c.t, zz]); kx.push([c.t, tgtx]); ky.push([c.t, fyFor(zz)]); kz.push([c.t + c.dur, zz]); kx.push([c.t + c.dur, tgtx]); ky.push([c.t + c.dur, fyFor(zz)]); return; }
       /* on insère puis on re-trie */
       kz.push([c.t, c.zoom * (mode === 'port' ? .9 : 1)]); kx.push([c.t, tgtx]); ky.push([c.t, c.fy !== undefined ? c.fy : fyFor(c.zoom)]);
       kz.push([c.t + c.dur, c.zoom * (mode === 'port' ? .9 : 1)]); kx.push([c.t + c.dur, tgtx]); ky.push([c.t + c.dur, c.fy !== undefined ? c.fy : fyFor(c.zoom)]);
@@ -617,7 +669,7 @@
       D.sq.setAttribute('transform', 'translate(0 ' + cy + ') rotate(' + st.rot.toFixed(1) + ') translate(0 ' + (-cy) + ') scale(' + st.sx.toFixed(3) + ' ' + st.sy.toFixed(3) + ')');
       var hh = Math.max(0, st.y - A.hover);
       D.sh.setAttribute('cx', f1(st.x)); D.sh.setAttribute('cy', f1(gy + 2)); D.sh.setAttribute('rx', ((A.kind === 'grincheux' ? 52 : 32) * A.s * (1 - cl(st.y / 300) * .5)).toFixed(1)); D.sh.setAttribute('ry', 7 * A.s); D.sh.setAttribute('opacity', (.22 * (1 - cl(st.y / 320))).toFixed(2));
-      CHARS.poseFace(ch.face, { emo: st.emo, open: st.open, lx: st.lx, ly: st.ly, blink: st.blink });
+      CHARS.poseFace(ch.face, { emo: st.emo, emoPrev: st.emoPrev, emoK: st.emoK, open: st.open, mw: st.mw, lx: st.lx, ly: st.ly, blink: st.blink, blinkAmt: st.blinkAmt });
       /* bras */
       if (ch.arms && ch.arms.length) {
         ch.arms[0].setAttribute('transform', 'translate(' + ch.armBase[0][0] + ' ' + ch.armBase[0][1] + ') rotate(' + f1(st.armL) + ')');

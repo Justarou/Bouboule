@@ -95,22 +95,56 @@
      5
     ],
     [
-     1,
-     "look",
-     "B",
-     "P"
-    ],
-    [
      "e-2.2",
      "mood",
      "B",
      "worried"
     ],
     [
-     "e-2.2",
-     "look",
+     0.2,
+     "mood",
      "B",
-     "up"
+     "worried"
+    ],
+    [
+     0.3,
+     "anim",
+     "B",
+     "tremble",
+     4
+    ],
+    [
+     0.4,
+     "fx",
+     "B",
+     "sweat",
+     2
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "B",
+     4.5
+    ],
+    [
+     5,
+     "shot",
+     "group",
+     "group",
+     3.5
+    ],
+    [
+     6,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     6.4,
+     "mood",
+     "F",
+     "worried"
     ]
    ]
   },
@@ -132,13 +166,6 @@
      "cam"
     ],
     [
-     0.2,
-     "cam",
-     "B",
-     1.25,
-     3
-    ],
-    [
      "e-1.8",
      "fx",
      "B",
@@ -156,6 +183,26 @@
      "mood",
      "P",
      "worried"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "B",
+     4
+    ],
+    [
+     "e-3",
+     "shot",
+     "reaction",
+     "P",
+     2.6
+    ],
+    [
+     0.3,
+     "mood",
+     "P",
+     "worried"
     ]
    ]
   },
@@ -164,6 +211,12 @@
    "text": "Pauvre Grincheux. Il lui faut un toit, et vite !",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
    "do": [
+    [
+     0,
+     "sfx",
+     "xylo",
+     0.22
+    ],
     [
      0,
      "mood",
@@ -188,6 +241,13 @@
      "P",
      "nod",
      1
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     3
     ]
    ]
   },
@@ -238,6 +298,25 @@
      "sfx",
      "boing",
      0.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "B",
+     3.2
+    ],
+    [
+     0.5,
+     "mood",
+     "P",
+     "amazed"
+    ],
+    [
+     0.7,
+     "mood",
+     "F",
+     "curious"
     ]
    ]
   },
@@ -284,6 +363,13 @@
      "F",
      "squish",
      0.5
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     3.2
     ]
    ]
   },
@@ -292,6 +378,12 @@
    "text": "Bip bip ! Une maison ? J'ai le plan, et j'ai la machine ! Suivez-moi à l'atelier !",
    "tags": "[cheerful, robotic, enthusiastic]",
    "do": [
+    [
+     0,
+     "sfx",
+     "tic",
+     0.3
+    ],
     [
      0,
      "mood",
@@ -384,6 +476,12 @@
    "do": [
     [
      0,
+     "sfx",
+     "tic",
+     0.3
+    ],
+    [
+     0,
      "look",
      "R",
      "cam"
@@ -412,6 +510,13 @@
      "look",
      "P",
      "R"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "R",
+     3.5
     ]
    ]
   },
@@ -420,6 +525,12 @@
    "text": "Vérifions. Quatre murs, un toit, une porte... Le calcul est bon. Mais cela va demander beaucoup de travail.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
    "do": [
+    [
+     0,
+     "sfx",
+     "xylo",
+     0.22
+    ],
     [
      0,
      "look",
@@ -438,6 +549,19 @@
      "P",
      "nod",
      2
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "curious"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     4
     ]
    ]
   },
@@ -446,6 +570,12 @@
    "text": "Pas avec ma nouvelle invention : le Bâtimatic ! Elle construit une maison en dix secondes !",
    "tags": "[cheerful, robotic, enthusiastic]",
    "do": [
+    [
+     0,
+     "sfx",
+     "tic",
+     0.3
+    ],
     [
      0,
      "mood",
@@ -492,12 +622,6 @@
    "do": [
     [
      0,
-     "mood",
-     "B",
-     "laugh"
-    ],
-    [
-     0,
      "look",
      "B",
      "R"
@@ -510,16 +634,35 @@
      1
     ],
     [
-     0.2,
-     "mood",
-     "P",
-     "surprised"
-    ],
-    [
      "e-1",
      "sfx",
      "applaudit",
      0.5
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "amazed"
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "B",
+     2.5
+    ],
+    [
+     0.35,
+     "mood",
+     "P",
+     "amazed"
+    ],
+    [
+     0.5,
+     "mood",
+     "F",
+     "amazed"
     ]
    ]
   },
@@ -560,6 +703,13 @@
      "F",
      "squish",
      0.5
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     3
     ]
    ]
   },
@@ -568,6 +718,12 @@
    "text": "Bip bip ! Pas grave, il reste assez de plan ! En route pour la colline !",
    "tags": "[cheerful, robotic, enthusiastic]",
    "do": [
+    [
+     0,
+     "sfx",
+     "tic",
+     0.3
+    ],
     [
      0,
      "mood",
@@ -660,6 +816,12 @@
    "do": [
     [
      0,
+     "sfx",
+     "tic",
+     0.3
+    ],
+    [
+     0,
      "look",
      "R",
      "cam"
@@ -693,6 +855,13 @@
      "sfx",
      "tremble",
      0.7
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     "group",
+     4
     ]
    ]
   },
@@ -731,6 +900,13 @@
      "mood",
      "F",
      "surprised"
+    ],
+    [
+     0.0,
+     "shot",
+     "group",
+     "group",
+     5
     ]
    ]
   },
@@ -762,6 +938,13 @@
      "look",
      "B",
      "P"
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "B",
+     3
     ]
    ]
   },
@@ -770,6 +953,12 @@
    "text": "Et le toit est tout de travers. Robi, tu es sûr de ton calcul ?",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
    "do": [
+    [
+     0,
+     "sfx",
+     "xylo",
+     0.22
+    ],
     [
      0,
      "look",
@@ -796,6 +985,12 @@
    "text": "Pas de panique ! Je passe en mode turbo !",
    "tags": "[cheerful, robotic, enthusiastic]",
    "do": [
+    [
+     0,
+     "sfx",
+     "tic",
+     0.3
+    ],
     [
      0,
      "mood",
@@ -825,6 +1020,13 @@
      "sfx",
      "suspense_c",
      0.5
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "R",
+     2.8
     ]
    ]
   },
@@ -895,6 +1097,13 @@
      "F",
      "fall",
      1
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     "group",
+     3
     ]
    ]
   },
@@ -931,6 +1140,12 @@
    "do": [
     [
      0,
+     "sfx",
+     "tic",
+     0.3
+    ],
+    [
+     0,
      "mood",
      "R",
      "sad"
@@ -962,16 +1177,16 @@
      4
     ],
     [
-     0.4,
-     "cam",
-     "R",
-     1.35,
-     3.2
-    ],
-    [
      0,
      "music",
      "doux"
+    ],
+    [
+     0.1,
+     "shot",
+     "extreme",
+     "R",
+     5
     ]
    ]
   },
@@ -1012,6 +1227,13 @@
      "mood",
      "B",
      "sad"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "B",
+     3.4
     ]
    ]
   },
@@ -1020,6 +1242,12 @@
    "text": "Robi, respire. Comptons ensemble jusqu'à dix. Un, deux, trois, quatre, cinq...",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
    "do": [
+    [
+     0,
+     "sfx",
+     "xylo",
+     0.22
+    ],
     [
      0,
      "move",
@@ -1053,6 +1281,13 @@
      "P",
      "sparkle",
      3
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     4.5
     ]
    ]
   },
@@ -1061,6 +1296,12 @@
    "text": "...six, sept, huit, neuf, dix. Bip... Ça va un petit peu mieux.",
    "tags": "[sad, robotic, small and discouraged]",
    "do": [
+    [
+     0,
+     "sfx",
+     "tic",
+     0.3
+    ],
     [
      0,
      "look",
@@ -1084,6 +1325,13 @@
      "tod",
      "day",
      3
+    ],
+    [
+     0,
+     "shot",
+     "extreme",
+     "R",
+     4.5
     ]
    ]
   },
@@ -1099,12 +1347,6 @@
      0.78,
      1.6,
      "waddle"
-    ],
-    [
-     0,
-     "mood",
-     "F",
-     "happy"
     ],
     [
      0,
@@ -1131,6 +1373,19 @@
      "F",
      0.3,
      "L"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     5.5
     ]
    ]
   },
@@ -1139,6 +1394,12 @@
    "text": "Mon plan est sauvé ! Merci, Flamme. Bip bip !",
    "tags": "[cheerful, robotic, enthusiastic]",
    "do": [
+    [
+     0,
+     "sfx",
+     "tic",
+     0.3
+    ],
     [
      0,
      "mood",
@@ -1170,6 +1431,19 @@
      "sfx",
      "scintille",
      0.5
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "F",
+     2.5
+    ],
+    [
+     0.2,
+     "mood",
+     "R",
+     "amazed"
     ]
    ]
   },
@@ -1196,13 +1470,6 @@
      "R"
     ],
     [
-     0.2,
-     "cam",
-     "wide",
-     1,
-     2
-    ],
-    [
      "e-2",
      "anim",
      "B",
@@ -1214,6 +1481,20 @@
      "look",
      "B",
      "cam"
+    ],
+    [
+     0.2,
+     "shot",
+     "medium",
+     "B",
+     4
+    ],
+    [
+     5,
+     "shot",
+     "reaction",
+     "R",
+     3
     ]
    ]
   },
@@ -1222,6 +1503,12 @@
    "text": "À la main ? Sans machine ? Bip bip... avec vous, oui ! D'accord !",
    "tags": "[cheerful, robotic, enthusiastic]",
    "do": [
+    [
+     0,
+     "sfx",
+     "tic",
+     0.3
+    ],
     [
      0,
      "mood",
@@ -1246,6 +1533,13 @@
      "sfx",
      "valide",
      0.5
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "R",
+     3.5
     ]
    ]
   },
@@ -1254,6 +1548,12 @@
    "text": "Le plan dit que le premier piquet se plante ici. Tu veux le faire, Robi ?",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm]",
    "do": [
+    [
+     0,
+     "sfx",
+     "xylo",
+     0.22
+    ],
     [
      0,
      "look",
@@ -1282,6 +1582,12 @@
    "do": [
     [
      0,
+     "sfx",
+     "tic",
+     0.3
+    ],
+    [
+     0,
      "mood",
      "R",
      "proud"
@@ -1299,6 +1605,13 @@
      "look",
      "R",
      "down"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     "R",
+     2.5
     ]
    ]
   },
@@ -1363,6 +1676,13 @@
      "mood",
      "B",
      "happy"
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     "group",
+     7
     ]
    ]
   },
@@ -1553,6 +1873,13 @@
      "sfx",
      "fete",
      0.4
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     "group",
+     7
     ]
    ]
   }
@@ -1582,5 +1909,6 @@
    "bouboule",
    "pourtoi"
   ]
- }
+ },
+ "engine": 2
 }

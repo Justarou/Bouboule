@@ -31,6 +31,10 @@ var CHARS = (function () {
     shy:      { mood: .4,  rot: -14, lift: -1, wide: 1,    open: 0,   cheek: 1.8, squint: 0 },
     worried:  { mood: -.3, rot: -14, lift: -3, wide: 1.05, open: 0,   cheek: .8,  squint: 0 },
     proud:    { mood: .8,  rot: 6,   lift: -2, wide: 1,    open: 0,   cheek: 1.3, squint: .25 },
+    curious:  { mood: .3, rot: 5,   lift: -5, wide: 1.1,  open: .12, cheek: 1,   squint: 0 },
+    tired:    { mood: -.2, rot: -12, lift: 3,  wide: .8,  open: 0,   cheek: .7,  squint: .55 },
+    amazed:   { mood: .9, rot: -4,  lift: -9, wide: 1.26, open: .35, cheek: 1.4, squint: 0 },
+    embarrassed:{ mood: .25, rot: -16, lift: -1, wide: 1, open: 0,   cheek: 2.3, squint: 0 },
     dizzy:    { mood: -.1, rot: 0,   lift: -2, wide: 1.1,  open: .2,  cheek: 1,   squint: 0 }
   };
 
@@ -69,9 +73,11 @@ var CHARS = (function () {
 
   /* applique l'état du visage : st = {emo, open, lx, ly, blink, t} */
   function poseFace(R, st) {
-    var f = R.f, E = EMO[st.emo] || EMO.neutral, o = Math.max(E.open, st.open || 0);
-    var wide = E.wide, sq = E.squint, bl = st.blink ? 1 : 0;
-    var ey = Math.max(.07, (1 - sq * .5) * (bl ? .07 : 1));
+    var f = R.f, E = EMO[st.emo] || EMO.neutral;
+    if (st.emoPrev && st.emoK !== undefined && st.emoK < 1 && EMO[st.emoPrev] && st.emoPrev !== st.emo) { var E0 = EMO[st.emoPrev], k = st.emoK, B = {}; for (var kk in E) B[kk] = E0[kk] + (E[kk] - E0[kk]) * k; E = B; }
+    var o = Math.max(E.open, st.open || 0);
+    var wide = E.wide, sq = E.squint, bl = st.blinkAmt !== undefined ? st.blinkAmt : (st.blink ? 1 : 0);
+    var ey = Math.max(.07, (1 - sq * .5) * (1 - .93 * bl));
     var tf = function (sx) { return 'translate(' + (sx * f.ex) + ' ' + f.ey + ') scale(' + wide.toFixed(2) + ' ' + (wide * ey).toFixed(2) + ')'; };
     R.eL.setAttribute('transform', tf(-1));
     R.eR.setAttribute('transform', tf(1));
@@ -90,7 +96,7 @@ var CHARS = (function () {
     var rot = E.rot, lift = E.lift;
     R.bL.setAttribute('transform', 'translate(' + (-f.ex) + ' ' + (f.br + lift) + ') rotate(' + rot + ')');
     R.bR.setAttribute('transform', 'translate(' + f.ex + ' ' + (f.br + lift) + ') rotate(' + (-rot) + ')');
-    var d = mouthD(f.mw * (E.open > .4 ? .8 : 1), f.my, E.mood, o, f.mr || 6);
+    var d = mouthD(f.mw * (E.open > .4 ? .8 : 1) * (st.mw || 1), f.my, E.mood, o, f.mr || 6);
     R.mo.setAttribute('d', d); R.mclip.setAttribute('d', d);
     R.tg.setAttribute('opacity', (o > .12 || E.mood > .5) ? 1 : 0);
     R.tg.setAttribute('cy', (f.my + 3.5 + o * 6.5).toFixed(1));
@@ -202,12 +208,37 @@ var CHARS = (function () {
       arms: [g.querySelector('.armL'), g.querySelector('.armR')], armBase: [[-36, -34], [36, -34]], armRest: 14, col: '#56bf5a' };
   }
 
+  /* relief v2 : ombre de forme (AO) + lumière de contour intérieure, clonées depuis la forme principale */
+  function volume(g, sel, kind, col) {
+    var el = g.querySelector(sel); if (!el) return;
+    var par = el.parentNode, isG = el.tagName === 'g';
+    var defs = '<defs><linearGradient id="ao_' + kind + '" x1="0" y1="0" x2="0" y2="1"><stop offset=".4" stop-color="' + col + '" stop-opacity="0"/><stop offset="1" stop-color="' + col + '" stop-opacity=".34"/></linearGradient>' +
+      '<linearGradient id="rim_' + kind + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset=".32" stop-color="#fff" stop-opacity="0"/><stop offset=".72" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".4"/></linearGradient>' +
+      '<clipPath id="rc_' + kind + '"></clipPath></defs>';
+    par.insertAdjacentHTML('beforeend', defs);
+    var clip = par.querySelector('#rc_' + kind);
+    var ao = el.cloneNode(true), rim = el.cloneNode(true), cc = el.cloneNode(true);
+    [ao, rim, cc].forEach(function (n) { n.removeAttribute('class'); n.removeAttribute('id'); });
+    function setFill(n, f, s, sw) { n.setAttribute('fill', f); n.setAttribute('stroke', s); if (sw) n.setAttribute('stroke-width', sw); n.setAttribute('opacity', 1); n.setAttribute('pointer-events', 'none'); }
+    if (isG) {
+      [ao, rim].forEach(function (n) { n.setAttribute('opacity', 1); });
+      ao.setAttribute('fill', 'url(#ao_' + kind + ')'); ao.querySelectorAll('*').forEach(function (e) { e.removeAttribute('fill'); e.setAttribute('pointer-events', 'none'); });
+      el.parentNode.insertBefore(ao, el.nextSibling);
+      return;
+    }
+    setFill(ao, 'url(#ao_' + kind + ')', 'none');
+    setFill(rim, 'none', 'url(#rim_' + kind + ')', 5.5);
+    clip.appendChild(cc); rim.setAttribute('clip-path', 'url(#rc_' + kind + ')');
+    var after = el.nextSibling; par.insertBefore(ao, after); par.insertBefore(rim, ao.nextSibling);
+  }
+  function wrap(fn, sel, kind, col) { return function () { var r = fn(); if (CHARS.V2) volume(r.g, sel, kind, col); return r; }; }
   var LIB = {
-    bouboule: { make: bouboule, name: 'Bouboule', color: '#ff8a3d' },
-    pitou: { make: pitou, name: 'Pitou', color: '#ffd23f', hover: 0 },
-    grincheux: { make: grincheux, name: 'Grincheux', color: '#9aa7c8', hover: 0 },
-    robi: { make: robi, name: 'Robi', color: '#4fd0e4' },
-    flamme: { make: flamme, name: 'Flamme', color: '#56bf5a' }
+    bouboule: { make: wrap(bouboule, '.body', 'bb', '#7a2a10'), name: 'Bouboule', color: '#ff8a3d' },
+    pitou: { make: wrap(pitou, '.shape', 'pt', '#a86a0a'), name: 'Pitou', color: '#ffd23f', hover: 0 },
+    grincheux: { make: wrap(grincheux, '.cFill', 'gr', '#2b3a6e'), name: 'Grincheux', color: '#9aa7c8', hover: 0 },
+    robi: { make: wrap(robi, 'rect[fill="url(#rbG)"]', 'rb', '#0f3a52'), name: 'Robi', color: '#4fd0e4' },
+    flamme: { make: wrap(flamme, '.body', 'fm', '#1f5a2c'), name: 'Flamme', color: '#56bf5a' }
   };
+
   return { LIB: LIB, poseFace: poseFace, EMO: EMO, mouthD: mouthD, mk: mk, put: put };
 })();
