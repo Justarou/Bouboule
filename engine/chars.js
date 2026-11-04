@@ -78,7 +78,7 @@ var CHARS = (function () {
     if (st.emoPrev && st.emoK !== undefined && st.emoK < 1 && EMO[st.emoPrev] && st.emoPrev !== st.emo) { var E0 = EMO[st.emoPrev], k = st.emoK, B = {}; for (var kk in E) B[kk] = E0[kk] + (E[kk] - E0[kk]) * k; E = B; }
     var o = Math.max(E.open, st.open || 0);
     var wide = E.wide, sq = E.squint, bl = st.blinkAmt !== undefined ? st.blinkAmt : (st.blink ? 1 : 0);
-    var ey = Math.max(.07, (1 - sq * .5) * (1 - .93 * bl));
+    var ey = Math.max(.07, (1 - sq * .5) * (1 - .93 * bl)); if (sq >= 1) ey = .07;   /* EV-005 : yeux vraiment fermés (endormi) */
     var tf = function (sx) { return 'translate(' + (sx * f.ex) + ' ' + f.ey + ') scale(' + wide.toFixed(2) + ' ' + (wide * ey).toFixed(2) + ')'; };
     R.eL.setAttribute('transform', tf(-1));
     R.eR.setAttribute('transform', tf(1));

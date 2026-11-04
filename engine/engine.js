@@ -24,6 +24,7 @@
   var V2 = (EP.engine || 1) >= 2; CHARS.V2 = V2;
   var DEPTH_DY = 70, DEPTH_SC = .55, STN_P = [], FIRE_P = null;
   var V4 = (EP.engine || 1) >= 4; /* EV-004 : profondeur (depth), cailloux en profondeur, locuteur au premier plan */
+  var V5 = (EP.engine || 1) >= 5; /* EV-005 : caméra lissée finement (plus de marches d'escalier dans les transitions) */
   var V3 = (EP.engine || 1) >= 3; /* EV-002 : transitions de décor symétriques + accessoires liés à leur décor */
   var RND = SETS.rnd, SM = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
   /* ---------- 1. Chronologie des répliques ---------- */
@@ -56,7 +57,7 @@
   LET.forEach(function (k, n) {
     var kind = CASTK[k], o = CAST_OPT[kind] || {};
     AC[k] = { k: k, kind: kind, s: o.s || 1, row: o.row || 0, hover: o.hover || 0, style: STYLE[kind] || 'hop',
-      segs: [], lifts: [], depths: [], waters: [], wets: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
+      segs: [], lifts: [], depths: [], waters: [], wets: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], aura: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
   });
   var RBEV = [];
   var EVSFX = [], EVFX = [], EVCAM = [], SKYK = [], SHK = [], BEAMS = [], PROPS = { ball: [], machine: [], house: [], stones: [], fire: [] }, AMB = [], MUS = [], SETK = [[0, EP.set || 'colline']], RAIN = [];
@@ -108,6 +109,7 @@
     else if (v === 'hic') { A.anims.push({ t0: t, dur: .55, name: 'hic' }); EVSFX.push({ t: t, key: 'pop', vol: .9, variant: 1 }); EVFX.push({ t: t + .06, fx: 'flame', who: a[0], dur: a[1] || .5, dir: a[2] || 'up' }); }
     else if (v === 'fx') EVFX.push({ t: t, fx: a[1], who: a[0], dur: a[2], extra: a[3], extra2: a[4] });
     else if (v === 'glow') A.glow.push([t, a[1], t + (a[2] || .6)]);
+    else if (v === 'aura') A.aura.push([t, a[1], t + (a[2] || .8)]);   /* EV-005 : grande aura de Pitou */
     else if (v === 'soot') A.soot.push([t, a[1], t + (a[2] || .4)]);
     else if (v === 'tod') SKYK.push([t, a[0], t + (V3 ? (a[1] === undefined ? 3 : a[1]) : (a[1] || 3))]); /* EV-003 : en engine 3, durée 0 = changement instantané (plus de remplacement par 3 s) */
     else if (v === 'set') SETK.push([t, a[0], a[1] || .6]);
@@ -414,6 +416,7 @@
     /* anims */
     for (i = 0; i < A.anims.length; i++) {
       var an = A.anims[i], u = (t - an.t0) / an.dur;
+      if (an.name === 'sleep' && u >= 0) { var sk = sm(cl(u)), sb = Math.sin(t * 1.25 + A.phase); o.rot += (an.p || 14) * sk; o.sy *= 1 - .1 * sk + .022 * sb * sk; o.sx *= 1 + .05 * sk - .012 * sb * sk; o.dy = (o.dy || 0); continue; }   /* EV-005 : pose endormie persistante */
       if (u < 0 || u > 1.0001) { if (an.name === 'faint' && u > 1) { o.rot += 88; o.y -= 0; } continue; }
       var nm = an.name, pn = an.p || 1;
       if (nm === 'hop') { var hh = hopf(t, an.t0, an.dur / pn, 34); o.y += hh.y; o.sx *= hh.sx; o.sy *= hh.sy; o.armL = 120; o.armR = 120; }
@@ -447,7 +450,7 @@
     if (V2) { var mb = moodBlend(A, t); o.emoPrev = mb.prev; o.emoK = mb.k; }
     var lk = lastOf(A.looks, t), lx = 0, ly = 0;
     if (typeof lk === 'string' && AC[lk]) { var dxl = wx(xOf(lk, t)) - o.x; lx = cl(dxl / 120, -1, 1); ly = -.1; }
-    else if (lk === 'up') ly = -1; else if (lk === 'RD') { lx = 1; ly = 1; } else if (lk === 'down') ly = 1; else if (lk === 'L') lx = -1; else if (lk === 'R') lx = 1;
+    else if (lk === 'fire') { var fsl = fireState(t); if (fsl) { lx = cl((wx(fsl.x) - o.x) / 120, -1, 1); ly = fsl.lift > 0 ? -.55 : .5; } else lx = 1; } else if (lk === 'up') ly = -1; else if (lk === 'RD') { lx = 1; ly = 1; } else if (lk === 'down') ly = 1; else if (lk === 'L') lx = -1; else if (lk === 'R') lx = 1;
     if (o.lookOv === 'RD') { lx = 1; ly = 1; }
     if (o.extra.moving) lx = cl(Math.sign(vel) * .7 + lx * .3, -1, 1);
     if (!lk || lk === 'cam') { lx = 0; ly = 0; }
@@ -480,6 +483,7 @@
     /* lueur, suie */
     var gl = 0; for (i = 0; i < A.glow.length; i++) { var g3 = A.glow[i]; gl = t >= g3[2] ? g3[1] : (t >= g3[0] ? lerp(gl, g3[1], (t - g3[0]) / (g3[2] - g3[0])) : gl); }
     var so = 0; for (i = 0; i < A.soot.length; i++) { var s3 = A.soot[i]; so = t >= s3[2] ? s3[1] : (t >= s3[0] ? lerp(so, s3[1], (t - s3[0]) / (s3[2] - s3[0])) : so); }
+    var au2 = 0; for (i = 0; i < A.aura.length; i++) { var a3 = A.aura[i]; au2 = t >= a3[2] ? a3[1] : (t >= a3[0] ? lerp(au2, a3[1], (t - a3[0]) / (a3[2] - a3[0])) : au2); } o.aura = au2;
     o.glow = gl; o.soot = so;
     return o;
   }
@@ -529,7 +533,7 @@
   var CAMFX = 400, CAMFY = 250;
   function camAt(t) {
     var c = CAMS[MODE], cfg = LAYOUT[MODE], z = 0, fx = 0, fy = 0, n = 0, d;
-    for (d = -.75; d <= .76; d += .25) { var tt = Math.max(0, t + d); z += kf(c.z, tt); fx += kf(c.x, tt); fy += kf(c.y, tt); n++; }
+    for (d = -.75; d <= .76; d += (V5 ? .05 : .25)) { var tt = Math.max(0, t + d), zs = kf(c.z, tt), xs = kf(c.x, tt); if (V5) { var hw = cfg.VW / 2 / zs; xs = cl(xs, -60 + hw, 860 - hw); } z += zs; fx += xs; fy += kf(c.y, tt); n++; }
     z /= n; fx /= n; fy /= n;
     var sx = 0, sy = 0;
     SHK.forEach(function (s) { var a = t - s[0]; if (a > 0 && a < 1.2) { var e = s[1] * Math.exp(-a * 5.5); sx += e * Math.sin(a * 47); sy += e * .7 * Math.cos(a * 39); } });
@@ -578,7 +582,7 @@
   put(houseG,
     '<ellipse cy="3" rx="64" ry="8" fill="#14213d" opacity=".18"/>' +
     '<g class="hrub"><rect x="-52" y="-12" width="44" height="12" rx="3" fill="#e6c08a" stroke="#7b4f33" stroke-width="2.6" transform="rotate(-9 -30 -6)"/><rect x="-6" y="-9" width="50" height="10" rx="3" fill="#f2d2a0" stroke="#7b4f33" stroke-width="2.6" transform="rotate(7 18 -4)"/><path d="M-20 -18 L8 -40 L36 -16Z" fill="#d8654f" stroke="#7b3a2a" stroke-width="2.6" stroke-linejoin="round" transform="rotate(-18 8 -26)"/><rect x="26" y="-8" width="30" height="8" rx="3" fill="#c4915a" stroke="#7b4f33" stroke-width="2.4" transform="rotate(14 40 -4)"/></g>' +
-    '<g class="hbd"><g class="hwl"><rect x="-46" y="-62" width="92" height="62" rx="3" fill="#f2d2a0" stroke="#7b4f33" stroke-width="3.2"/><rect x="-46" y="-62" width="30" height="62" fill="#e6bf86" opacity=".6"/><rect x="-36" y="-48" width="22" height="22" rx="2" fill="#a9d0ee" stroke="#7b4f33" stroke-width="3" transform="rotate(8 -25 -37)"/><rect x="8" y="-40" width="20" height="40" rx="9" fill="#7b4f33" transform="rotate(-4 18 -20)"/><circle cx="23" cy="-18" r="2" fill="#ffd23f"/></g>' +
+    '<g class="hbd"><g class="hwl"><rect x="-46" y="-62" width="92" height="62" rx="3" fill="#f2d2a0" stroke="#7b4f33" stroke-width="3.2"/><rect x="-46" y="-62" width="30" height="62" fill="#e6bf86" opacity=".6"/><g class="hwd" display="none"><rect x="-44.4" y="-60.4" width="88.8" height="15.2" fill="#d9a566"/><rect x="-44.4" y="-45.2" width="88.8" height="15.2" fill="#c98f52"/><rect x="-44.4" y="-30" width="88.8" height="15.2" fill="#d9a566"/><rect x="-44.4" y="-14.8" width="88.8" height="14.8" fill="#c98f52"/><path d="M-44 -45.2 H44 M-44 -30 H44 M-44 -14.8 H44" stroke="#6b4429" stroke-width="2.2" fill="none"/><path d="M-14 -60 V-45.4 M22 -45 V-30.2 M-30 -29.8 V-15 M10 -14.6 V0 M34 -60 V-45.4" stroke="#6b4429" stroke-width="1.6" fill="none"/><path d="M-42 -55 Q-30 -57 -18 -54 T6 -55 T30 -53 M-42 -50 Q-26 -48 -8 -50 T40 -49 M-40 -40 Q-24 -42 -6 -39 T24 -40 M-42 -35 Q-30 -33 -10 -35 T38 -34 M-42 -24 Q-28 -26 -10 -23 T20 -24 T42 -22 M-40 -19 Q-22 -17 0 -19 T40 -18 M-42 -9 Q-28 -11 -12 -8 T18 -9 M-40 -4 Q-20 -2 2 -4 T42 -3" stroke="#a06a35" stroke-width="1.2" fill="none" opacity=".75"/><ellipse cx="-27" cy="-52.5" rx="3.2" ry="2" fill="#8a5a2d"/><ellipse cx="30" cy="-38" rx="2.8" ry="1.8" fill="#8a5a2d"/><ellipse cx="-8" cy="-22" rx="3" ry="1.9" fill="#8a5a2d"/><ellipse cx="38" cy="-8" rx="2.6" ry="1.7" fill="#8a5a2d"/><g fill="#5a3a22"><circle cx="-40" cy="-53" r="1.1"/><circle cx="40" cy="-53" r="1.1"/><circle cx="-40" cy="-38" r="1.1"/><circle cx="40" cy="-38" r="1.1"/><circle cx="-40" cy="-23" r="1.1"/><circle cx="40" cy="-23" r="1.1"/><circle cx="-40" cy="-8" r="1.1"/><circle cx="40" cy="-8" r="1.1"/></g></g><rect x="-36" y="-48" width="22" height="22" rx="2" fill="#a9d0ee" stroke="#7b4f33" stroke-width="3" transform="rotate(8 -25 -37)"/><rect x="8" y="-40" width="20" height="40" rx="9" fill="#7b4f33" transform="rotate(-4 18 -20)"/><circle cx="23" cy="-18" r="2" fill="#ffd23f"/></g>' +
     '<g class="hrf"><path d="M-58 -62 L0 -108 L58 -62Z" fill="#e0614e" stroke="#7b3a2a" stroke-width="3.4" stroke-linejoin="round"/><path d="M0 -108 L58 -62 L10 -62Z" fill="#bb4638"/></g></g>' +
     '<g class="hst"><rect x="-4" y="-48" width="8" height="46" rx="2" fill="#c4915a" stroke="#7b4f33" stroke-width="2.6"/><path d="M-4 -2 L0 8 L4 -2Z" fill="#7b4f33"/><path d="M4 -46 L26 -40 L4 -32Z" fill="#ff5f7e" stroke="#8a2a4a" stroke-width="2"/></g>');
   houseG.setAttribute('display', 'none');
@@ -613,7 +617,7 @@
     '<path d="M-22 -20 Q-22 -28 -10 -29 L12 -29 Q23 -28 23 -20Z" fill="#a39c90" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-27" rx="14" ry="2.4" fill="#c9c3b8"/>');
   pileG.setAttribute('display', 'none');
   var fireG = mk('g', {}, propL);   /* EV-005 : petit feu */
-  put(fireG, '<g class="fch"><ellipse cy="-26" rx="15" ry="27" fill="#2e211b" opacity=".62"/><ellipse cy="-30" rx="8" ry="18" fill="#1b130f" opacity=".5"/></g>' +
+  put(fireG, '<g class="fch"><defs><radialGradient id="fchg" cx="50%" cy="55%" r="50%"><stop offset="0" stop-color="#0d0805" stop-opacity=".7"/><stop offset=".55" stop-color="#1a110b" stop-opacity=".35"/><stop offset="1" stop-color="#1a110b" stop-opacity="0"/></radialGradient></defs><ellipse cy="-30" rx="30" ry="44" fill="url(#fchg)"/><path d="M-13 0 C-18 -9 -13 -15 -15 -23 C-18 -31 -10 -35 -11 -44 C-8 -50 -3 -47 -1 -57 C3 -52 6 -55 7 -46 C13 -42 11 -34 14 -27 C17 -19 12 -12 13 0Z" fill="#1b120c" opacity=".86"/><path d="M-7 -4 C-10 -12 -6 -20 -8 -28 C-6 -36 -1 -40 0 -47 C4 -40 8 -36 7 -27 C9 -19 6 -10 7 -4Z" fill="#3a2314" opacity=".8"/><path d="M-9 -36 L-3 -30 L-6 -22 M5 -40 L2 -31 L7 -23 M0 -14 L-2 -6" stroke="#0a0604" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M-17 -6 C-24 -22 -19 -40 -8 -62 M17 -4 C23 -20 20 -38 11 -60" stroke="#2a1b12" stroke-width="2.4" fill="none" opacity=".35" stroke-linecap="round"/></g>' +
     '<g class="fgl"><ellipse cy="-20" rx="78" ry="58" fill="#ffb347" opacity=".10"/><ellipse cy="-20" rx="50" ry="38" fill="#ffb347" opacity=".13"/><ellipse cy="-18" rx="30" ry="24" fill="#ffd77a" opacity=".18"/></g>' +
     '<g class="ffl"><path d="M0 0 C-26 -4 -24 -30 -6 -50 C-6 -34 4 -30 8 -44 C27 -26 26 -4 0 0Z" fill="#ff6d2a" stroke="#c4441a" stroke-width="2"/><path d="M0 -2 C-17 -4 -15 -22 -3 -36 C-3 -26 4 -23 6 -31 C18 -19 17 -4 0 -2Z" fill="#ffae2e"/><path d="M0 -3 C-8 -4 -7 -14 -1 -22 C0 -16 3 -14 4 -18 C9 -11 8 -4 0 -3Z" fill="#fff3a0"/></g>');
   fireG.setAttribute('display', 'none');
@@ -844,7 +848,7 @@
         var litF = cl((st.glow !== 0 ? st.glow : (st.emo === 'sad' || st.emo === 'worried' ? 0 : .8)));
         ch.stops[0].setAttribute('stop-color', SETS.rgb(SETS.mixc([205, 198, 170], [255, 246, 176], litF))); ch.stops[1].setAttribute('stop-color', SETS.rgb(SETS.mixc([150, 140, 110], [255, 194, 31], litF)));
         ch.shape.setAttribute('stroke', SETS.rgb(SETS.mixc([110, 96, 64], [201, 138, 16], litF)));
-        ch.glow.setAttribute('opacity', (.95 * cl((litF - .3) / .7) * (.8 + .2 * Math.sin(t * 6))).toFixed(2));
+        ch.glow.setAttribute('opacity', (.95 * cl((litF - .3) / .7) * (.8 + .2 * Math.sin(t * 6))).toFixed(2)); if (st.aura) { ch.glow.setAttribute('r', (80 + 110 * st.aura).toFixed(0)); ch.glow.setAttribute('opacity', Math.max(.95 * cl((litF - .3) / .7), .5 + .5 * st.aura).toFixed(2)); } else if (ch.glow.getAttribute('r') !== '80') ch.glow.setAttribute('r', '80');
         ch.flare.setAttribute('opacity', (st.glow > .95 ? (.5 + .5 * Math.sin(t * 4)) * .8 : 0).toFixed(2)); ch.flare.setAttribute('transform', 'translate(0 -42) rotate(' + f1(t * 20) + ')');
       }
       if (A.kind === 'grincheux') {
@@ -920,7 +924,7 @@
       if (hs.mode === 'build' || hs.mode === 'walls') { wy = Math.max(.001, sm(cl(hu / .7))); var ru = sm(cl((hu - .6) / .4)); ry = -(1 - ru) * 90; rr = (1 - ru) * -25 - 7 * ru; rot = (hs.mode === 'walls' ? .8 : 5) * sm(hu) + 1.4 * Math.sin(t * 9) * (1 - hu) * (hu > 0 ? 1 : 0); bo = 1; }
       else if (hs.mode === 'collapse') { wy = 1 - .84 * sm(hu); ry = 0 + 110 * hu * hu; rr = -7 - 40 * hu; rot = 5 + 22 * hu * hu; rub = sm(cl((hu - .5) / .5)); bo = hu < .95 ? 1 : 0; wy = Math.max(.001, wy); }
       else if (hs.mode === 'stake') { bo = 0; so = 1; sy0 = -140 * Math.pow(1 - sm(cl(hu)), 2); }
-      hr.setAttribute('display', hs.mode === 'walls' ? 'none' : '');
+      hr.setAttribute('display', hs.mode === 'walls' ? 'none' : ''); var hwd = houseG.querySelector('.hwd'); if (hwd) hwd.setAttribute('display', hs.mode === 'walls' ? '' : 'none');
       hb.setAttribute('display', bo ? '' : 'none'); hrub.setAttribute('display', rub > 0 ? '' : 'none'); hrub.setAttribute('opacity', rub.toFixed(2)); hst.setAttribute('display', so ? '' : 'none');
       hst.setAttribute('transform', 'translate(0 ' + f1(sy0) + ')');
       hb.setAttribute('transform', 'rotate(' + rot.toFixed(2) + ' 0 0)');
@@ -936,7 +940,7 @@
       var fsz = fs.size * fk * (1 + .07 * Math.sin(t * 17)), fsy = fs.size * fk * (1 + .12 * Math.sin(t * 13 + 1));
       fireG.setAttribute('display', (fk > .01 || (fs.outT !== null && fs.mark)) ? '' : 'none');
       fch.setAttribute('display', (fs.outT !== null && fs.mark) ? '' : 'none');
-      fch.setAttribute('transform', 'scale(' + f1(fs.size) + ')');
+      fch.setAttribute('transform', 'scale(' + f1(fs.size * .5) + ')');
       ffl.setAttribute('display', fk > .01 ? '' : 'none');
       ffl.setAttribute('transform', 'scale(' + f1(fsz) + ' ' + f1(fsy) + ') skewX(' + f1(4 * Math.sin(t * 9)) + ')');
       fgl.setAttribute('display', fk > .01 ? '' : 'none');
