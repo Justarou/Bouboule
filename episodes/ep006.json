@@ -59,289 +59,2124 @@
    "who": "N",
    "text": "Dans l'épisode d'avant, les amis ont posé les fondations. Depuis, les murs sont montés. Mais il n'y a pas encore de toit.",
    "tags": "[warm, slow, gentle old man telling a bedtime story]",
-   "do": []
+   "do": [
+    [
+     0,
+     "tod",
+     "dusk",
+     0.01
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0,
+     "amb",
+     "amb_oiseaux",
+     0.2
+    ],
+    [
+     0,
+     "house",
+     "walls",
+     0.68,
+     0.01,
+     1.5
+    ],
+    [
+     0,
+     "stones",
+     "pile",
+     0.54
+    ],
+    [
+     0,
+     "place",
+     "B",
+     0.12
+    ],
+    [
+     0,
+     "place",
+     "R",
+     0.2
+    ],
+    [
+     0,
+     "place",
+     "P",
+     0.38
+    ],
+    [
+     0,
+     "place",
+     "F",
+     0.47
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "faint",
+     0.01
+    ],
+    [
+     0,
+     "anim",
+     "R",
+     "faint",
+     0.01
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "asleep"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "asleep"
+    ],
+    [
+     0.4,
+     "fx",
+     "B",
+     "zzz",
+     5
+    ],
+    [
+     1.4,
+     "fx",
+     "R",
+     "zzz",
+     4
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.45,
+     0.5
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "shy"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "P"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.5,
+      0.5
+     ],
+     6.0
+    ],
+    [
+     "e-2.4",
+     "shot",
+     "medium",
+     [
+      0.34,
+      0.34
+     ],
+     2.4
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Brrr. Il fait froid, ce soir. Bouboule et Robi dorment déjà, épuisés.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [shivering a little, worried]",
-   "do": []
+   "do": [
+    [
+     0,
+     "anim",
+     "P",
+     "squish",
+     0.5
+    ],
+    [
+     0.2,
+     "fx",
+     "P",
+     "sweat"
+    ],
+    [
+     "e-3.0",
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.3,
+      0.3
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Pfff. Moi, je passais par là. Je regarde juste... mon futur toit.",
    "tags": "[grumpy, sulking, plaintive] [grumbling, pretending to be casual]",
-   "do": []
+   "do": [
+    [
+     0,
+     "enter",
+     "G",
+     "L",
+     0.3,
+     2.2,
+     "float"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "neutral"
+    ],
+    [
+     1.4,
+     "look",
+     "G",
+     "cam"
+    ],
+    [
+     1.6,
+     "mood",
+     "G",
+     "worried"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.36,
+      0.36
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Ce soir, il nous faut un feu. Un petit feu dans la cheminée.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [gentle, hopeful]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "F"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.7,
+     0.6
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.6,
+     "anim",
+     "P",
+     "nod",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Un feu ? Moi ? Non, non, non...",
    "tags": "[shy, soft, trembling little voice] [scared, small]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "scared"
+    ],
+    [
+     0,
+     "anim",
+     "F",
+     "squish",
+     0.7
+    ],
+    [
+     0.5,
+     "move",
+     "F",
+     0.44,
+     0.6,
+     "waddle"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     3.5
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Tu es notre seul dragon, Flamme. Tu sais faire du feu.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [kind, encouraging]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "F"
+    ],
+    [
+     0,
+     "move",
+     "P",
+     0.4,
+     1.0,
+     "float"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.8,
+     0.8
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.44,
+      0.44
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Je sais en faire un trop grand. Et la maison est en bois.",
    "tags": "[shy, soft, trembling little voice] [anxious]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "F",
+     "house"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "worried"
+    ],
+    [
+     0.6,
+     "look",
+     "F",
+     "L"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     5.0
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Alors on commence tout petit. Un tout petit, tout petit feu.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [soft, reassuring]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "anim",
+     "P",
+     "nod",
+     0.6
+    ],
+    [
+     0.6,
+     "look",
+     "F",
+     "P"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.44,
+      0.44
+     ],
+     4.5
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Pfff. Et si ça brûle ? C'est moi qui ai promis le toit.",
    "tags": "[grumpy, sulking, plaintive] [gruff, secretly worried]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "cam"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "worried"
+    ],
+    [
+     0.3,
+     "fx",
+     "G",
+     "drip",
+     1.0
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "G",
+     4.5
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Je... je vais essayer.",
    "tags": "[shy, soft, trembling little voice] [hesitant, brave but trembling]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "worried"
+    ],
+    [
+     0.5,
+     "move",
+     "F",
+     0.52,
+     1.2,
+     "waddle"
+    ],
+    [
+     0.5,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.46,
+      0.46
+     ],
+     4.5
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Respire. Compte jusqu'à dix. Tout doucement.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [calm, steady]",
-   "do": []
+   "do": [
+    [
+     0,
+     "move",
+     "P",
+     0.46,
+     0.8,
+     "float"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "F"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.9,
+     0.8
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.48,
+      0.48
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Un... deux... trois... Hic !",
    "tags": "[shy, soft, trembling little voice] [nervous, then a sudden hiccup]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "worried"
+    ],
+    [
+     0.9,
+     "anim",
+     "F",
+     "nod",
+     0.4
+    ],
+    [
+     "e-1.3",
+     "hic",
+     "F",
+     0.6
+    ],
+    [
+     "e-1.0",
+     "fire",
+     "show",
+     0.6,
+     0.9,
+     42
+    ],
+    [
+     "e-0.9",
+     "fx",
+     "F",
+     "sweat"
+    ],
+    [
+     "e-0.6",
+     "shake",
+     3
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     5.5
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Oh non ! La planche brûle ! La maison brûle !",
    "tags": "[shy, soft, trembling little voice] [panicked]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "scared"
+    ],
+    [
+     0,
+     "anim",
+     "F",
+     "tremble",
+     1.5
+    ],
+    [
+     0,
+     "fire",
+     "grow",
+     1.5,
+     1.2
+    ],
+    [
+     0.5,
+     "fx",
+     "F",
+     "smoke",
+     1.0
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.56,
+      0.56
+     ],
+     4.5
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Grincheux ! Vite, ta pluie !",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [urgent]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     1,
+     0.3
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "scared"
+    ],
+    [
+     0,
+     "anim",
+     "P",
+     "hop",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     [
+      0.4,
+      0.4
+     ],
+     3.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Pfff ! J'arrive ! Psssh !",
    "tags": "[grumpy, sulking, plaintive] [grumpy but quick, effort]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "L"
+    ],
+    [
+     0,
+     "move",
+     "G",
+     0.54,
+     0.7,
+     "float"
+    ],
+    [
+     0.5,
+     "fx",
+     "G",
+     "rain",
+     2.0
+    ],
+    [
+     0.9,
+     "fire",
+     "out",
+     1.3,
+     true
+    ],
+    [
+     1.0,
+     "sfx",
+     "goutte",
+     0.5
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "angry"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.56,
+      0.56
+     ],
+     4.5
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Voilà, c'est éteint. Tu m'avais réchauffé, je t'éteins. On est quittes.",
    "tags": "[grumpy, sulking, plaintive] [gruff, embarrassed, mumbling]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "embarrassed"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "L"
+    ],
+    [
+     0.4,
+     "anim",
+     "G",
+     "squish",
+     0.6
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "surprised"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.54,
+      0.54
+     ],
+     5.5
+    ]
+   ]
   },
   {
    "who": "R",
    "text": "Bip... pluie... je ne rouille pas... bip... zzz.",
    "tags": "[sleepy, robotic, mumbling]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "sfx",
+     "chat_ronron",
+     0.18
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.16,
+      0.16
+     ],
+     5.0
+    ],
+    [
+     0.2,
+     "fx",
+     "R",
+     "zzz",
+     2.5
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Je le savais. J'ai brûlé une planche. Je suis dangereux.",
    "tags": "[shy, soft, trembling little voice] [crushed, ashamed, whispering]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "sad"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     5.0
+    ],
+    [
+     0,
+     "move",
+     "F",
+     0.56,
+     1.0,
+     "waddle"
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "C'est une seule planche, Flamme. Et personne n'est blessé.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [gentle, worried]",
-   "do": []
+   "do": [
+    [
+     0,
+     "move",
+     "P",
+     0.5,
+     1.2,
+     "float"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "F"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.55,
+     0.8
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.52,
+      0.52
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Aujourd'hui une planche. Demain, toute la maison. Je préfère partir.",
    "tags": "[shy, soft, trembling little voice] [sad, small, defeated]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "sad"
+    ],
+    [
+     0.6,
+     "anim",
+     "F",
+     "shake",
+     0.7
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     5.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Pfff... Ne dis pas de bêtises.",
    "tags": "[grumpy, sulking, plaintive] [awkward, clumsy tenderness]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "F"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "worried"
+    ],
+    [
+     0.8,
+     "fx",
+     "G",
+     "drip",
+     1.0
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "G",
+     4.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Je vais dormir dans la forêt. Loin des maisons.",
    "tags": "[shy, soft, trembling little voice] [sad, quiet, resigned]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "sad"
+    ],
+    [
+     0.5,
+     "tod",
+     "night",
+     5
+    ],
+    [
+     0.5,
+     "amb",
+     "amb_nuit",
+     0.3
+    ],
+    [
+     1.0,
+     "exit",
+     "F",
+     "R",
+     4.5,
+     "waddle"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.56,
+      0.56
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "N",
    "text": "Flamme marcha jusqu'à la forêt. Sa petite flamme tremblait, de plus en plus petite.",
    "tags": "[warm, slow, gentle old man telling a bedtime story] [slow, tender]",
-   "do": []
+   "do": [
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.62,
+      0.62
+     ],
+     5.0
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "R"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.4,
+     1.0
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Flamme, attends ! ... Grincheux, je ne sais pas quoi lui dire.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [worried, helpless]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "G"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "worried"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.46,
+      0.46
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Pfff. Laisse-moi faire, Pitou. Je vais lui parler.",
    "tags": "[grumpy, sulking, plaintive] [reluctant, then decided]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "scared"
+    ],
+    [
+     0,
+     "anim",
+     "G",
+     "tremble",
+     1.5
+    ],
+    [
+     0.8,
+     "mood",
+     "G",
+     "angry"
+    ],
+    [
+     "e-1.8",
+     "exit",
+     "G",
+     "R",
+     3.0,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Flamme ! Attends. Je n'aime pas le noir. Reste allumé, s'il te plaît.",
    "tags": "[grumpy, sulking, plaintive] [afraid but pushing on, whispering]",
-   "do": []
+   "do": [
+    [
+     0,
+     "set",
+     "foret",
+     1.2
+    ],
+    [
+     0,
+     "tod",
+     "night",
+     0.5
+    ],
+    [
+     0,
+     "amb",
+     "amb_nuit",
+     0.35
+    ],
+    [
+     0,
+     "enter",
+     "G",
+     "L",
+     0.28,
+     3.0,
+     "float"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "scared"
+    ],
+    [
+     0,
+     "place",
+     "F",
+     0.74
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "sad"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     0.3,
+     "sfx",
+     "hibou",
+     0.4
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.5,
+      0.5
+     ],
+     5.5
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Je te fais de la lumière ? Même après la planche ?",
    "tags": "[shy, soft, trembling little voice] [surprised, tiny hope]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "F",
+     "L"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "surprised"
+    ],
+    [
+     0,
+     "glow",
+     "F",
+     0.9,
+     0.8
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     4.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Ta flamme m'a réchauffé, un jour. Elle ne m'a jamais fait peur.",
    "tags": "[grumpy, sulking, plaintive] [gruff but warm]",
-   "do": []
+   "do": [
+    [
+     0,
+     "move",
+     "G",
+     0.44,
+     2.0,
+     "float"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "worried"
+    ],
+    [
+     1.5,
+     "mood",
+     "G",
+     "shy"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Et moi, ma pluie a gâché plein de pique-niques. Pfff. On s'en remet.",
    "tags": "[grumpy, sulking, plaintive] [embarrassed, honest]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "embarrassed"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "L"
+    ],
+    [
+     0,
+     "move",
+     "F",
+     0.62,
+     1.5,
+     "waddle"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.54,
+      0.54
+     ],
+     5.5
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Vraiment ? Toi aussi, tu as fait des dégâts ?",
    "tags": "[shy, soft, trembling little voice] [curious, softly]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "surprised"
+    ],
+    [
+     0.5,
+     "mood",
+     "F",
+     "curious"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     4.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Une planche, ça se remplace. Un ami, non. Pfff. On retourne, d'accord ?",
    "tags": "[grumpy, sulking, plaintive] [gruff but warm, gentle]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "F"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "shy"
+    ],
+    [
+     0.5,
+     "anim",
+     "G",
+     "nod",
+     0.6
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "G",
+     6.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "D'accord. Mais j'ai quand même un peu peur.",
    "tags": "[shy, soft, trembling little voice] [timid, relieved]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "shy"
+    ],
+    [
+     0,
+     "anim",
+     "F",
+     "squish",
+     0.6
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     4.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Moi aussi. Alors on a peur ensemble. Pfff... ça va mieux.",
    "tags": "[grumpy, sulking, plaintive] [gruff but warm, a little smile]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "G"
+    ],
+    [
+     1.0,
+     "fx",
+     "G",
+     "sparkle",
+     1.0
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.52,
+      0.52
+     ],
+     5.5
+    ]
+   ]
   },
   {
    "who": "N",
    "text": "Ils revinrent à la maison. Pitou les attendait, sa lumière allumée pour les guider.",
    "tags": "[warm, slow, gentle old man telling a bedtime story] [tender]",
-   "do": []
+   "do": [
+    [
+     0,
+     "set",
+     "colline",
+     1.2
+    ],
+    [
+     0,
+     "tod",
+     "night",
+     0.5
+    ],
+    [
+     0,
+     "amb",
+     "amb_nuit",
+     0.3
+    ],
+    [
+     0,
+     "house",
+     "walls",
+     0.68,
+     0.01,
+     1.5
+    ],
+    [
+     0,
+     "stones",
+     "pile",
+     0.54
+    ],
+    [
+     0,
+     "fire",
+     "show",
+     0.6,
+     1.0,
+     42,
+     "quiet"
+    ],
+    [
+     0.02,
+     "fire",
+     "out",
+     0.01,
+     true,
+     "quiet"
+    ],
+    [
+     0,
+     "place",
+     "B",
+     0.12
+    ],
+    [
+     0,
+     "place",
+     "R",
+     0.2
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "faint",
+     0.01
+    ],
+    [
+     0,
+     "anim",
+     "R",
+     "faint",
+     0.01
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "asleep"
+    ],
+    [
+     0,
+     "mood",
+     "R",
+     "asleep"
+    ],
+    [
+     0.4,
+     "fx",
+     "B",
+     "zzz",
+     5
+    ],
+    [
+     0,
+     "place",
+     "P",
+     0.4
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     1.0,
+     0.5
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "place",
+     "F",
+     0.3
+    ],
+    [
+     0,
+     "place",
+     "G",
+     0.24
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "shy"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "neutral"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.5,
+      0.5
+     ],
+     4.5
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Vous revenez ! Flamme, on réessaie ? Cette fois, Grincheux reste tout près.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [relieved, warm]",
-   "do": []
+   "do": [
+    [
+     0,
+     "move",
+     "P",
+     0.46,
+     1.0,
+     "float"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "F"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.4,
+      0.4
+     ],
+     5.5
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Pfff. Mon petit nuage est prêt. Au cas où.",
    "tags": "[grumpy, sulking, plaintive] [gruff, protective]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "cam"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "neutral"
+    ],
+    [
+     0.5,
+     "move",
+     "G",
+     0.5,
+     1.6,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.44,
+      0.44
+     ],
+     4.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Cette fois, je compte tout seul. Un... deux... trois... quatre... cinq...",
    "tags": "[shy, soft, trembling little voice] [determined, trembling, slow]",
-   "do": []
+   "do": [
+    [
+     0,
+     "move",
+     "F",
+     0.52,
+     2.0,
+     "waddle"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     0.8,
+     "anim",
+     "F",
+     "tremble",
+     1.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     6.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Six... sept... huit... neuf... dix.",
    "tags": "[shy, soft, trembling little voice] [determined, slow, breathing]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "proud"
+    ],
+    [
+     0.2,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     2.2,
+     "fire",
+     "show",
+     0.54,
+     0.5,
+     26
+    ],
+    [
+     2.3,
+     "sfx",
+     "scintille",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "F",
+     5.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Il est allumé ! Un tout petit feu. Tout sage.",
    "tags": "[shy, soft, trembling little voice] [overjoyed, whispering]",
-   "do": []
+   "do": [
+    [
+     0,
+     "fire",
+     "grow",
+     0.75,
+     1.2
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "laugh"
+    ],
+    [
+     0.3,
+     "anim",
+     "F",
+     "hop",
+     0.6
+    ],
+    [
+     0.4,
+     "fx",
+     "F",
+     "sparkle",
+     1.2
+    ],
+    [
+     0,
+     "tod",
+     "night",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.52,
+      0.52
+     ],
+     4.5
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Il est parfait. Regardez, la maison est toute dorée.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [soft, delighted]",
-   "do": []
+   "do": [
+    [
+     0,
+     "glow",
+     "P",
+     1.0,
+     0.5
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.3,
+     "anim",
+     "P",
+     "cheer",
+     0.7
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.54,
+      0.54
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "J'ai grillé une planche... et j'ai quand même allumé le feu.",
    "tags": "[shy, soft, trembling little voice] [proud and shy]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "proud"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "house"
+    ],
+    [
+     0.8,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Tu as recommencé, Flamme. Je suis fière de toi.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [warm, moved]",
-   "do": []
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "F"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     1.0,
+     0.5
+    ],
+    [
+     0.3,
+     "fx",
+     "P",
+     "hearts",
+     1.3
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.46,
+      0.46
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "Pfff... C'est chaud. Ça sent bon.",
    "tags": "[grumpy, sulking, plaintive] [gruff but warm, cheerful]",
-   "do": []
+   "do": [
+    [
+     0,
+     "move",
+     "G",
+     0.46,
+     1.6,
+     "float"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "R"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "shy"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.44,
+      0.44
+     ],
+     4.5
+    ]
+   ]
   },
   {
    "who": "F",
    "text": "Viens plus près, Grincheux. Il y a de la place.",
    "tags": "[shy, soft, trembling little voice] [warm, kind little voice]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "F",
+     "G"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "happy"
+    ],
+    [
+     0,
+     "anim",
+     "F",
+     "nod",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.48,
+      0.48
+     ],
+     4.5
+    ]
+   ]
   },
   {
    "who": "G",
    "text": "... Merci, Flamme.",
    "tags": "[grumpy, sulking, plaintive] [soft, touched, mumbling]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "F"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0.5,
+     "fx",
+     "G",
+     "steam",
+     1.8
+    ],
+    [
+     0.8,
+     "move",
+     "G",
+     0.49,
+     1.0,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "G",
+     5.0
+    ],
+    [
+     "e-1.8",
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     2.0
+    ]
+   ]
   },
   {
    "who": "B",
    "text": "Bouboule, Bouboule, saute, saute... on recommence... zzz.",
    "tags": "[sleepy, mumbling, childlike voice]",
-   "do": []
+   "do": [
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.16,
+      0.16
+     ],
+     5.0
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "bounce",
+     0.8
+    ],
+    [
+     0.6,
+     "anim",
+     "R",
+     "tremble",
+     1.0
+    ]
+   ]
   },
   {
    "who": "P",
    "text": "Bonne nuit, tout le monde. Je monte briller pour vous.",
    "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [gentle, sleepy]",
-   "do": []
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "cam"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.5,
+     "rainbow",
+     "show",
+     2.0
+    ],
+    [
+     1.3,
+     "exit",
+     "P",
+     "R",
+     3.0,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.5,
+      0.5
+     ],
+     5.0
+    ]
+   ]
   },
   {
    "who": "N",
    "text": "Dans la nuit, le premier feu brillait. Demain, Grincheux devrait tenir sa promesse : faire le toit.",
    "tags": "[warm, slow, gentle old man telling a bedtime story] [tender, slow]",
-   "do": []
+   "do": [
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.54,
+      0.54
+     ],
+     7.0
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "R"
+    ],
+    [
+     0,
+     "look",
+     "G",
+     "R"
+    ],
+    [
+     0.5,
+     "tod",
+     "night",
+     1
+    ]
+   ]
   }
  ]
 }
