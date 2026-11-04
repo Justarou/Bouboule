@@ -26,7 +26,7 @@ Chaque épisode peut être regardé seul, mais ce qui s'est passé compte : les 
 - La **bouteille à la mer** (fin de saison) ouvre la saison 2.
 
 ## État de la maison commune (objet récurrent)
-Piquet planté (ép. 3). **Fondations posées (ép. 5)**, pile de pierres plates au pied du piquet. Prévu : cheminée (ép. 6), fenêtre ronde (ép. 7), toit (ép. 8), porte (ép. 10), fête d'inauguration (ép. 12). Position : à droite de la colline (milieu-droit du décor), grande, plus haute que les personnages.
+Piquet planté (ép. 3). **Fondations posées (ép. 5)**, pile de pierres plates au pied du piquet. **Murs montés, sans toit (ép. 6)** ; **foyer en pierres plates posé au pied de la maison, premier petit feu allumé par Flamme (ép. 6)** — décor tout extérieur, pas d'intérieur. Prévu : fenêtre ronde (ép. 7), toit (ép. 8, promesse de Grincheux), fenêtre ronde (ép. 7), toit (ép. 8), porte (ép. 10), fête d'inauguration (ép. 12). Position : à droite de la colline (milieu-droit du décor), grande, plus haute que les personnages.
 
 ## Protocole de continuité
 **Avant d'écrire** : lire les faits établis, le registre des promesses, l'état des personnages. Choisir *au moins un* rappel naturel d'un épisode passé (une phrase, un objet, un geste) ; vérifier qu'il ne contredit rien.
