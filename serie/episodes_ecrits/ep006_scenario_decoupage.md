@@ -2,7 +2,7 @@
 
 **Scénario et découpage (étapes A à E de la chaîne de production)** — bible du studio **1.3.0** · 4 novembre 2026 · **à valider par Aaron avant la production (étapes F à N).**
 
-Durée estimée : **≈ 4:01** (46 répliques) · casting : Flamme (vedette), Grincheux, Pitou + le narrateur ; Bouboule et Robi dorment (une réplique de rêve chacun) · décors : colline (crépuscule, nuit), forêt (nuit) · `"engine": 5` si l'évolution EV-005 est validée.
+Durée estimée : **≈ 4:10** (48 répliques) · casting : Flamme (vedette), Grincheux, Pitou + le narrateur ; Bouboule et Robi dorment (une réplique de rêve chacun) · décors : colline (crépuscule, nuit), forêt (nuit) · `"engine": 5` si l'évolution EV-005 est validée.
 
 ## Points à trancher (décisions importantes)
 
@@ -22,7 +22,7 @@ Durée estimée : **≈ 4:01** (46 répliques) · casting : Flamme (vedette), Gr
 | Problème | Un feu dans une maison en bois : Flamme est le seul à pouvoir l'allumer, et son hoquet grille une planche dès le premier essai. |
 | Enjeu | La première nuit froide des amis, et que Flamme s'en aille pour de bon. |
 | Émotion | Peur → honte → fierté, avec un mélange : peur *et* fierté à la fin (il a toujours un peu peur, et il y arrive). |
-| Morale incarnée | Se pardonner ses erreurs, c'est apprendre à bien faire. Dite **une seule fois, par Grincheux, avec ses mots** (« Une planche, ça se remplace. Se pardonner, ça aide à mieux faire. ») ; montrée par l'action : Flamme recommence et réussit. |
+| Morale incarnée | Se pardonner ses erreurs, c'est apprendre à bien faire. **Jamais énoncée comme une leçon** : elle passe par le geste. Grincheux dit seulement « Une planche, ça se remplace. Un ami, non. On retourne, d'accord ? », Flamme recommence et réussit, puis Pitou : « Tu as recommencé. Je suis fière de toi. » Le cœur de l'épisode est le rapprochement Grincheux–Flamme. |
 | Lien avec la saison | Pièce de la maison : la cheminée. Teaser : le toit de Grincheux (ép. 8). |
 | Rappels | Ép. 2 : Flamme avait réchauffé Grincheux (« Tu m'avais réchauffé, je t'éteins ») ; compter jusqu'à dix. Ép. 4 : Grincheux a peur du noir et a promis le toit. Ép. 5 : les pierres plates des fondations servent de foyer ; Robi ne rouille pas. |
 | Gags récurrents (une fois chacun) | « Hic ! » (grille une planche) ; « Pfff » de Grincheux ; sa pluie sur la tête, **retournée : elle éteint le feu et devient utile** ; le compte jusqu'à dix de Pitou, **retourné : c'est Flamme qui compte tout seul, Pitou se tait**. |
@@ -70,14 +70,14 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 25. **Grincheux** [grumpy, sulking, plaintive] — « Pfff. Laisse-moi faire, Pitou. Je vais lui parler. »
 
 ### Scène 4 — Deux peureux dans la forêt (forêt, nuit) · ≈ 2:08
-*Intention narrative : Grincheux avoue sa peur et ses propres dégâts ; il dit une fois sa morale ; ils reviennent ensemble. · Intention émotionnelle : aveu → réconfort → courage partagé.*
+*Intention narrative : Grincheux avoue sa peur et ses propres dégâts ; il console sans leçon ; ils reviennent ensemble. · Intention émotionnelle : aveu → réconfort → courage partagé.*
 
 26. **Grincheux** [grumpy, sulking, plaintive] — « Flamme ! Attends. Je n'aime pas le noir. Reste allumé, s'il te plaît. »
 27. **Flamme** [shy, soft, trembling little voice] — « Je te fais de la lumière ? Même après la planche ? »
 28. **Grincheux** [grumpy, sulking, plaintive] — « Ta flamme m'a réchauffé, un jour. Elle ne m'a jamais fait peur. »
 29. **Grincheux** [grumpy, sulking, plaintive] — « Et moi, ma pluie a gâché plein de pique-niques. Pfff. On s'en remet. »
 30. **Flamme** [shy, soft, trembling little voice] — « Vraiment ? Toi aussi, tu as fait des dégâts ? »
-31. **Grincheux** [grumpy, sulking, plaintive] — « Une planche, ça se remplace. Se pardonner, ça aide à mieux faire. »
+31. **Grincheux** [grumpy, sulking, plaintive] — « Une planche, ça se remplace. Un ami, non. Pfff. On retourne, d'accord ? »
 32. **Flamme** [shy, soft, trembling little voice] — « D'accord. Mais j'ai quand même un peu peur. »
 33. **Grincheux** [grumpy, sulking, plaintive] — « Moi aussi. Alors on a peur ensemble. Pfff... ça va mieux. »
 
@@ -91,12 +91,14 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 38. **Flamme** [shy, soft, trembling little voice] — « Six... sept... huit... neuf... dix. »
 39. **Flamme** [shy, soft, trembling little voice] — « Il est allumé ! Un tout petit feu. Tout sage. »
 40. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] — « Il est parfait. Regardez, la maison est toute dorée. »
-41. **Grincheux** [grumpy, sulking, plaintive] — « Pfff... C'est joli. »
-42. **Flamme** [shy, soft, trembling little voice] — « J'ai grillé une planche... et j'ai quand même allumé le feu. »
-43. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] — « Tu as appris, Flamme. C'est ça, bien faire. »
-44. **Bouboule** [sleepy, mumbling, childlike voice] — « Bouboule, Bouboule, saute, saute... pardonne-toi... zzz. »
-45. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] — « Bonne nuit, tout le monde. Je monte briller pour vous. »
-46. **Narrateur** [warm, slow, gentle old man telling a bedtime story] — « Dans la nuit, le premier feu brillait. Demain, Grincheux devrait tenir sa promesse : faire le toit. »
+41. **Flamme** [shy, soft, trembling little voice] — « J'ai grillé une planche... et j'ai quand même allumé le feu. »
+42. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] — « Tu as recommencé, Flamme. Je suis fière de toi. »
+43. **Grincheux** [grumpy, sulking, plaintive] — « Pfff... C'est chaud. Ça sent bon. »
+44. **Flamme** [shy, soft, trembling little voice] — « Viens plus près, Grincheux. Il y a de la place. »
+45. **Grincheux** [grumpy, sulking, plaintive] — « ... Merci, Flamme. »
+46. **Bouboule** [sleepy, mumbling, childlike voice] — « Bouboule, Bouboule, saute, saute... on recommence... zzz. »
+47. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] — « Bonne nuit, tout le monde. Je monte briller pour vous. »
+48. **Narrateur** [warm, slow, gentle old man telling a bedtime story] — « Dans la nuit, le premier feu brillait. Demain, Grincheux devrait tenir sa promesse : faire le toit. »
 
 ## C. Grille de structure
 
@@ -108,12 +110,12 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 | Péripétie 2 | répl. 13–17 | Début d'incendie, Grincheux éteint avec sa pluie (gag retourné) ; Bouboule et Robi arrosés. |
 | Creux émotionnel | répl. 18–23 | Honte : « Je suis dangereux », Flamme s'en va, flamme de plus en plus petite. |
 | Surprise (≈ 65 %) | répl. 24–26 | Grincheux, qui a peur du noir, entre seul dans la forêt de nuit pour le retrouver. |
-| Résolution | répl. 27–42 | Aveu à deux, morale de Grincheux, retour, Flamme compte seul et allume un petit feu sage. |
-| Morale | répl. 30 | Dite une fois par Grincheux. |
-| Chanson-refrain | répl. 44 | Bouboule en dormant : « Bouboule, Bouboule, saute, saute... pardonne-toi... ». |
-| Teaser | répl. 46 | Demain, Grincheux devra tenir sa promesse : le toit. |
+| Résolution | répl. 27–45 | Aveu à deux, Grincheux console, retour, Flamme compte seul et allume un petit feu sage ; Grincheux s'assoit près du feu, réchauffé (inverse de l'ép. 2). |
+| Moment de cœur | répl. 28–33 et 43–45 | Grincheux avoue sa peur et ses dégâts ; à la fin Flamme lui fait de la place près du feu : « Merci, Flamme. » |
+| Chanson-refrain | répl. 46 | Bouboule en dormant : « Bouboule, Bouboule, saute, saute... on recommence... zzz. » |
+| Teaser | répl. 48 | Demain, Grincheux devra tenir sa promesse : le toit. |
 
-Durée estimée : **4:01** (avant pauses de montage), dans la cible 3 min 30 – 6 min. Une seule intrigue. Pas de danger réaliste (un petit feu vite éteint).
+Durée estimée : **4:10** (avant pauses de montage), dans la cible 3 min 30 – 6 min. Une seule intrigue. Pas de danger réaliste (un petit feu vite éteint).
 
 ## D. Découpage en scènes
 
@@ -163,7 +165,7 @@ Durées estimées (voix + respiration). Tout objet cité est montré : cheminée
 | 28 | 2:19 | **G** — Ta flamme m'a réchauffé, un jour. Elle ne m'a jamais fait peur. | Plan à deux ; Grincheux relève la tête vers la flamme : le nuage s'éclaircit ; il sourit presque. | nuage qui s'éclaircit | medium G-F | 6.1 s |
 | 29 | 2:25 | **G** — Et moi, ma pluie a gâché plein de pique-niques. Pfff. On s'en remet. | Grincheux regarde sa pluie, honteux ; Flamme ouvre grand les yeux. | Grincheux honteux | close G | 7.0 s |
 | 30 | 2:32 | **F** — Vraiment ? Toi aussi, tu as fait des dégâts ? | Flamme s'assoit près de lui ; sa flamme monte, douce. | Flamme à côté de lui | medium G-F | 4.5 s |
-| 31 | 2:37 | **G** — Une planche, ça se remplace. Se pardonner, ça aide à mieux faire. | Close sur Grincheux : sourire timide, nuage blanc ; il hoche la tête. | sourire de Grincheux | close G | 6.1 s |
+| 31 | 2:37 | **G** — Une planche, ça se remplace. Un ami, non. Pfff. On retourne, d'accord ? | Close sur Grincheux : sourire timide, nuage blanc ; il hoche la tête. | sourire de Grincheux | close G | 6.1 s |
 | 32 | 2:43 | **F** — D'accord. Mais j'ai quand même un peu peur. | Flamme se lève : un peu de peur, un peu de fierté. | Flamme: peur + fierté | close F | 4.5 s |
 | 33 | 2:47 | **G** — Moi aussi. Alors on a peur ensemble. Pfff... ça va mieux. | Les deux avancent côte à côte, la petite flamme éclaire le chemin ; le nuage blanc au-dessus d'eux. | les deux qui marchent | wide deux | 5.7 s |
 | 34 | 2:53 | **N** — Ils revinrent à la maison. Pitou les attendait, sa lumière allumée pour les guider. | Fondu vers la colline de nuit ; Pitou, sa lumière vive, les attend près des dormeurs ; ils entrent par la gauche. | retour à la maison | wide colline | 7.0 s |
@@ -173,12 +175,14 @@ Durées estimées (voix + respiration). Tout objet cité est montré : cheminée
 | 38 | 3:16 | **F** — Six... sept... huit... neuf... dix. | Insert sur la bouche de Flamme ; inspire, souffle doux : une petite flamme naît dans la cheminée. | souffle de Flamme | insert F + cheminée | 3.2 s |
 | 39 | 3:19 | **F** — Il est allumé ! Un tout petit feu. Tout sage. | Flamme saute de joie (hop) ; la flamme dans la cheminée est toute petite et sage. | le petit feu | wide | 4.9 s |
 | 40 | 3:24 | **P** — Il est parfait. Regardez, la maison est toute dorée. | La lumière dorée du feu éclaire la maison et les amis ; Pitou, ravie. | maison dorée | wide dorée | 4.9 s |
-| 41 | 3:29 | **G** — Pfff... C'est joli. | Grincheux, nuage tout blanc, regarde le feu ; il sourit pour de vrai. | sourire de Grincheux | close G | 2.4 s |
-| 42 | 3:32 | **F** — J'ai grillé une planche... et j'ai quand même allumé le feu. | Flamme montre la planche noircie, puis le feu : fierté mêlée de gêne. | planche noircie + feu | medium F | 5.7 s |
-| 43 | 3:37 | **P** — Tu as appris, Flamme. C'est ça, bien faire. | Pitou pose sa pointe sur Flamme ; plan de réaction de Grincheux qui hoche la tête. | Pitou touche Flamme | medium P-F | 4.5 s |
-| 44 | 3:42 | **B** — Bouboule, Bouboule, saute, saute... pardonne-toi... zzz. | Gag final : Bouboule, endormi, rebondit avec chaque mot en chantant sa chanson ; Robi ronfle en rythme. | Bouboule qui chante en dormant | insert B | 4.0 s |
-| 45 | 3:46 | **P** — Bonne nuit, tout le monde. Je monte briller pour vous. | Pitou monte l'escalier arc-en-ciel (rainbow show), se retourne et salue ; sa lumière rejoint le ciel. | Pitou sur l'escalier | wide escalier | 5.3 s |
-| 46 | 3:51 | **N** — Dans la nuit, le premier feu brillait. Demain, Grincheux devrait tenir sa promesse : faire le toit. | Plan fixe de nuit : maison sans toit, feu doré, silhouettes ; la carte FIN suit. | maison et feu | wide fixe long | 7.8 s |
+| 41 | 3:29 | **F** — J'ai grillé une planche... et j'ai quand même allumé le feu. | Flamme montre la planche noircie, puis le feu : fierté mêlée de gêne. | planche noircie + feu | medium F | 5.7 s |
+| 42 | 3:35 | **P** — Tu as recommencé, Flamme. Je suis fière de toi. | Pitou pose sa pointe sur Flamme ; plan de réaction de Grincheux qui hoche la tête. | Pitou touche Flamme | medium P-F | 4.9 s |
+| 43 | 3:40 | **G** — Pfff... C'est chaud. Ça sent bon. | Grincheux, nuage tout blanc, regarde le feu ; il sourit pour de vrai. | sourire de Grincheux | close G | 3.6 s |
+| 44 | 3:43 | **F** — Viens plus près, Grincheux. Il y a de la place. | Flamme tapote le sol à côté de lui, devant le foyer ; Grincheux hésite, nuage gris qui tremble. | Flamme qui fait de la place | medium F-G | 5.3 s |
+| 45 | 3:49 | **G** — ... Merci, Flamme. | Grincheux s'assoit près du feu, tout contre Flamme ; son nuage devient tout blanc, une petite vapeur chaude monte de lui (il est réchauffé : l'inverse de l'ép. 2). Ils regardent le feu côte à côte. | Grincheux réchauffé à côté de Flamme | close G puis medium deux | 2.2 s |
+| 46 | 3:51 | **B** — Bouboule, Bouboule, saute, saute... on recommence... zzz. | Gag final : Bouboule, endormi, rebondit avec chaque mot en chantant sa chanson ; Robi ronfle en rythme. | Bouboule qui chante en dormant | insert B | 4.0 s |
+| 47 | 3:55 | **P** — Bonne nuit, tout le monde. Je monte briller pour vous. | Pitou monte l'escalier arc-en-ciel (rainbow show), se retourne et salue ; sa lumière rejoint le ciel. | Pitou sur l'escalier | wide escalier | 5.3 s |
+| 48 | 4:00 | **N** — Dans la nuit, le premier feu brillait. Demain, Grincheux devrait tenir sa promesse : faire le toit. | Plan fixe de nuit : maison sans toit, feu doré, silhouettes ; la carte FIN suit. | maison et feu | wide fixe long | 7.8 s |
 
 ## Placement et accessoires (repères)
 - Maison (`house walls`, EV-005) à x 0,62 (échelle plus grande que les personnages), piquet de l'ép. 3 caché derrière les murs. Foyer de pierres plates au pied du mur gauche (x 0,52). Dormeurs (B, R) en tas à x 0,18 ; Pitou x 0,38, Flamme x 0,50 → 0,44, Grincheux x 0,30.
