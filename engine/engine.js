@@ -22,7 +22,7 @@
   var CAST_OPT = { bouboule: { s: 1, row: 0 }, pitou: { s: .95, row: 4, hover: 10 }, grincheux: { s: .95, row: -6, hover: 55 }, robi: { s: 1, row: 8 }, flamme: { s: .92, row: -4 } };
 
   var V2 = (EP.engine || 1) >= 2; CHARS.V2 = V2;
-  var DEPTH_DY = 70, DEPTH_SC = .55, STN_P = [];
+  var DEPTH_DY = 70, DEPTH_SC = .55, STN_P = [], FIRE_P = null;
   var V4 = (EP.engine || 1) >= 4; /* EV-004 : profondeur (depth), cailloux en profondeur, locuteur au premier plan */
   var V3 = (EP.engine || 1) >= 3; /* EV-002 : transitions de décor symétriques + accessoires liés à leur décor */
   var RND = SETS.rnd, SM = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
@@ -59,7 +59,7 @@
       segs: [], lifts: [], depths: [], waters: [], wets: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
   });
   var RBEV = [];
-  var EVSFX = [], EVFX = [], EVCAM = [], SKYK = [], SHK = [], BEAMS = [], PROPS = { ball: [], machine: [], house: [], stones: [] }, AMB = [], MUS = [], SETK = [[0, EP.set || 'colline']], RAIN = [];
+  var EVSFX = [], EVFX = [], EVCAM = [], SKYK = [], SHK = [], BEAMS = [], PROPS = { ball: [], machine: [], house: [], stones: [], fire: [] }, AMB = [], MUS = [], SETK = [[0, EP.set || 'colline']], RAIN = [];
   SKYK.push([0, EP.tod || 'day']);
 
   function sideX(sd) { return sd === 'L' ? -.2 : (sd === 'R' ? 1.2 : .5); }
@@ -119,6 +119,11 @@
     else if (v === 'ball') PROPS.ball.push({ t: t, a: a });
     else if (v === 'machine') PROPS.machine.push({ t: t, a: a });
     else if (v === 'house') PROPS.house.push({ t: t, a: a });
+    else if (v === 'fire') {   /* EV-005 : petit feu (show x taille lift / grow taille dur / out dur [trace] / hide) */
+      PROPS.fire.push({ t: t, a: a });
+      if (a[0] === 'show') { FIRE_P = { x: a[1], lift: a[3] || 0 }; EVSFX.push({ t: t, key: (a[3] || 0) > 0 ? 'bois_craque' : 'scintille', vol: .5 }); }
+      if (a[0] === 'out' && FIRE_P) { var fx0 = FIRE_P.x, fl0 = FIRE_P.lift, fd0 = a[1] || 1.2; for (var q = 0; q < 9; q++) (function (q) { var t1 = t + q * fd0 / 9; P(t1, 1.5, 'puff', function (u) { return { x: wx(fx0) + (q % 3 - 1) * 8 + 16 * u, y: GY - fl0 - 30 - 70 * u, r: 7 + 18 * u, a: (1 - u) * .6, col: '#d9dde3' }; }); })(q); EVSFX.push({ t: t, key: 'eclabousse_eau', vol: .55 }); }
+    }
     else if (v === 'stones') {
       PROPS.stones.push({ t: t, a: a });
       if (a[0] === 'show') STN_P = (a[1] || []).slice(); else if (a[0] === 'add') STN_P = STN_P.concat(a[1] || []); else if (a[0] === 'hide') STN_P = [];
@@ -577,6 +582,7 @@
       e = PROPS.house[i]; if (e.t > t) break; var v = e.a[0];
       if (V3) { var hset = SETK[0][1], k3; for (k3 = 0; k3 < SETK.length; k3++) if (SETK[k3][0] <= e.t) hset = SETK[k3][1]; }
       if (v === 'build') st = { set: hset, mode: 'build', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: e.a[2] || 3, s: e.a[3] || 1 };
+      else if (v === 'walls') st = { set: hset, mode: 'walls', t0: e.t, x: e.a[1] === undefined ? (st.x || wx(.5)) : wx(e.a[1]), dur: e.a[2] || 3, s: e.a[3] || st.s || 1 };   /* EV-005 : murs sans toit */
       else if (v === 'collapse' && st.mode !== 'none') st = { set: hset, mode: 'collapse', t0: e.t, x: st.x, dur: .9, s: st.s };
       else if (v === 'clear') st = { mode: 'none', t0: e.t, x: st.x };
       else if (v === 'stake') st = { set: hset, mode: 'stake', t0: e.t, x: wx(e.a[1] === undefined ? .5 : e.a[1]), dur: .5, s: e.a[2] || 1 };
@@ -600,6 +606,23 @@
     '<path d="M-30 -10 Q-30 -19 -16 -20 L20 -20 Q31 -19 31 -10Z" fill="#b8b1a5" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-18" rx="20" ry="2.8" fill="#d8d2c7"/>' +
     '<path d="M-22 -20 Q-22 -28 -10 -29 L12 -29 Q23 -28 23 -20Z" fill="#a39c90" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-27" rx="14" ry="2.4" fill="#c9c3b8"/>');
   pileG.setAttribute('display', 'none');
+  var fireG = mk('g', {}, propL);   /* EV-005 : petit feu */
+  put(fireG, '<g class="fch"><ellipse cy="-26" rx="15" ry="27" fill="#2e211b" opacity=".62"/><ellipse cy="-30" rx="8" ry="18" fill="#1b130f" opacity=".5"/></g>' +
+    '<g class="fgl"><ellipse cy="-20" rx="78" ry="58" fill="#ffb347" opacity=".10"/><ellipse cy="-20" rx="50" ry="38" fill="#ffb347" opacity=".13"/><ellipse cy="-18" rx="30" ry="24" fill="#ffd77a" opacity=".18"/></g>' +
+    '<g class="ffl"><path d="M0 0 C-26 -4 -24 -30 -6 -50 C-6 -34 4 -30 8 -44 C27 -26 26 -4 0 0Z" fill="#ff6d2a" stroke="#c4441a" stroke-width="2"/><path d="M0 -2 C-17 -4 -15 -22 -3 -36 C-3 -26 4 -23 6 -31 C18 -19 17 -4 0 -2Z" fill="#ffae2e"/><path d="M0 -3 C-8 -4 -7 -14 -1 -22 C0 -16 3 -14 4 -18 C9 -11 8 -4 0 -3Z" fill="#fff3a0"/></g>');
+  fireG.setAttribute('display', 'none');
+  function fireState(t) {
+    var st = null, i, e, v;
+    for (i = 0; i < PROPS.fire.length; i++) {
+      e = PROPS.fire[i]; if (e.t > t) break; v = e.a[0];
+      if (v === 'show') st = { x: e.a[1], size: e.a[2] || 1, s0: e.a[2] || 1, s1: e.a[2] || 1, g0: e.t, gd: 1, lift: e.a[3] || 0, t0: e.t, outT: null, od: 1, mark: false };
+      else if (v === 'grow' && st) { var cur = st.s0 + (st.s1 - st.s0) * cl((e.t - st.g0) / st.gd); st.s0 = cur; st.s1 = e.a[1]; st.g0 = e.t; st.gd = e.a[2] || 1; }
+      else if (v === 'out' && st) { st.outT = e.t; st.od = e.a[1] || 1.2; st.mark = e.a[2] !== false && st.lift > 0 ? true : !!e.a[2]; }
+      else if (v === 'hide') st = null;
+    }
+    if (st) st.size = st.s0 + (st.s1 - st.s0) * sm(cl((t - st.g0) / st.gd));
+    return st;
+  }
   function addDrop(ss, n) { var a = ss.add || [], j, d = false; for (j = 0; j < a.length; j++) if (n >= a[j][0]) d = !!a[j][2]; return d; }
   function addDelay(ss, n) { var a = ss.add || [], j, d = 0; for (j = 0; j < a.length; j++) if (n >= a[j][0]) d = a[j][1] - ss.t0 - a[j][0] * .12; return d; }
   function stonesState(t) {
@@ -887,15 +910,32 @@
       }
       var hb = houseG.querySelector('.hbd'), hw = houseG.querySelector('.hwl'), hr = houseG.querySelector('.hrf'), hrub = houseG.querySelector('.hrub'), hst = houseG.querySelector('.hst');
       var hu = cl((t - hs.t0) / (hs.dur || 1)), wy = 1, ry = 0, rr = 0, rot = 0, rub = 0, bo = 1, so = 0, sy0 = 0;
-      if (hs.mode === 'build') { wy = Math.max(.001, sm(cl(hu / .7))); var ru = sm(cl((hu - .6) / .4)); ry = -(1 - ru) * 90; rr = (1 - ru) * -25 - 7 * ru; rot = 5 * sm(hu) + 1.4 * Math.sin(t * 9) * (1 - hu) * (hu > 0 ? 1 : 0); bo = 1; }
+      if (hs.mode === 'build' || hs.mode === 'walls') { wy = Math.max(.001, sm(cl(hu / .7))); var ru = sm(cl((hu - .6) / .4)); ry = -(1 - ru) * 90; rr = (1 - ru) * -25 - 7 * ru; rot = 5 * sm(hu) + 1.4 * Math.sin(t * 9) * (1 - hu) * (hu > 0 ? 1 : 0); bo = 1; }
       else if (hs.mode === 'collapse') { wy = 1 - .84 * sm(hu); ry = 0 + 110 * hu * hu; rr = -7 - 40 * hu; rot = 5 + 22 * hu * hu; rub = sm(cl((hu - .5) / .5)); bo = hu < .95 ? 1 : 0; wy = Math.max(.001, wy); }
       else if (hs.mode === 'stake') { bo = 0; so = 1; sy0 = -140 * Math.pow(1 - sm(cl(hu)), 2); }
+      hr.setAttribute('display', hs.mode === 'walls' ? 'none' : '');
       hb.setAttribute('display', bo ? '' : 'none'); hrub.setAttribute('display', rub > 0 ? '' : 'none'); hrub.setAttribute('opacity', rub.toFixed(2)); hst.setAttribute('display', so ? '' : 'none');
       hst.setAttribute('transform', 'translate(0 ' + f1(sy0) + ')');
       hb.setAttribute('transform', 'rotate(' + rot.toFixed(2) + ' 0 0)');
       hw.setAttribute('transform', 'scale(1 ' + wy.toFixed(3) + ')');
       hr.setAttribute('transform', 'translate(0 ' + f1(ry - (1 - wy) * 62) + ') rotate(' + rr.toFixed(2) + ' 0 -62)');
       houseG.setAttribute('transform', 'translate(' + f1(hs.x) + ' ' + GY + ') scale(' + (hs.s || 1) + ')');
+    }
+    /* feu (EV-005) */
+    var fs = fireState(t);
+    if (!fs) fireG.setAttribute('display', 'none');
+    else {
+      var fk = fs.outT === null ? sm(cl((t - fs.t0) / .4)) : Math.max(0, 1 - (t - fs.outT) / fs.od), fch = fireG.querySelector('.fch'), ffl = fireG.querySelector('.ffl'), fgl = fireG.querySelector('.fgl');
+      var fsz = fs.size * fk * (1 + .07 * Math.sin(t * 17)), fsy = fs.size * fk * (1 + .12 * Math.sin(t * 13 + 1));
+      fireG.setAttribute('display', (fk > .01 || (fs.outT !== null && fs.mark)) ? '' : 'none');
+      fch.setAttribute('display', (fs.outT !== null && fs.mark) ? '' : 'none');
+      fch.setAttribute('transform', 'scale(' + f1(fs.size) + ')');
+      ffl.setAttribute('display', fk > .01 ? '' : 'none');
+      ffl.setAttribute('transform', 'scale(' + f1(fsz) + ' ' + f1(fsy) + ') skewX(' + f1(4 * Math.sin(t * 9)) + ')');
+      fgl.setAttribute('display', fk > .01 ? '' : 'none');
+      fgl.setAttribute('opacity', (fk * (.85 + .15 * Math.sin(t * 11))).toFixed(2));
+      fgl.setAttribute('transform', 'scale(' + f1(fs.size) + ')');
+      fireG.setAttribute('transform', 'translate(' + f1(wx(fs.x)) + ' ' + f1(GY - fs.lift) + ')');
     }
     /* balle */
     var bp = ballPos(t);
