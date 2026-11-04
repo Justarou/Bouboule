@@ -22,6 +22,8 @@
   var CAST_OPT = { bouboule: { s: 1, row: 0 }, pitou: { s: .95, row: 4, hover: 10 }, grincheux: { s: .95, row: -6, hover: 55 }, robi: { s: 1, row: 8 }, flamme: { s: .92, row: -4 } };
 
   var V2 = (EP.engine || 1) >= 2; CHARS.V2 = V2;
+  var DEPTH_DY = 70, DEPTH_SC = .55, STN_P = [];
+  var V4 = (EP.engine || 1) >= 4; /* EV-004 : profondeur (depth), cailloux en profondeur, locuteur au premier plan */
   var V3 = (EP.engine || 1) >= 3; /* EV-002 : transitions de décor symétriques + accessoires liés à leur décor */
   var RND = SETS.rnd, SM = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
   /* ---------- 1. Chronologie des répliques ---------- */
@@ -54,7 +56,7 @@
   LET.forEach(function (k, n) {
     var kind = CASTK[k], o = CAST_OPT[kind] || {};
     AC[k] = { k: k, kind: kind, s: o.s || 1, row: o.row || 0, hover: o.hover || 0, style: STYLE[kind] || 'hop',
-      segs: [], lifts: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
+      segs: [], lifts: [], depths: [], waters: [], wets: [], vis: [], moods: [[-1, 'neutral']], looks: [[-1, 'cam']], anims: [], glow: [], soot: [], x: .5, v: 0, phase: n * 1.7, tint: [] };
   });
   var RBEV = [];
   var EVSFX = [], EVFX = [], EVCAM = [], SKYK = [], SHK = [], BEAMS = [], PROPS = { ball: [], machine: [], house: [], stones: [] }, AMB = [], MUS = [], SETK = [[0, EP.set || 'colline']], RAIN = [];
@@ -117,7 +119,15 @@
     else if (v === 'ball') PROPS.ball.push({ t: t, a: a });
     else if (v === 'machine') PROPS.machine.push({ t: t, a: a });
     else if (v === 'house') PROPS.house.push({ t: t, a: a });
-    else if (v === 'stones') PROPS.stones.push({ t: t, a: a });   /* EV-001 : cailloux de la rivière */
+    else if (v === 'stones') {
+      PROPS.stones.push({ t: t, a: a });
+      if (a[0] === 'show') STN_P = (a[1] || []).slice(); else if (a[0] === 'add') STN_P = STN_P.concat(a[1] || []); else if (a[0] === 'hide') STN_P = [];
+      if (a[0] === 'take') (a[1] || []).forEach(function (q, m) { var si = STN_P[q]; if (si) { EVFX.push({ t: t + m * (a[2] || 0), fx: 'ringat', who: null, x: si[0], y: GY - 10 - DEPTH_DY * (si[1] || 0) }); EVSFX.push({ t: t + m * (a[2] || 0) + .6, key: 'pop', vol: .5, variant: 1 }); } });
+      if (a[0] === 'add' && a[2] === 'drop') (a[1] || []).forEach(function (si, j) { EVFX.push({ t: t + j * .12 + .5, fx: 'ringat', who: null, x: si[0], y: GY - 10 - DEPTH_DY * (si[1] || 0) }); });
+    }   /* EV-001 : cailloux de la rivière */
+    else if (v === 'depth') A.depths.push({ t0: t, t1: t + (a[2] === undefined ? .6 : a[2]), v: a[1] });   /* EV-004 : éloigne l'acteur (0 = rive, 1 = loin) : monte et rapetisse */
+    else if (v === 'water') A.waters.push({ t0: t, t1: t + (a[2] === undefined ? .4 : a[2]), v: a[1] });   /* EV-004 : immersion (0 = hors de l'eau, 1 = tout le corps) */
+    else if (v === 'wet') A.wets.push({ t0: t, t1: t + (a[2] === undefined ? .6 : a[2]), v: a[1] });   /* EV-004 : mouillé (0 à 1) */
     else if (v === 'lift') A.lifts.push({ t0: t, t1: t + (a[2] === undefined ? .3 : a[2]), v: a[1] });   /* EV-001 : monte l'acteur de a[1] px (ex. sur un caillou) */
     else if (v === 'rainbow') RBEV.push({ t: t, a: a });
     else if (v === 'vanish') A.vis.push([t, 0]);
@@ -138,11 +148,22 @@
     for (i = 0; i < L.length; i++) { var l = L[i]; if (t < l.t0) break; if (t >= l.t1) { v = l.v; continue; } return v + (l.v - v) * SM((t - l.t0) / Math.max(.001, l.t1 - l.t0)); }
     return v;
   }
-  function actorY(k, t) { return GY + AC[k].row - (AC[k].lifts.length ? liftOf(k, t) : 0); }
+  function depthOf(k, t) {
+    var L = AC[k].depths, v = 0, i;
+    for (i = 0; i < L.length; i++) { var l = L[i]; if (t < l.t0) break; if (t >= l.t1) { v = l.v; continue; } return v + (l.v - v) * SM((t - l.t0) / Math.max(.001, l.t1 - l.t0)); }
+    return v;
+  }
+  function trackOf(L, t) {
+    var v = 0, i;
+    for (i = 0; i < L.length; i++) { var l = L[i]; if (t < l.t0) break; if (t >= l.t1) { v = l.v; continue; } return v + (l.v - v) * SM((t - l.t0) / Math.max(.001, l.t1 - l.t0)); }
+    return v;
+  }
+  function scaleOf(k, t) { return AC[k].depths.length ? AC[k].s * (1 - DEPTH_SC * depthOf(k, t)) : AC[k].s; }
+  function actorY(k, t) { var dd = AC[k].depths.length ? depthOf(k, t) : 0; return GY + AC[k].row - (AC[k].lifts.length ? liftOf(k, t) * (1 - DEPTH_SC * dd) : 0) - DEPTH_DY * dd; }
   function bodyTop(k) { return CHARS.LIB[AC[k].kind]; }
   function mouthPos(k, t, dirX) {
     var A = AC[k], c = CHAR_INFO[A.kind], x = wx(xOf(k, t));
-    return { x: x + c.mouth.x * A.s, y: actorY(k, t) - A.hover - 0 + c.mouth.y * A.s };
+    return { x: x + c.mouth.x * scaleOf(k, t), y: actorY(k, t) - A.hover * (scaleOf(k, t) / A.s) - 0 + c.mouth.y * scaleOf(k, t) };
   }
   var CHAR_INFO = {};
   Object.keys(CHARS.LIB).forEach(function (kn) { var tmp = CHARS.LIB[kn].make(); CHAR_INFO[kn] = { mouth: tmp.mouth, cy: tmp.cy, h: tmp.h, w: tmp.w }; });
@@ -246,12 +267,23 @@
       P(t, .9, 'drop', function (u) { var x = wx(xOf(k, t)) + 30 * AC[k].s, y = actorY(k, t) - AC[k].hover - 80 * AC[k].s; return { x: x + 4 * u, y: y + 30 * u, r: 1, a: 1 - u, rot: 0 }; });
     }
     else if (e.fx === 'ripple') {   /* EV-001 : 3 ondulations concentriques à l'eau, au pied de l'acteur (extra = y de l'eau) */
-      var wy2 = e.extra !== undefined ? e.extra : GY - 12;
+      var wy2 = e.extra !== undefined ? e.extra : (AC[k] && AC[k].depths.length ? GY - 12 - DEPTH_DY * depthOf(k, t) : GY - 12);
       for (j = 0; j < 3; j++) (function (j) { P(t + j * .28, 1.2, 'splashe', function (u) { return { x: wx(xOf(k, t)), y: wy2, r: 8 + u * 38, a: (1 - u) * .75 }; }); })(j);
       EVSFX.push({ t: t, key: 'blop', vol: .35, variant: 1 });
     }
+    else if (e.fx === 'drip') {   /* EV-004 : gouttes qui tombent d'un personnage mouillé */
+      var ddur = e.dur || 2.5;
+      for (i = 0; i < Math.round(ddur * 5); i++) (function (i) {
+        var t0 = t + i * .2 + rnd(i + 40) * .12, dx = (rnd(i + 11) - .5) * 56;
+        P(t0, .75, 'drop', function (u) { return { x: wx(xOf(k, t0)) + dx * AC[k].s, y: actorY(k, t0) - (34 - 30 * u * u) * AC[k].s - 6 + 46 * u * u * AC[k].s, r: 1, a: (1 - u) * .9, rot: 0 }; });
+      })(i);
+    }
+    else if (e.fx === 'ringat') {   /* EV-004 : ondulations à un endroit de l'eau (cailloux qui tombent) */
+      for (j = 0; j < 3; j++) (function (j) { P(t + j * .14, .9, 'splashe', function (u) { return { x: wx(e.x), y: e.y, r: 6 + u * 30, a: (1 - u) * .85 }; }); })(j);
+      EVSFX.push({ t: t, key: 'blop', vol: .5, variant: 1 });
+    }
     else if (e.fx === 'splashbig') {   /* EV-001 : gerbe d'eau (gouttes + 2 anneaux) */
-      var wy3 = e.extra !== undefined ? e.extra : GY - 12, nd = 16;
+      var wy3 = e.extra !== undefined ? e.extra : (AC[k] && AC[k].depths.length ? GY - 12 - DEPTH_DY * depthOf(k, t) : GY - 12), nd = 16;
       for (i = 0; i < nd; i++) (function (i) {
         var an = -Math.PI / 2 + (rnd(i + 3) - .5) * 1.9, v = 110 + rnd(i + 9) * 120;
         P(t, .95, 'drop', function (u) { var x = wx(xOf(k, t)) + Math.cos(an) * v * u * .9, y = wy3 + Math.sin(an) * v * u + 360 * u * u; return { x: x, y: y, r: 1, a: (1 - u * u) * .95, rot: (an * 57.3 + 90) * .3 }; });
@@ -295,7 +327,7 @@
   }
   PROPS.machine.forEach(function (c) {
     var a = c.a, t = c.t, v = a[0];
-    if (v === 'show') MACH.show.push([t, 1, a[1], a[2] || 'pop']);
+    if (v === 'show') MACH.show.push([t, 1, a[1], a[2] || 'pop', a[3] || 0]);
     else if (v === 'hide') MACH.show.push([t, 0]);
     else if (v === 'shake') MACH.boom.push({ t: t, dur: a[1] || 1.2, kind: 'shake' });
     else if (v === 'boom') { MACH.boom.push({ t: t, dur: .6, kind: 'boom' }); EVFX.push({ t: t, fx: 'foam', who: null }); EVSFX.push({ t: t, key: 'petite_explosion', vol: .9 }); SHK.push([t, 5]); }
@@ -310,7 +342,7 @@
   });
   function machineState(t) {
     var s = { vis: 0, x: .5, pop: 0 }, i, last = null;
-    for (i = 0; i < MACH.show.length; i++) { var m = MACH.show[i]; if (m[0] <= t) { s.vis = m[1]; if (m[2] !== undefined) { s.x = m[2]; } s.t0 = m[0]; } }
+    for (i = 0; i < MACH.show.length; i++) { var m = MACH.show[i]; if (m[0] <= t) { s.vis = m[1]; if (m[2] !== undefined) { s.x = m[2]; } s.d = m[4] || 0; s.t0 = m[0]; } }
     return s;
   }
   function machinePos() { var s = machineState(1e9); /* dernière position connue */ var x = 400, i; for (i = 0; i < MACH.show.length; i++) if (MACH.show[i][2] !== undefined) x = wx(MACH.show[i][2]); return { x: x, y: GY }; }
@@ -379,6 +411,7 @@
       else if (nm === 'spin') { o.rot += 360 * sm(u); o.y += 40 * Math.sin(Math.PI * u); }
       else if (nm === 'shake') { o.dx += 3.2 * Math.sin(t * 60) * (1 - u * .3); o.rot += 3 * Math.sin(t * 47); }
       else if (nm === 'squish') { var e = Math.sin(Math.PI * u * 2) * Math.exp(-u * 2); o.sx *= 1 + .3 * e; o.sy *= 1 - .3 * e; }
+      else if (nm === 'tug') { o.armL = -102 + 6 * Math.sin(t * 9 + 1.6); o.armR = 100 + 6 * Math.sin(t * 9); o.armLX = 72; o.armLY = 14; o.lookOv = 'RD'; o.armS = 1.9; o.rot += 12 + 3 * Math.sin(t * 9); o.dx += 5 * Math.sin(t * 9); o.sx *= 1 + .03 * Math.sin(t * 9); }   /* EV-004 : tire de toutes ses forces */
       else if (nm === 'wave') { o.armL = 40; o.armR = 100 + 60 * Math.sin(t * 12); }
       else if (nm === 'cheer') { o.armL = 150 + 15 * Math.sin(t * 10); o.armR = 150 + 15 * Math.sin(t * 10 + 2); o.y += Math.abs(Math.sin(t * 7)) * 14; }
       else if (nm === 'dance') { o.rot += 9 * Math.sin(t * 8); o.y += Math.abs(Math.sin(t * 8)) * 18; o.armL = 80 + 70 * Math.sin(t * 8); o.armR = 80 + 70 * Math.sin(t * 8 + Math.PI); }
@@ -403,7 +436,8 @@
     if (V2) { var mb = moodBlend(A, t); o.emoPrev = mb.prev; o.emoK = mb.k; }
     var lk = lastOf(A.looks, t), lx = 0, ly = 0;
     if (typeof lk === 'string' && AC[lk]) { var dxl = wx(xOf(lk, t)) - o.x; lx = cl(dxl / 120, -1, 1); ly = -.1; }
-    else if (lk === 'up') ly = -1; else if (lk === 'down') ly = 1; else if (lk === 'L') lx = -1; else if (lk === 'R') lx = 1;
+    else if (lk === 'up') ly = -1; else if (lk === 'RD') { lx = 1; ly = 1; } else if (lk === 'down') ly = 1; else if (lk === 'L') lx = -1; else if (lk === 'R') lx = 1;
+    if (o.lookOv === 'RD') { lx = 1; ly = 1; }
     if (o.extra.moving) lx = cl(Math.sign(vel) * .7 + lx * .3, -1, 1);
     if (!lk || lk === 'cam') { lx = 0; ly = 0; }
     if (V2) { var gz = gaze(k, t); lx = cl(lx + gz.x * (lx || ly ? .35 : 1), -1, 1); ly = cl(ly + gz.y * (lx || ly ? .35 : 1), -1, 1); }
@@ -511,8 +545,13 @@
   LET.forEach(function (k) {
     var A = AC[k], ch = CHARS.LIB[A.kind].make();
     var sh = mk('ellipse', { rx: 34, ry: 7, fill: '#14213d', opacity: .22 }, shadowL);
-    var ax = mk('g', {}, actL), sq = mk('g', {}, ax); sq.appendChild(ch.g);
-    ACT_DOM[k] = { ax: ax, sq: sq, ch: ch, sh: sh };
+    var ow = A.waters.length ? mk('g', {}, actL) : null, wr = null, wclr = null, wr1 = null, wr2 = null;
+    var ax = mk('g', {}, ow || actL), sq = mk('g', {}, ax); sq.appendChild(ch.g);
+    if (ow) {   /* EV-004 : niveau d'eau (le bas du corps est masqué sous la surface) */
+      var wcl = mk('clipPath', { id: 'wcl_' + k }, actL); wclr = mk('rect', { x: -3000, y: -3000, width: 6000, height: 3000 }, wcl);
+      wr = mk('g', {}, actL); wr1 = mk('ellipse', { fill: '#4cb4cf', 'fill-opacity': .55, stroke: 'none' }, wr); wr2 = mk('ellipse', { fill: 'none', stroke: '#fff', 'stroke-width': 2.4, opacity: .8 }, wr);
+    }
+    ACT_DOM[k] = { ax: ax, sq: sq, ch: ch, sh: sh, ow: ow, wr: wr, wclr: wclr, wr1: wr1, wr2: wr2 };
   });
   /* accessoires */
   var ballG = mk('g', {}, fxL), ballE = mk('circle', { r: 16, fill: '#ff5f7e', stroke: '#8a2a4a', 'stroke-width': 3 }, ballG);
@@ -546,7 +585,7 @@
   }
   /* cailloux (EV-001) : gués dans l'eau (show/hide) et tas de pierres plates sur la berge (pile/unpile) */
   var STN = [], stnMax = 0, stnPile = null;
-  PROPS.stones.forEach(function (c) { if (c.a[0] === 'show') stnMax = Math.max(stnMax, (c.a[1] || []).length); });
+  var stnLen = 0; PROPS.stones.forEach(function (c) { if (c.a[0] === 'show') stnLen = (c.a[1] || []).length; else if (c.a[0] === 'add') stnLen += (c.a[1] || []).length; else if (c.a[0] === 'hide') stnLen = 0; stnMax = Math.max(stnMax, stnLen); });
   var stonesG = mk('g', {}, propL), stnEl = [];
   for (i = 0; i < stnMax; i++) {
     var sg = mk('g', {}, stonesG);
@@ -561,19 +600,23 @@
     '<path d="M-30 -10 Q-30 -19 -16 -20 L20 -20 Q31 -19 31 -10Z" fill="#b8b1a5" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-18" rx="20" ry="2.8" fill="#d8d2c7"/>' +
     '<path d="M-22 -20 Q-22 -28 -10 -29 L12 -29 Q23 -28 23 -20Z" fill="#a39c90" stroke="#6f685d" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="0" cy="-27" rx="14" ry="2.4" fill="#c9c3b8"/>');
   pileG.setAttribute('display', 'none');
+  function addDrop(ss, n) { var a = ss.add || [], j, d = false; for (j = 0; j < a.length; j++) if (n >= a[j][0]) d = !!a[j][2]; return d; }
+  function addDelay(ss, n) { var a = ss.add || [], j, d = 0; for (j = 0; j < a.length; j++) if (n >= a[j][0]) d = a[j][1] - ss.t0 - a[j][0] * .12; return d; }
   function stonesState(t) {
-    var st = { list: [], t0: 0, pile: null, pt0: 0 }, i, e;
+    var st = { list: [], t0: 0, pile: null, pt0: 0, add: [], gn: {} }, i, e, k2;
     for (i = 0; i < PROPS.stones.length; i++) {
       e = PROPS.stones[i]; if (e.t > t) break; var v = e.a[0];
-      if (v === 'show') st = { list: e.a[1] || [], t0: e.t, pile: st.pile, pt0: st.pt0 };
-      else if (v === 'hide') st = { list: [], t0: e.t, pile: st.pile, pt0: st.pt0 };
-      else if (v === 'pile') st = { list: st.list, t0: st.t0, pile: e.a[1] === undefined ? .8 : e.a[1], pt0: e.t };
-      else if (v === 'unpile') st = { list: st.list, t0: st.t0, pile: null, pt0: e.t };
+      if (v === 'show') st = { list: e.a[1] || [], t0: e.t, pile: st.pile, pt0: st.pt0, add: [], gn: {} };
+      else if (v === 'add') { var n0 = st.list.length; st = { list: st.list.concat(e.a[1] || []), t0: st.t0, pile: st.pile, pt0: st.pt0, add: (st.add || []).concat([[n0, e.t, e.a[2] === 'drop']]), gn: st.gn }; }   /* EV-004 : ajoute des cailloux sans refaire apparaître les anciens */
+      else if (v === 'take') { var g2 = {}; for (k2 in st.gn) g2[k2] = st.gn[k2]; (e.a[1] || []).forEach(function (q, m) { g2[q] = e.t + m * (e.a[2] || 0); }); st = { list: st.list, t0: st.t0, pile: st.pile, pt0: st.pt0, add: st.add, gn: g2 }; }   /* EV-004 : les cailloux sont pris dans l'eau et vont sur la pile */
+      else if (v === 'hide') st = { list: [], t0: e.t, pile: st.pile, pt0: st.pt0, add: [], gn: {} };
+      else if (v === 'pile') st = { list: st.list, t0: st.t0, pile: e.a[1] === undefined ? .8 : e.a[1], pt0: e.t, add: st.add, gn: st.gn };
+      else if (v === 'unpile') st = { list: st.list, t0: st.t0, pile: null, pt0: e.t, add: st.add, gn: st.gn };
     }
     return st;
   }
   var machG = mk('g', {}, propL);
-  put(machG, '<ellipse cy="2" rx="30" ry="6" fill="#14213d" opacity=".2"/><rect x="-26" y="-58" width="52" height="56" rx="9" fill="#b7c3d8" stroke="#3b4a66" stroke-width="3.4"/><rect x="-18" y="-50" width="36" height="22" rx="5" fill="#2a3a58"/>' +
+  put(machG, '<ellipse class="mring" cy="3" rx="42" ry="8" fill="#8fd9ee" fill-opacity=".35" stroke="#fff" stroke-width="2.4" opacity="0"/><ellipse cy="2" rx="30" ry="6" fill="#14213d" opacity=".2"/><rect x="-26" y="-58" width="52" height="56" rx="9" fill="#b7c3d8" stroke="#3b4a66" stroke-width="3.4"/><rect x="-18" y="-50" width="36" height="22" rx="5" fill="#2a3a58"/>' +
     '<circle cx="-8" cy="-39" r="5" fill="#7aff9a"/><circle cx="6" cy="-39" r="5" fill="#ffd23f"/><circle class="mbtn" cx="0" cy="-16" r="8" fill="#ff5f5f" stroke="#7a1f1f" stroke-width="3"/><path d="M-14 -58 L-8 -78 H8 L14 -58Z" fill="#ffb347" stroke="#8a4a12" stroke-width="3" stroke-linejoin="round"/><path d="M-26 -30 q-14 0 -14 14" fill="none" stroke="#3b4a66" stroke-width="4" stroke-linecap="round"/>');
   /* pools de particules */
   var POOL = {};
@@ -699,7 +742,7 @@
   }
 
   /* ---------- 12. Rendu d'une image ---------- */
-  var lastUsed = {};
+  var lastUsed = {}, z4Key = '';
   var curSetOpacity = {};
   function render(t) {
     var cfg = LAYOUT[MODE], i, S = SETS.skyAt(SKYKEYS, t);
@@ -726,24 +769,46 @@
     var nightF = cl((S.night - .2) / .3);
     /* teinte globale */
     tintFront.setAttribute('fill', SETS.rgb(S.tint)); tintFront.setAttribute('opacity', (S.tint[3] * .9).toFixed(3));
+    /* EV-004 : ordre d'affichage = les plus loin derrière, le locuteur toujours devant */
+    if (V4) {
+      var spk = null; for (i = 0; i < L.length; i++) if (t >= L[i].t && t <= L[i].e + .15) { spk = L[i].who; break; }
+      var ord = LET.slice().sort(function (a, b) { return (b === spk ? -1 : 0) - (a === spk ? -1 : 0) || depthOf(b, t) - depthOf(a, t) || LET.indexOf(a) - LET.indexOf(b); });
+      var ok = ord.join();
+      if (ok !== z4Key) { z4Key = ok; ord.forEach(function (k) { var Dz = ACT_DOM[k]; actL.appendChild(Dz.ow || Dz.ax); if (Dz.wr) actL.appendChild(Dz.wr); }); }
+    }
     /* personnages */
     LET.forEach(function (k) {
-      var A = AC[k], D = ACT_DOM[k], st = astate(k, t), ch = D.ch, gy = actorY(k, t);
-      if (!st.vis) { D.ax.setAttribute('display', 'none'); D.sh.setAttribute('opacity', 0); return; }
+      var A = AC[k], D = ACT_DOM[k], st = astate(k, t), ch = D.ch, gy = actorY(k, t), asc = scaleOf(k, t);
+      if (!st.vis) { D.ax.setAttribute('display', 'none'); D.sh.setAttribute('opacity', 0); if (D.wr) D.wr.setAttribute('display', 'none'); return; }
       D.ax.setAttribute('display', '');
-      D.ax.setAttribute('transform', 'translate(' + f1(st.x + st.dx) + ' ' + f1(gy - st.y) + ') scale(' + A.s + ')');
+      var wv = A.waters.length ? trackOf(A.waters, t) : 0, bob = wv > .02 ? 2.6 * Math.sin(t * 3.3 + A.phase) * asc : 0;
+      D.ax.setAttribute('transform', 'translate(' + f1(st.x + st.dx) + ' ' + f1(gy - st.y + bob) + ') scale(' + asc + ')');
       var cy = ch.cy;
       D.sq.setAttribute('transform', 'translate(0 ' + cy + ') rotate(' + st.rot.toFixed(1) + ') translate(0 ' + (-cy) + ') scale(' + st.sx.toFixed(3) + ' ' + st.sy.toFixed(3) + ')');
       var hh = Math.max(0, st.y - A.hover);
-      D.sh.setAttribute('cx', f1(st.x)); D.sh.setAttribute('cy', f1(gy + 2)); D.sh.setAttribute('rx', ((A.kind === 'grincheux' ? 52 : 32) * A.s * (1 - cl(st.y / 300) * .5)).toFixed(1)); D.sh.setAttribute('ry', 7 * A.s); D.sh.setAttribute('opacity', (.22 * (1 - cl(st.y / 320))).toFixed(2));
+      D.sh.setAttribute('cx', f1(st.x)); D.sh.setAttribute('cy', f1(gy + 2)); D.sh.setAttribute('rx', ((A.kind === 'grincheux' ? 52 : 32) * asc * (1 - cl(st.y / 300) * .5)).toFixed(1)); D.sh.setAttribute('ry', 7 * asc); D.sh.setAttribute('opacity', (.22 * (1 - cl(st.y / 320))).toFixed(2));
       CHARS.poseFace(ch.face, { emo: st.emo, emoPrev: st.emoPrev, emoK: st.emoK, open: st.open, mw: st.mw, lx: st.lx, ly: st.ly, blink: st.blink, blinkAmt: st.blinkAmt });
       /* bras */
       if (ch.arms && ch.arms.length) {
-        ch.arms[0].setAttribute('transform', 'translate(' + ch.armBase[0][0] + ' ' + ch.armBase[0][1] + ') rotate(' + f1(st.armL) + ')');
-        ch.arms[1].setAttribute('transform', 'translate(' + ch.armBase[1][0] + ' ' + ch.armBase[1][1] + ') rotate(' + f1(-st.armR) + ')');
+        var aL = st.armL, aR = st.armR;
+        if (wv > .3) { aL = 100 + 42 * Math.sin(t * 6.5); aR = 100 + 42 * Math.sin(t * 6.5 + Math.PI); }   /* EV-004 : brasse dans l'eau */
+        if (st.armLX && !ch._a0f) { ch._a0f = [ch.arms[0].parentNode, ch.arms[0].nextSibling]; ch.arms[0].parentNode.appendChild(ch.arms[0]); }
+        else if (!st.armLX && ch._a0f) { ch._a0f[0].insertBefore(ch.arms[0], ch._a0f[1]); ch._a0f = null; }
+        ch.arms[0].setAttribute('transform', 'translate(' + (ch.armBase[0][0] + (st.armLX || 0)) + ' ' + (ch.armBase[0][1] + (st.armLY || 0)) + ') rotate(' + f1(aL) + ')' + (st.armS ? ' scale(1 ' + st.armS + ')' : ''));
+        ch.arms[1].setAttribute('transform', 'translate(' + ch.armBase[1][0] + ' ' + ch.armBase[1][1] + ') rotate(' + f1(-aR) + ')' + (st.armS ? ' scale(1 ' + st.armS + ')' : ''));
+      }
+      if (D.ow) {
+        if (wv > .02) {
+          var yw = gy - st.y + bob - wv * ch.h * asc, xw = st.x + st.dx, pl = 1 + .07 * Math.sin(t * 4 + A.phase);
+          D.wclr.setAttribute('height', f1(yw + 3000)); D.ow.setAttribute('clip-path', 'url(#wcl_' + k + ')');
+          D.wr.setAttribute('display', ''); D.sh.setAttribute('opacity', 0);
+          D.wr1.setAttribute('cx', f1(xw)); D.wr1.setAttribute('cy', f1(yw + 1)); D.wr1.setAttribute('rx', f1(ch.w * .58 * asc * pl)); D.wr1.setAttribute('ry', f1(8.5 * asc));
+          D.wr2.setAttribute('cx', f1(xw)); D.wr2.setAttribute('cy', f1(yw + 1)); D.wr2.setAttribute('rx', f1(ch.w * .64 * asc * pl)); D.wr2.setAttribute('ry', f1(9.5 * asc));
+        } else { D.ow.removeAttribute('clip-path'); D.wr.setAttribute('display', 'none'); }
       }
       /* spécificités */
-      if (A.kind === 'bouboule') { ch.topEl.setAttribute('transform', 'translate(0 -76) rotate(' + f1(6 * Math.sin(t * 2.2) + st.y * -.08) + ')'); ch.soot.setAttribute('opacity', (st.soot * .8).toFixed(2)); }
+      if (A.kind === 'bouboule') { ch.topEl.setAttribute('transform', 'translate(0 -76) rotate(' + f1(6 * Math.sin(t * 2.2) + st.y * -.08) + ')'); ch.soot.setAttribute('opacity', (st.soot * .8).toFixed(2));
+        if (A.wets.length) { var wtv = trackOf(A.wets, t); if (wtv > .01) { ch.soot.setAttribute('fill', '#8fdcf0'); ch.soot.setAttribute('opacity', (.30 * wtv).toFixed(2)); } else ch.soot.setAttribute('fill', '#2a2420'); } }
       if (A.kind === 'pitou') {
         var gl = cl(.55 + st.glow * .45 + (st.emo === 'sad' ? -.35 : 0));
         var litF = cl((st.glow !== 0 ? st.glow : (st.emo === 'sad' || st.emo === 'worried' ? 0 : .8)));
@@ -780,7 +845,7 @@
       for (i2 = 0; i2 < MACH.boom.length; i2++) { var b = MACH.boom[i2]; if (b.kind === 'shake' && t >= b.t && t < b.t + b.dur) shk = 1; if (b.kind === 'boom' && t >= b.t) boomed = t - b.t; }
       var scl = (pu < 1 ? sm(pu) * (1 + .15 * Math.sin(pu * 3)) : 1);
       if (boomed > 0 && boomed < .25) scl *= 1 + .5 * (boomed / .25); else if (boomed >= .25) scl = 0;
-      machG.setAttribute('display', ''); machG.setAttribute('transform', 'translate(' + f1(mx + (shk ? 2.5 * Math.sin(t * 60) : 0)) + ' ' + GY + ') scale(' + scl.toFixed(3) + ')');
+      machG.setAttribute('display', ''); var mdp = ms.d || 0; machG.setAttribute('transform', 'translate(' + f1(mx + (shk ? 2.5 * Math.sin(t * 60) : 0)) + ' ' + f1(GY - DEPTH_DY * mdp) + ') scale(' + (scl * (1 - DEPTH_SC * mdp)).toFixed(3) + ')'); machG.querySelector('.mring').setAttribute('opacity', mdp > 0 ? (.8 + .2 * Math.sin(t * 4)).toFixed(2) : 0);
       machG.querySelector('.mbtn').setAttribute('fill', shk && Math.sin(t * 14) > 0 ? '#ffb0b0' : '#ff5f5f');
     } else machG.setAttribute('display', 'none');
 
@@ -789,11 +854,19 @@
       var ss = stonesState(t);
       stnEl.forEach(function (o, n) {
         if (n >= ss.list.length) { o.g.setAttribute('display', 'none'); return; }
-        var sx = wx(ss.list[n]), pu = cl((t - ss.t0 - n * .12) / .35), dep = 0;
+        var si = ss.list[n], sd = (si instanceof Array) ? (si[1] || 0) : 0, sx = wx(si instanceof Array ? si[0] : si), dpf = addDrop(ss, n), pu = cl((t - ss.t0 - n * .12 - addDelay(ss, n)) / (dpf ? .5 : .35)), dep = 0, dpo = dpf ? -150 * (1 - pu) * (1 - pu) : 0;
         if (pu <= 0) { o.g.setAttribute('display', 'none'); return; }
+        var gt = ss.gn ? ss.gn[n] : undefined;
+        if (gt !== undefined && t >= gt) {   /* EV-004 : caillou pris : il vole en arc jusqu'à la pile */
+          var kk = (t - gt) / .6;
+          if (kk >= 1 || ss.pile === null) { o.g.setAttribute('display', 'none'); return; }
+          var tx = wx(ss.pile), ty = GY - 8, sx0 = sx, sy0 = GY - 14 - DEPTH_DY * sd, sc0 = (1 - DEPTH_SC * sd), ek = kk * kk * (3 - 2 * kk);
+          o.g.setAttribute('display', ''); o.g.setAttribute('transform', 'translate(' + f1(sx0 + (tx - sx0) * ek) + ' ' + f1(sy0 + (ty - sy0) * ek - 80 * Math.sin(Math.PI * kk)) + ') scale(' + (sc0 + (.4 - sc0) * ek).toFixed(3) + ')');
+          return;
+        }
         LET.forEach(function (k2) { var ll = liftOf(k2, t); if (ll > 8 && visOf(k2, t) && Math.abs(wx(xOf(k2, t)) - sx) < 26) dep = Math.max(dep, 3 * cl(ll / 22)); });
-        var sc = sm(pu) * (1 + .12 * Math.sin(pu * Math.PI));
-        o.g.setAttribute('display', ''); o.g.setAttribute('transform', 'translate(' + f1(sx) + ' ' + f1(GY - 14 + dep + 1.2 * Math.sin(t * 1.4 + n * 2)) + ') scale(' + sc.toFixed(3) + ')');
+        var sc = (dpf ? 1 : sm(pu) * (1 + .12 * Math.sin(pu * Math.PI))) * (1 - DEPTH_SC * sd);
+        o.g.setAttribute('display', ''); o.g.setAttribute('transform', 'translate(' + f1(sx) + ' ' + f1(GY - 14 - DEPTH_DY * sd + dep + dpo + 1.2 * Math.sin(t * 1.4 + n * 2)) + ') scale(' + sc.toFixed(3) + ')');
         o.sf.setAttribute('opacity', (.35 + .3 * Math.sin(t * 2.2 + n)).toFixed(2)); o.sf.setAttribute('rx', (36 + 2 * Math.sin(t * 2 + n)).toFixed(1));
       });
       if (ss.pile === null) pileG.setAttribute('display', 'none');
