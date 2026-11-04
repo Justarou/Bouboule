@@ -122,7 +122,7 @@
     else if (v === 'fire') {   /* EV-005 : petit feu (show x taille lift / grow taille dur / out dur [trace] / hide) */
       PROPS.fire.push({ t: t, a: a });
       if (a[0] === 'show') { FIRE_P = { x: a[1], lift: a[3] || 0 }; if (a[4] !== 'quiet') EVSFX.push({ t: t, key: (a[3] || 0) > 0 ? 'bois_craque' : 'scintille', vol: .5 }); }
-      if (a[0] === 'out' && FIRE_P) { var fx0 = FIRE_P.x, fl0 = FIRE_P.lift, fd0 = a[1] || 1.2; for (var q = 0; q < 9; q++) (function (q) { var t1 = t + q * fd0 / 9; P(t1, 1.5, 'puff', function (u) { return { x: wx(fx0) + (q % 3 - 1) * 8 + 16 * u, y: GY - fl0 - 30 - 70 * u, r: 7 + 18 * u, a: (1 - u) * .6, col: '#d9dde3' }; }); })(q); if (a[2] !== 'quiet' && a[3] !== 'quiet') EVSFX.push({ t: t, key: 'eclabousse_eau', vol: .55 }); }
+      if (a[0] === 'out' && FIRE_P) { var fx0 = FIRE_P.x, fl0 = FIRE_P.lift, fd0 = a[1] || 1.2; EVFX.push({ t: t, fx: 'fireout', who: null, x: fx0, y: fl0, dur: fd0 }); if (a[2] !== 'quiet' && a[3] !== 'quiet') EVSFX.push({ t: t, key: 'eclabousse_eau', vol: .55 }); }
     }
     else if (v === 'stones') {
       PROPS.stones.push({ t: t, a: a });
@@ -282,6 +282,9 @@
         var t0 = t + i * .2 + rnd(i + 40) * .12, dx = (rnd(i + 11) - .5) * 56;
         P(t0, .75, 'drop', function (u) { return { x: wx(xOf(k, t0)) + dx * AC[k].s, y: actorY(k, t0) - (34 - 30 * u * u) * AC[k].s - 6 + 46 * u * u * AC[k].s, r: 1, a: (1 - u) * .9, rot: 0 }; });
       })(i);
+    }
+    else if (e.fx === 'fireout') {   /* EV-005 : fumée grise d'un feu qui s'éteint */
+      for (var q = 0; q < 9; q++) (function (q) { var t1 = t + q * e.dur / 9; P(t1, 1.5, 'puff', function (u) { return { x: wx(e.x) + (q % 3 - 1) * 8 + 16 * u, y: GY - e.y - 30 - 70 * u, r: 7 + 18 * u, a: (1 - u) * .6, col: '#d9dde3' }; }); })(q);
     }
     else if (e.fx === 'ringat') {   /* EV-004 : ondulations à un endroit de l'eau (cailloux qui tombent) */
       for (j = 0; j < 3; j++) (function (j) { P(t + j * .14, .9, 'splashe', function (u) { return { x: wx(e.x), y: e.y, r: 6 + u * 30, a: (1 - u) * .85 }; }); })(j);
