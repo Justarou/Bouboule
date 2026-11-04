@@ -411,7 +411,7 @@
       else if (nm === 'spin') { o.rot += 360 * sm(u); o.y += 40 * Math.sin(Math.PI * u); }
       else if (nm === 'shake') { o.dx += 3.2 * Math.sin(t * 60) * (1 - u * .3); o.rot += 3 * Math.sin(t * 47); }
       else if (nm === 'squish') { var e = Math.sin(Math.PI * u * 2) * Math.exp(-u * 2); o.sx *= 1 + .3 * e; o.sy *= 1 - .3 * e; }
-      else if (nm === 'tug') { o.armL = 18 + 6 * Math.sin(t * 9); o.armR = 96 + 12 * Math.sin(t * 9 + 1.6); o.armS = 1.9; o.rot += 12 + 3 * Math.sin(t * 9); o.dx += 5 * Math.sin(t * 9); o.sx *= 1 + .03 * Math.sin(t * 9); }   /* EV-004 : tire de toutes ses forces */
+      else if (nm === 'tug') { o.armL = -102 + 6 * Math.sin(t * 9 + 1.6); o.armR = 100 + 6 * Math.sin(t * 9); o.armLX = 72; o.armLY = 14; o.lookOv = 'RD'; o.armS = 1.9; o.rot += 12 + 3 * Math.sin(t * 9); o.dx += 5 * Math.sin(t * 9); o.sx *= 1 + .03 * Math.sin(t * 9); }   /* EV-004 : tire de toutes ses forces */
       else if (nm === 'wave') { o.armL = 40; o.armR = 100 + 60 * Math.sin(t * 12); }
       else if (nm === 'cheer') { o.armL = 150 + 15 * Math.sin(t * 10); o.armR = 150 + 15 * Math.sin(t * 10 + 2); o.y += Math.abs(Math.sin(t * 7)) * 14; }
       else if (nm === 'dance') { o.rot += 9 * Math.sin(t * 8); o.y += Math.abs(Math.sin(t * 8)) * 18; o.armL = 80 + 70 * Math.sin(t * 8); o.armR = 80 + 70 * Math.sin(t * 8 + Math.PI); }
@@ -436,7 +436,8 @@
     if (V2) { var mb = moodBlend(A, t); o.emoPrev = mb.prev; o.emoK = mb.k; }
     var lk = lastOf(A.looks, t), lx = 0, ly = 0;
     if (typeof lk === 'string' && AC[lk]) { var dxl = wx(xOf(lk, t)) - o.x; lx = cl(dxl / 120, -1, 1); ly = -.1; }
-    else if (lk === 'up') ly = -1; else if (lk === 'down') ly = 1; else if (lk === 'L') lx = -1; else if (lk === 'R') lx = 1;
+    else if (lk === 'up') ly = -1; else if (lk === 'RD') { lx = 1; ly = 1; } else if (lk === 'down') ly = 1; else if (lk === 'L') lx = -1; else if (lk === 'R') lx = 1;
+    if (o.lookOv === 'RD') { lx = 1; ly = 1; }
     if (o.extra.moving) lx = cl(Math.sign(vel) * .7 + lx * .3, -1, 1);
     if (!lk || lk === 'cam') { lx = 0; ly = 0; }
     if (V2) { var gz = gaze(k, t); lx = cl(lx + gz.x * (lx || ly ? .35 : 1), -1, 1); ly = cl(ly + gz.y * (lx || ly ? .35 : 1), -1, 1); }
@@ -791,7 +792,9 @@
       if (ch.arms && ch.arms.length) {
         var aL = st.armL, aR = st.armR;
         if (wv > .3) { aL = 100 + 42 * Math.sin(t * 6.5); aR = 100 + 42 * Math.sin(t * 6.5 + Math.PI); }   /* EV-004 : brasse dans l'eau */
-        ch.arms[0].setAttribute('transform', 'translate(' + ch.armBase[0][0] + ' ' + ch.armBase[0][1] + ') rotate(' + f1(aL) + ')' + (st.armS ? ' scale(1 ' + st.armS + ')' : ''));
+        if (st.armLX && !ch._a0f) { ch._a0f = [ch.arms[0].parentNode, ch.arms[0].nextSibling]; ch.arms[0].parentNode.appendChild(ch.arms[0]); }
+        else if (!st.armLX && ch._a0f) { ch._a0f[0].insertBefore(ch.arms[0], ch._a0f[1]); ch._a0f = null; }
+        ch.arms[0].setAttribute('transform', 'translate(' + (ch.armBase[0][0] + (st.armLX || 0)) + ' ' + (ch.armBase[0][1] + (st.armLY || 0)) + ') rotate(' + f1(aL) + ')' + (st.armS ? ' scale(1 ' + st.armS + ')' : ''));
         ch.arms[1].setAttribute('transform', 'translate(' + ch.armBase[1][0] + ' ' + ch.armBase[1][1] + ') rotate(' + f1(-aR) + ')' + (st.armS ? ' scale(1 ' + st.armS + ')' : ''));
       }
       if (D.ow) {
