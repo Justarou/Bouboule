@@ -37,6 +37,7 @@ Le décalage est en secondes depuis le début de la réplique ; `"e-2.4"` = 2,4 
 | `cam` | `cam, cible, zoom, durée, y` | cadrage libre (cible : personnage, `group`, fraction, `"x213"`, ou `[paysage, vertical]`) |
 | `machine`, `house`, `ball` | voir `05_decors.md` | accessoires animés |
 | `stones` | `stones, show, [x1,x2,…]` / `hide` / `pile, x` / `unpile` | cailloux du gué (dans l'eau, sol de pierre à `lift` 22) et tas de pierres plates sur la berge (rivière, EV-001) |
+| `depth`, `water`, `wet`, `machine show … depth` | profondeur 0–1, immersion, mouillé, machine dans l'eau ; `stones add/take` (moteur 4, EV-004) | voir `evolutions/EV-004_profondeur_eau.md` |
 | `lift` | `lift, qui, px, durée` | monte l'acteur de `px` pixels (22 = debout sur un caillou) ; 0 pour redescendre ; son ombre, ses effets et le poids sur le caillou suivent |
 | `fx` (rivière) | `fx, qui, ripple` / `splashbig` / `vapeur, durée` | 3 ondulations concentriques ; gerbe d'eau avec bruit `eclabousse_eau` ; vapeur grise (Flamme touche l'eau). 4e paramètre optionnel : y de l'eau |
 | `hic`, `soot`, `vanish` | spécifiques personnages | hoquet de Flamme, suie, disparition |
