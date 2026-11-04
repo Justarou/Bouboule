@@ -30,3 +30,8 @@ Retours : personnages tassés, Pitou devant Bouboule quand il parle, pierres ill
 - Moteur (branche `ev-004-profondeur`, engine ≥ 4, **non fusionnée dans main**, en attente de validation) : verbe `depth who d dur` (0 = rive, 1 = loin : monte et rapetisse), cailloux `[x, profondeur]`, `stones add` (ajout sans refaire apparaître les anciens), locuteur toujours dessiné devant, les plus éloignés derrière. Non-régression ép. 1 à 4 : 24/24 images identiques à chaque changement.
 - Épisode : engine 4, groupes en éventail, cailloux étalés sur la largeur (x .34 à .82, profondeur .15 à .79), Bouboule saute de l'un à l'autre en rapetissant, pont de Robi ajouté sans réapparition de la file.
 - Contrôles du rendu final : paysage et vertical, fluidité identique (seules les deux alertes faux positifs 0,3 s et 11,6 s), audio −15,5 LUFS / crête −1,8 dBFS, 231,4 s, aucun noir ni image figée ; caméra moteur CONFORME ; synchro labiale OK.
+
+## Version 3 (4 nov) — eau, mouillé, pierres prises
+- Bouboule tente réellement la première pierre (animation `tug`), puis tombe : immersion visible (`water`), nage, silhouette mouillée (`wet`), gouttes (`drip`).
+- Cailloumatic visible dans l'eau (anneau `.mring`), pile parasite supprimée ; les pierres prises quittent l'eau (`stones take`) vers la pile du bord.
+- QC : ép.1–4 16/16 identiques ; caméra moteur CONFORME ; synchro labiale OK ; vidéo (noir/figé) RAS en land et port ; fluidité land 1 alerte (fondu 0,3 s) et port 1 alerte (changement de sous-titre 11,6 s), faux positifs connus ; cadrage 174 alertes (139 avant, fenêtres verticales), à revoir en évolution.
