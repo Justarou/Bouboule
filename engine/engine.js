@@ -121,8 +121,8 @@
     else if (v === 'house') PROPS.house.push({ t: t, a: a });
     else if (v === 'fire') {   /* EV-005 : petit feu (show x taille lift / grow taille dur / out dur [trace] / hide) */
       PROPS.fire.push({ t: t, a: a });
-      if (a[0] === 'show') { FIRE_P = { x: a[1], lift: a[3] || 0 }; EVSFX.push({ t: t, key: (a[3] || 0) > 0 ? 'bois_craque' : 'scintille', vol: .5 }); }
-      if (a[0] === 'out' && FIRE_P) { var fx0 = FIRE_P.x, fl0 = FIRE_P.lift, fd0 = a[1] || 1.2; for (var q = 0; q < 9; q++) (function (q) { var t1 = t + q * fd0 / 9; P(t1, 1.5, 'puff', function (u) { return { x: wx(fx0) + (q % 3 - 1) * 8 + 16 * u, y: GY - fl0 - 30 - 70 * u, r: 7 + 18 * u, a: (1 - u) * .6, col: '#d9dde3' }; }); })(q); EVSFX.push({ t: t, key: 'eclabousse_eau', vol: .55 }); }
+      if (a[0] === 'show') { FIRE_P = { x: a[1], lift: a[3] || 0 }; if (a[4] !== 'quiet') EVSFX.push({ t: t, key: (a[3] || 0) > 0 ? 'bois_craque' : 'scintille', vol: .5 }); }
+      if (a[0] === 'out' && FIRE_P) { var fx0 = FIRE_P.x, fl0 = FIRE_P.lift, fd0 = a[1] || 1.2; for (var q = 0; q < 9; q++) (function (q) { var t1 = t + q * fd0 / 9; P(t1, 1.5, 'puff', function (u) { return { x: wx(fx0) + (q % 3 - 1) * 8 + 16 * u, y: GY - fl0 - 30 - 70 * u, r: 7 + 18 * u, a: (1 - u) * .6, col: '#d9dde3' }; }); })(q); if (a[2] !== 'quiet' && a[3] !== 'quiet') EVSFX.push({ t: t, key: 'eclabousse_eau', vol: .55 }); }
     }
     else if (v === 'stones') {
       PROPS.stones.push({ t: t, a: a });
@@ -303,7 +303,10 @@
         P(t0, 1.4, 'puff', function (u) { return { x: wx(xOf(k, t0)) + dx + 10 * Math.sin(u * 5 + i), y: wy4 - u * 70, r: 6 + u * 14, a: .75 * (1 - u), col: i % 2 ? '#eef2f7' : '#cfd6df' }; });
       })(i);
     }
-    else if (e.fx === 'zzz') { }
+    else if (e.fx === 'zzz') {   /* EV-005 : petits « z » qui montent d'un personnage endormi */
+      var nz = Math.max(2, Math.round((e.dur || 3) / 1.1));
+      for (i = 0; i < nz; i++) (function (i) { var t0 = t + i * 1.1; P(t0, 1.9, 'zz', function (u) { var m = mouthPos(k, t0); return { x: m.x + 14 + 22 * u + 6 * Math.sin(u * 6 + i), y: m.y - 14 - 62 * u, r: 7 + 7 * u, a: Math.min(1, u * 5) * (1 - u) * .9 }; }); })(i);
+    }
   });
 
   /* ---------- 6. Accessoires : balle + machine ---------- */
@@ -649,6 +652,7 @@
   pool('puff', 140, function () { return mk('circle', { r: 5 }, fxF); });
   pool('dot', 140, function () { return mk('circle', { r: 3 }, fxF); });
   pool('spark', 80, function () { return mk('path', { d: SETS.sparkD(1), fill: '#fff6b0' }, fxF); });
+  pool('zz', 20, function () { return mk('path', { d: 'M-1 -1 L1 -1 L-1 1 L1 1', fill: 'none', stroke: '#e9f1ff', 'stroke-width': .38, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, fxF); });
   pool('heart', 24, function () { return mk('path', { d: 'M0 .9 C-1.8 -.4 -1 -1.7 0 -.9 C1 -1.7 1.8 -.4 0 .9Z', fill: '#ff5f7e', stroke: '#b02a4a', 'stroke-width': .15 }, fxF); });
   pool('conf', 80, function () { return mk('rect', { x: -4, y: -6, width: 8, height: 12 }, fxF); });
   pool('drop', 90, function () { return mk('path', { d: 'M0 -9 Q5.5 2 0 7 Q-5.5 2 0 -9Z', fill: '#4a97ff' }, fxF); });
@@ -958,6 +962,7 @@
       else if (kd === 'puff') { e2.setAttribute('cx', f1(p.x)); e2.setAttribute('cy', f1(p.y)); e2.setAttribute('r', f1(p.r)); e2.setAttribute('fill', p.col); }
       else if (kd === 'dot') { e2.setAttribute('cx', f1(p.x)); e2.setAttribute('cy', f1(p.y)); e2.setAttribute('r', f1(Math.max(.1, p.r))); e2.setAttribute('fill', p.col); }
       else if (kd === 'spark') e2.setAttribute('transform', 'translate(' + f1(p.x) + ' ' + f1(p.y) + ') rotate(' + f1(p.rot || 0) + ') scale(' + f1(p.r) + ')');
+      else if (kd === 'zz') e2.setAttribute('transform', 'translate(' + f1(p.x) + ' ' + f1(p.y) + ') scale(' + f1(p.r) + ')');
       else if (kd === 'heart') e2.setAttribute('transform', 'translate(' + f1(p.x) + ' ' + f1(p.y) + ') scale(' + f1(p.r) + ')');
       else if (kd === 'conf') { e2.setAttribute('transform', 'translate(' + f1(p.x) + ' ' + f1(p.y) + ') rotate(' + f1(p.rot) + ')'); e2.setAttribute('fill', p.col); }
       else if (kd === 'drop') e2.setAttribute('transform', 'translate(' + f1(p.x) + ' ' + f1(p.y) + ') rotate(' + f1(p.rot || 0) + ')');
