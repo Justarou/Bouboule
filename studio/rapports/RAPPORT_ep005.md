@@ -24,3 +24,9 @@ Branche `ep-005-production` · moteur 3 · durée 3 min 51 (231,4 s) · public 6
 - Titre : « Bouboule et la rivière aux cailloux — Dessin animé pour enfants (6–9 ans) »
 - Description : Bouboule veut rapporter seul les pierres des fondations de la maison. Mais le courant l'emporte… Pitou, Robi et Flamme vont devoir garder leur calme. Un dessin animé pour les 6–9 ans sur le courage et l'écoute. Épisode 5 de « Bouboule et ses amis ».
 - Pas de Short : durée de 3 min 51.
+
+## Version 2 (4 nov.) — retours d'Aaron et évolution EV-004
+Retours : personnages tassés, Pitou devant Bouboule quand il parle, pierres illisibles (elles doivent s'éloigner du rivage, être dans l'eau, espacées sur la largeur, et Bouboule doit rapetisser en s'éloignant).
+- Moteur (branche `ev-004-profondeur`, engine ≥ 4, **non fusionnée dans main**, en attente de validation) : verbe `depth who d dur` (0 = rive, 1 = loin : monte et rapetisse), cailloux `[x, profondeur]`, `stones add` (ajout sans refaire apparaître les anciens), locuteur toujours dessiné devant, les plus éloignés derrière. Non-régression ép. 1 à 4 : 24/24 images identiques à chaque changement.
+- Épisode : engine 4, groupes en éventail, cailloux étalés sur la largeur (x .34 à .82, profondeur .15 à .79), Bouboule saute de l'un à l'autre en rapetissant, pont de Robi ajouté sans réapparition de la file.
+- Contrôles du rendu final : paysage et vertical, fluidité identique (seules les deux alertes faux positifs 0,3 s et 11,6 s), audio −15,5 LUFS / crête −1,8 dBFS, 231,4 s, aucun noir ni image figée ; caméra moteur CONFORME ; synchro labiale OK.
