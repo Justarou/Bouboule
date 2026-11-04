@@ -35,7 +35,8 @@ var CHARS = (function () {
     tired:    { mood: -.2, rot: -12, lift: 3,  wide: .8,  open: 0,   cheek: .7,  squint: .55 },
     amazed:   { mood: .9, rot: -4,  lift: -9, wide: 1.26, open: .35, cheek: 1.4, squint: 0 },
     embarrassed:{ mood: .25, rot: -16, lift: -1, wide: 1, open: 0,   cheek: 2.3, squint: 0 },
-    dizzy:    { mood: -.1, rot: 0,   lift: -2, wide: 1.1,  open: .2,  cheek: 1,   squint: 0 }
+    dizzy:    { mood: -.1, rot: 0,   lift: -2, wide: 1.1,  open: .2,  cheek: 1,   squint: 0 },
+    asleep:   { mood: .35, rot: -10, lift: 3,  wide: .7,  open: 0,   cheek: 1.1, squint: 1 }   /* EV-005 : yeux fermés, il dort */
   };
 
   /* ----- visage générique ----- */
