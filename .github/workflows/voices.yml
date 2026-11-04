@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Generer les voix manquantes
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
@@ -26,4 +28,10 @@ jobs:
           git config user.name "voix-bot"
           git config user.email "voix-bot@users.noreply.github.com"
           git add audio
-          git diff --cached --quiet || (git commit -m "Nouvelles voix" && git pull --rebase -X theirs origin main && git push)
+          git diff --cached --quiet || (git commit -m "Nouvelles voix" && git push origin HEAD:${{ github.ref_name }})
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audio
+          path: audio
