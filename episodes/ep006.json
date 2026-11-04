@@ -1,0 +1,347 @@
+{
+ "title": "Flamme et la première cheminée",
+ "series": "BOUBOULE",
+ "episodeNo": 6,
+ "subtitle": "Flamme et la première cheminée",
+ "lead_text": "Première nuit froide dans la maison sans toit : Flamme est le seul à pouvoir allumer le feu, mais il a peur de tout brûler. Grincheux va l'aider à recommencer.",
+ "alt": "Dessin animé : Flamme, un petit dragon timide, allume le premier feu de la maison avec l'aide de Grincheux et de Pitou.",
+ "set": "colline",
+ "tod": "dusk",
+ "music": "doux",
+ "endLine": "à demain, petits rigolos !",
+ "nextTeaser": "Abonne-toi pour la suite !",
+ "lead": 3.0,
+ "outro": 5.5,
+ "cast": {
+  "B": "bouboule",
+  "P": "pitou",
+  "R": "robi",
+  "F": "flamme",
+  "G": "grincheux"
+ },
+ "at": [
+  [
+   0,
+   "amb",
+   "amb_nuit",
+   0.25
+  ]
+ ],
+ "engine": 4,
+ "voices": {
+  "N": {
+   "id": "t4fHUMAMZxaaV2inHOnb",
+   "name": "Narrateur"
+  },
+  "B": {
+   "id": "vqvgjNDXBhRGzlLsbOq5",
+   "name": "Bouboule"
+  },
+  "P": {
+   "id": "ZYOBieLaunTiQrTrvNQq",
+   "name": "Pitou"
+  },
+  "R": {
+   "id": "UOvFSB5TNiugzjq7qJQ3",
+   "name": "Robi"
+  },
+  "F": {
+   "id": "3paYfmyc7ZI6WVqsBsrE",
+   "name": "Flamme"
+  },
+  "G": {
+   "id": "7OQ78nZ3nzjUjN8fGpn6",
+   "name": "Grincheux"
+  }
+ },
+ "lines": [
+  {
+   "who": "N",
+   "text": "Dans l'épisode d'avant, les amis ont posé les fondations. Depuis, les murs sont montés. Mais il n'y a pas encore de toit.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Brrr. Il fait froid, ce soir. Bouboule et Robi dorment déjà, épuisés.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [shivering a little, worried]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Moi, je passais par là. Je regarde juste... mon futur toit.",
+   "tags": "[grumpy, sulking, plaintive] [grumbling, pretending to be casual]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Ce soir, il nous faut un feu. Un petit feu dans la cheminée.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [gentle, hopeful]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Un feu ? Moi ? Non, non, non...",
+   "tags": "[shy, soft, trembling little voice] [scared, small]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Tu es notre seul dragon, Flamme. Tu sais faire du feu.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [kind, encouraging]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Je sais en faire un trop grand. Et la maison est en bois.",
+   "tags": "[shy, soft, trembling little voice] [anxious]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Alors on commence tout petit. Un tout petit, tout petit feu.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [soft, reassuring]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Et si ça brûle ? C'est moi qui ai promis le toit.",
+   "tags": "[grumpy, sulking, plaintive] [gruff, secretly worried]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Je... je vais essayer.",
+   "tags": "[shy, soft, trembling little voice] [hesitant, brave but trembling]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Respire. Compte jusqu'à dix. Tout doucement.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [calm, steady]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Un... deux... trois... Hic !",
+   "tags": "[shy, soft, trembling little voice] [nervous, then a sudden hiccup]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Oh non ! La planche brûle ! La maison brûle !",
+   "tags": "[shy, soft, trembling little voice] [panicked]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Grincheux ! Vite, ta pluie !",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [urgent]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Pfff ! J'arrive ! Psssh !",
+   "tags": "[grumpy, sulking, plaintive] [grumpy but quick, effort]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Voilà, c'est éteint. Tu m'avais réchauffé, je t'éteins. On est quittes.",
+   "tags": "[grumpy, sulking, plaintive] [gruff, embarrassed, mumbling]",
+   "do": []
+  },
+  {
+   "who": "R",
+   "text": "Bip... pluie... je ne rouille pas... bip... zzz.",
+   "tags": "[sleepy, robotic, mumbling]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Je le savais. J'ai brûlé une planche. Je suis dangereux.",
+   "tags": "[shy, soft, trembling little voice] [crushed, ashamed, whispering]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "C'est une seule planche, Flamme. Et personne n'est blessé.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [gentle, worried]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Aujourd'hui une planche. Demain, toute la maison. Je préfère partir.",
+   "tags": "[shy, soft, trembling little voice] [sad, small, defeated]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Pfff... Ne dis pas de bêtises.",
+   "tags": "[grumpy, sulking, plaintive] [awkward, clumsy tenderness]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Je vais dormir dans la forêt. Loin des maisons.",
+   "tags": "[shy, soft, trembling little voice] [sad, quiet, resigned]",
+   "do": []
+  },
+  {
+   "who": "N",
+   "text": "Flamme marcha jusqu'à la forêt. Sa petite flamme tremblait, de plus en plus petite.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story] [slow, tender]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Flamme, attends ! ... Grincheux, je ne sais pas quoi lui dire.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [worried, helpless]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Laisse-moi faire, Pitou. Je vais lui parler.",
+   "tags": "[grumpy, sulking, plaintive] [reluctant, then decided]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Flamme ! Attends. Je n'aime pas le noir. Reste allumé, s'il te plaît.",
+   "tags": "[grumpy, sulking, plaintive] [afraid but pushing on, whispering]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Je te fais de la lumière ? Même après la planche ?",
+   "tags": "[shy, soft, trembling little voice] [surprised, tiny hope]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Ta flamme m'a réchauffé, un jour. Elle ne m'a jamais fait peur.",
+   "tags": "[grumpy, sulking, plaintive] [gruff but warm]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Et moi, ma pluie a gâché plein de pique-niques. Pfff. On s'en remet.",
+   "tags": "[grumpy, sulking, plaintive] [embarrassed, honest]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Vraiment ? Toi aussi, tu as fait des dégâts ?",
+   "tags": "[shy, soft, trembling little voice] [curious, softly]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Une planche, ça se remplace. Un ami, non. Pfff. On retourne, d'accord ?",
+   "tags": "[grumpy, sulking, plaintive] [gruff but warm, gentle]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "D'accord. Mais j'ai quand même un peu peur.",
+   "tags": "[shy, soft, trembling little voice] [timid, relieved]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Moi aussi. Alors on a peur ensemble. Pfff... ça va mieux.",
+   "tags": "[grumpy, sulking, plaintive] [gruff but warm, a little smile]",
+   "do": []
+  },
+  {
+   "who": "N",
+   "text": "Ils revinrent à la maison. Pitou les attendait, sa lumière allumée pour les guider.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story] [tender]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Vous revenez ! Flamme, on réessaie ? Cette fois, Grincheux reste tout près.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [relieved, warm]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Mon petit nuage est prêt. Au cas où.",
+   "tags": "[grumpy, sulking, plaintive] [gruff, protective]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Cette fois, je compte tout seul. Un... deux... trois... quatre... cinq...",
+   "tags": "[shy, soft, trembling little voice] [determined, trembling, slow]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Six... sept... huit... neuf... dix.",
+   "tags": "[shy, soft, trembling little voice] [determined, slow, breathing]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Il est allumé ! Un tout petit feu. Tout sage.",
+   "tags": "[shy, soft, trembling little voice] [overjoyed, whispering]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Il est parfait. Regardez, la maison est toute dorée.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [soft, delighted]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "J'ai grillé une planche... et j'ai quand même allumé le feu.",
+   "tags": "[shy, soft, trembling little voice] [proud and shy]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Tu as recommencé, Flamme. Je suis fière de toi.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [warm, moved]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "Pfff... C'est chaud. Ça sent bon.",
+   "tags": "[grumpy, sulking, plaintive] [gruff but warm, cheerful]",
+   "do": []
+  },
+  {
+   "who": "F",
+   "text": "Viens plus près, Grincheux. Il y a de la place.",
+   "tags": "[shy, soft, trembling little voice] [warm, kind little voice]",
+   "do": []
+  },
+  {
+   "who": "G",
+   "text": "... Merci, Flamme.",
+   "tags": "[grumpy, sulking, plaintive] [soft, touched, mumbling]",
+   "do": []
+  },
+  {
+   "who": "B",
+   "text": "Bouboule, Bouboule, saute, saute... on recommence... zzz.",
+   "tags": "[sleepy, mumbling, childlike voice]",
+   "do": []
+  },
+  {
+   "who": "P",
+   "text": "Bonne nuit, tout le monde. Je monte briller pour vous.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [gentle, sleepy]",
+   "do": []
+  },
+  {
+   "who": "N",
+   "text": "Dans la nuit, le premier feu brillait. Demain, Grincheux devrait tenir sa promesse : faire le toit.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story] [tender, slow]",
+   "do": []
+  }
+ ]
+}
