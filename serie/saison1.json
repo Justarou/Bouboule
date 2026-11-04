@@ -1,526 +1,526 @@
 {
-  "saison": 1,
-  "titre": "La Maison de la Colline",
-  "fil_rouge": "Les cinq amis construisent ensemble une maison commune, une pièce par épisode : le plan (3), les fondations (5), la cheminée (6), la fenêtre ronde (7), le toit (8), la porte (10), la fête d'inauguration (12). Fil secret : Pitou et sa famille d'étoiles (7, 10, 11, 12). Fil final : la bouteille à la mer, ouverture de la saison 2.",
-  "equilibre_vedettes": {
-    "Pitou": [
-      1,
-      7,
-      11
-    ],
-    "Flamme": [
-      2,
-      6
-    ],
-    "Robi": [
-      3,
-      9
-    ],
-    "Grincheux": [
-      4,
-      8
-    ],
-    "Bouboule": [
-      5,
-      10
-    ]
-  },
-  "regles_de_generation": [
-    "Chaque jour, prendre le premier épisode dont le statut est « à faire ».",
-    "Relire serie/bible.json (états, souvenirs, relations) ET les scripts des 2 derniers épisodes publiés.",
-    "Écrire episodes/epNNN.json selon la structure d'épisode de la bible, avec le casting, les décors et la durée prévus ici.",
-    "Après écriture, mettre à jour serie/bible.json : humeur, souvenirs, relations, progression de chaque personnage présent, puis passer le statut de l'épisode à « écrit ».",
-    "Ne jamais répéter une même situation avec la même fin : respecter le genre et l'émotion prévus pour l'épisode.",
-    "Rester dans les voix existantes ; pas de nouveau personnage parlant en saison 1."
+ "saison": 1,
+ "titre": "La Maison de la Colline",
+ "fil_rouge": "Les cinq amis construisent ensemble une maison commune, une pièce par épisode : le plan (3), les fondations (5), la cheminée (6), la fenêtre ronde (7), le toit (8), la porte (10), la fête d'inauguration (12). Fil secret : Pitou et sa famille d'étoiles (7, 10, 11, 12). Fil final : la bouteille à la mer, ouverture de la saison 2.",
+ "equilibre_vedettes": {
+  "Pitou": [
+   1,
+   7,
+   11
   ],
-  "episodes": [
-    {
-      "no": 1,
-      "titre": "Bouboule et l'étoile Pitou",
-      "statut": "publié (format court)",
-      "vedette": "Pitou",
-      "casting": [
-        "B",
-        "P",
-        "G"
-      ],
-      "decors": [
-        "colline"
-      ],
-      "moment": "jour puis soir",
-      "musique": "joyeux",
-      "genre": "rencontre",
-      "emotion": "pitié puis joie",
-      "synopsis": [
-        "Pitou tombe du ciel, sa lumière éteinte.",
-        "Un nuage triste, Grincheux, fait pleuvoir.",
-        "Le soleil et la pluie font un arc-en-ciel, escalier vers le ciel."
-      ],
-      "evolution_personnages": {
-        "P": "retrouve sa lumière",
-        "G": "sourit pour la première fois"
-      },
-      "liens_avec_avant": [],
-      "teaser_fin": "Grincheux dit qu'il reviendra jouer.",
-      "piece_de_la_maison": "aucune",
-      "morale": "L'amitié éclaire les jours de pluie.",
-      "rappels": [],
-      "idee_titre_youtube": "Bouboule et l'étoile tombée du ciel | Dessin animé pour enfants"
-    },
-    {
-      "no": 2,
-      "titre": "Flamme et le hoquet de feu",
-      "statut": "publié (format court)",
-      "vedette": "Flamme",
-      "casting": [
-        "B",
-        "P",
-        "R",
-        "F",
-        "G"
-      ],
-      "decors": [
-        "colline",
-        "colline soir"
-      ],
-      "moment": "jour puis soir",
-      "musique": "joyeux",
-      "genre": "émotion",
-      "emotion": "tendresse",
-      "synopsis": [
-        "Flamme n'ose pas jouer à cause de son hoquet de feu.",
-        "Les machines et les astuces ratent.",
-        "Le soir, Grincheux arrive tremblant de froid : le feu de Flamme le réchauffe."
-      ],
-      "evolution_personnages": {
-        "F": "se découvre utile",
-        "G": "est réchauffé, mais n'a toujours pas de maison"
-      },
-      "liens_avec_avant": [
-        "Reprend Pitou et Grincheux de l'épisode 1"
-      ],
-      "teaser_fin": "Il fait froid la nuit : et si les amis avaient un endroit à eux ?",
-      "piece_de_la_maison": "aucune",
-      "morale": "Ce qui nous rend différents peut devenir notre force.",
-      "rappels": [
-        "compter jusqu'à dix (Pitou)"
-      ],
-      "idee_titre_youtube": "Flamme a peur de brûler ses amis | Dessin animé pour enfants"
-    },
-    {
-      "no": 3,
-      "titre": "Robi et le plan de la maison",
-      "statut": "à faire",
-      "vedette": "Robi",
-      "casting": [
-        "R",
-        "B",
-        "P",
-        "F"
-      ],
-      "decors": [
-        "colline jour",
-        "atelier de Robi (nouveau, intérieur)"
-      ],
-      "moment": "jour",
-      "musique": "joyeux",
-      "genre": "humour",
-      "emotion": "amusement puis découragement puis espoir",
-      "synopsis": [
-        "Après la nuit froide, Bouboule dit : « Il nous faut une maison pour tout le monde ! ».",
-        "Robi dessine le plan et lance sa machine Bâtimatic qui doit construire une maison en dix secondes.",
-        "Elle fabrique une maison toute tordue qui s'écroule : bzzzzt, boum, plouf. Robi pense qu'il est nul.",
-        "Pitou compte jusqu'à dix avec lui, Flamme sèche le plan mouillé, Bouboule propose de construire ensemble, à la main, pièce par pièce.",
-        "Ils plantent le premier piquet de la maison sur la colline."
-      ],
-      "evolution_personnages": {
-        "R": "accepte que ses ratés ne disent pas qui il est",
-        "B": "lance l'idée de la maison"
-      },
-      "liens_avec_avant": [
-        "Ep 2 : la nuit froide de Grincheux est la raison de la maison."
-      ],
-      "teaser_fin": "Il faudra de grosses pierres plates pour les fondations, et on n'en trouve qu'à la rivière.",
-      "piece_de_la_maison": "le plan et le premier piquet",
-      "morale": "Une machine ne remplace pas des amis qui construisent ensemble.",
-      "rappels": [
-        "bzzzzt, boum, plouf",
-        "Pitou compte jusqu'à dix"
-      ],
-      "idee_titre_youtube": "Robi construit une maison en 10 secondes... et tout s'écroule !"
-    },
-    {
-      "no": 4,
-      "titre": "Grincheux et la nuit sans étoiles",
-      "statut": "à faire",
-      "vedette": "Grincheux",
-      "casting": [
-        "G",
-        "P",
-        "B"
-      ],
-      "decors": [
-        "forêt de nuit",
-        "colline soir"
-      ],
-      "moment": "nuit",
-      "musique": "mystère",
-      "genre": "peur douce",
-      "emotion": "vexation, peur, soulagement",
-      "synopsis": [
-        "Grincheux entend les autres plaisanter : « Avec sa pluie, il va mouiller la maison ! ». Vexé, il part seul dans la forêt.",
-        "La nuit, tout est sombre : hibou, vent, ombres. Il se rend compte que son gros nuage cache les étoiles, donc la lumière de Pitou.",
-        "Pitou, qui l'a suivi, ne peut pas briller à travers lui ; il comprend qu'il peut s'écarter pour la laisser éclairer, ce qui est son rôle à lui aussi.",
-        "Grincheux décide de faire le toit de la maison, car personne d'autre ne peut faire un abri contre la pluie."
-      ],
-      "evolution_personnages": {
-        "G": "se sent utile ; promet le toit",
-        "P": "voit qu'on peut aider sans rien dire"
-      },
-      "liens_avec_avant": [
-        "Ep 3 : la maison est lancée mais Grincheux n'a pas été invité à la discussion.",
-        "Ep 1 : Pitou a pitié de son chagrin."
-      ],
-      "teaser_fin": "Bouboule est parti devant, tout seul, chercher les pierres de la rivière...",
-      "piece_de_la_maison": "aucune (il promet le toit)",
-      "morale": "Demander de l'aide, ce n'est pas être faible.",
-      "rappels": [
-        "Pfff",
-        "la pluie qui suit sa tête"
-      ],
-      "idee_titre_youtube": "Grincheux se perd dans la forêt la nuit | Histoire pour enfants"
-    },
-    {
-      "no": 5,
-      "titre": "Bouboule et la rivière aux cailloux",
-      "statut": "produit (voix + rendus, QC ok) — publication à planifier",
-      "vedette": "Bouboule",
-      "casting": [
-        "B",
-        "R",
-        "P",
-        "F"
-      ],
-      "decors": [
-        "rivière (nouveau)",
-        "colline jour"
-      ],
-      "moment": "jour",
-      "musique": "joyeux",
-      "genre": "aventure",
-      "emotion": "excitation, frayeur, fierté",
-      "synopsis": [
-        "Bouboule saute dans la rivière sans écouter le plan de Pitou et est emporté vers la cascade.",
-        "Robi fabrique un pont de planches (bzzzzt), Flamme sèche et réchauffe, Pitou guide.",
-        "Bouboule est repêché, penaud ; il écoute enfin chaque idée.",
-        "Ensemble ils roulent les grandes pierres plates et font les fondations."
-      ],
-      "evolution_personnages": {
-        "B": "apprend à écouter avant d'agir",
-        "R": "son pont tient !"
-      },
-      "liens_avec_avant": [
-        "Ep 4 : pendant que les autres cherchaient Grincheux, Bouboule est parti devant vers la rivière ; il retrouve les autres au début de l'épisode."
-      ],
-      "teaser_fin": "Les fondations sont prêtes. Il faut maintenant les murs... et le premier feu.",
-      "piece_de_la_maison": "les fondations",
-      "morale": "Écouter, c'est aussi une façon d'être courageux.",
-      "rappels": [
-        "Pitou compte jusqu'à dix",
-        "Bouboule : « saute, saute, saute »"
-      ],
-      "idee_titre_youtube": "Bouboule tombe dans la rivière ! Aventure pour enfants"
-    },
-    {
-      "no": 6,
-      "titre": "Flamme et la première cheminée",
-      "statut": "scénario écrit (A–E) — à valider par Aaron avant production ; EV-005 proposée",
-      "vedette": "Flamme",
-      "casting": [
-        "F",
-        "G",
-        "P"
-      ],
-      "decors": [
-        "maison à moitié construite (intérieur, nouveau)",
-        "soir"
-      ],
-      "moment": "soir",
-      "musique": "doux",
-      "genre": "émotion",
-      "emotion": "peur, honte, fierté",
-      "synopsis": [
-        "Première nuit dans la maison à murs sans toit : il faut un feu dans la cheminée.",
-        "Flamme a peur de brûler la maison. Son hoquet grille une planche ; il s'excuse et veut partir.",
-        "Grincheux éteint le début d'incendie avec une petite pluie et lui dit « Tu m'as réchauffé, je t'éteins : on est quittes ».",
-        "Pitou lui rappelle de compter jusqu'à dix en respirant. Flamme allume un petit feu bien sage."
-      ],
-      "evolution_personnages": {
-        "F": "maîtrise son hoquet un peu mieux et se pardonne",
-        "G": "montre sa tendresse"
-      },
-      "liens_avec_avant": [
-        "Ep 2 : Flamme avait réchauffé Grincheux ; ici c'est le contraire.",
-        "Ep 5 : les murs sont montés."
-      ],
-      "teaser_fin": "Le toit arrive demain : Grincheux a une promesse à tenir.",
-      "piece_de_la_maison": "la cheminée",
-      "morale": "Se pardonner ses erreurs, c'est apprendre à bien faire.",
-      "rappels": [
-        "Hic !",
-        "compter jusqu'à dix"
-      ],
-      "idee_titre_youtube": "Flamme a peur de brûler la maison | Dessin animé pour enfants"
-    },
-    {
-      "no": 7,
-      "titre": "Pitou regarde les étoiles",
-      "statut": "à faire",
-      "vedette": "Pitou",
-      "casting": [
-        "P",
-        "B"
-      ],
-      "decors": [
-        "sommet de la colline de nuit (ciel étoilé, nouveau)",
-        "maison"
-      ],
-      "moment": "nuit",
-      "musique": "doux",
-      "genre": "mélancolie",
-      "emotion": "tristesse puis réconfort",
-      "synopsis": [
-        "Pitou brille moins fort chaque soir et ne dit rien. Bouboule remarque.",
-        "Elle avoue : sa famille d'étoiles lui manque, elle l'a perdue en tombant.",
-        "Ils décident de construire une grande fenêtre ronde dans la maison, pour que Pitou voie le ciel tout le temps. Les amis la fabriquent en cachette, en lui faisant une surprise.",
-        "Une étoile filante passe : un signe ? Pitou le garde pour elle."
-      ],
-      "evolution_personnages": {
-        "P": "dit enfin quand elle est triste",
-        "B": "console au lieu de faire rire"
-      },
-      "liens_avec_avant": [
-        "Ep 1 : on revoit l'arc-en-ciel qui ne mène qu'à la première étoile."
-      ],
-      "teaser_fin": "Une étoile filante a traversé le ciel... et personne n'a vu son message sur la fenêtre.",
-      "piece_de_la_maison": "la fenêtre ronde",
-      "morale": "Dire ce qu'on ressent, c'est déjà aller mieux.",
-      "rappels": [
-        "étoile filante (seed du final)"
-      ],
-      "idee_titre_youtube": "Pitou a le cœur lourd | Histoire de bonne nuit pour enfants"
-    },
-    {
-      "no": 8,
-      "titre": "La grande tempête",
-      "statut": "à faire",
-      "vedette": "Grincheux et toute la bande",
-      "casting": [
-        "B",
-        "P",
-        "G",
-        "R",
-        "F"
-      ],
-      "decors": [
-        "maison avec toit en travaux",
-        "tempête (nouveau)"
-      ],
-      "moment": "jour puis nuit",
-      "musique": "aventure",
-      "genre": "action",
-      "emotion": "peur puis chaleur",
-      "synopsis": [
-        "Grincheux commence le toit, mais un gros nuage orage se lève : le vent est trop fort.",
-        "Il a peur de sa propre force ; les amis se mettent tous au travail pour fixer des feuilles et des planches.",
-        "Grincheux apprend à faire une pluie douce et non un orage.",
-        "Le toit tient. Pour la première fois, ils dorment tous ensemble dans la maison."
-      ],
-      "evolution_personnages": {
-        "G": "a un toit à lui, maîtrise sa pluie",
-        "B": "écoute et attend"
-      },
-      "liens_avec_avant": [
-        "Ep 4 : Grincheux avait promis le toit.",
-        "Ep 6 : la cheminée est prête, Flamme garde le feu."
-      ],
-      "teaser_fin": "La maison est presque finie : il manque la porte... et une surprise.",
-      "piece_de_la_maison": "le toit",
-      "morale": "On n'est jamais trop petit pour protéger les autres.",
-      "rappels": [
-        "Pfff",
-        "Pitou compte jusqu'à dix"
-      ],
-      "idee_titre_youtube": "La tempête arrive sur la colline | Dessin animé pour enfants"
-    },
-    {
-      "no": 9,
-      "titre": "Robi et les cadeaux qui coincent",
-      "statut": "à faire",
-      "vedette": "Robi",
-      "casting": [
-        "R",
-        "B",
-        "P",
-        "G",
-        "F"
-      ],
-      "decors": [
-        "atelier",
-        "maison"
-      ],
-      "moment": "jour",
-      "musique": "joyeux",
-      "genre": "humour",
-      "emotion": "amusement, gêne, tendresse",
-      "synopsis": [
-        "Robi veut remercier chacun et invente un cadeau par ami : un mixeur à câlins pour Bouboule, un parapluie à chauffer pour Grincheux, etc.",
-        "Chaque cadeau tourne à la catastrophe en cascade (mousse, éclairs, boucles).",
-        "Robi s'excuse, mortifié ; les autres lui disent qu'ils veulent juste du temps avec lui.",
-        "Il offre alors une partie de cartes dans l'atelier : le meilleur cadeau."
-      ],
-      "evolution_personnages": {
-        "R": "comprend qu'il est aimé pour lui, pas pour ses machines"
-      },
-      "liens_avec_avant": [
-        "Ep 3 : à son tour de découragement, mais cette fois il rit."
-      ],
-      "teaser_fin": "Demain, c'est un jour important pour quelqu'un... mais personne ne dit pour qui.",
-      "piece_de_la_maison": "aucune (les amis préparent la porte en secret)",
-      "morale": "Le plus beau cadeau, c'est le temps qu'on partage.",
-      "rappels": [
-        "bzzzzt, boum, plouf",
-        "Bip bip !"
-      ],
-      "idee_titre_youtube": "Robi invente des cadeaux (et tout part en vrille) | Dessin animé drôle pour enfants"
-    },
-    {
-      "no": 10,
-      "titre": "L'anniversaire oublié de Bouboule",
-      "statut": "à faire",
-      "vedette": "Bouboule",
-      "casting": [
-        "B",
-        "P",
-        "G",
-        "R",
-        "F"
-      ],
-      "decors": [
-        "colline jour",
-        "rivière",
-        "maison"
-      ],
-      "moment": "jour puis soir",
-      "musique": "doux puis fête",
-      "genre": "émotion",
-      "emotion": "tristesse, doute, grande joie",
-      "synopsis": [
-        "Le matin, personne ne parle de l'anniversaire de Bouboule : chacun a l'air occupé et le fuit.",
-        "Bouboule se sent oublié, s'en va tout seul à la rivière, rebondit moins haut.",
-        "Il comprend petit à petit : ses amis lui cachaient la porte de la maison, peinte à son nom.",
-        "Tout le monde chante ; il s'excuse d'avoir douté ; la porte est posée."
-      ],
-      "evolution_personnages": {
-        "B": "apprend à faire confiance aux autres même quand il ne voit pas",
-        "P": "mène la surprise"
-      },
-      "liens_avec_avant": [
-        "Ep 9 : le jour important annoncé.",
-        "Ep 5 : Bouboule revient à la rivière, plus calme qu'avant."
-      ],
-      "teaser_fin": "Pitou est très silencieuse : elle a vu quelque chose dans le ciel cette nuit.",
-      "piece_de_la_maison": "la porte",
-      "morale": "Un ami n'oublie jamais : il prépare.",
-      "rappels": [
-        "saute, saute, saute !"
-      ],
-      "idee_titre_youtube": "Tout le monde oublie l'anniversaire de Bouboule ?"
-    },
-    {
-      "no": 11,
-      "titre": "Pitou doit choisir",
-      "statut": "à faire",
-      "vedette": "Pitou",
-      "casting": [
-        "P",
-        "B",
-        "G",
-        "R",
-        "F"
-      ],
-      "decors": [
-        "maison",
-        "colline de nuit"
-      ],
-      "moment": "nuit",
-      "musique": "doux",
-      "genre": "émotion forte",
-      "emotion": "peine, colère légère, tendresse",
-      "synopsis": [
-        "Pitou annonce que ce soir, la Nuit des Étoiles Filantes : sa famille passera et pourra la ramener au ciel.",
-        "Chacun réagit : Bouboule se fâche (« Tu veux partir ! »), Grincheux pleure de la pluie, Robi calcule en vain, Flamme chauffe sans mot dire.",
-        "Pitou ne sait plus : elle les aime, mais sa famille lui manque.",
-        "Ses amis lui disent qu'ils veulent son bonheur, même loin ; ils décident de lui préparer la plus belle fête des étoiles."
-      ],
-      "evolution_personnages": {
-        "B": "passe de la colère à l'amour qui laisse libre",
-        "P": "choisit de dire sa peur à haute voix"
-      },
-      "liens_avec_avant": [
-        "Ep 7 : l'étoile filante et la fenêtre ronde.",
-        "Ep 1 : l'arc-en-ciel d'origine."
-      ],
-      "teaser_fin": "La Nuit des Étoiles Filantes commence... et un point lumineux s'approche.",
-      "piece_de_la_maison": "aucune",
-      "morale": "Aimer, c'est vouloir le bonheur de l'autre.",
-      "rappels": [
-        "Pitou compte jusqu'à dix",
-        "la fenêtre ronde"
-      ],
-      "idee_titre_youtube": "Pitou doit-elle quitter ses amis ? | Histoire émouvante pour enfants"
-    },
-    {
-      "no": 12,
-      "titre": "La nuit des étoiles filantes",
-      "statut": "à faire",
-      "vedette": "tous",
-      "casting": [
-        "B",
-        "P",
-        "G",
-        "R",
-        "F"
-      ],
-      "decors": [
-        "maison complète",
-        "ciel étoilé",
-        "colline de nuit"
-      ],
-      "moment": "nuit",
-      "musique": "fête",
-      "genre": "finale",
-      "emotion": "larmes de joie",
-      "synopsis": [
-        "Fête dans la maison terminée : musique, feu de Flamme, pluie douce de Grincheux, lumières de Robi.",
-        "La famille de Pitou passe en pluie d'étoiles filantes ; elle peut partir.",
-        "Pitou choisit de rester sur la colline le jour et de rejoindre sa famille chaque nuit : la fenêtre ronde est leur point de rencontre.",
-        "Tous ensemble au sommet, les étoiles les saluent. Une bouteille arrive de la mer avec un message mystérieux (début de la saison 2)."
-      ],
-      "evolution_personnages": {
-        "P": "a deux familles",
-        "tous": "la maison est finie et ils y vivent ensemble"
-      },
-      "liens_avec_avant": [
-        "Reprend toutes les pièces : plan, fondations, cheminée, fenêtre, toit, porte."
-      ],
-      "teaser_fin": "Message dans une bouteille : « Le phare de la mer a besoin de vous. »",
-      "piece_de_la_maison": "les finitions et l'inauguration",
-      "morale": "Une famille, ça peut être grand.",
-      "rappels": [
-        "tous les gags de la saison"
-      ],
-      "idee_titre_youtube": "Le final de la saison 1 | Dessin animé pour enfants"
-    }
+  "Flamme": [
+   2,
+   6
+  ],
+  "Robi": [
+   3,
+   9
+  ],
+  "Grincheux": [
+   4,
+   8
+  ],
+  "Bouboule": [
+   5,
+   10
   ]
+ },
+ "regles_de_generation": [
+  "Chaque jour, prendre le premier épisode dont le statut est « à faire ».",
+  "Relire serie/bible.json (états, souvenirs, relations) ET les scripts des 2 derniers épisodes publiés.",
+  "Écrire episodes/epNNN.json selon la structure d'épisode de la bible, avec le casting, les décors et la durée prévus ici.",
+  "Après écriture, mettre à jour serie/bible.json : humeur, souvenirs, relations, progression de chaque personnage présent, puis passer le statut de l'épisode à « écrit ».",
+  "Ne jamais répéter une même situation avec la même fin : respecter le genre et l'émotion prévus pour l'épisode.",
+  "Rester dans les voix existantes ; pas de nouveau personnage parlant en saison 1."
+ ],
+ "episodes": [
+  {
+   "no": 1,
+   "titre": "Bouboule et l'étoile Pitou",
+   "statut": "publié (format court)",
+   "vedette": "Pitou",
+   "casting": [
+    "B",
+    "P",
+    "G"
+   ],
+   "decors": [
+    "colline"
+   ],
+   "moment": "jour puis soir",
+   "musique": "joyeux",
+   "genre": "rencontre",
+   "emotion": "pitié puis joie",
+   "synopsis": [
+    "Pitou tombe du ciel, sa lumière éteinte.",
+    "Un nuage triste, Grincheux, fait pleuvoir.",
+    "Le soleil et la pluie font un arc-en-ciel, escalier vers le ciel."
+   ],
+   "evolution_personnages": {
+    "P": "retrouve sa lumière",
+    "G": "sourit pour la première fois"
+   },
+   "liens_avec_avant": [],
+   "teaser_fin": "Grincheux dit qu'il reviendra jouer.",
+   "piece_de_la_maison": "aucune",
+   "morale": "L'amitié éclaire les jours de pluie.",
+   "rappels": [],
+   "idee_titre_youtube": "Bouboule et l'étoile tombée du ciel | Dessin animé pour enfants"
+  },
+  {
+   "no": 2,
+   "titre": "Flamme et le hoquet de feu",
+   "statut": "publié (format court)",
+   "vedette": "Flamme",
+   "casting": [
+    "B",
+    "P",
+    "R",
+    "F",
+    "G"
+   ],
+   "decors": [
+    "colline",
+    "colline soir"
+   ],
+   "moment": "jour puis soir",
+   "musique": "joyeux",
+   "genre": "émotion",
+   "emotion": "tendresse",
+   "synopsis": [
+    "Flamme n'ose pas jouer à cause de son hoquet de feu.",
+    "Les machines et les astuces ratent.",
+    "Le soir, Grincheux arrive tremblant de froid : le feu de Flamme le réchauffe."
+   ],
+   "evolution_personnages": {
+    "F": "se découvre utile",
+    "G": "est réchauffé, mais n'a toujours pas de maison"
+   },
+   "liens_avec_avant": [
+    "Reprend Pitou et Grincheux de l'épisode 1"
+   ],
+   "teaser_fin": "Il fait froid la nuit : et si les amis avaient un endroit à eux ?",
+   "piece_de_la_maison": "aucune",
+   "morale": "Ce qui nous rend différents peut devenir notre force.",
+   "rappels": [
+    "compter jusqu'à dix (Pitou)"
+   ],
+   "idee_titre_youtube": "Flamme a peur de brûler ses amis | Dessin animé pour enfants"
+  },
+  {
+   "no": 3,
+   "titre": "Robi et le plan de la maison",
+   "statut": "à faire",
+   "vedette": "Robi",
+   "casting": [
+    "R",
+    "B",
+    "P",
+    "F"
+   ],
+   "decors": [
+    "colline jour",
+    "atelier de Robi (nouveau, intérieur)"
+   ],
+   "moment": "jour",
+   "musique": "joyeux",
+   "genre": "humour",
+   "emotion": "amusement puis découragement puis espoir",
+   "synopsis": [
+    "Après la nuit froide, Bouboule dit : « Il nous faut une maison pour tout le monde ! ».",
+    "Robi dessine le plan et lance sa machine Bâtimatic qui doit construire une maison en dix secondes.",
+    "Elle fabrique une maison toute tordue qui s'écroule : bzzzzt, boum, plouf. Robi pense qu'il est nul.",
+    "Pitou compte jusqu'à dix avec lui, Flamme sèche le plan mouillé, Bouboule propose de construire ensemble, à la main, pièce par pièce.",
+    "Ils plantent le premier piquet de la maison sur la colline."
+   ],
+   "evolution_personnages": {
+    "R": "accepte que ses ratés ne disent pas qui il est",
+    "B": "lance l'idée de la maison"
+   },
+   "liens_avec_avant": [
+    "Ep 2 : la nuit froide de Grincheux est la raison de la maison."
+   ],
+   "teaser_fin": "Il faudra de grosses pierres plates pour les fondations, et on n'en trouve qu'à la rivière.",
+   "piece_de_la_maison": "le plan et le premier piquet",
+   "morale": "Une machine ne remplace pas des amis qui construisent ensemble.",
+   "rappels": [
+    "bzzzzt, boum, plouf",
+    "Pitou compte jusqu'à dix"
+   ],
+   "idee_titre_youtube": "Robi construit une maison en 10 secondes... et tout s'écroule !"
+  },
+  {
+   "no": 4,
+   "titre": "Grincheux et la nuit sans étoiles",
+   "statut": "à faire",
+   "vedette": "Grincheux",
+   "casting": [
+    "G",
+    "P",
+    "B"
+   ],
+   "decors": [
+    "forêt de nuit",
+    "colline soir"
+   ],
+   "moment": "nuit",
+   "musique": "mystère",
+   "genre": "peur douce",
+   "emotion": "vexation, peur, soulagement",
+   "synopsis": [
+    "Grincheux entend les autres plaisanter : « Avec sa pluie, il va mouiller la maison ! ». Vexé, il part seul dans la forêt.",
+    "La nuit, tout est sombre : hibou, vent, ombres. Il se rend compte que son gros nuage cache les étoiles, donc la lumière de Pitou.",
+    "Pitou, qui l'a suivi, ne peut pas briller à travers lui ; il comprend qu'il peut s'écarter pour la laisser éclairer, ce qui est son rôle à lui aussi.",
+    "Grincheux décide de faire le toit de la maison, car personne d'autre ne peut faire un abri contre la pluie."
+   ],
+   "evolution_personnages": {
+    "G": "se sent utile ; promet le toit",
+    "P": "voit qu'on peut aider sans rien dire"
+   },
+   "liens_avec_avant": [
+    "Ep 3 : la maison est lancée mais Grincheux n'a pas été invité à la discussion.",
+    "Ep 1 : Pitou a pitié de son chagrin."
+   ],
+   "teaser_fin": "Bouboule est parti devant, tout seul, chercher les pierres de la rivière...",
+   "piece_de_la_maison": "aucune (il promet le toit)",
+   "morale": "Demander de l'aide, ce n'est pas être faible.",
+   "rappels": [
+    "Pfff",
+    "la pluie qui suit sa tête"
+   ],
+   "idee_titre_youtube": "Grincheux se perd dans la forêt la nuit | Histoire pour enfants"
+  },
+  {
+   "no": 5,
+   "titre": "Bouboule et la rivière aux cailloux",
+   "statut": "produit (voix + rendus, QC ok) — publication à planifier",
+   "vedette": "Bouboule",
+   "casting": [
+    "B",
+    "R",
+    "P",
+    "F"
+   ],
+   "decors": [
+    "rivière (nouveau)",
+    "colline jour"
+   ],
+   "moment": "jour",
+   "musique": "joyeux",
+   "genre": "aventure",
+   "emotion": "excitation, frayeur, fierté",
+   "synopsis": [
+    "Bouboule saute dans la rivière sans écouter le plan de Pitou et est emporté vers la cascade.",
+    "Robi fabrique un pont de planches (bzzzzt), Flamme sèche et réchauffe, Pitou guide.",
+    "Bouboule est repêché, penaud ; il écoute enfin chaque idée.",
+    "Ensemble ils roulent les grandes pierres plates et font les fondations."
+   ],
+   "evolution_personnages": {
+    "B": "apprend à écouter avant d'agir",
+    "R": "son pont tient !"
+   },
+   "liens_avec_avant": [
+    "Ep 4 : pendant que les autres cherchaient Grincheux, Bouboule est parti devant vers la rivière ; il retrouve les autres au début de l'épisode."
+   ],
+   "teaser_fin": "Les fondations sont prêtes. Il faut maintenant les murs... et le premier feu.",
+   "piece_de_la_maison": "les fondations",
+   "morale": "Écouter, c'est aussi une façon d'être courageux.",
+   "rappels": [
+    "Pitou compte jusqu'à dix",
+    "Bouboule : « saute, saute, saute »"
+   ],
+   "idee_titre_youtube": "Bouboule tombe dans la rivière ! Aventure pour enfants"
+  },
+  {
+   "no": 6,
+   "titre": "Flamme et la première cheminée",
+   "statut": "scénario écrit (A–E) — à valider par Aaron avant production ; EV-005 proposée",
+   "vedette": "Flamme",
+   "casting": [
+    "F",
+    "G",
+    "P"
+   ],
+   "decors": [
+    "maison à moitié construite (intérieur, nouveau)",
+    "soir"
+   ],
+   "moment": "soir",
+   "musique": "doux",
+   "genre": "émotion",
+   "emotion": "peur, honte, fierté",
+   "synopsis": [
+    "Première nuit dans la maison à murs sans toit : il faut un feu dans la cheminée.",
+    "Flamme a peur de brûler la maison. Son hoquet grille une planche ; il s'excuse et veut partir.",
+    "Grincheux éteint le début d'incendie avec une petite pluie et lui dit « Tu m'as réchauffé, je t'éteins : on est quittes ».",
+    "Pitou lui rappelle de compter jusqu'à dix en respirant. Flamme allume un petit feu bien sage."
+   ],
+   "evolution_personnages": {
+    "F": "maîtrise son hoquet un peu mieux et se pardonne",
+    "G": "montre sa tendresse"
+   },
+   "liens_avec_avant": [
+    "Ep 2 : Flamme avait réchauffé Grincheux ; ici c'est le contraire.",
+    "Ep 5 : les murs sont montés."
+   ],
+   "teaser_fin": "Le toit arrive demain : Grincheux a une promesse à tenir.",
+   "piece_de_la_maison": "la cheminée",
+   "morale": "Se pardonner ses erreurs, c'est apprendre à bien faire.",
+   "rappels": [
+    "Hic !",
+    "compter jusqu'à dix"
+   ],
+   "idee_titre_youtube": "Flamme a peur de brûler la maison | Dessin animé pour enfants"
+  },
+  {
+   "no": 7,
+   "titre": "Pitou regarde les étoiles",
+   "statut": "à faire",
+   "vedette": "Pitou",
+   "casting": [
+    "P",
+    "B"
+   ],
+   "decors": [
+    "sommet de la colline de nuit (ciel étoilé, nouveau)",
+    "maison"
+   ],
+   "moment": "nuit",
+   "musique": "doux",
+   "genre": "mélancolie",
+   "emotion": "tristesse puis réconfort",
+   "synopsis": [
+    "Pitou brille moins fort chaque soir et ne dit rien. Bouboule remarque.",
+    "Elle avoue : sa famille d'étoiles lui manque, elle l'a perdue en tombant.",
+    "Ils décident de construire une grande fenêtre ronde dans la maison, pour que Pitou voie le ciel tout le temps. Les amis la fabriquent en cachette, en lui faisant une surprise.",
+    "Une étoile filante passe : un signe ? Pitou le garde pour elle."
+   ],
+   "evolution_personnages": {
+    "P": "dit enfin quand elle est triste",
+    "B": "console au lieu de faire rire"
+   },
+   "liens_avec_avant": [
+    "Ep 1 : on revoit l'arc-en-ciel qui ne mène qu'à la première étoile."
+   ],
+   "teaser_fin": "Une étoile filante a traversé le ciel... et personne n'a vu son message sur la fenêtre.",
+   "piece_de_la_maison": "la fenêtre ronde",
+   "morale": "Dire ce qu'on ressent, c'est déjà aller mieux.",
+   "rappels": [
+    "étoile filante (seed du final)"
+   ],
+   "idee_titre_youtube": "Pitou a le cœur lourd | Histoire de bonne nuit pour enfants"
+  },
+  {
+   "no": 8,
+   "titre": "La grande tempête",
+   "statut": "à faire",
+   "vedette": "Grincheux et toute la bande",
+   "casting": [
+    "B",
+    "P",
+    "G",
+    "R",
+    "F"
+   ],
+   "decors": [
+    "maison avec toit en travaux",
+    "tempête (nouveau)"
+   ],
+   "moment": "jour puis nuit",
+   "musique": "aventure",
+   "genre": "action",
+   "emotion": "peur puis chaleur",
+   "synopsis": [
+    "Grincheux commence le toit, mais un gros nuage orage se lève : le vent est trop fort.",
+    "Il a peur de sa propre force ; les amis se mettent tous au travail pour fixer des feuilles et des planches.",
+    "Grincheux apprend à faire une pluie douce et non un orage.",
+    "Le toit tient. Pour la première fois, ils dorment tous ensemble dans la maison."
+   ],
+   "evolution_personnages": {
+    "G": "a un toit à lui, maîtrise sa pluie",
+    "B": "écoute et attend"
+   },
+   "liens_avec_avant": [
+    "Ep 4 : Grincheux avait promis le toit.",
+    "Ep 6 : la cheminée est prête, Flamme garde le feu."
+   ],
+   "teaser_fin": "La maison est presque finie : il manque la porte... et une surprise.",
+   "piece_de_la_maison": "le toit",
+   "morale": "On n'est jamais trop petit pour protéger les autres.",
+   "rappels": [
+    "Pfff",
+    "Pitou compte jusqu'à dix"
+   ],
+   "idee_titre_youtube": "La tempête arrive sur la colline | Dessin animé pour enfants"
+  },
+  {
+   "no": 9,
+   "titre": "Robi et les cadeaux qui coincent",
+   "statut": "à faire",
+   "vedette": "Robi",
+   "casting": [
+    "R",
+    "B",
+    "P",
+    "G",
+    "F"
+   ],
+   "decors": [
+    "atelier",
+    "maison"
+   ],
+   "moment": "jour",
+   "musique": "joyeux",
+   "genre": "humour",
+   "emotion": "amusement, gêne, tendresse",
+   "synopsis": [
+    "Robi veut remercier chacun et invente un cadeau par ami : un mixeur à câlins pour Bouboule, un parapluie à chauffer pour Grincheux, etc.",
+    "Chaque cadeau tourne à la catastrophe en cascade (mousse, éclairs, boucles).",
+    "Robi s'excuse, mortifié ; les autres lui disent qu'ils veulent juste du temps avec lui.",
+    "Il offre alors une partie de cartes dans l'atelier : le meilleur cadeau."
+   ],
+   "evolution_personnages": {
+    "R": "comprend qu'il est aimé pour lui, pas pour ses machines"
+   },
+   "liens_avec_avant": [
+    "Ep 3 : à son tour de découragement, mais cette fois il rit."
+   ],
+   "teaser_fin": "Demain, c'est un jour important pour quelqu'un... mais personne ne dit pour qui.",
+   "piece_de_la_maison": "aucune (les amis préparent la porte en secret)",
+   "morale": "Le plus beau cadeau, c'est le temps qu'on partage.",
+   "rappels": [
+    "bzzzzt, boum, plouf",
+    "Bip bip !"
+   ],
+   "idee_titre_youtube": "Robi invente des cadeaux (et tout part en vrille) | Dessin animé drôle pour enfants"
+  },
+  {
+   "no": 10,
+   "titre": "L'anniversaire oublié de Bouboule",
+   "statut": "à faire",
+   "vedette": "Bouboule",
+   "casting": [
+    "B",
+    "P",
+    "G",
+    "R",
+    "F"
+   ],
+   "decors": [
+    "colline jour",
+    "rivière",
+    "maison"
+   ],
+   "moment": "jour puis soir",
+   "musique": "doux puis fête",
+   "genre": "émotion",
+   "emotion": "tristesse, doute, grande joie",
+   "synopsis": [
+    "Le matin, personne ne parle de l'anniversaire de Bouboule : chacun a l'air occupé et le fuit.",
+    "Bouboule se sent oublié, s'en va tout seul à la rivière, rebondit moins haut.",
+    "Il comprend petit à petit : ses amis lui cachaient la porte de la maison, peinte à son nom.",
+    "Tout le monde chante ; il s'excuse d'avoir douté ; la porte est posée."
+   ],
+   "evolution_personnages": {
+    "B": "apprend à faire confiance aux autres même quand il ne voit pas",
+    "P": "mène la surprise"
+   },
+   "liens_avec_avant": [
+    "Ep 9 : le jour important annoncé.",
+    "Ep 5 : Bouboule revient à la rivière, plus calme qu'avant."
+   ],
+   "teaser_fin": "Pitou est très silencieuse : elle a vu quelque chose dans le ciel cette nuit.",
+   "piece_de_la_maison": "la porte",
+   "morale": "Un ami n'oublie jamais : il prépare.",
+   "rappels": [
+    "saute, saute, saute !"
+   ],
+   "idee_titre_youtube": "Tout le monde oublie l'anniversaire de Bouboule ?"
+  },
+  {
+   "no": 11,
+   "titre": "Pitou doit choisir",
+   "statut": "à faire",
+   "vedette": "Pitou",
+   "casting": [
+    "P",
+    "B",
+    "G",
+    "R",
+    "F"
+   ],
+   "decors": [
+    "maison",
+    "colline de nuit"
+   ],
+   "moment": "nuit",
+   "musique": "doux",
+   "genre": "émotion forte",
+   "emotion": "peine, colère légère, tendresse",
+   "synopsis": [
+    "Pitou annonce que ce soir, la Nuit des Étoiles Filantes : sa famille passera et pourra la ramener au ciel.",
+    "Chacun réagit : Bouboule se fâche (« Tu veux partir ! »), Grincheux pleure de la pluie, Robi calcule en vain, Flamme chauffe sans mot dire.",
+    "Pitou ne sait plus : elle les aime, mais sa famille lui manque.",
+    "Ses amis lui disent qu'ils veulent son bonheur, même loin ; ils décident de lui préparer la plus belle fête des étoiles."
+   ],
+   "evolution_personnages": {
+    "B": "passe de la colère à l'amour qui laisse libre",
+    "P": "choisit de dire sa peur à haute voix"
+   },
+   "liens_avec_avant": [
+    "Ep 7 : l'étoile filante et la fenêtre ronde.",
+    "Ep 1 : l'arc-en-ciel d'origine."
+   ],
+   "teaser_fin": "La Nuit des Étoiles Filantes commence... et un point lumineux s'approche.",
+   "piece_de_la_maison": "aucune",
+   "morale": "Aimer, c'est vouloir le bonheur de l'autre.",
+   "rappels": [
+    "Pitou compte jusqu'à dix",
+    "la fenêtre ronde"
+   ],
+   "idee_titre_youtube": "Pitou doit-elle quitter ses amis ? | Histoire émouvante pour enfants"
+  },
+  {
+   "no": 12,
+   "titre": "La nuit des étoiles filantes",
+   "statut": "à faire",
+   "vedette": "tous",
+   "casting": [
+    "B",
+    "P",
+    "G",
+    "R",
+    "F"
+   ],
+   "decors": [
+    "maison complète",
+    "ciel étoilé",
+    "colline de nuit"
+   ],
+   "moment": "nuit",
+   "musique": "fête",
+   "genre": "finale",
+   "emotion": "larmes de joie",
+   "synopsis": [
+    "Fête dans la maison terminée : musique, feu de Flamme, pluie douce de Grincheux, lumières de Robi.",
+    "La famille de Pitou passe en pluie d'étoiles filantes ; elle peut partir.",
+    "Pitou choisit de rester sur la colline le jour et de rejoindre sa famille chaque nuit : la fenêtre ronde est leur point de rencontre.",
+    "Tous ensemble au sommet, les étoiles les saluent. Une bouteille arrive de la mer avec un message mystérieux (début de la saison 2)."
+   ],
+   "evolution_personnages": {
+    "P": "a deux familles",
+    "tous": "la maison est finie et ils y vivent ensemble"
+   },
+   "liens_avec_avant": [
+    "Reprend toutes les pièces : plan, fondations, cheminée, fenêtre, toit, porte."
+   ],
+   "teaser_fin": "Message dans une bouteille : « Le phare de la mer a besoin de vous. »",
+   "piece_de_la_maison": "les finitions et l'inauguration",
+   "morale": "Une famille, ça peut être grand.",
+   "rappels": [
+    "tous les gags de la saison"
+   ],
+   "idee_titre_youtube": "Le final de la saison 1 | Dessin animé pour enfants"
+  }
+ ]
 }
