@@ -917,7 +917,7 @@
       }
       var hb = houseG.querySelector('.hbd'), hw = houseG.querySelector('.hwl'), hr = houseG.querySelector('.hrf'), hrub = houseG.querySelector('.hrub'), hst = houseG.querySelector('.hst');
       var hu = cl((t - hs.t0) / (hs.dur || 1)), wy = 1, ry = 0, rr = 0, rot = 0, rub = 0, bo = 1, so = 0, sy0 = 0;
-      if (hs.mode === 'build' || hs.mode === 'walls') { wy = Math.max(.001, sm(cl(hu / .7))); var ru = sm(cl((hu - .6) / .4)); ry = -(1 - ru) * 90; rr = (1 - ru) * -25 - 7 * ru; rot = 5 * sm(hu) + 1.4 * Math.sin(t * 9) * (1 - hu) * (hu > 0 ? 1 : 0); bo = 1; }
+      if (hs.mode === 'build' || hs.mode === 'walls') { wy = Math.max(.001, sm(cl(hu / .7))); var ru = sm(cl((hu - .6) / .4)); ry = -(1 - ru) * 90; rr = (1 - ru) * -25 - 7 * ru; rot = (hs.mode === 'walls' ? .8 : 5) * sm(hu) + 1.4 * Math.sin(t * 9) * (1 - hu) * (hu > 0 ? 1 : 0); bo = 1; }
       else if (hs.mode === 'collapse') { wy = 1 - .84 * sm(hu); ry = 0 + 110 * hu * hu; rr = -7 - 40 * hu; rot = 5 + 22 * hu * hu; rub = sm(cl((hu - .5) / .5)); bo = hu < .95 ? 1 : 0; wy = Math.max(.001, wy); }
       else if (hs.mode === 'stake') { bo = 0; so = 1; sy0 = -140 * Math.pow(1 - sm(cl(hu)), 2); }
       hr.setAttribute('display', hs.mode === 'walls' ? 'none' : '');
