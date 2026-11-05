@@ -1,4 +1,4 @@
-# Rapport de contrôle — Épisode 7 « Pitou regarde les étoiles » (v1)
+# Rapport de contrôle — Épisode 7 « Pitou regarde les étoiles » (v2)
 
 Bible 1.4.0 · 5 novembre 2026 · branche `ep-007-production` (moteur 5 + EV-006, branche `ev-006-fenetre`).
 
@@ -10,3 +10,10 @@ Bible 1.4.0 · 5 novembre 2026 · branche `ep-007-production` (moteur 5 + EV-006
 - Cadrage : 62 alertes paysage, 92 portrait, surtout le nuage de Grincheux qui touche le haut et les personnages sous les sous-titres ; à traiter dans une évolution des fenêtres verticales.
 - Relecture logique : fenêtre justifiée (« Le toit cachera le ciel »), Pitou monte puis redescend, vitre posée avant d'être lavée, lanterne allumée avant son retour, escalier arc-en-ciel visible seulement pendant ses trajets, étoile filante vue par elle seule.
 - À faire après validation : fusion (EV-006 + ép. 7), `bible.json`, continuité (09), statut dans `saison1.json`.
+
+## Version 2 (retours d'Aaron du 5 nov.)
+- Le petit feu du foyer (ép. 6) brûle encore dès le début et reste visible jusqu'à la fin (le conteur dit « hier, Flamme a allumé le premier feu »).
+- Robi est collé au mur de la maison pendant qu'il découpe la fenêtre ; Flamme s'approche du mur pour allumer la lanterne, puis s'écarte.
+- Pitou entre par la porte et on la voit à travers la fenêtre ronde (EV-006 : `house window peek show/hide`), puis elle ressort.
+- Voix : les 41 mp3 sont réutilisés (aucun crédit ElevenLabs consommé).
+- Contrôles v2 : non-régression ép. 1–6 16/16 identiques (épisodes reconstruits avec le moteur final) ; caméra CONFORME ; fluidité paysage et portrait (3 segments) CONFORME, 0 anomalie ; −15,5 LUFS, crête −1,3 dBFS ; aucune image noire ni figée.
