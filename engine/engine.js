@@ -289,14 +289,14 @@
       var ssd = e.dur || 1.5, ss2 = e.extra || [.22, 42, .62, 150];
       var sX0 = wx(ss2[0]), sY0 = ss2[1], sX1 = wx(ss2[2]), sY1 = ss2[3];
       EVSFX.push({ t: t, key: 'scintille', vol: .35 });
-      for (i = 0; i < 14; i++) (function (i) {
-        P(t, ssd + .7, 'dot', function (u, tt) {
-          var s0 = (tt - t) / ssd - i * .028, vis = s0 >= 0 && s0 <= 1;
-          var fa = vis ? (1 - i / 15) * (s0 > .85 ? (1 - s0) / .15 : 1) : 0;
-          return { x: lerp(sX0, sX1, s0), y: lerp(sY0, sY1, s0), r: Math.max(.3, 3.4 * (1 - i / 15)), a: fa, col: i < 3 ? '#ffffff' : '#fff0a8' };
+      for (i = 0; i < 16; i++) (function (i) {
+        P(t, ssd + .9, 'dot', function (u, tt) {
+          var s0 = (tt - t) / ssd - i * .04, vis = s0 >= 0 && s0 <= 1;
+          var fa = vis ? (1 - i / 17) * (s0 > .85 ? (1 - s0) / .15 : 1) : 0;
+          return { x: lerp(sX0, sX1, s0), y: lerp(sY0, sY1, s0), r: Math.max(.4, 5.2 * (1 - i / 17)), a: fa, col: i < 3 ? '#ffffff' : '#fff0a8' };
         });
       })(i);
-      P(t, ssd + .1, 'spark', function (u, tt) { var s0 = (tt - t) / ssd; return { x: lerp(sX0, sX1, s0), y: lerp(sY0, sY1, s0), r: 7 * (s0 > .85 ? (1 - s0) / .15 : 1), a: s0 >= 0 && s0 <= 1 ? 1 : 0, rot: s0 * 120 }; });
+      P(t, ssd + .1, 'spark', function (u, tt) { var s0 = (tt - t) / ssd; return { x: lerp(sX0, sX1, s0), y: lerp(sY0, sY1, s0), r: 12 * (s0 > .85 ? (1 - s0) / .15 : 1), a: s0 >= 0 && s0 <= 1 ? 1 : 0, rot: s0 * 120 }; });
     }
     else if (e.fx === 'fireout') {   /* EV-005 : fumée grise d'un feu qui s'éteint */
       for (var q = 0; q < 9; q++) (function (q) { var t1 = t + q * e.dur / 9; P(t1, 1.5, 'puff', function (u) { return { x: wx(e.x) + (q % 3 - 1) * 8 + 16 * u, y: GY - e.y - 30 - 70 * u, r: 7 + 18 * u, a: (1 - u) * .6, col: '#d9dde3' }; }); })(q);
