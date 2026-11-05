@@ -42,7 +42,7 @@
    "faille": "fonce sans écouter",
    "chemin": "apprendre à écouter avant d'agir, puis à faire confiance à ses amis",
    "etat": {
-    "humeur": "joyeux",
+    "humeur": "attentif",
     "relations": {
      "P": "meilleure amie",
      "G": "ami protecteur",
@@ -51,7 +51,8 @@
     },
     "souvenirs": [
      "a trouvé Pitou tombée du ciel et l'a aidée (ep1)",
-     "a transformé le hoquet de Flamme en jeu (ep2)"
+     "a transformé le hoquet de Flamme en jeu (ep2)",
+     "a consolé Pitou sans blague et a imité le « Pfff » de Grincheux (ep7)"
     ],
     "progression": 0
    }
@@ -64,7 +65,7 @@
    "faille": "veut toujours avoir raison ; garde ses chagrins pour elle",
    "chemin": "accepter de ne pas savoir, et dire quand elle est triste",
    "etat": {
-    "humeur": "contente",
+    "humeur": "apaisée, un peu nostalgique",
     "relations": {
      "B": "meilleur ami",
      "G": "protège le nuage de sa solitude",
@@ -73,7 +74,8 @@
     },
     "souvenirs": [
      "est tombée du ciel et a retrouvé sa lumière grâce à l'arc-en-ciel (ep1)",
-     "a donné l'astuce de compter jusqu'à dix (ep2)"
+     "a donné l'astuce de compter jusqu'à dix (ep2)",
+     "a avoué son cœur lourd et promis de dire plus vite sa tristesse ; a vu une étoile filante (ep7)"
     ],
     "progression": 0
    }
@@ -86,7 +88,7 @@
    "faille": "se sent seul derrière sa mauvaise humeur ; croit que sa pluie dérange",
    "chemin": "oser demander de l'aide et accepter qu'il est utile",
    "etat": {
-    "humeur": "adouci mais méfiant",
+    "humeur": "adouci",
     "relations": {
      "B": "premier ami",
      "P": "l'écoute",
@@ -95,7 +97,8 @@
     },
     "souvenirs": [
      "a joué sous la pluie avec Bouboule et Pitou (ep1)",
-     "a été réchauffé par le feu de Flamme (ep2)"
+     "a été réchauffé par le feu de Flamme (ep2)",
+     "a eu l'idée de la lanterne pour que la famille de Pitou la voie (ep7)"
     ],
     "sans_abri": true,
     "progression": 0
@@ -109,7 +112,7 @@
    "faille": "ses inventions tournent mal ; il se juge à ses échecs",
    "chemin": "comprendre qu'une erreur fait avancer et que le travail à plusieurs vaut mieux que la machine",
    "etat": {
-    "humeur": "enthousiaste",
+    "humeur": "fier",
     "relations": {
      "B": "meilleur public",
      "P": "calcule avec elle",
@@ -118,7 +121,8 @@
     },
     "souvenirs": [
      "sa machine anti-hoquet a raté (ep2)",
-     "son calcul a aidé Flamme à réchauffer Grincheux (ep2)"
+     "son calcul a aidé Flamme à réchauffer Grincheux (ep2)",
+     "a conçu et posé la fenêtre ronde (ep7)"
     ],
     "progression": 0
    }
@@ -131,7 +135,7 @@
    "faille": "a peur de brûler ses amis, se croit nul",
    "chemin": "faire de son feu une force après s'être pardonné",
    "etat": {
-    "humeur": "heureux mais fragile",
+    "humeur": "heureux",
     "relations": {
      "B": "ami qui l'a invité",
      "G": "lui a rendu confiance",
@@ -140,7 +144,8 @@
     },
     "souvenirs": [
      "a réchauffé Grincheux (ep2)",
-     "a grillé deux fois Bouboule par accident (ep2)"
+     "a grillé deux fois Bouboule par accident (ep2)",
+     "son hic a allumé la lanterne de la fenêtre (ep7)"
     ],
     "progression": 0
    }

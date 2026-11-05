@@ -1,10 +1,15 @@
 # Journal des modifications de la bible du studio
 
 ## À traiter
-- **EV-006 proposée (ép. 7)** : fenêtre ronde de la maison et étoile filante (`studio/evolutions/EV-006_fenetre_etoile_filante.md`), en attente de la validation d'Aaron.
 - Qualification des fenêtres verticales 7–13 s des ép. 3 et 4 (mouvements rapides de saut ?).
 - Sauts de teinte dus à des `tod` qui se chevauchent dans les épisodes `engine: 2` (ép. 2 à 52,7 s, ép. 3 à 6,0 s) : corrigés seulement si l'épisode passe en `engine: 3` ; évolution EV-004 possible.
 - Carte « FIN » : en paysage elle recouvre en partie le personnage du dernier plan ; comportement conservé (décision d'Aaron, 3 nov. 2026), amélioration à étudier dans une évolution séparée.
+
+## 1.5.0 — 5 novembre 2026
+- **Épisode 7 « Pitou regarde les étoiles » intégré** (3 min 08, paysage + portrait, pas de Short). Validé par Aaron.
+- **Évolution moteur EV-006 intégrée** : fenêtre ronde (`house window show|lit|unlit|mark|hide|peek`) et `fx shootstar`, activées par l'usage de leurs verbes. Épisodes 1 à 6 non modifiés (16/16 images identiques par épisode).
+- **Règles** : durée maximale 4 min par épisode ; réutilisation des audios déjà générés ; relecture logique obligatoire du scénario.
+- À traiter : alertes de cadrage vertical de l'ép. 7 ; durée de l'ép. 7 sous le minimum de 3 min 30 ; description YouTube de l'ép. 4 (âge).
 
 ## 1.4.0 — 5 novembre 2026
 - **Épisode 6 « Flamme et la première cheminée » intégré** (4 min 13, paysage + portrait, pas de Short). Fichiers : `episodes/ep006.json`, `audio/ep006/`, `serie/saison1.json`, `studio/09_continuite.md`, `studio/rapports/RAPPORT_ep006.md`.
