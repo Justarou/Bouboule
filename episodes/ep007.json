@@ -1,0 +1,1908 @@
+{
+ "title": "Pitou regarde les étoiles",
+ "series": "BOUBOULE",
+ "episodeNo": 7,
+ "subtitle": "Pitou regarde les étoiles",
+ "lead_text": "Pitou brille un peu moins chaque soir et ne dit rien. Bouboule remarque, et les amis lui préparent une surprise : une fenêtre ronde sur le ciel.",
+ "alt": "Dessin animé : Pitou, une petite étoile triste, retrouve le sourire quand ses amis construisent une fenêtre ronde pour regarder le ciel.",
+ "set": "colline",
+ "tod": "dusk",
+ "music": "doux",
+ "endLine": "à demain, petits rigolos !",
+ "nextTeaser": "Abonne-toi pour la suite !",
+ "lead": 3.0,
+ "outro": 5.5,
+ "cast": {
+  "B": "bouboule",
+  "P": "pitou",
+  "R": "robi",
+  "F": "flamme",
+  "G": "grincheux"
+ },
+ "at": [],
+ "engine": 5,
+ "voices": {
+  "N": {
+   "id": "t4fHUMAMZxaaV2inHOnb",
+   "name": "Narrateur"
+  },
+  "B": {
+   "id": "vqvgjNDXBhRGzlLsbOq5",
+   "name": "Bouboule"
+  },
+  "P": {
+   "id": "ZYOBieLaunTiQrTrvNQq",
+   "name": "Pitou"
+  },
+  "R": {
+   "id": "UOvFSB5TNiugzjq7qJQ3",
+   "name": "Robi"
+  },
+  "F": {
+   "id": "3paYfmyc7ZI6WVqsBsrE",
+   "name": "Flamme"
+  },
+  "G": {
+   "id": "7OQ78nZ3nzjUjN8fGpn6",
+   "name": "Grincheux"
+  }
+ },
+ "lines": [
+  {
+   "who": "N",
+   "text": "Hier, Flamme a allumé le premier feu. Le toit attendra : les feuilles de Grincheux sèchent encore. Ce soir, la colline est calme.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "tod",
+     "dusk",
+     0.01
+    ],
+    [
+     0,
+     "music",
+     "doux"
+    ],
+    [
+     0,
+     "amb",
+     "amb_oiseaux",
+     0.2
+    ],
+    [
+     0,
+     "house",
+     "walls",
+     0.7,
+     0.01,
+     1.5
+    ],
+    [
+     0,
+     "stones",
+     "pile",
+     0.56
+    ],
+    [
+     0,
+     "place",
+     "B",
+     0.22
+    ],
+    [
+     0,
+     "place",
+     "P",
+     0.38
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "tired"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.3,
+     0.5
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "L"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.5,
+      0.5
+     ],
+     7.0
+    ],
+    [
+     "e-3.0",
+     "shot",
+     "medium",
+     [
+      0.3,
+      0.3
+     ],
+     3.0
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Pitou, regarde ! Je sais faire Pfff comme Grincheux !",
+   "tags": "[childlike voice] [excited]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0.3,
+     "anim",
+     "B",
+     "puff",
+     0.9
+    ],
+    [
+     1.6,
+     "anim",
+     "B",
+     "hop",
+     0.6
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "laugh"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.3,
+      0.3
+     ],
+     5.0
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Ah oui. Très ressemblant.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [flat, distracted]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0.5,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "tired"
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "P",
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Ta lumière est toute petite, ce soir.",
+   "tags": "[childlike voice] [worried, quiet]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.3,
+      0.3
+     ],
+     4.0
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "C'est le froid. Ça va passer.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [small, evasive]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "L"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "nod",
+     0.5
+    ],
+    [
+     1.2,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "B",
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "La nuit devint claire. Des milliers d'étoiles apparurent. Pitou les regardait, sans dire un mot.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "tod",
+     "night",
+     5.0
+    ],
+    [
+     0,
+     "amb",
+     "amb_nuit",
+     0.3
+    ],
+    [
+     0,
+     "move",
+     "P",
+     0.44,
+     1.0,
+     "float"
+    ],
+    [
+     0,
+     "move",
+     "B",
+     0.34,
+     1.0,
+     "hop"
+    ],
+    [
+     0.6,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0.6,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.3,
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.5,
+      0.5
+     ],
+     3.0
+    ],
+    [
+     2.5,
+     "cam",
+     [
+      0.4,
+      0.4
+     ],
+     1.15,
+     5.0,
+     -60
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Tu regardes quoi ?",
+   "tags": "[childlike voice] [gentle, curious]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "curious"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.4,
+      0.4
+     ],
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Les étoiles. Un... deux... trois... quatre...",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [soft, counting]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0.4,
+     "anim",
+     "P",
+     "nod",
+     0.4
+    ],
+    [
+     1.2,
+     "anim",
+     "P",
+     "nod",
+     0.4
+    ],
+    [
+     2.0,
+     "anim",
+     "P",
+     "nod",
+     0.4
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.4,
+      0.4
+     ],
+     4.0
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "...Je n'arrive plus à compter. Il y en a trop.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [voice breaking]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.2,
+     1.0
+    ],
+    [
+     0.6,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     5.0
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Ma famille est là-haut, quelque part.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [sad, quiet]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     4.0
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Je suis tombée. Je ne sais plus laquelle est la mienne.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [sad, quiet]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "anim",
+     "P",
+     "squish",
+     0.8
+    ],
+    [
+     1.0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     5.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Je brille un peu moins chaque soir.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [sad, whisper]",
+   "do": [
+    [
+     0,
+     "glow",
+     "P",
+     0.12,
+     1.5
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "L"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     4.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "J'avais le cœur lourd. Je n'osais pas le dire.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [sad, whisper]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "sad"
+    ],
+    [
+     0,
+     "anim",
+     "P",
+     "lean",
+     0.8,
+     -6
+    ],
+    [
+     0,
+     "shot",
+     "extreme",
+     "P",
+     5.0
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Je pourrais sauter très haut, pour... Non. Pas ce soir.",
+   "tags": "[childlike voice] [starting to joke, then stopping]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "anim",
+     "B",
+     "squish",
+     0.8
+    ],
+    [
+     2.8,
+     "anim",
+     "B",
+     "squish",
+     0.5
+    ],
+    [
+     3.2,
+     "mood",
+     "B",
+     "sad"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.4,
+      0.4
+     ],
+     5.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Je ne saute pas. Je ne ris pas. Je reste avec toi.",
+   "tags": "[childlike voice] [soft, warm]",
+   "do": [
+    [
+     0,
+     "mood",
+     "B",
+     "sad"
+    ],
+    [
+     0,
+     "move",
+     "B",
+     0.4,
+     1.0,
+     "walk"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.41,
+      0.41
+     ],
+     6.0
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Je dois monter briller, même petite. Je reviens vite.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [gentle]",
+   "do": [
+    [
+     0,
+     "glow",
+     "P",
+     0.3,
+     1.0
+    ],
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0.5,
+     "anim",
+     "P",
+     "nod",
+     0.5
+    ],
+    [
+     2.6,
+     "rainbow",
+     "show",
+     1.8
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.41,
+      0.41
+     ],
+     4.0
+    ],
+    [
+     "e-1.0",
+     "shot",
+     "wide",
+     [
+      0.46,
+      0.46
+     ],
+     2.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "D'accord. Je garde ta place.",
+   "tags": "[childlike voice] [soft]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "sad"
+    ],
+    [
+     0.6,
+     "anim",
+     "B",
+     "nod",
+     0.5
+    ],
+    [
+     1.0,
+     "move",
+     "P",
+     0.52,
+     2.2,
+     "float"
+    ],
+    [
+     0.5,
+     "lift",
+     "P",
+     300,
+     6.0
+    ],
+    [
+     0.5,
+     "depth",
+     "P",
+     1,
+     6.0
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.46,
+      0.46
+     ],
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Bouboule la regarda monter jusqu'à ce qu'elle soit toute petite dans le ciel.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "worried"
+    ],
+    [
+     0,
+     "cam",
+     [
+      0.48,
+      0.48
+     ],
+     1.0,
+     7.0
+    ],
+    [
+     3.5,
+     "look",
+     "B",
+     "house"
+    ],
+    [
+     5.0,
+     "mood",
+     "B",
+     "curious"
+    ],
+    [
+     5.0,
+     "rainbow",
+     "hide",
+     1.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Le toit cachera le ciel. Une fenêtre ronde, pour qu'elle le voie toujours !",
+   "tags": "[childlike voice] [thinking, then excited whisper]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "house"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0.8,
+     "anim",
+     "B",
+     "hop",
+     0.5
+    ],
+    [
+     1.6,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     3.2,
+     "look",
+     "B",
+     "house"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.4,
+      0.4
+     ],
+     6.0
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Robi ! Grincheux ! Flamme ! Chut, c'est un secret !",
+   "tags": "[childlike voice] [whispering]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "R"
+    ],
+    [
+     0.2,
+     "enter",
+     "R",
+     "L",
+     0.2,
+     2.0,
+     "drive"
+    ],
+    [
+     0.4,
+     "enter",
+     "G",
+     "L",
+     0.3,
+     2.2,
+     "float"
+    ],
+    [
+     0.8,
+     "enter",
+     "F",
+     "L",
+     0.12,
+     2.2,
+     "waddle"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     [
+      0.28,
+      0.28
+     ],
+     5.5
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Pfff. On travaille la nuit, maintenant ?",
+   "tags": "[grumpy, sulking, plaintive] [grumpy, sulking]",
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "angry"
+    ],
+    [
+     0.3,
+     "fx",
+     "G",
+     "drip",
+     1.0
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "G",
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "C'est pour Pitou. Elle a le cœur lourd.",
+   "tags": "[childlike voice] [quiet, firm]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "G"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "sad"
+    ],
+    [
+     0.4,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.34,
+      0.34
+     ],
+     4.0
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "...Pfff. Si elle ne les trouve pas, ils la cherchent peut-être.",
+   "tags": "[grumpy, sulking, plaintive] [gruff, softening]",
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "worried"
+    ],
+    [
+     2.0,
+     "look",
+     "G",
+     "B"
+    ],
+    [
+     2.2,
+     "mood",
+     "G",
+     "embarrassed"
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "G",
+     5.0
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Grincheux, tu as raison ! Il faut une lumière, pour qu'ils la voient !",
+   "tags": "[childlike voice] [amazed]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "G"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "amazed"
+    ],
+    [
+     0.4,
+     "anim",
+     "B",
+     "hop",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.34,
+      0.34
+     ],
+     6.0
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Une lumière ? Je sais faire ça. Tout petit, tout sage.",
+   "tags": "[shy, soft, trembling little voice] [shy, eager]",
+   "do": [
+    [
+     0,
+     "look",
+     "F",
+     "B"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "proud"
+    ],
+    [
+     0,
+     "anim",
+     "F",
+     "nod",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     [
+      0.32,
+      0.32
+     ],
+     5.0
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Pendant que Pitou cherchait là-haut, chacun fit ce qu'il savait faire.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "cam",
+     [
+      0.62,
+      0.62
+     ],
+     1.0,
+     5.0
+    ],
+    [
+     0,
+     "move",
+     "B",
+     0.655,
+     1.8,
+     "hop"
+    ],
+    [
+     0,
+     "move",
+     "R",
+     0.57,
+     1.8,
+     "drive"
+    ],
+    [
+     0.5,
+     "move",
+     "G",
+     0.76,
+     1.8,
+     "float"
+    ],
+    [
+     0.5,
+     "move",
+     "F",
+     0.5,
+     1.8,
+     "waddle"
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Découpe terminée ! Bip... oups. Trop petit.",
+   "tags": "[cheerful, robotic, enthusiastic] [cheerful, robotic, enthusiastic]",
+   "do": [
+    [
+     0,
+     "look",
+     "R",
+     "house"
+    ],
+    [
+     0,
+     "anim",
+     "R",
+     "tug",
+     1.0
+    ],
+    [
+     0.4,
+     "sfx",
+     "bois_craque",
+     0.5
+    ],
+    [
+     0.5,
+     "house",
+     "window",
+     "show",
+     0.6,
+     0.55
+    ],
+    [
+     2.4,
+     "look",
+     "B",
+     "house"
+    ],
+    [
+     2.6,
+     "anim",
+     "B",
+     "squish",
+     0.9
+    ],
+    [
+     3.0,
+     "anim",
+     "B",
+     "shake",
+     0.6
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.62,
+      0.62
+     ],
+     3.0
+    ],
+    [
+     "e-0.9",
+     "shot",
+     "medium",
+     [
+      0.64,
+      0.64
+     ],
+     1.0
+    ]
+   ]
+  },
+  {
+   "who": "R",
+   "text": "Mesure refaite. Bzzzt. J'agrandis le rond.",
+   "tags": "[cheerful, robotic, enthusiastic] [apologetic, robotic]",
+   "do": [
+    [
+     0,
+     "mood",
+     "R",
+     "embarrassed"
+    ],
+    [
+     0.5,
+     "move",
+     "B",
+     0.585,
+     0.8,
+     "hop"
+    ],
+    [
+     1.0,
+     "house",
+     "window",
+     "show",
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     "sfx",
+     "bois_craque",
+     0.5
+    ],
+    [
+     2.0,
+     "mood",
+     "R",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.62,
+      0.62
+     ],
+     4.0
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Pfff. Un peu de pluie, juste sur la vitre. Tout doux.",
+   "tags": "[grumpy, sulking, plaintive] [grumpy, gentle]",
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "house"
+    ],
+    [
+     0.3,
+     "fx",
+     "G",
+     "rain",
+     1.6
+    ],
+    [
+     0,
+     "move",
+     "G",
+     0.64,
+     0.6,
+     "float"
+    ],
+    [
+     1.2,
+     "mood",
+     "G",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.62,
+      0.62
+     ],
+     5.0
+    ]
+   ]
+  },
+  {
+   "who": "F",
+   "text": "Un... deux... trois... Hic !",
+   "tags": "[shy, soft, trembling little voice] [shy, counting]",
+   "do": [
+    [
+     0,
+     "look",
+     "F",
+     "house"
+    ],
+    [
+     0,
+     "mood",
+     "F",
+     "worried"
+    ],
+    [
+     0.4,
+     "anim",
+     "F",
+     "nod",
+     0.4
+    ],
+    [
+     "e-0.9",
+     "hic",
+     "F",
+     0.5
+    ],
+    [
+     "e-0.7",
+     "house",
+     "window",
+     "lit",
+     0.8
+    ],
+    [
+     "e-0.5",
+     "fx",
+     "F",
+     "sparkle",
+     1.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.64,
+      0.64
+     ],
+     3.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Elle est belle. Chut... la voilà qui revient.",
+   "tags": "[childlike voice] [softly, proud]",
+   "do": [
+    [
+     0,
+     "mood",
+     "F",
+     "amazed"
+    ],
+    [
+     0,
+     "look",
+     "F",
+     "house"
+    ],
+    [
+     0.3,
+     "look",
+     "B",
+     "up"
+    ],
+    [
+     0.3,
+     "look",
+     "R",
+     "up"
+    ],
+    [
+     0.3,
+     "look",
+     "G",
+     "up"
+    ],
+    [
+     0,
+     "rainbow",
+     "show",
+     1.5
+    ],
+    [
+     0.6,
+     "lift",
+     "P",
+     0,
+     5.0
+    ],
+    [
+     0.6,
+     "depth",
+     "P",
+     0,
+     5.0
+    ],
+    [
+     0.6,
+     "move",
+     "P",
+     0.46,
+     5.0,
+     "float"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.58,
+      0.58
+     ],
+     4.2
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Vous êtes tous là... Qu'est-ce que c'est que ça ?",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [surprised]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "house"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "surprised"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.4,
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.55,
+      0.55
+     ],
+     5.0
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Ta fenêtre. Pour voir le ciel tout le temps.",
+   "tags": "[childlike voice] [shy, proud]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "proud"
+    ],
+    [
+     0.5,
+     "anim",
+     "B",
+     "hop",
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     4.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Je les vois toutes. Même les toutes petites.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [wonder, whisper]",
+   "do": [
+    [
+     0,
+     "move",
+     "P",
+     0.57,
+     1.8,
+     "float"
+    ],
+    [
+     0.3,
+     "look",
+     "P",
+     "house"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "amazed"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     0.8,
+     1.5
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     4.5
+    ]
+   ]
+  },
+  {
+   "who": "G",
+   "text": "Et la lumière, c'est pour eux. Pour qu'ils te retrouvent. Pfff.",
+   "tags": "[grumpy, sulking, plaintive] [gruff but warm]",
+   "do": [
+    [
+     0,
+     "look",
+     "G",
+     "P"
+    ],
+    [
+     0.5,
+     "look",
+     "G",
+     "L"
+    ],
+    [
+     0,
+     "mood",
+     "G",
+     "embarrassed"
+    ],
+    [
+     0,
+     "shot",
+     "reaction",
+     "G",
+     5.5
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Ce soir, j'ai dit que j'étais triste. Et ça pèse moins.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [soft, warm]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "B"
+    ],
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "move",
+     "P",
+     0.54,
+     1.0,
+     "float"
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     1.0,
+     1.5
+    ],
+    [
+     0,
+     "aura",
+     "P",
+     0.8,
+     1.5
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     5.5
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "La prochaine fois, dis-le plus vite. On est là.",
+   "tags": "[childlike voice] [gentle]",
+   "do": [
+    [
+     0,
+     "move",
+     "B",
+     0.5,
+     1.0,
+     "hop"
+    ],
+    [
+     0,
+     "move",
+     "R",
+     0.46,
+     1.0,
+     "drive"
+    ],
+    [
+     0,
+     "move",
+     "F",
+     0.42,
+     1.0,
+     "waddle"
+    ],
+    [
+     0,
+     "move",
+     "G",
+     0.58,
+     1.0,
+     "float"
+    ],
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0,
+     "shot",
+     "group",
+     [
+      0.5,
+      0.5
+     ],
+     4.8
+    ]
+   ]
+  },
+  {
+   "who": "P",
+   "text": "Promis.",
+   "tags": "[tiny cute high-pitched child-like voice, gentle and calm] [soft]",
+   "do": [
+    [
+     0,
+     "mood",
+     "P",
+     "happy"
+    ],
+    [
+     0,
+     "anim",
+     "P",
+     "nod",
+     0.4
+    ],
+    [
+     0,
+     "glow",
+     "P",
+     1.0,
+     0.5
+    ],
+    [
+     0,
+     "shot",
+     "close",
+     "P",
+     2.0
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Alors, très haut, une étoile filante traversa le ciel. Pitou la vit. Elle ne dit rien.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0.3,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     2.0,
+     "fx",
+     "P",
+     "sparkle",
+     2.0
+    ],
+    [
+     3.0,
+     "fx",
+     null,
+     "shootstar",
+     1.7,
+     [
+      0.4,
+      36,
+      0.74,
+      170
+     ]
+    ],
+    [
+     4.0,
+     "look",
+     "P",
+     "up"
+    ],
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.58,
+      0.58
+     ],
+     4.0
+    ],
+    [
+     3.0,
+     "cam",
+     [
+      0.58,
+      0.58
+     ],
+     1.0,
+     4.0,
+     -60
+    ]
+   ]
+  },
+  {
+   "who": "B",
+   "text": "Bouboule, Bouboule, saute, saute, saute... doucement, ce soir.",
+   "tags": "[childlike voice] [soft, sung]",
+   "do": [
+    [
+     0,
+     "look",
+     "B",
+     "P"
+    ],
+    [
+     0,
+     "mood",
+     "B",
+     "happy"
+    ],
+    [
+     0.5,
+     "anim",
+     "B",
+     "squish",
+     0.8
+    ],
+    [
+     3.4,
+     "anim",
+     "B",
+     "squish",
+     0.6
+    ],
+    [
+     0,
+     "shot",
+     "medium",
+     [
+      0.5,
+      0.5
+     ],
+     5.0
+    ]
+   ]
+  },
+  {
+   "who": "N",
+   "text": "Une étoile filante a traversé le ciel... et personne n'a vu son message sur la fenêtre.",
+   "tags": "[warm, slow, gentle old man telling a bedtime story]",
+   "do": [
+    [
+     0,
+     "shot",
+     "wide",
+     [
+      0.64,
+      0.64
+     ],
+     9.0
+    ],
+    [
+     3.0,
+     "house",
+     "window",
+     "mark",
+     3.0
+    ],
+    [
+     "e-0.5",
+     "look",
+     "P",
+     "house"
+    ]
+   ]
+  }
+ ]
+}

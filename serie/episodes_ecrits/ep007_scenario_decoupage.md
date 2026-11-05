@@ -2,7 +2,7 @@
 
 **Scénario et découpage (étapes A à E de la chaîne de production)** — bible du studio **1.4.0** · 5 novembre 2026 · **à valider par Aaron avant la production (étapes F à N).**
 
-Durée estimée : **≈ 4:01** (41 répliques) · casting : Pitou (vedette), Bouboule (témoin), + Grincheux, Robi, Flamme dans la scène de la fenêtre + le narrateur · décors : colline de nuit (ciel étoilé), maison avec murs · `"engine": 5` + évolution EV-006 (voir ci-dessous).
+Durée estimée : **≈ 3:59** (41 répliques) · casting : Pitou (vedette), Bouboule (témoin), + Grincheux, Robi, Flamme dans la scène de la fenêtre + le narrateur · décors : colline de nuit (ciel étoilé), maison avec murs · `"engine": 5` + évolution EV-006 (voir ci-dessous).
 
 ## Points à trancher (décisions importantes)
 
@@ -27,7 +27,7 @@ Durée estimée : **≈ 4:01** (41 répliques) · casting : Pitou (vedette), Bou
 | Lien avec la saison | Pièce de la maison : la fenêtre ronde. Teaser : le message de l'étoile filante. Graines : famille d'étoiles (ép. 10–12), étoile filante (final). |
 | Rappels | Ép. 1 : l'escalier arc-en-ciel mène au ciel ; ép. 4 : Grincheux ne veut plus être seul, il comprend l'attente de l'autre ; ép. 5 : Robi mesure ; ép. 6 : Flamme maîtrise sa flamme, le premier feu, Grincheux promet le toit. |
 | Gags récurrents (une fois chacun) | « Saute, saute » de Bouboule : **retourné** (il se retient) ; compte jusqu'à dix de Pitou : **retourné** (elle compte les étoiles et n'y arrive plus) ; « Pfff » de Grincheux ; « Hic ! » de Flamme **retourné** : l'étincelle allume la lanterne sans rien brûler ; « Bip bip / bzzzt » de Robi. |
-| Gags visuels | Le caillou qui fait « Pfff » ; la tête de Bouboule coincée dans le trou trop petit ; la pluie de Grincheux qui lave la vitre. |
+| Gags visuels | Bouboule qui imite le « Pfff » de Grincheux ; la tête de Bouboule coincée dans le trou trop petit ; la pluie de Grincheux qui lave la vitre. |
 
 ## B. Scénario dialogué
 Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau E.
@@ -37,12 +37,12 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 *Intention narrative : Le lendemain du premier feu ; le toit attend ; Bouboule remarque que Pitou n'est pas comme d'habitude. · Intention émotionnelle : inquiétude douce ; Pitou cache sa tristesse derrière un sourire.*
 
 1. **Narrateur** [warm, slow, gentle old man telling a bedtime story] — « Hier, Flamme a allumé le premier feu. Le toit attendra : les feuilles de Grincheux sèchent encore. Ce soir, la colline est calme. »
-2. **Bouboule** [excited] [childlike voice] [excited] — « Pitou, regarde ! J'ai trouvé un caillou qui fait Pfff comme Grincheux ! »
-3. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] [flat, distracted] — « Ah oui. Il lui ressemble beaucoup. »
+2. **Bouboule** [excited] [childlike voice] [excited] — « Pitou, regarde ! Je sais faire Pfff comme Grincheux ! »
+3. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] [flat, distracted] — « Ah oui. Très ressemblant. »
 4. **Bouboule** [excited] [childlike voice] [worried, quiet] — « Ta lumière est toute petite, ce soir. »
 5. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] [small, evasive] — « C'est le froid. Ça va passer. »
 
-### Scène 2 — Les étoiles (sommet de la colline, nuit étoilée) · ≈ 0:32
+### Scène 2 — Les étoiles (sommet de la colline, nuit étoilée) · ≈ 0:31
 *Intention narrative : Pitou avoue la perte de sa famille ; Bouboule ne fait plus de blagues. · Intention émotionnelle : tristesse nue → réconfort silencieux.*
 
 6. **Narrateur** [warm, slow, gentle old man telling a bedtime story] — « La nuit devint claire. Des milliers d'étoiles apparurent. Pitou les regardait, sans dire un mot. »
@@ -58,7 +58,7 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 16. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] [gentle] — « Je dois monter briller, même petite. Je reviens vite. »
 17. **Bouboule** [excited] [childlike voice] [soft] — « D'accord. Je garde ta place. »
 
-### Scène 3 — L'idée (colline, nuit) · ≈ 1:38
+### Scène 3 — L'idée (colline, nuit) · ≈ 1:36
 *Intention narrative : Bouboule a l'idée de la fenêtre ronde ; les amis la gardent secrète ; Grincheux retourne le problème : et si c'était eux qui la cherchaient ? · Intention émotionnelle : tendresse → élan ; surprise du retournement.*
 
 18. **Narrateur** [warm, slow, gentle old man telling a bedtime story] — « Bouboule la regarda monter jusqu'à ce qu'elle soit toute petite dans le ciel. »
@@ -70,7 +70,7 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 24. **Bouboule** [excited] [childlike voice] [amazed] — « Grincheux, tu as raison ! Il faut une lumière, pour qu'ils la voient ! »
 25. **Flamme** [shy, soft, trembling little voice] [shy, eager] — « Une lumière ? Je sais faire ça. Tout petit, tout sage. »
 
-### Scène 4 — La fenêtre en cachette (colline, nuit) · ≈ 2:29
+### Scène 4 — La fenêtre en cachette (colline, nuit) · ≈ 2:27
 *Intention narrative : Chacun met sa nature au service de la fenêtre ; gags de fabrication ; la lanterne s'allume. · Intention émotionnelle : complicité et rire doux, sans bruit pour ne pas réveiller le ciel.*
 
 26. **Narrateur** [warm, slow, gentle old man telling a bedtime story] — « Pendant que Pitou cherchait là-haut, chacun fit ce qu'il savait faire. »
@@ -80,7 +80,7 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 30. **Flamme** [shy, soft, trembling little voice] [shy, counting] — « Un... deux... trois... Hic ! »
 31. **Bouboule** [excited] [childlike voice] [softly, proud] — « Elle est belle. Chut... la voilà qui revient. »
 
-### Scène 5 — La surprise (colline, nuit) · ≈ 3:00
+### Scène 5 — La surprise (colline, nuit) · ≈ 2:59
 *Intention narrative : Pitou découvre la fenêtre, dit sa joie et sa promesse ; une étoile filante passe. · Intention émotionnelle : soulagement tendre, un peu triste, avec une vraie lueur d'espoir.*
 
 32. **Pitou** [tiny cute high-pitched child-like voice, gentle and calm] [surprised] — « Vous êtes tous là... Qu'est-ce que c'est que ça ? »
@@ -98,7 +98,7 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 
 | Élément | Où | Contenu |
 |---|---|---|
-| Accroche (10 s) | répl. 1–3 | Caillou qui fait « Pfff » ; Pitou ne rit pas, sa lumière est plus petite. |
+| Accroche (10 s) | répl. 1–3 | Bouboule qui imite Grincheux ; Pitou ne rit pas, sa lumière est plus petite. |
 | Problème | répl. 3–5 | Pitou brille moins et le cache ; Bouboule le voit. |
 | Péripétie 1 | répl. 6–10 | Les étoiles : Pitou ne sait plus les compter ; sa famille est là-haut. |
 | Péripétie 2 | répl. 11–15 | Elle avoue le cœur lourd ; Bouboule retient son gag et reste avec elle. |
@@ -111,7 +111,7 @@ Pour chaque réplique : étiquette de voix (ElevenLabs). Actions dans le tableau
 | Chanson-refrain | répl. 40 | Bouboule, tout doucement : « Bouboule, Bouboule, saute, saute, saute... doucement, ce soir. » |
 | Teaser | répl. 41 | L'étoile filante et son message sur la fenêtre que personne n'a vu. |
 
-Durée estimée : **4:01** (avant pauses de montage), dans la cible 3 min 30 – 6 min. Une seule intrigue. Pas de danger réaliste, pas de méchant.
+Durée estimée : **3:59** (avant pauses de montage), dans la cible 3 min 30 – 6 min. Une seule intrigue. Pas de danger réaliste, pas de méchant.
 
 ## D. Découpage en scènes
 
@@ -127,51 +127,51 @@ Durée estimée : **4:01** (avant pauses de montage), dans la cible 3 min 30 –
 
 ## E. Storyboard plan par plan
 
-Durées estimées (voix + respiration). Tout objet cité est montré : caillou, étoiles, escalier arc-en-ciel, fenêtre ronde, lanterne, étoile filante, message sur la vitre.
+Durées estimées (voix + respiration). Tout objet cité est montré : imitation de Grincheux, étoiles, escalier arc-en-ciel, fenêtre ronde, lanterne, étoile filante, message sur la vitre.
 
 | N° | t | Qui — réplique | Image / action | Point focal | Plan | Durée |
 |---|---|---|---|---|---|---|
-| 1 | 0:01 | **N** — Hier, Flamme a allumé le premier feu. Le toit attendra : les feuilles de Grincheux sèchent encore. Ce soir, la colline est calme. | Colline au crépuscule. Maison avec murs sans toit à droite, foyer éteint au pied du mur ; Bouboule à gauche avec un caillou ; Pitou flotte, sa lumière faible. | la maison et Pitou, petite lumière | wide groupe | 11.9 s |
-| 2 | 0:13 | **B** — Pitou, regarde ! J'ai trouvé un caillou qui fait Pfff comme Grincheux ! | Bouboule tend un caillou grimaçant (nuage dessiné dessus) ; il saute de joie (hop). | le caillou | medium B | 6.1 s |
-| 3 | 0:20 | **P** — Ah oui. Il lui ressemble beaucoup. | Pitou regarde le caillou sans le voir ; ses yeux glissent vers le ciel. | regard de Pitou qui part | reaction P | 3.5 s |
-| 4 | 0:24 | **B** — Ta lumière est toute petite, ce soir. | Plan large : la lumière de Pitou comparée à la maison qui s'allume au loin ; Bouboule la regarde. | petite lumière de Pitou | medium P-B | 3.9 s |
-| 5 | 0:29 | **P** — C'est le froid. Ça va passer. | Pitou se tourne vers la nuit qui tombe ; Bouboule ne la croit pas (regard inquiet). | Bouboule qui ne croit pas | reaction B | 3.5 s |
-| 6 | 0:33 | **N** — La nuit devint claire. Des milliers d'étoiles apparurent. Pitou les regardait, sans dire un mot. | Tod night ; ciel plein d'étoiles, caméra qui monte lentement ; Pitou et Bouboule assis sur l'herbe, petits dans l'image. | le ciel étoilé | wide, cam haut | 8.4 s |
-| 7 | 0:43 | **B** — Tu regardes quoi ? | Bouboule s'assoit près d'elle, lève le nez. | les deux petits | medium P-B | 2.7 s |
-| 8 | 0:46 | **P** — Les étoiles. Un... deux... trois... quatre... | Pitou pointe le ciel de la pointe, compte une étoile par doigt. | pointe de Pitou vers le ciel | medium P | 3.5 s |
-| 9 | 0:50 | **P** — ...Je n'arrive plus à compter. Il y en a trop. | Elle baisse la main ; sa lumière vacille (gag du compte, retourné). | main qui retombe | close P | 5.0 s |
-| 10 | 0:56 | **P** — Ma famille est là-haut, quelque part. | Pitou regarde une étoile, puis une autre, puis toutes ; ses yeux brillent. | yeux de Pitou | close P | 3.5 s |
-| 11 | 1:00 | **P** — Je suis tombée. Je ne sais plus laquelle est la mienne. | Pitou serre ses pointes ; une petite étoile filante imaginaire dans ses yeux. | Pitou perdue | close P | 5.4 s |
-| 12 | 1:07 | **P** — Je brille un peu moins chaque soir. | Sa lumière baisse encore (glow bas). | lumière qui baisse | close P | 3.9 s |
-| 13 | 1:11 | **P** — J'avais le cœur lourd. Je n'osais pas le dire. | Elle baisse la tête ; une petite lueur tombe comme une larme brillante. | larme de lumière | extreme P | 4.6 s |
-| 14 | 1:17 | **B** — Je pourrais sauter très haut, pour... Non. Pas ce soir. | Bouboule plie les genoux (anticipation), se ravise, se rassoit : le gag « saute » retourné. | genoux qui se déplient puis se rassoient | medium B | 5.0 s |
-| 15 | 1:23 | **B** — Je ne saute pas. Je ne ris pas. Je reste avec toi. | Il se serre contre elle ; leurs ombres se touchent. | les deux serrés | medium P-B | 5.8 s |
-| 16 | 1:29 | **P** — Je dois monter briller, même petite. Je reviens vite. | Pitou se lève ; l'escalier arc-en-ciel apparaît (rainbow show). | l'escalier qui apparaît | wide escalier | 4.6 s |
-| 17 | 1:35 | **B** — D'accord. Je garde ta place. | Bouboule tapote l'herbe à côté de lui ; Pitou monte, se retourne, sourit. | Pitou qui s'éloigne | medium B puis wide | 3.1 s |
-| 18 | 1:39 | **N** — Bouboule la regarda monter jusqu'à ce qu'elle soit toute petite dans le ciel. | Pitou sur l'escalier arc-en-ciel, de plus en plus haut ; Bouboule en bas, de dos, tête levée. | Pitou qui rapetisse | wide, tilt haut | 7.6 s |
-| 19 | 1:47 | **B** — Le toit cachera le ciel. Une fenêtre ronde, pour qu'elle le voie toujours ! | Bouboule regarde les murs, puis le ciel (le toit du futur le cachera) ; il dessine un rond dans l'air avec le doigt. | le rond dessiné | medium B + insert mur | 6.5 s |
-| 20 | 1:54 | **B** — Robi ! Grincheux ! Flamme ! Chut, c'est un secret ! | Il fait signe de venir, doigt sur la bouche ; les trois arrivent sur la pointe des pieds. | les amis qui arrivent | wide groupe | 5.4 s |
-| 21 | 2:00 | **G** — Pfff. On travaille la nuit, maintenant ? | Grincheux, nuage gris, bras croisés ; petite pluie sur sa tête. | Grincheux qui râle | reaction G | 3.9 s |
-| 22 | 2:05 | **B** — C'est pour Pitou. Elle a le cœur lourd. | Bouboule le regarde droit dans les yeux ; le nuage de Grincheux se fige. | Bouboule sérieux | medium B-G | 4.2 s |
-| 23 | 2:10 | **G** — ...Pfff. Si elle ne les trouve pas, ils la cherchent peut-être. | Grincheux regarde le ciel ; son nuage s'éclaircit ; tous se tournent vers lui, surpris (retournement à ≈ 55 %). | regard de Grincheux vers le ciel | close G puis group | 5.4 s |
-| 24 | 2:16 | **B** — Grincheux, tu as raison ! Il faut une lumière, pour qu'ils la voient ! | Bouboule saute (hop), puis se retient et sourit : le gag revient, doux. | Bouboule illuminé | medium B | 6.5 s |
-| 25 | 2:24 | **F** — Une lumière ? Je sais faire ça. Tout petit, tout sage. | Flamme avance, sa flamme monte d'un cran ; il se redresse, fier. | Flamme volontaire | medium F | 5.4 s |
-| 26 | 2:30 | **N** — Pendant que Pitou cherchait là-haut, chacun fit ce qu'il savait faire. | Montage de plans courts : Robi qui découpe, Grincheux qui bruine, Flamme qui compte. Lune haute. | les mains au travail | wide groupe | 6.7 s |
-| 27 | 2:37 | **R** — Découpe terminée ! Bip... oups. Trop petit. | Robi découpe un rond dans le mur ; Bouboule glisse la tête pour vérifier : elle reste coincée (gag visuel). | tête de Bouboule coincée | medium B-R | 3.9 s |
-| 28 | 2:42 | **R** — Mesure refaite. Bzzzt. J'agrandis le rond. | Robi agrandit le trou ; Bouboule tombe dans l'herbe ; Robi pose une vitre ronde : la fenêtre est grande et fermée (house window). | la fenêtre ronde apparaît | wide maison | 3.5 s |
-| 29 | 2:46 | **G** — Pfff. Un peu de pluie, juste sur la vitre. Tout doux. | Grincheux fait tomber une toute petite pluie qui lave le verre rond : la fenêtre brille (sa pluie, utile). | la vitre qui brille | medium G + insert fenêtre | 5.4 s |
-| 30 | 2:53 | **F** — Un... deux... trois... Hic ! | Flamme compte, hic : une étincelle tombe dans une petite lanterne posée derrière la vitre (fire show, lift sur le mur). | l'étincelle dans la lanterne | insert lanterne | 3.1 s |
-| 31 | 2:56 | **B** — Elle est belle. Chut... la voilà qui revient. | Bouboule désigne le ciel : le point lumineux de Pitou descend l'escalier ; tous se cachent derrière un buisson/le mur. | Pitou qui redescend | wide ciel + maison | 4.2 s |
-| 32 | 3:01 | **P** — Vous êtes tous là... Qu'est-ce que c'est que ça ? | Pitou arrive en flottant ; elle voit la maison avec la grande fenêtre ronde et sa lanterne dorée ; tous les amis alignés devant. | la fenêtre ronde allumée | wide maison | 5.0 s |
-| 33 | 3:07 | **B** — Ta fenêtre. Pour voir le ciel tout le temps. | Bouboule montre la fenêtre du bras, tout rouge de fierté. | Bouboule qui présente | medium B-P | 4.6 s |
-| 34 | 3:13 | **P** — Je les vois toutes. Même les toutes petites. | Pitou colle son visage à la vitre ; par le rond, on voit le ciel étoilé reflété dans ses yeux. | ses yeux dans le rond | close P, vitre | 4.2 s |
-| 35 | 3:18 | **G** — Et la lumière, c'est pour eux. Pour qu'ils te retrouvent. Pfff. | Grincheux regarde ailleurs, nuage blanc, les joues rosies. | Grincheux ému | reaction G | 5.4 s |
-| 36 | 3:24 | **P** — Ce soir, j'ai dit que j'étais triste. Et ça pèse moins. | Pitou serre les mains de Bouboule ; sa lumière revient presque complètement. | lumière qui revient | medium P-B | 5.4 s |
-| 37 | 3:30 | **B** — La prochaine fois, dis-le plus vite. On est là. | Bouboule hoche la tête ; Robi, Flamme et Grincheux s'approchent d'elle (câlin collectif). | le groupe serré | group | 4.6 s |
-| 38 | 3:35 | **P** — Promis. | Pitou ferme les yeux, sourit. | sourire de Pitou | close P | 1.6 s |
-| 39 | 3:38 | **N** — Alors, très haut, une étoile filante traversa le ciel. Pitou la vit. Elle ne dit rien. | Plan large sur la fenêtre ; une étoile filante traverse le ciel au-dessus (fx shootstar) ; seule Pitou lève les yeux, les autres ont les yeux fermés dans le câlin. | l'étoile filante | wide fenêtre + ciel | 8.9 s |
-| 40 | 3:48 | **B** — Bouboule, Bouboule, saute, saute, saute... doucement, ce soir. | Bouboule chante tout bas en balançant doucement ; il ne saute pas mais ses pieds rebondissent à peine. | Bouboule qui chante doucement | medium B | 4.2 s |
-| 41 | 3:53 | **N** — Une étoile filante a traversé le ciel... et personne n'a vu son message sur la fenêtre. | Plan fixe de nuit : la fenêtre ronde dorée ; sur la vitre, une toute petite étoile claire apparaît puis s'efface ; la carte FIN suit. | le message sur la vitre | wide fixe long | 8.9 s |
+| 1 | 0:01 | **N** — Hier, Flamme a allumé le premier feu. Le toit attendra : les feuilles de Grincheux sèchent encore. Ce soir, la colline est calme. | Colline au crépuscule. Maison avec murs sans toit à droite, foyer éteint au pied du mur ; Bouboule à gauche ; Pitou flotte, sa lumière faible. | la maison et Pitou, petite lumière | wide groupe | 11.9 s |
+| 2 | 0:13 | **B** — Pitou, regarde ! Je sais faire Pfff comme Grincheux ! | Bouboule gonfle les joues et fait « Pfff » en imitant Grincheux (anim puff), puis rebondit de joie. | Bouboule qui imite Grincheux | medium B | 5.0 s |
+| 3 | 0:19 | **P** — Ah oui. Très ressemblant. | Pitou regarde Bouboule qui imite Grincheux sans le voir ; ses yeux glissent vers le ciel. | regard de Pitou qui part | reaction P | 2.7 s |
+| 4 | 0:23 | **B** — Ta lumière est toute petite, ce soir. | Plan large : la lumière de Pitou comparée à la maison qui s'allume au loin ; Bouboule la regarde. | petite lumière de Pitou | medium P-B | 3.9 s |
+| 5 | 0:27 | **P** — C'est le froid. Ça va passer. | Pitou se tourne vers la nuit qui tombe ; Bouboule ne la croit pas (regard inquiet). | Bouboule qui ne croit pas | reaction B | 3.5 s |
+| 6 | 0:32 | **N** — La nuit devint claire. Des milliers d'étoiles apparurent. Pitou les regardait, sans dire un mot. | Tod night ; ciel plein d'étoiles, caméra qui monte lentement ; Pitou et Bouboule assis sur l'herbe, petits dans l'image. | le ciel étoilé | wide, cam haut | 8.4 s |
+| 7 | 0:41 | **B** — Tu regardes quoi ? | Bouboule s'assoit près d'elle, lève le nez. | les deux petits | medium P-B | 2.7 s |
+| 8 | 0:44 | **P** — Les étoiles. Un... deux... trois... quatre... | Pitou pointe le ciel de la pointe, compte une étoile par doigt. | pointe de Pitou vers le ciel | medium P | 3.5 s |
+| 9 | 0:49 | **P** — ...Je n'arrive plus à compter. Il y en a trop. | Elle baisse la main ; sa lumière vacille (gag du compte, retourné). | main qui retombe | close P | 5.0 s |
+| 10 | 0:54 | **P** — Ma famille est là-haut, quelque part. | Pitou regarde une étoile, puis une autre, puis toutes ; ses yeux brillent. | yeux de Pitou | close P | 3.5 s |
+| 11 | 0:59 | **P** — Je suis tombée. Je ne sais plus laquelle est la mienne. | Pitou serre ses pointes ; une petite étoile filante imaginaire dans ses yeux. | Pitou perdue | close P | 5.4 s |
+| 12 | 1:05 | **P** — Je brille un peu moins chaque soir. | Sa lumière baisse encore (glow bas). | lumière qui baisse | close P | 3.9 s |
+| 13 | 1:10 | **P** — J'avais le cœur lourd. Je n'osais pas le dire. | Elle baisse la tête ; une petite lueur tombe comme une larme brillante. | larme de lumière | extreme P | 4.6 s |
+| 14 | 1:15 | **B** — Je pourrais sauter très haut, pour... Non. Pas ce soir. | Bouboule plie les genoux (anticipation), se ravise, se rassoit : le gag « saute » retourné. | genoux qui se déplient puis se rassoient | medium B | 5.0 s |
+| 15 | 1:21 | **B** — Je ne saute pas. Je ne ris pas. Je reste avec toi. | Il se serre contre elle ; leurs ombres se touchent. | les deux serrés | medium P-B | 5.8 s |
+| 16 | 1:27 | **P** — Je dois monter briller, même petite. Je reviens vite. | Pitou se lève ; l'escalier arc-en-ciel apparaît (rainbow show). | l'escalier qui apparaît | wide escalier | 4.6 s |
+| 17 | 1:33 | **B** — D'accord. Je garde ta place. | Bouboule tapote l'herbe à côté de lui ; Pitou monte, se retourne, sourit. | Pitou qui s'éloigne | medium B puis wide | 3.1 s |
+| 18 | 1:37 | **N** — Bouboule la regarda monter jusqu'à ce qu'elle soit toute petite dans le ciel. | Pitou sur l'escalier arc-en-ciel, de plus en plus haut ; Bouboule en bas, de dos, tête levée. | Pitou qui rapetisse | wide, tilt haut | 7.6 s |
+| 19 | 1:45 | **B** — Le toit cachera le ciel. Une fenêtre ronde, pour qu'elle le voie toujours ! | Bouboule regarde les murs, puis le ciel (le toit du futur le cachera) ; il dessine un rond dans l'air avec le doigt. | le rond dessiné | medium B + insert mur | 6.5 s |
+| 20 | 1:52 | **B** — Robi ! Grincheux ! Flamme ! Chut, c'est un secret ! | Il fait signe de venir, doigt sur la bouche ; les trois arrivent sur la pointe des pieds. | les amis qui arrivent | wide groupe | 5.4 s |
+| 21 | 1:59 | **G** — Pfff. On travaille la nuit, maintenant ? | Grincheux, nuage gris, bras croisés ; petite pluie sur sa tête. | Grincheux qui râle | reaction G | 3.9 s |
+| 22 | 2:03 | **B** — C'est pour Pitou. Elle a le cœur lourd. | Bouboule le regarde droit dans les yeux ; le nuage de Grincheux se fige. | Bouboule sérieux | medium B-G | 4.2 s |
+| 23 | 2:08 | **G** — ...Pfff. Si elle ne les trouve pas, ils la cherchent peut-être. | Grincheux regarde le ciel ; son nuage s'éclaircit ; tous se tournent vers lui, surpris (retournement à ≈ 55 %). | regard de Grincheux vers le ciel | close G puis group | 5.4 s |
+| 24 | 2:14 | **B** — Grincheux, tu as raison ! Il faut une lumière, pour qu'ils la voient ! | Bouboule saute (hop), puis se retient et sourit : le gag revient, doux. | Bouboule illuminé | medium B | 6.5 s |
+| 25 | 2:22 | **F** — Une lumière ? Je sais faire ça. Tout petit, tout sage. | Flamme avance, sa flamme monte d'un cran ; il se redresse, fier. | Flamme volontaire | medium F | 5.4 s |
+| 26 | 2:28 | **N** — Pendant que Pitou cherchait là-haut, chacun fit ce qu'il savait faire. | Montage de plans courts : Robi qui découpe, Grincheux qui bruine, Flamme qui compte. Lune haute. | les mains au travail | wide groupe | 6.7 s |
+| 27 | 2:35 | **R** — Découpe terminée ! Bip... oups. Trop petit. | Robi découpe un rond dans le mur ; Bouboule glisse la tête pour vérifier : elle reste coincée (gag visuel). | tête de Bouboule coincée | medium B-R | 3.9 s |
+| 28 | 2:40 | **R** — Mesure refaite. Bzzzt. J'agrandis le rond. | Robi agrandit le trou ; Bouboule tombe dans l'herbe ; Robi pose une vitre ronde : la fenêtre est grande et fermée (house window). | la fenêtre ronde apparaît | wide maison | 3.5 s |
+| 29 | 2:44 | **G** — Pfff. Un peu de pluie, juste sur la vitre. Tout doux. | Grincheux fait tomber une toute petite pluie qui lave le verre rond : la fenêtre brille (sa pluie, utile). | la vitre qui brille | medium G + insert fenêtre | 5.4 s |
+| 30 | 2:51 | **F** — Un... deux... trois... Hic ! | Flamme compte, hic : une étincelle tombe dans une petite lanterne posée derrière la vitre (fire show, lift sur le mur). | l'étincelle dans la lanterne | insert lanterne | 3.1 s |
+| 31 | 2:55 | **B** — Elle est belle. Chut... la voilà qui revient. | Bouboule désigne le ciel : le point lumineux de Pitou descend l'escalier ; tous se cachent derrière un buisson/le mur. | Pitou qui redescend | wide ciel + maison | 4.2 s |
+| 32 | 3:00 | **P** — Vous êtes tous là... Qu'est-ce que c'est que ça ? | Pitou arrive en flottant ; elle voit la maison avec la grande fenêtre ronde et sa lanterne dorée ; tous les amis alignés devant. | la fenêtre ronde allumée | wide maison | 5.0 s |
+| 33 | 3:05 | **B** — Ta fenêtre. Pour voir le ciel tout le temps. | Bouboule montre la fenêtre du bras, tout rouge de fierté. | Bouboule qui présente | medium B-P | 4.6 s |
+| 34 | 3:11 | **P** — Je les vois toutes. Même les toutes petites. | Pitou colle son visage à la vitre ; par le rond, on voit le ciel étoilé reflété dans ses yeux. | ses yeux dans le rond | close P, vitre | 4.2 s |
+| 35 | 3:16 | **G** — Et la lumière, c'est pour eux. Pour qu'ils te retrouvent. Pfff. | Grincheux regarde ailleurs, nuage blanc, les joues rosies. | Grincheux ému | reaction G | 5.4 s |
+| 36 | 3:22 | **P** — Ce soir, j'ai dit que j'étais triste. Et ça pèse moins. | Pitou serre les mains de Bouboule ; sa lumière revient presque complètement. | lumière qui revient | medium P-B | 5.4 s |
+| 37 | 3:28 | **B** — La prochaine fois, dis-le plus vite. On est là. | Bouboule hoche la tête ; Robi, Flamme et Grincheux s'approchent d'elle (câlin collectif). | le groupe serré | group | 4.6 s |
+| 38 | 3:34 | **P** — Promis. | Pitou ferme les yeux, sourit. | sourire de Pitou | close P | 1.6 s |
+| 39 | 3:36 | **N** — Alors, très haut, une étoile filante traversa le ciel. Pitou la vit. Elle ne dit rien. | Plan large sur la fenêtre ; une étoile filante traverse le ciel au-dessus (fx shootstar) ; seule Pitou lève les yeux, les autres ont les yeux fermés dans le câlin. | l'étoile filante | wide fenêtre + ciel | 8.9 s |
+| 40 | 3:46 | **B** — Bouboule, Bouboule, saute, saute, saute... doucement, ce soir. | Bouboule chante tout bas en balançant doucement ; il ne saute pas mais ses pieds rebondissent à peine. | Bouboule qui chante doucement | medium B | 4.2 s |
+| 41 | 3:51 | **N** — Une étoile filante a traversé le ciel... et personne n'a vu son message sur la fenêtre. | Plan fixe de nuit : la fenêtre ronde dorée ; sur la vitre, une toute petite étoile claire apparaît puis s'efface ; la carte FIN suit. | le message sur la vitre | wide fixe long | 8.9 s |
 
 ## Placement et accessoires (repères)
 - Maison (`house walls`, EV-005) à x 0,70, avec `house window` (EV-006) sur le mur côté caméra, au centre de la maison ; foyer éteint x 0,56 (le feu de l'ép. 6 est éteint).
@@ -181,7 +181,7 @@ Durées estimées (voix + respiration). Tout objet cité est montré : caillou, 
 
 ## F. Contrôles déjà faits sur ce document
 - Répliques ≤ 15 mots (narrateur excepté), une idée par réplique ; aucune réplique sans action visible.
-- 🔒 « Ce dont on parle doit se voir » : caillou, étoiles, escalier, fenêtre, lanterne, étoile filante, message : chacun a son plan ou son insert.
+- 🔒 « Ce dont on parle doit se voir » : imitation de Grincheux, étoiles, escalier, fenêtre, lanterne, étoile filante, message : chacun a son plan ou son insert.
 - Continuité vérifiée contre les faits établis des épisodes 1 à 6 : aucune contradiction (Pitou monte briller le soir ; la maison a ses murs sans toit ; Grincheux fera le toit à l'ép. 8 ; Flamme a un feu maîtrisé ; Robi a surmonté sa peur de l'eau).
 - Gags récurrents : chacun une seule fois, trois retournés.
 - **Relecture logique (demande d'Aaron)** : (1) la maison n'a pas de toit, donc la fenêtre est justifiée par la réplique « Le toit cachera le ciel » ; (2) Pitou monte puis redescend : le narrateur dit que les amis travaillent « pendant que Pitou cherchait là-haut » ; (3) la vitre est posée par Robi avant que Grincheux la lave ; (4) la lanterne est allumée par l'étincelle de Flamme avant que Pitou ne revienne ; (5) l'escalier arc-en-ciel apparaît quand elle monte et disparaît quand elle revient ; (6) le foyer de l'ép. 6 est éteint, la seule lumière est la lanterne ; (7) l'étoile filante est vue par Pitou seule, le message sur la vitre par le spectateur seul ; (8) heure : crépuscule puis nuit, jamais d'étoiles avant la nuit.
