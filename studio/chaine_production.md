@@ -6,7 +6,7 @@ Chaque étape produit un **livrable vérifiable**. On ne passe à la suivante qu
 |---|---|---|---|---|
 | A | Idée et intention narrative | storytelling-jeunesse | fiche d'une page : vedette, désir, problème, enjeu, émotion, morale incarnée, lien avec `saison1.json`, rappel de continuité | cohérence avec 01, 02, 03, 09 ; une seule intrigue |
 | B | Écriture du scénario | storytelling-jeunesse | scénario dialogué par scènes | respect de 08 (accroche 10 s, péripéties, gag, nuance, répliques courtes) |
-| C | Validation de la structure dramatique | storytelling-jeunesse + supervision-qualite | grille d'actes (problème, escalade, surprise, creux, résolution) | tous les éléments présents, durée estimée 3 min 30–6 min |
+| C | Validation de la structure dramatique | storytelling-jeunesse + supervision-qualite | grille d'actes (problème, escalade, surprise, creux, résolution) | tous les éléments présents, durée estimée 3 min 30–4 min (maximum 4 min) |
 | D | Découpage en scènes | storyboard-et-decoupage | liste de scènes avec lieu, moment, personnages, **fiche d'intention** (07) | chaque scène a un changement ; transitions de lieu prévues |
 | E | Storyboard | storyboard-et-decoupage | tableau plan par plan : réplique, image, point focal, objets à montrer, durée | tout objet cité est montré ; format vertical vérifié |
 | F | Mouvements de caméra | cinematographie | fenêtres `shot`/`cam` par réplique, inserts, transitions + **pré-contrôle moteur `qc_camera.js` (niveau CONFORME / À CORRIGER / BLOQUANT)** | règles d'or de 07 ; pas de zigzag ; **niveau CONFORME**, sinon retour à F |
@@ -20,6 +20,8 @@ Chaque étape produit un **livrable vérifiable**. On ne passe à la suivante qu
 | N | Export final | montage-animation | MP4 paysage et vertical + titres/descriptions (YouTube, TikTok ; **Shorts uniquement si l'épisode dure 3 min ou moins**, voir règles) | rapport validé **avec fluidité CONFORME** ; export **interdit** sinon ; Aaron informé |
 
 ## Règles de la chaîne
+- **Durée maximale (décision d'Aaron, 5 nov. 2026)** : 4 minutes par épisode, car les crédits ElevenLabs ne sont pas illimités. Le scénario est resserré dès l'écriture (étape B) ; la durée estimée est vérifiée à l'étape C.
+- **Relecture logique obligatoire (demande d'Aaron, 5 nov. 2026)** : à chaque scénario (étape C), contrôle explicite des erreurs de logique : un objet ou un lieu a-t-il une raison d'être ? qui sait quoi ? l'heure, la météo, l'état de la maison, ce qui est montré correspond-il à ce qui est dit ?
 - **Shorts (décision d'Aaron, 3 nov. 2026)** : une vidéo de plus de 3 minutes ne peut pas être publiée en YouTube Shorts. Pour tout épisode de plus de 3 min (c'est le cas de la durée cible 3 min 30–6 min), l'export prépare titres et descriptions YouTube et TikTok, **sans titre ni description Shorts**. Un extrait de 3 min ou moins pour Shorts n'est produit que si Aaron le demande. Les épisodes 3 et 4 (plus de 3 min) ont des champs `shorts*` sans objet : non modifiés.
 - 🔒 **Contrôle de fluidité caméra obligatoire** (`10_qualite.md`) : à chaque épisode et chaque démo, deux formats, avant livraison. Pas de livraison tant que le niveau n'est pas CONFORME ; un BLOQUANT arrête la chaîne et est remonté à Aaron.
 - Un livrable refusé revient à l'étape qui l'a produit, avec la liste numérée des corrections.

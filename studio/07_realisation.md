@@ -53,7 +53,7 @@ Aller = sortie à droite → arrivée par la gauche. Retour = l'inverse. Jamais 
 - Placements : les personnages parlants jamais cachés par un accessoire ; l'accessoire important n'est jamais derrière eux (la maison est à droite, les personnages à gauche, etc.).
 
 ## Rythme
-Répliques ≤ 8 s ; alternance de plans longs (respirations) et courts ; une pause avant et après chaque gag ; durée d'un épisode : 3 min 30 à 6 min.
+Répliques ≤ 8 s ; alternance de plans longs (respirations) et courts ; une pause avant et après chaque gag ; durée d'un épisode : 3 min 30 à 4 min (maximum 4 min, décision d'Aaron du 5 nov. 2026).
 
 ## Chaîne de production
 Voir `chaine_production.md`. La réalisation valide chaque porte avant de passer à la suivante.

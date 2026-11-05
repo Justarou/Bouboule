@@ -14,7 +14,7 @@ Des histoires **plus développées** (trois actes clairs, une vraie complication
 8. **Morale incarnée** : montrée par une action, ou dite par un personnage avec ses mots, une fois, brièvement.
 9. **Teaser** d'une phrase qui crée l'envie de la suite (en lien avec `../serie/saison1.json`).
 10. **Chanson-refrain** : « Bouboule, Bouboule, saute, saute, saute ! » + variante liée à la morale.
-Durée : 3 min 30 à 6 min, ≈ 40–80 répliques. Avec une seule intrigue.
+Durée : 3 min 30 à 4 min maximum (décision d'Aaron, 5 nov. 2026 : crédits ElevenLabs limités), ≈ 38–45 répliques. Avec une seule intrigue.
 
 ## Cahier des charges de chaque épisode
 - Un **problème clairement identifiable** et un **désir** pour le personnage vedette.
