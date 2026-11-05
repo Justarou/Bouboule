@@ -131,7 +131,7 @@ Durées estimées (voix + respiration). Tout objet cité est montré : imitation
 
 | N° | t | Qui — réplique | Image / action | Point focal | Plan | Durée |
 |---|---|---|---|---|---|---|
-| 1 | 0:01 | **N** — Hier, Flamme a allumé le premier feu. Le toit attendra : les feuilles de Grincheux sèchent encore. Ce soir, la colline est calme. | Colline au crépuscule. Maison avec murs sans toit à droite, foyer éteint au pied du mur ; Bouboule à gauche ; Pitou flotte, sa lumière faible. | la maison et Pitou, petite lumière | wide groupe | 11.9 s |
+| 1 | 0:01 | **N** — Hier, Flamme a allumé le premier feu. Le toit attendra : les feuilles de Grincheux sèchent encore. Ce soir, la colline est calme. | Colline au crépuscule. Maison avec murs sans toit à droite, petit feu du foyer encore allumé (suite de l'ép. 6) au pied du mur ; Bouboule à gauche ; Pitou flotte, sa lumière faible. | la maison et Pitou, petite lumière | wide groupe | 11.9 s |
 | 2 | 0:13 | **B** — Pitou, regarde ! Je sais faire Pfff comme Grincheux ! | Bouboule gonfle les joues et fait « Pfff » en imitant Grincheux (anim puff), puis rebondit de joie. | Bouboule qui imite Grincheux | medium B | 5.0 s |
 | 3 | 0:19 | **P** — Ah oui. Très ressemblant. | Pitou regarde Bouboule qui imite Grincheux sans le voir ; ses yeux glissent vers le ciel. | regard de Pitou qui part | reaction P | 2.7 s |
 | 4 | 0:23 | **B** — Ta lumière est toute petite, ce soir. | Plan large : la lumière de Pitou comparée à la maison qui s'allume au loin ; Bouboule la regarde. | petite lumière de Pitou | medium P-B | 3.9 s |
@@ -157,15 +157,15 @@ Durées estimées (voix + respiration). Tout objet cité est montré : imitation
 | 24 | 2:14 | **B** — Grincheux, tu as raison ! Il faut une lumière, pour qu'ils la voient ! | Bouboule saute (hop), puis se retient et sourit : le gag revient, doux. | Bouboule illuminé | medium B | 6.5 s |
 | 25 | 2:22 | **F** — Une lumière ? Je sais faire ça. Tout petit, tout sage. | Flamme avance, sa flamme monte d'un cran ; il se redresse, fier. | Flamme volontaire | medium F | 5.4 s |
 | 26 | 2:28 | **N** — Pendant que Pitou cherchait là-haut, chacun fit ce qu'il savait faire. | Montage de plans courts : Robi qui découpe, Grincheux qui bruine, Flamme qui compte. Lune haute. | les mains au travail | wide groupe | 6.7 s |
-| 27 | 2:35 | **R** — Découpe terminée ! Bip... oups. Trop petit. | Robi découpe un rond dans le mur ; Bouboule glisse la tête pour vérifier : elle reste coincée (gag visuel). | tête de Bouboule coincée | medium B-R | 3.9 s |
+| 27 | 2:35 | **R** — Découpe terminée ! Bip... oups. Trop petit. | Robi, collé au mur de la maison, découpe un rond ; Bouboule glisse la tête dans le trou pour vérifier : elle reste coincée (gag visuel). | tête de Bouboule coincée | medium B-R | 3.9 s |
 | 28 | 2:40 | **R** — Mesure refaite. Bzzzt. J'agrandis le rond. | Robi agrandit le trou ; Bouboule tombe dans l'herbe ; Robi pose une vitre ronde : la fenêtre est grande et fermée (house window). | la fenêtre ronde apparaît | wide maison | 3.5 s |
 | 29 | 2:44 | **G** — Pfff. Un peu de pluie, juste sur la vitre. Tout doux. | Grincheux fait tomber une toute petite pluie qui lave le verre rond : la fenêtre brille (sa pluie, utile). | la vitre qui brille | medium G + insert fenêtre | 5.4 s |
-| 30 | 2:51 | **F** — Un... deux... trois... Hic ! | Flamme compte, hic : une étincelle tombe dans une petite lanterne posée derrière la vitre (fire show, lift sur le mur). | l'étincelle dans la lanterne | insert lanterne | 3.1 s |
+| 30 | 2:51 | **F** — Un... deux... trois... Hic ! | Flamme s'approche du mur, compte, hic : sa petite flamme allume la lanterne posée derrière la vitre ronde. | l'étincelle dans la lanterne | insert lanterne | 3.1 s |
 | 31 | 2:55 | **B** — Elle est belle. Chut... la voilà qui revient. | Bouboule désigne le ciel : le point lumineux de Pitou descend l'escalier ; tous se cachent derrière un buisson/le mur. | Pitou qui redescend | wide ciel + maison | 4.2 s |
 | 32 | 3:00 | **P** — Vous êtes tous là... Qu'est-ce que c'est que ça ? | Pitou arrive en flottant ; elle voit la maison avec la grande fenêtre ronde et sa lanterne dorée ; tous les amis alignés devant. | la fenêtre ronde allumée | wide maison | 5.0 s |
 | 33 | 3:05 | **B** — Ta fenêtre. Pour voir le ciel tout le temps. | Bouboule montre la fenêtre du bras, tout rouge de fierté. | Bouboule qui présente | medium B-P | 4.6 s |
-| 34 | 3:11 | **P** — Je les vois toutes. Même les toutes petites. | Pitou colle son visage à la vitre ; par le rond, on voit le ciel étoilé reflété dans ses yeux. | ses yeux dans le rond | close P, vitre | 4.2 s |
-| 35 | 3:16 | **G** — Et la lumière, c'est pour eux. Pour qu'ils te retrouvent. Pfff. | Grincheux regarde ailleurs, nuage blanc, les joues rosies. | Grincheux ému | reaction G | 5.4 s |
+| 34 | 3:11 | **P** — Je les vois toutes. Même les toutes petites. | Pitou marche jusqu'à la porte et entre dans la maison ; on la voit alors à travers la fenêtre ronde, le visage éclairé par la lanterne, qui regarde le ciel : on comprend tout. | ses yeux dans le rond | close P, vitre | 4.2 s |
+| 35 | 3:16 | **G** — Et la lumière, c'est pour eux. Pour qu'ils te retrouvent. Pfff. | Pitou est toujours visible à travers la fenêtre ; Grincheux, au-dessus, regarde ailleurs, nuage blanc, les joues rosies. | Grincheux ému | reaction G | 5.4 s |
 | 36 | 3:22 | **P** — Ce soir, j'ai dit que j'étais triste. Et ça pèse moins. | Pitou serre les mains de Bouboule ; sa lumière revient presque complètement. | lumière qui revient | medium P-B | 5.4 s |
 | 37 | 3:28 | **B** — La prochaine fois, dis-le plus vite. On est là. | Bouboule hoche la tête ; Robi, Flamme et Grincheux s'approchent d'elle (câlin collectif). | le groupe serré | group | 4.6 s |
 | 38 | 3:34 | **P** — Promis. | Pitou ferme les yeux, sourit. | sourire de Pitou | close P | 1.6 s |
@@ -174,7 +174,7 @@ Durées estimées (voix + respiration). Tout objet cité est montré : imitation
 | 41 | 3:51 | **N** — Une étoile filante a traversé le ciel... et personne n'a vu son message sur la fenêtre. | Plan fixe de nuit : la fenêtre ronde dorée ; sur la vitre, une toute petite étoile claire apparaît puis s'efface ; la carte FIN suit. | le message sur la vitre | wide fixe long | 8.9 s |
 
 ## Placement et accessoires (repères)
-- Maison (`house walls`, EV-005) à x 0,70, avec `house window` (EV-006) sur le mur côté caméra, au centre de la maison ; foyer éteint x 0,56 (le feu de l'ép. 6 est éteint).
+- Maison (`house walls`, EV-005) à x 0,70, avec `house window` (EV-006) sur le mur côté caméra, au centre de la maison ; foyer x 0,56 avec son petit feu allumé (`fire show`, suite de l'ép. 6).
 - Pitou x 0,31 ; Bouboule x 0,22 ; Robi, Grincheux, Flamme arrivent de la gauche (x 0,10 → 0,35–0,55).
 - Escalier arc-en-ciel : `rainbow show` (réplique 16) puis `rainbow hide` (réplique 32) ; Pitou monte de la hauteur de l'écran et redescend.
 - Vertical : zones de sécurité de 07 ; plans serrés sur Pitou et Bouboule seuls ; pour le ciel, cible `[paysage, vertical]` vérifiée à chaque `shot` ; fenêtre ronde visible dans les deux formats.
@@ -184,7 +184,7 @@ Durées estimées (voix + respiration). Tout objet cité est montré : imitation
 - 🔒 « Ce dont on parle doit se voir » : imitation de Grincheux, étoiles, escalier, fenêtre, lanterne, étoile filante, message : chacun a son plan ou son insert.
 - Continuité vérifiée contre les faits établis des épisodes 1 à 6 : aucune contradiction (Pitou monte briller le soir ; la maison a ses murs sans toit ; Grincheux fera le toit à l'ép. 8 ; Flamme a un feu maîtrisé ; Robi a surmonté sa peur de l'eau).
 - Gags récurrents : chacun une seule fois, trois retournés.
-- **Relecture logique (demande d'Aaron)** : (1) la maison n'a pas de toit, donc la fenêtre est justifiée par la réplique « Le toit cachera le ciel » ; (2) Pitou monte puis redescend : le narrateur dit que les amis travaillent « pendant que Pitou cherchait là-haut » ; (3) la vitre est posée par Robi avant que Grincheux la lave ; (4) la lanterne est allumée par l'étincelle de Flamme avant que Pitou ne revienne ; (5) l'escalier arc-en-ciel apparaît quand elle monte et disparaît quand elle revient ; (6) le foyer de l'ép. 6 est éteint, la seule lumière est la lanterne ; (7) l'étoile filante est vue par Pitou seule, le message sur la vitre par le spectateur seul ; (8) heure : crépuscule puis nuit, jamais d'étoiles avant la nuit.
+- **Relecture logique (demande d'Aaron)** : (1) la maison n'a pas de toit, donc la fenêtre est justifiée par la réplique « Le toit cachera le ciel » ; (2) Pitou monte puis redescend : le narrateur dit que les amis travaillent « pendant que Pitou cherchait là-haut » ; (3) la vitre est posée par Robi avant que Grincheux la lave ; (4) la lanterne est allumée par l'étincelle de Flamme avant que Pitou ne revienne ; (5) l'escalier arc-en-ciel apparaît quand elle monte et disparaît quand elle revient ; (6) le petit feu du foyer de l'ép. 6 brûle encore (le narrateur le dit) et la lanterne s'y ajoute ; (7) l'étoile filante est vue par Pitou seule, le message sur la vitre par le spectateur seul ; (8) heure : crépuscule puis nuit, jamais d'étoiles avant la nuit.
 - Épisodes 1 à 6 non modifiés.
 
 ## G. Risques techniques à vérifier (étapes F et H)
