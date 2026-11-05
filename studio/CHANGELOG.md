@@ -1,6 +1,7 @@
 # Journal des modifications de la bible du studio
 
 ## À traiter
+- **EV-006 proposée (ép. 7)** : fenêtre ronde de la maison et étoile filante (`studio/evolutions/EV-006_fenetre_etoile_filante.md`), en attente de la validation d'Aaron.
 - Qualification des fenêtres verticales 7–13 s des ép. 3 et 4 (mouvements rapides de saut ?).
 - Sauts de teinte dus à des `tod` qui se chevauchent dans les épisodes `engine: 2` (ép. 2 à 52,7 s, ép. 3 à 6,0 s) : corrigés seulement si l'épisode passe en `engine: 3` ; évolution EV-004 possible.
 - Carte « FIN » : en paysage elle recouvre en partie le personnage du dernier plan ; comportement conservé (décision d'Aaron, 3 nov. 2026), amélioration à étudier dans une évolution séparée.
