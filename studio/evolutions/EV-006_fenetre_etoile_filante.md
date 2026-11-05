@@ -1,6 +1,7 @@
 # EV-006 — Fenêtre ronde et étoile filante (moteur, épisode 7)
 
-Statut : **proposée, non développée (en attente de la validation d'Aaron).**
+Statut : **développée sur la branche `ev-006-fenetre`, intégrée à `ep-007-production` ; non fusionnée dans main (en attente de l'accord d'Aaron).** Non-régression ép. 1–6 : 16/16 identiques.
+Ajouts : `house window show/lit/unlit/mark/hide` (4e paramètre de `show` = taille), `fx shootstar`.
 Aucun changement des règles fondamentales. Épisodes 1 à 6 : images identiques exigées (non-régression 8 instants par épisode, paysage et portrait).
 
 ## Besoin (ce qu'on veut voir à l'écran)
