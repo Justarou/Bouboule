@@ -5,6 +5,11 @@
 - Sauts de teinte dus à des `tod` qui se chevauchent dans les épisodes `engine: 2` (ép. 2 à 52,7 s, ép. 3 à 6,0 s) : corrigés seulement si l'épisode passe en `engine: 3` ; évolution EV-004 possible.
 - Carte « FIN » : en paysage elle recouvre en partie le personnage du dernier plan ; comportement conservé (décision d'Aaron, 3 nov. 2026), amélioration à étudier dans une évolution séparée.
 
+## 1.4.0 — 5 novembre 2026
+- **Épisode 6 « Flamme et la première cheminée » intégré** (4 min 13, paysage + portrait, pas de Short). Fichiers : `episodes/ep006.json`, `audio/ep006/`, `serie/saison1.json`, `studio/09_continuite.md`, `studio/rapports/RAPPORT_ep006.md`.
+- **Évolution moteur EV-005 intégrée (activée par l'usage de ses verbes ; caméra fine par `"engine": 5`)** : maison sans toit en bois, petit feu, dormeurs, regards sur le feu, aura de Pitou (`studio/evolutions/EV-005_maison_murs_feu.md`). Fusion autorisée par Aaron, sans force push. Épisodes 1 à 5 non modifiés.
+- À traiter : texte de teaser de l'ép. 6 (« faire le toit ») à accorder avec la continuité (fenêtre ép. 7, toit ép. 8) ; alertes de cadrage vertical de l'ép. 6.
+
 ## 1.3.0 — 4 novembre 2026
 - **Épisode 5 « Bouboule et la rivière aux cailloux » intégré** (3 min 51, paysage + portrait, pas de Short). Fichiers : `episodes/ep005.json`, `serie/saison1.json`, `studio/09_continuite.md`, `studio/rapports/RAPPORT_ep005.md`.
 - **Évolution moteur EV-004 intégrée (moteur 4, activé par `"engine": 4`)** : profondeur, eau, immersion, mouillé, pierres prises (`studio/evolutions/EV-004_profondeur_eau.md`). Épisodes 1 à 4 non modifiés (24/24 images identiques).
